@@ -17,8 +17,10 @@ compile '*' do
   if item[:extension] == 'md'
     filter :kramdown
     layout 'default'
+    filter :relativize_paths, type: :html
   elsif item[:extension] == 'css'
-    # don’t filter stylesheets
+    filter :relativize_paths, type: :css
+  elsif item[:extension] == 'html'
   elsif item[:extension] == 'graffle'
     # don't filter OmniGraffle documents
   elsif item.binary?
