@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Luc J. Bourhis Musings - <%= @item[:title] %></title>
+    <link rel="stylesheet" href="<%= @items['/stylesheet/'].path %>">
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc <%= Nanoc::VERSION %>">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$']],
+          displayMath: [['$$', '$$']],
+        },
+        TeX: {
+          equationNumbers: {
+            autoNumber: "all"
+          }
+        }
+      });
+    </script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  </head>
+  <body>
+    <div id="main">
+      <%= yield %>
+    </div>
+    <div id="sidebar">
+      <h2>Physique</h2>
+      <ul>
+        <li><a href="/bell-inequalities">
+        Une inégalité de Bell</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

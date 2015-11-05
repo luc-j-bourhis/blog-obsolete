@@ -1,0 +1,7 @@
+Gemfile.lock
+bin/
+crash.log
+output/
+tmp/
+.bundle/
+*.sublime-project
