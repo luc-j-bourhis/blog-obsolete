@@ -19,7 +19,7 @@ sera notée $L$, qui est aussi appelé l'état de la paire à cause de
 l'influence du vocabulaire de la mécanique quantique. Le point
 fondamental est qu'une partie de cette information ne nous est pas
 connue: ce sont les fameuses variables cachées (dans le cas de paires de
-photons, on connait le spin total de chaque paire grâce à ce que l'on
+photons, on connaît le spin total de chaque paire grâce à ce que l'on
 connaît du mécanisme de production des paires mais on ignore le spin de
 chaque particule avant mesure par exemple). Je voudrais insister sur
 deux points importants:
@@ -44,27 +44,27 @@ Pour chaque paire, l'une des particules va vers l'ensemble
 analyseur/détecteur 1 tandis que l'autre va vers l'ensemble 2. Les
 analyseurs (ils sont identiques) laissent passer la particule
 aléatoirement, avec une probabilité qui dépend non seulement de $L$ mais
-aussi de leur réglage -- dans la suite je symbolyserais le réglage des
+aussi de leur réglage -- dans la suite je symboliserais le réglage des
 analyseurs 1 et 2 par respectivement $a$ et $b$ (pour des photons, les
 analyseurs seraient des polariseurs qui ne laisseraient passer que les
 particules ayant un spin dans une direction donnée et le réglage serait
 donc cette direction). À nouveau cette soudaine introduction du hasard
 n'est pas un reniement du déterminisme classique; c'est juste que nous
-ne connaissons pas les détails de l'intéraction entre l'analyseur et la
+ne connaissons pas les détails de l’interaction entre l'analyseur et la
 particule et que nous devons nous contenter d'un traitement statistique.
 
 Finalement les particules passant la barrière des analyseurs sont
 comptées par des détecteurs. Les paires sont émises à une fréquence
-suffisament faible pour que l'on puisse dire si un coup dans le
+suffisamment faible pour que l'on puisse dire si un coup dans le
 détecteur 1 et un coup dans le détecteur 2 sont dues à des particules de
-la même paire. Une telle situation est appelée une coincidence.
+la même paire. Une telle situation est appelée une coïncidence.
 
 La procédure est alors la suivante. On fixe les réglages a et b des
 analyseurs pour la durée de l'expérience. On génère $N$ paires et on
 incrémente trois compteurs $N_1$, $N_2$ et $N_{12}$ à chaque détection. $N_1$ est
 incrémenté de 1 à chaque fois que le détecteur 1 est touché, que le
-détecteur 2 le soit ou non. On définit symmétriquement $N_2$. Finalement
-$N_{12}$ est incrémenter de 1 à chaque fois qu'une coincidence est détectée.
+détecteur 2 le soit ou non. On définit symétriquement $N_2$. Finalement
+$N_{12}$ est incrémenter de 1 à chaque fois qu'une coïncidence est détectée.
 On définit alors les fréquences associées
 
 $$ f_1 = \frac{N_1}{N} \label{frequencies} $$
@@ -85,7 +85,7 @@ hypothèses à partir desquelles on peut déduire les inégalités de Bell.
 Suivant le modèle ébauché précédemment, il nous faut donc introduire,
 pour une paire (1,2) transportant une information $L$, la probabilité $p_1$
 que la particule 1 franchisse l'analyseur 1, que la particule 2
-franchisse l'analyseur 2 ou non; et symmétriquement la probabilité $p_2$.
+franchisse l'analyseur 2 ou non; et symétriquement la probabilité $p_2$.
 Le dernier ingrédient est la probabilité $p_{12}$ que les deux particules
 franchissent leur analyseur respectif. À ce point il me faut écrire
 précisément de quoi dépendent les probabilités $p_1$, $p_2$ et $p_{12}$.
@@ -96,14 +96,14 @@ fonctionne indépendamment de l'analyseur 2**. C'est le critère de
 À l'évidence cette hypothèse n'est guère évidente si les deux appareils
 sont très proches l'un de l'autre. Elle devient plus naturelle si ils
 sont distants mais cela reste subjectif. Cependant, la relativité
-restreinte permet de rendre ce critère quantitatif, puisqu'aucune
+restreinte permet de rendre ce critère quantitatif, puisque aucune
 information ne peut passer d'un analyseur à l'autre plus vite que la
 lumière. L'implémentation expérimentale de cette idée n'est pas aisée
 malheureusement et plusieurs expériences prétendirent faussement avoir
 atteint ce but, par exemple la seconde expérience de Aspect et al. [^2]
 Cette deuxième faille potentielle est appelée "timing loophole" dans la
 littérature car on fait varier les réglages des polariseurs pendant le
-vol des photons de la source aux détecteurs avec un timing suffisament
+vol des photons de la source aux détecteurs avec un timing suffisamment
 rapide pour s'assurer du critère de localité. Ce "timing loophole" fut
 fermé de manière satisfaisante par Weihs et al. [^4] en 1998.
 
@@ -112,10 +112,10 @@ critère de localité. Deux conséquences en résultent qui vont nous être
 utiles dans la suite.
 
 - La probabilité $p_1$ ne peut pas dépendre du réglage $b$ de l'analyseur 2
-et symmétriquement la probabilité $p_2$ ne peut pas dépendre du réglage $a$
+et symétriquement la probabilité $p_2$ ne peut pas dépendre du réglage $a$
 de l'analyseur 1. Par contre elles dépendent à priori de l'état de la
-paire et je noterais donc $p1(L,a)$ et $p2(L,b)$.
-- les évènements "la particule 1 traverse l'analyseur 1" et "la
+paire et je noterais donc $p_1(L,a)$ et $p_2(L,b)$.
+- les événements "la particule 1 traverse l'analyseur 1" et "la
 particule 2 traverse l'analyseur 2" sont indépendants et donc $p_{12}$ est le
 produit de $p_1$ et $p_2$. Je noterais donc
 
@@ -136,7 +136,7 @@ mesurée (\ref{frequencies}).
 
 Afin d'éviter toute complication mathématique on va supposer que L prend
 des valeurs discrète $L_1, L_2, \cdots, L_n$ et on va noter $Q(L)$ la probabilité
-d'occurence de la valeur $L$ (les amoureux des maths comprendront que le
+d’occurrence de la valeur $L$ (les amoureux des maths comprendront que le
 cas le plus général se traite avec une mesure de probabilité). Bien
 entendu les $Q(L)$ nous sont inconnues et on ne fait aucune hypothèse à
 leur sujet -- bien entendu comme toutes probabilités qui se respectent,
@@ -148,12 +148,12 @@ l'on ne peut pas décrire complètement les détails microscopiques des
 systèmes en jeu.
 
 Les fréquences (\ref{frequencies}) sont alors données par des sommes, étendues sur
-l'ensembles des valeurs possibles de $L$, des probabilités $p_1(L,a)$,
-$p_2(L,a)$ et $p_{12}(L,a,b)$ pondérées par la probabilité d'occurence de $L$,
+l’ensemble des valeurs possibles de $L$, des probabilités $p_1(L,a)$,
+$p_2(L,b)$ et $p_{12}(L,a,b)$ pondérées par la probabilité d’occurrence de $L$,
 
 $$ f_1(a)      = \sum_{i=1}^n p_1(L_i,a) Q(L_i) \label{freqform} $$
 
-$$ f_2(a)      = \sum_{i=1}^n p_2(L_i,a) Q(L_i) \notag $$
+$$ f_2(b)      = \sum_{i=1}^n p_2(L_i,b) Q(L_i) \notag $$
 
 $$ f_{12}(a,b) = \sum_{i=1}^n p_{12}(L_i,a,b) Q(L_i) \notag $$
 
@@ -166,12 +166,12 @@ soient passées au travers de l'analyseur, les fréquences mesurées ne
 correspondront pas aux probabilités ci-dessus. Cette faille potentielle
 est appelée "detector efficiency loophole" dans la littérature.
 L'expérience d'Aspect et al. fut la première à sérieusement fermer cette
-faille mais pas suffisament au gout de beaucoup -- il faut savoir aussi
+faille mais pas suffisamment au goût de beaucoup -- il faut savoir aussi
 que pour avoir un grand nombre total $n$ de paires, il est tentant
 d'augmenter la fréquence d'émission et on risque alors de compter de
-fausses coincidences, entre des photons de deux paires successives.
+fausses coïncidences, entre des photons de deux paires successives.
 C'est pourquoi de nombreuses autres expériences testant les inégalités
-de Bell furent menées depuis. Finalement cette année, le "detector
+de Bell furent menées depuis. Finalement en 2001, le "detector
 efficiency loophole" semble avoir été fermé à la satisfaction de la
 communauté des physiciens par Rowe et ses collaborateurs [^3] (j'écris
 "semble" car je ne suis pas un expert).
@@ -196,7 +196,7 @@ $$ xy - xy' + x'y + x'y' \le x' + y $$
 
 En utilisant (\ref{probaprod}) et en l'appliquant à
 
-$$ x = p_1(L,a), y = p_2(L,b), x' = p_1(L,a'), y' = p_2(L,b') \notag $$,
+$$ x = p_1(L,a),\ y = p_2(L,b),\ x' = p_1(L,a'),\ y' = p_2(L,b') \notag $$,
 
 on obtient
 
@@ -218,10 +218,10 @@ qui est l'inégalité de Bell que cet article se proposait de démontrer.
 Toutes les grandeurs apparaissant dans (\ref{bellinequal}) sont des taux de comptage et il est donc à priori possible de tester cette inégalité. Il se trouve
 que si l'on utilise des paires de photons dites dans un état singlet,
 que l'on sait produire en grand nombre, la mécanique quantique prédit
-qu'il existe des réglages $a,b,a' et b'$ des polariseurs tels que le
-membre de gauche de (\ref{bellinequal}) soit égale à $2^\frac{3}{2}$ -- $a$ perpendiculaire à $a'$ (je rapelle que pour des photons le réglage de l'analyseur est une direction), $b$ perpendiculaire à $b'$ et un angle de $\frac{\pi}{8}$ entre $a$ et $b$.
+qu'il existe des réglages $a$, $b$, $a'$ et $b'$ des polariseurs tels que le
+membre de gauche de (\ref{bellinequal}) soit égale à $2^\frac{3}{2}$. Ces réglages sont: $a$ perpendiculaire à $a'$ (je rappelle que pour des photons le réglage de l'analyseur est une direction), $b$ perpendiculaire à $b'$ et un angle de $\frac{\pi}{8}$ entre $a$ et $b$.
 
-Par conséquent, de telle expérience peuve atteindre deux buts: (a)
+Par conséquent, de telles expériences peuvent atteindre deux buts: (a)
 montrer que les inégalités de Bell sont violées et donc qu'une théorie
 locale avec variables cachées (dont les postulats fondamentaux ont été
 discutés dans cet article) n'est pas viable et (b) confirmer la
