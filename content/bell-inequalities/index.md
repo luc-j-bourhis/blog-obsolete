@@ -10,7 +10,7 @@ category: physique
 
 Je vais analyser une expérience idéalisée, que j'ai schématisée
 ci-dessous, mais je tenterais de faire le lien avec des expériences
-réelles.
+réelles. Ce cas de figure est celui analysé par Clauser et Horne[^1] et ma présentation est très similaire à celle de cet article.
 
 ![Expérimental Setup](/bell-inequalities/entangled-pair-exp-setup-img.png)
 
