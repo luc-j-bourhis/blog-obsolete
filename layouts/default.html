@@ -27,15 +27,20 @@
       <%= yield %>
     </div>
     <div id="sidebar">
-      <h2>Physique</h2>
+      <%
+        tree = {}
+        articles.each {|e|
+          (tree[e[:category]] ||= []).push(e)
+        }
+      %>
+      <% tree.each do |key, entries| %>
+      <h2><%= key %></h2>
       <ul>
-        <li><a href="/bell-inequalities">
-        Une inégalité de Bell</a>
-        </li>
-        <li><a href="/bell-inequalities-no-math">
-        Inégalités de Bell sans math</a>
-        </li>
+        <% entries.each do |e| %>
+        <li><%= link_to(e[:title], e.path) %></li>
+        <% end %>
       </ul>
+      <% end %>
     </div>
   </body>
 </html>

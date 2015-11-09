@@ -1,5 +1,7 @@
 ---
 title: Une Inégalité de Bell
+kind: article
+category: physique
 ---
 
 # Démonstration d'une <br>inégalité de Bell

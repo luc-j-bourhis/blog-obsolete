@@ -1,5 +1,7 @@
 ---
 title: Inégalités de Bell sans math
+kind: article
+category: physique
 ---
 
 # Une présentation ludique des inégalités de Bell
