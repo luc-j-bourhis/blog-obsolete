@@ -27,6 +27,9 @@
       <%= yield %>
     </div>
     <div id="sidebar">
+      <p>
+      <%= @items["/#{language_of(@item)}/card/"].raw_content %>
+      </p>
       <%
         tree = {}
         articles.each {|e|

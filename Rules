@@ -13,6 +13,13 @@
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
+# Do not process files 'card.xxx'
+compile '/*/card/' do
+end
+route '/*/card/' do
+  nil
+end
+
 compile '*' do
   if item[:extension] == 'md'
     filter :kramdown

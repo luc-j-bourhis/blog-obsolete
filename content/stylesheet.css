@@ -118,3 +118,13 @@ a:hover {
 
   line-height: 20px;
 }
+
+#sidebar p {
+  font-size: 14px;
+  text-align: justify;
+  margin-bottom: 40px;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}

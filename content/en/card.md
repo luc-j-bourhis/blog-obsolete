@@ -1,0 +1,1 @@
+I am Luc J. Bourhis, physicist and software developer in Paris, France. This is my personal blog dedicated to my scientific and computing hobbies.

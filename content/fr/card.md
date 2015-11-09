@@ -1,0 +1,1 @@
+Je suis Luc Bourhis, physicien et développeur de logiciel à Paris, France. Ceci est un blog personnel dédié à mes marottes informatiques et scientifiques.
