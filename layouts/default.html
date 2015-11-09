@@ -33,7 +33,9 @@
       <%
         tree = {}
         articles.each {|e|
-          (tree[e[:category]] ||= []).push(e)
+          if language_of(e) == language_of(@item)
+            (tree[e[:category]] ||= []).push(e)
+          end
         }
         tree.each do |key, entries|
       %>
