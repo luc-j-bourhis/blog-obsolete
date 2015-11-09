@@ -12,7 +12,7 @@ Je vais analyser une expérience idéalisée, que j'ai schématisée
 ci-dessous, mais je tenterais de faire le lien avec des expériences
 réelles. Ce cas de figure est celui analysé par Clauser et Horne[^1] et ma présentation est très similaire à celle de cet article.
 
-![Expérimental Setup](/bell-inequalities/entangled-pair-exp-setup-img.png)
+![Expérimental Setup](/fr/bell-inequalities/entangled-pair-exp-setup-img.png)
 
 La source émet une à une des paires de particules (dans les expériences
 d'Aspect et al., ce sont des photons). L'information contenue dans
