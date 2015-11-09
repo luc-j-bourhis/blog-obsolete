@@ -1,3 +1,7 @@
+---
+title: Inégalités de Bell sans math
+---
+
 # Une présentation ludique des inégalités de Bell
 
 Mon but est de présenter le problème en imaginant une expérience avec des objets de tous les jours et en analysant cette expérience comme on le ferait pour les vraies expérience de physique réalisée en laboratoire. La problématique est évidemment simplifiée mais je ne commet pas de mensonges effrontés! Commençons…
