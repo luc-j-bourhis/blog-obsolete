@@ -32,8 +32,8 @@
         articles.each {|e|
           (tree[e[:category]] ||= []).push(e)
         }
+        tree.each do |key, entries|
       %>
-      <% tree.each do |key, entries| %>
       <h2><%= key %></h2>
       <ul>
         <% entries.each do |e| %>
