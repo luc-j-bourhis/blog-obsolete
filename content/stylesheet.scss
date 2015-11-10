@@ -1,8 +1,26 @@
+@mixin font_families {
+  font-family: Georgia, Palatino, serif;
+}
+
+@mixin main_paragraph_font_specs {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@mixin alignment_and_hyphenation {
+  text-align: justify;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
 * {
   margin: 0;
   padding: 0;
 
-  font-family: Georgia, Palatino, serif;
+  @include font_families;
 }
 
 body {
@@ -51,25 +69,18 @@ a:hover {
 }
 
 #main p, #main ul, #main ol {
-  text-align: justify;
-
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
+  @include alignment_and_hyphenation;
 }
 
 #main p {
   margin: 20px 0;
 
-  font-size: 16px;
-
-  line-height: 20px;
+  @include main_paragraph_font_specs;
 }
 
 #main .MathJax a {
-  font-family: Georgia, Palatino, serif;
-  font-size: 16px;
+  @include font_families;
+  @include main_paragraph_font_specs;
 }
 
 #main ul, #main ol {
@@ -77,9 +88,7 @@ a:hover {
 }
 
 #main li {
-  font-size: 16px;
-
-  line-height: 20px;
+  @include main_paragraph_font_specs;
 }
 
 #main ul li {
@@ -126,10 +135,6 @@ a:hover {
 
 #sidebar p {
   font-size: 14px;
-  text-align: justify;
   margin-bottom: 40px;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
+  @include alignment_and_hyphenation;
 }

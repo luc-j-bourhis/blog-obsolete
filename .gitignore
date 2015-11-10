@@ -5,3 +5,4 @@ output/
 tmp/
 .bundle/
 *.sublime-project
+.sass-cache/

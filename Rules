@@ -25,7 +25,8 @@ compile '*' do
     filter :kramdown
     layout 'default'
     filter :relativize_paths, type: :html
-  elsif item[:extension] == 'css'
+  elsif item[:extension] == 'scss'
+    filter :sass, syntax: :scss
     filter :relativize_paths, type: :css
   elsif item[:extension] == 'html'
   elsif item[:extension] == 'graffle'
@@ -39,7 +40,7 @@ compile '*' do
 end
 
 route '*' do
-  if item[:extension] == 'css'
+  if item[:extension] == 'scss'
     # Write item with identifier /foo/ to /foo.css
     item.identifier.chop + '.css'
   elsif item[:extension] == 'graffle'
