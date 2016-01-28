@@ -34,16 +34,7 @@ $$
 
 This will require to move $O(n^2)$ matrix elements from RAM to the caches and it will then take $O(n^3)$ flops. Thus the cost of moving each matrix element is amortised over $O(n)$ flops. This property of matrix multiplication, and by extension all the other level 3 operations that share this $O(n^3)$ vs $O(n^2)$ property, is the key to their performance. Clearly, we should choose as big a value of n as possible to maximise the number of flops per memory operation, but under the constrain that all matrices fit in the caches.
 
-But then, how does this apply to general matrices that is too big to fit in the caches? The trick is to slice them into blocks that do fit in those caches and to multiply those blocks. We will explain in great details how this can be done in the next section.
-
-The role of L1/L2/L3 caches and of virtual memory is mundane knowledge but we believe it not to be the case for the TLB. It is however crucial to correctly determine the constrains on the block size above. We will therefore dedicate the rest of this section to it. First, we shall remember that physical addresses in RAM and virtual addresses on disk are mapped onto each other by the *page table*, which does also keep track of whether a memory page is loaded in RAM, or swapped to the disk. In order to speed up the retrieval of pages from the disk, most architectures cache the information about the most recently used pages in a so-called Translation Look-aside Buffer (TLB). It roughly works as follow. When a line of L2 cache is to be updated with data starting at a given address in memory, the system looks up for that address in the TLB:
-
-- if it is there, then it proceeds with the requested memory operation: loading the appropriate memory from the disk if it is not already in RAM, and then moving data from RAM to L2 cache;
-- if not, (so-called TLB miss), the address is searched in the page table; when it is found, the TLB is updated, and then the memory operation takes place as in the previous case.
-
-Contrary to a L1/L2 cache miss that can be prevented by prefetching data, a TLB miss always stalls the CPU because of the TLB update and it should therefore be avoided at all cost by working with chunks of data that fit inside the TLB address space.
-
-We will now show in details how these different constraints can be navigated to write fast matrix multiplication.
+But then, how does this apply to general matrices that are too big to fit in the caches? The trick is to slice them into blocks that do fit in those caches and to multiply those blocks. This is the subject of the next section.
 
 ## General matrix-matrix product (GEMM)
 
@@ -59,7 +50,7 @@ The rightmost block of $A$ (resp. the bottommost block of $B$) may have less tha
 
 ![Matrix multiplication blocking (2)](/en/fast-matrix-multiplication/AB-blocking-2.png)
 
-Again the bottommost block has likely a dimension smaller than $m_c$. The general block-panel product $A_{ip} B_p$ is called GEBP by Goto et al. All the floating point operations are performed in GEBP. This is therefore the only place to optimise to the fullest. It is especially essential to choose dimensions $k_c$ and $m_c$ as large as possible to amortise the memory operations but not so large that those blocks and panels would trash the L1/L2 caches and the TLB. Specifically, Goto and van de Geijn advocates that the following properties should hold:
+Again the bottommost block has likely a dimension smaller than $m_c$. The general block-panel product $A_{ip} B_p$ is called GEBP by Goto et al. All the floating point operations are performed in GEBP. This is therefore the only place to optimise to the fullest. It is especially essential to choose dimensions $k_c$ and $m_c$ as large as possible to amortise the memory operations but not so large that those blocks and panels would trash the L1/L2 caches and the TLB (c.f. Appendices). Specifically, Goto and van de Geijn advocates that the following properties should hold:
 
 1. TODO
 
@@ -73,6 +64,16 @@ The left-hand side is split into thin slices of rows whereas of the right-hand s
 The values of $m_r$ and $n_r$ are chosen so that each tiny block of the product can be held entirely in CPU registers. The only memory operations involved in the computation of each of these tiny block consist in loading the elements of the two thin panels into the registers. Moreover the loops over the $m_r$ rows of the left-hand side and over the $n_r$ columns of the right-hand side can be entirely unrolled because $m_r$ and $n_r$ are very small. This leaves only one loop over $k_c$ columns of the left-hand side and $k_c$ rows of the right-hand side during the execution of which the elements of the tiny block of $C$ are updated entirely inside registers. When this loop terminates, and only then, the corresponding block of $C$ is updated in RAM. $m_r$ and $n_r$ are highly dependent on the number of registers and the size of vector units (the SIMD type commonly found on modern processors[^5]) featured by the processor. For a purely scalar processor, $m_r$ = 2 and $n_r$ = 4 usually provide a bottom line.
 
 [^5]: SSE2/3/4 on x86 and x86_64, NEON on ARM, Altivec on PowerPC and Cell, VIS on SPARC, just to name a few popular processors,
+
+## Appendix: TLB
+
+The role of L1/L2/L3 caches and of virtual memory is mundane knowledge but we believe it not to be the case for the TLB. It is however crucial to correctly determine the constrains on the block size above. We will therefore dedicate the rest of this section to it. First, we shall remember that physical addresses in RAM and virtual addresses on disk are mapped onto each other by the *page table*, which does also keep track of whether a memory page is loaded in RAM, or swapped to the disk. In order to speed up the retrieval of pages from the disk, most architectures cache the information about the most recently used pages in a so-called Translation Look-aside Buffer (TLB). It roughly works as follow. When a line of L2 cache is to be updated with data starting at a given address in memory, the system looks up for that address in the TLB:
+
+- if it is there, then it proceeds with the requested memory operation: loading the appropriate memory from the disk if it is not already in RAM, and then moving data from RAM to L2 cache;
+- if not, (so-called TLB miss), the address is searched in the page table; when it is found, the TLB is updated, and then the memory operation takes place as in the previous case.
+
+Contrary to a L1/L2 cache miss that can be prevented by prefetching data, a TLB miss always stalls the CPU because of the TLB update and it should therefore be avoided at all cost by working with chunks of data that fit inside the TLB address space.
+
 
 ## Bibliography
 
