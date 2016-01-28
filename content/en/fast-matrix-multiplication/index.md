@@ -14,7 +14,7 @@ The plan of this article is as follow. First we will explain why efficient matri
 
 ## On the importance of matrix multiplication
 
-Solving systems of linear equations, computing the eigenvalues and the eigenvectors of a matrix, or solving a linear least-squares problem, to name only a few applications of linear algebra, are very common tasks in a wide range of fields. Huge matrices are not unusual (e.g. least-squares with about 100000 parameters and millions of observations) and therefore extremely fast algorithms are compulsory for many applications. It was discovered in the 80's that the computer architectures emerging at the time, were most efficient at performing matrix multiplications. As a result, all classic linear algebra algorithms have been rewritten throughout the 90's so as to perform nearly all floating point operations as part of matrix multiplications, and more generally of the so-called level 3 operations, which are defined as those such that the number of floating-point operations (flops) scales as a third-order polynomials of the matrix dimensions whereas the number of matrix elements that are touched scales as a second-order polynomials of those dimensions. As a result, the speed of modern algorithms such as those provided by LAPACK[^2] almost entirely hinges on the speed of those level 3 operations. They include solving triangular system of equations with multiple right-hand sides and rank-k updates, besides matrix multiplication.
+Solving systems of linear equations, computing the eigenvalues and the eigenvectors of a matrix, or solving a linear least-squares problem, to name only a few applications of linear algebra, are very common tasks in a wide range of fields. Huge matrices are not unusual (e.g. least-squares with about 100000 parameters and millions of observations) and therefore extremely fast algorithms are compulsory for many applications. It was discovered in the 80's that the computer architectures emerging at the time, were most efficient at performing matrix multiplications. As a result, all classic linear algebra algorithms have been rewritten throughout the 90's so as to perform nearly all floating point operations as part of matrix multiplications, and more generally of the so-called level 3 operations, which are defined as those such that the number of floating-point operations (flops) scales as a third-order polynomials of the matrix dimensions whereas the number of matrix elements that are touched scales as a second-order polynomials of those dimensions. As a result, the speed of modern algorithms such as those provided by LAPACK[^2] almost entirely hinges on the speed of those level 3 operations. They include solving triangular system of equations with multiple right-hand sides and rank-k updates (e.g. the symmetric one which reads $C \rightarrow C + \alpha A A^T$), besides matrix multiplication.
 
 The reason for the efficiency of level 3 operations is rooted in the memory hierarchy of modern architectures, which we are therefore going to discuss next.
 
@@ -26,10 +26,10 @@ Modern architectures are characterised by a strong memory hierarchy, whose key l
 
 There is a huge speed difference between the different memory layers. For example, on "recent" x86 processors, it takes 1 cycle to add two floating point values stored in registers, about 4 cycles to load a value from L1 cache into registers, about 10 cycles to do so from L2 cache, from 40 to a few hundred cycles to load a value from L3 cache, and finally about 60 ns to get a value all the way from DRAM. Thus we should design our algorithms so that once a chunk of data has been moved upward through this memory hierarchy, as many floating point operations are performed on it that do not require further data motion.
 
-Level 3 operations are an ideal case in that respect. Let us take the example of the matrix product $C = A B$ where all matrices are of dimension $n \times n$, where $n$ is small enough that $A$, $B$ and $C$ fit in the processor caches. By definition
+Level 3 operations are an ideal case in that respect. Let us take the example of the matrix product $C = A B$ where all matrices are of dimension $n \times n$, where $n$ is small enough that $A$, $B$ and $C$ fit in the processor caches. By definition, for any $i=1,\cdots,n$ and any $j=1,\cdots,n$
 
 $$
-\forall i=1,\cdots,n,\ \forall j=1,\cdots,n,\ C_{ij} = \sum_{p=1}^n A_{ip} B_{pj}.
+C_{ij} = \sum_{p=1}^n A_{ip} B_{pj}.
 $$
 
 This will require to move $O(n^2)$ matrix elements from RAM to the caches and it will then take $O(n^3)$ flops. Thus the cost of moving each matrix element is amortised over $O(n)$ flops. This property of matrix multiplication, and by extension all the other level 3 operations that share this $O(n^3)$ vs $O(n^2)$ property, is the key to their performance. Clearly, we should choose as big a value of n as possible to maximise the number of flops per memory operation, but under the constrain that all matrices fit in the caches.
@@ -38,7 +38,7 @@ But then, how does this apply to general matrices that are too big to fit in the
 
 ## General matrix-matrix product (GEMM)
 
-The key will be to dice and slice matrices in the right manner and we will start with a picturesque description of this decomposition. We are going to follow as closely as possible the prescriptions presented in Goto[^1] that are at the core of GotoBLAS2, one of the fastest implementation of BLAS (this project is now continued under the name of OpenBLAS.[^4])
+The key will be to dice and slice matrices in the right manner and we will start with a picturesque description of this decomposition. We are going to follow as closely as possible the prescriptions presented in Goto[^1] that are at the core of GotoBLAS2, one of the fastest implementation of BLAS (this project is now continued under the name of OpenBLAS[^4]).
 
 Given a matrix $A$ of dimension $m \times k$, a matrix $B$ of dimension $k \times n$ and a matrix $C$ of dimension $m \times n$, we are interested in the operation $C = C + A B$. A fast implementation is obtained by a three-layered decomposition into blocks and panels.
 
