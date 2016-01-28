@@ -9,5 +9,7 @@
 
 then `nanoc` will build the site and `nanoc view -p 4000 > /tmp/luc-j-bourhis-github-io.log 2>&1 &` will run a server to preview the site locally. The French version of the generated site is at the following address:
 
-http://luc-j-bourhis.github.io/blog/fr/
+http://luc-j-bourhis.github.io/blog/fr/ and the English version at
+
+http://luc-j-bourhis.github.io/blog/en/
 
