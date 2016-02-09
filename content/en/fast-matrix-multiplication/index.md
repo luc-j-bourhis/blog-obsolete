@@ -32,7 +32,7 @@ $$
 C_{ij} = \sum_{p=1}^n A_{ip} B_{pj}.
 $$
 
-This will require to move $O(n^2)$ matrix elements from RAM to the caches and it will then take $O(n^3)$ flops. Thus the cost of moving each matrix element is amortised over $O(n)$ flops. This property of matrix multiplication, and by extension all the other level 3 operations that share this $O(n^3)$ vs $O(n^2)$ property, is the key to their performance. Clearly, we should choose as big a value of n as possible to maximise the number of flops per memory operation, but under the constrain that all matrices fit in the caches.
+This requires to move $O(n^2)$ matrix elements from RAM to the caches and it will then take $O(n^3)$ flops. Thus the cost of moving each matrix element is amortised over $O(n)$ flops. This property of matrix multiplication, and by extension all the other level 3 operations that share this $O(n^3)$ vs $O(n^2)$ property, is the key to their performance. Clearly, we should choose as big a value of n as possible to maximise the number of flops per memory operation, but under the constrain that all matrices fit in the caches.
 
 But then, how does this apply to general matrices that are too big to fit in the caches? The trick is to slice them into blocks that do fit in those caches and to multiply those blocks. This is the subject of the next section.
 
