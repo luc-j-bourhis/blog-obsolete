@@ -6,106 +6,169 @@ category: physique
 
 # Démonstration d'une <br>inégalité de Bell
 
-## 1. Description de l'expérience <br>et premiers aperçu du modèle
+## 1. L'expérience
 
-Je vais analyser une expérience idéalisée, que j'ai schématisée ci-dessous, mais je tenterais de faire le lien avec des expériences réelles. Ce cas de figure est celui analysé par Clauser et Horne[^1] et ma présentation est très similaire à celle de cet article.
+Toutes les expériences réalisées pour tester les inégalités de Bell utilisent la version de ces inégalités dite CHSH car introduites par Clauser, Horne, Shimony et Holt.[^CHSH69] Je vais donc présenter cette version. La discussion des points de physique suit celle de Clauser et Horne,[^CH74] où les auteurs démontrent une autre inégalité de Bell, dite CH, dont je dirais juste qu'elle est plus générale au sens où CHSH peut être démontrée à partir de CH.
 
-![Expérimental Setup](/fr/bell-inequalities/entangled-pair-exp-setup-img.png)
+Toutes les tests expérimentaux des inégalités de Bell peuvent être idéalisés comme suit. Il y a en premier lieu une source qui émet une à une des paires de particules -- en pratique des photons ou des ions. Pour chaque paire, l'une des particules, notée 1, va vers un appareil de mesure I tandis que l'autre, notée 2, va vers un appareil de mesure II. Ces deux appareils sont identiques mais chacun peut avoir des réglages différents, que je noterais $a$ et $b$ respectivement. L'appareil I va mesurer une observable $A$ de la particule 1 tandis que l'appareil II va mesurer une observable $B$ de la particule 2. Nous allons faire l'hypothèse que $A$ et $B$ ne peuvent prendre que les valeurs 1 et -1. En pratique, $a$ et $b$ sont des vecteurs unitaires et $A$ (resp. $B$) est la projection du spin de la particule 1 (resp. 2) selon la direction $a$ (resp. $b$). De plus, $a$ et $b$ sont assujettis à rester dans des plans fixes et donc, en pratique, ces réglages se résument à un angle pour chaque appareil.
 
-La source émet une à une des paires de particules (dans les expériences d'Aspect et al., ce sont des photons). L'information contenue dans chaque paire, ou du moins celle qui aura une influence sur les mesures, sera notée $L$, qui est aussi appelé l'état de la paire à cause de l'influence du vocabulaire de la mécanique quantique. Le point fondamental est qu'une partie de cette information ne nous est pas connue: ce sont les fameuses variables cachées (dans le cas de paires de photons, on connaît le spin total de chaque paire grâce à ce que l'on connaît du mécanisme de production des paires mais on ignore le spin de chaque particule avant mesure par exemple). Je voudrais insister sur deux points importants:
+L'expérience consiste alors à mesurer $A$ et $B$ pour un grand nombre de paires et à calculer leur corrélation, en prenant la moyenne du produit $AB$. Il faut s'assurer que les paires sont émises à des intervalles de temps suffisamment grands pour que l'on puisse être certain que les appareils I et II font des mesures sur les membres de la même paire. L'astuce est alors de répéter l'expérience avec des réglages différents, de combiner les résultats, et de les comparer avec les prédictions du modèle, comme nous allons le voir maintenant.
 
-- $L$ varie aléatoirement d'une paire à l'autre et $L$ évolue peut-être aussi stochastiquement pendant le temps de vol des photons d'une même paire. Cela ne signifie pas que l'on renie le déterminisme de la mécanique classique mais simplement que l'on doit se contenter de traiter statistiquement des processus dont tous les détails ne nous sont pas connus.
-- On ne suppose pas que l'information $L$ au sujet de la paire est un simple juxtaposition d'informations indépendantes $L_1$ et $L_2$ au sujet de respectivement la première et la deuxième particule de la paire -- cette supposition est ce que l'on peut appeler un critère de séparabilité. Pour enfoncer le clou on laisse la porte ouverte à des corrélations entre les états des deux particules (des corrélations entre les spins dans le cas de photons). L'idée est que ces corrélations sont causées par le mécanisme de production de la paire, que malheureusement nous ne connaissons pas.
+## 2. Le modèle
 
-Pour chaque paire, l'une des particules va vers l'ensemble analyseur/détecteur 1 tandis que l'autre va vers l'ensemble 2. Les analyseurs (ils sont identiques) laissent passer la particule aléatoirement, avec une probabilité qui dépend non seulement de $L$ mais aussi de leur réglage -- dans la suite je symboliserais le réglage des analyseurs 1 et 2 par respectivement $a$ et $b$ (pour des photons, les analyseurs seraient des polariseurs qui ne laisseraient passer que les particules ayant un spin dans une direction donnée et le réglage serait donc cette direction). À nouveau cette soudaine introduction du hasard n'est pas un reniement du déterminisme classique; c'est juste que nous ne connaissons pas les détails de l’interaction entre l'analyseur et la particule et que nous devons nous contenter d'un traitement statistique.
+L'information contenue dans chaque paire, ou du moins celle qui aura une influence sur les mesures, sera notée $\lambda$, qui est aussi appelée l'état de la paire à cause de l'influence du vocabulaire de la mécanique quantique. Le point fondamental est qu'une partie de cette information ne nous est pas connue: ce sont les fameuses variables cachées. En pratique, $\lambda$ comprend donc le spin de chaque particule et peut-être aussi des élements d'information dont nous n'avons pas la moindre idée. On connaît le spin total de chaque paire grâce à ce que l'on connaît du mécanisme de production des paires mais on ignore le spin de chaque particule avant mesure. Je voudrais insister sur deux points importants:
 
-Finalement les particules passant la barrière des analyseurs sont comptées par des détecteurs. Les paires sont émises à une fréquence suffisamment faible pour que l'on puisse dire si un coup dans le détecteur 1 et un coup dans le détecteur 2 sont dues à des particules de la même paire. Une telle situation est appelée une coïncidence.
+- $\lambda$ varie aléatoirement d'une paire à l'autre et $\lambda$ évolue peut-être aussi stochastiquement pendant le temps de vol des photons d'une même paire. Cela ne signifie pas que l'on renie le déterminisme de la mécanique classique mais simplement que l'on doit se contenter de traiter statistiquement des processus dont tous les détails ne nous sont pas connus;
+- on ne suppose pas que l'information $\lambda$ au sujet de la paire est un simple juxtaposition d'informations indépendantes $\lambda_1$ et $\lambda_2$ au sujet de respectivement la première et la deuxième particule de la paire -- cette supposition est ce que l'on peut appeler un critère de séparabilité. Pour enfoncer le clou on laisse la porte ouverte à des corrélations entre les états des deux particules -- au minimum des corrélations entre les spins en pratique. L'idée est que ces corrélations sont causées par le mécanisme de production de la paire, que malheureusement nous ne connaissons pas.
 
-La procédure est alors la suivante. On fixe les réglages a et b des analyseurs pour la durée de l'expérience. On génère $N$ paires et on incrémente trois compteurs $N_1$, $N_2$ et $N_{12}$ à chaque détection. $N_1$ est incrémenté de 1 à chaque fois que le détecteur 1 est touché, que le détecteur 2 le soit ou non. On définit symétriquement $N_2$. Finalement $N_{12}$ est incrémenter de 1 à chaque fois qu'une coïncidence est détectée. On définit alors les fréquences associées
+Toutes les inégalités de Bell résulte des deux hypothèses fondamentales de localité et de réalisme (en anglais Objective Local Theory, parfois abrégé en OLT). Nous allons maintenant les présenter en détails. Tout l'enjeu est de décrire précisément de quoi dépendent les mesures $A$ et $B$.
 
-$$ f_1 = \frac{N_1}{N} \label{frequencies} $$
+### a. Le critère de réalisme
 
-$$ f_2 = \frac{N_2}{N} \notag $$
+Une théorie "réaliste" suppose l'existence d'une réalité, au sens de la mécanique classique, c'est à dire déterministe, et introduit des probabilités, comme en physique statistique, uniquement parce que l'on ne peut pas décrire complètement les détails microscopiques des systèmes en jeu. Plus précisément, une telle théorie fait l'hypothèse que **l'état de la paire $\lambda$ est entièrement suffisant pour déterminer, conjointement avec les réglages des appareils, le résultat des mesures** mais que l'état de chaque paire ne pouvant être connu, il nous faut introduire une densité de probabilité $\rho(\lambda)$ sur l'ensemble $\Lambda$ des valeurs pouvant être prises par $\lambda$. Notons que cette densité ne dépend que du mécanisme de production des paires et donc pas des réglages des appareils de mesure, un point très important pour démontrer les inégalités de Bell. Notons aussi que nous n'avons à priori aucune idée de la forme que peut prendre $\rho(\lambda)$, et que cette information n'est pas nécessaire pour démontrer les inégalités de Bell.
 
-$$ f_{12} = \frac{N_{12}}{N} \notag $$
+### b. Le critère de localité
 
-## 2. Le modèle dans tous ses détails.
+Ce critère s'exprime ainsi: **l'analyseur 1 fonctionne indépendamment de l'analyseur 2**.
 
+À l'évidence cette hypothèse n'est guère évidente si les deux appareils sont très proches l'un de l'autre. Elle devient plus naturelle si ils sont distants mais cela reste subjectif. Cependant, la relativité restreinte permet de rendre ce critère quantitatif, puisque aucune information ne peut passer d'un analyseur à l'autre plus vite que la lumière. L'implémentation expérimentale de cette idée n'est pas aisée malheureusement. La seconde expérience de Aspect et al.[^Aspect82] fut une la première à tenter de fermet cette faille potentielle, appelée "timing loophole" dans la littérature car on fait varier les réglages des polariseurs pendant le vol des photons de la source aux détecteurs avec un timing suffisamment rapide pour s'assurer du critère de localité. Ce "timing loophole" fut finalement fermé pour la première fois de manière satisfaisante par Weihs et al. [^Weihs98] en 1998.
 
-Il est maintenant temps d'introduire avec une précision mathématique les hypothèses à partir desquelles on peut déduire les inégalités de Bell.
+Par souci de simplicité, laissons les détails de coté et admettons le critère de localité. Il en résulte une conséquence importante: combiné avec le critère de réalisme, la mesure $A$ par l'appareil I ne peut dépendre que du réglage $a$ de cet appareil et de l'état de la pair $\lambda$. On notera donc $A(a, \lambda)$. Et de même pour l'autre mesure, $B(b, \lambda)$.
 
+On pourrait être tenté d'aller plus loin et de dire que $A$ ne peut dépendre que de l'état de la particule 1 mais comme cet état peut être corrélé avec celui de la particule 2, cette hypothèse est en générale fausse. Le critère de localité, qui s'applique aux analyseurs, n'est donc pas équivalent au critère de séparabilité, comme nous l'avions déjà mentionné plus haut.
 
-### a. Le critère de localité.
+## 3. Démonstration des inégalités de Bell
 
-Suivant le modèle ébauché précédemment, il nous faut donc introduire, pour une paire (1,2) transportant une information $L$, la probabilité $p_1$ que la particule 1 franchisse l'analyseur 1, que la particule 2 franchisse l'analyseur 2 ou non; et symétriquement la probabilité $p_2$. Le dernier ingrédient est la probabilité $p_{12}$ que les deux particules franchissent leur analyseur respectif. À ce point il me faut écrire précisément de quoi dépendent les probabilités $p_1$, $p_2$ et $p_{12}$. C'est ici que va entrer en jeu une hypothèse fondamentale: **l'analyseur 1 fonctionne indépendamment de l'analyseur 2**. C'est le critère de *localité*.
+Nous nous intéressons à la fonction de corrélation entre les mesures sur les membres d'une paire:
 
-À l'évidence cette hypothèse n'est guère évidente si les deux appareils sont très proches l'un de l'autre. Elle devient plus naturelle si ils sont distants mais cela reste subjectif. Cependant, la relativité restreinte permet de rendre ce critère quantitatif, puisque aucune information ne peut passer d'un analyseur à l'autre plus vite que la lumière. L'implémentation expérimentale de cette idée n'est pas aisée malheureusement et plusieurs expériences prétendirent faussement avoir atteint ce but, par exemple la seconde expérience de Aspect et al. [^2] Cette deuxième faille potentielle est appelée "timing loophole" dans la littérature car on fait varier les réglages des polariseurs pendant le vol des photons de la source aux détecteurs avec un timing suffisamment rapide pour s'assurer du critère de localité. Ce "timing loophole" fut fermé de manière satisfaisante par Weihs et al. [^4] en 1998.
+$$ P(a,b) = \int_{\Lambda} A(a, \lambda) B(b, \lambda) d\rho(\lambda). $$
 
-Par souci de simplicité, laissons les détails de coté et admettons le critère de localité. Deux conséquences en résultent qui vont nous être utiles dans la suite.
+On considère maintenant deux réglage $a$ et $a'$ de l'appareil I et deux réglages $b$ et $b'$ de l'appareil II. L'inégalité CHSH que nous voulons démontrer est:
 
-- La probabilité $p_1$ ne peut pas dépendre du réglage $b$ de l'analyseur 2 et symétriquement la probabilité $p_2$ ne peut pas dépendre du réglage $a$ de l'analyseur 1. Par contre elles dépendent à priori de l'état de la paire et je noterais donc $p_1(L,a)$ et $p_2(L,b)$. - les événements "la particule 1 traverse l'analyseur 1" et "la particule 2 traverse l'analyseur 2" sont indépendants et donc $p_{12}$ est le produit de $p_1$ et $p_2$. Je noterais donc
+$$ R(a, a', b, b') = |P(a',b) - P(a,b) + P(a',b') + P(a,b')| \le 2 $$
 
-$$ p_{12}(L,a,b) = p_{1}(L,a) p_{2}(L,b) \label{probaprod} $$
+Tout d'abord,
 
-On notera encore une fois que $p_{12}$ dépend de l'état de la paire et donc des possibles corrélations entre les deux particules. Le critère de localité, qui s'applique aux analyseurs, n'est donc pas équivalent au critère de séparabilité mentionné au début de cet article.
+$$ |P(a',b) - P(a,b) + P(a',b') + P(a,b')|
+    \le |P(a',b) - P(a,b)| + |P(a',b') + P(a,b')| \notag $$
 
+et chaque terme du membre de droite peut alors être majoré séparément:
 
-### b. Les variables cachées.
+$$
+\begin{aligned}
+    |P(a',b) - P(a,b)| & =
+    \left|
+    \int_\Lambda (A(a', \lambda) - A(a, \lambda)) B(b, \lambda) d\rho(\lambda)
+    \right| \notag \\
+    & \le \int_\Lambda |A(a', \lambda) - A(a, \lambda)| |B(b, \lambda)| d\rho(\lambda) \notag
+\end{aligned}
+$$
 
-Il me faut aussi définir proprement le sens de l'expression "distribution aléatoire de l'information L d'une paire" et par là-même de faire le lien entre les probabilités définies au a) et les fréquences mesurée (\ref{frequencies}).
+et
 
-Afin d'éviter toute complication mathématique on va supposer que L prend des valeurs discrète $L_1, L_2, \cdots, L_n$ et on va noter $Q(L)$ la probabilité d’occurrence de la valeur $L$ (les amoureux des maths comprendront que le cas le plus général se traite avec une mesure de probabilité). Bien entendu les $Q(L)$ nous sont inconnues et on ne fait aucune hypothèse à leur sujet -- bien entendu comme toutes probabilités qui se respectent, on a $0 \le Q(L) \le 1$ et la somme de tous les $Q(L)$ vaut 1. Une telle théorie est dite réaliste. Elle suppose en effet l'existence d'une réalité, au sens de la mécanique classique, c'est à dire déterministe, et introduit des probabilités, comme en physique statistique, uniquement parce que l'on ne peut pas décrire complètement les détails microscopiques des systèmes en jeu.
+$$
+\begin{aligned}
+    |P(a',b') + P(a,b')| & =
+    \left|
+    \int_\Lambda (A(a', \lambda) + A(a, \lambda)) B(b', \lambda) d\rho(\lambda)
+    \right| \notag \\
+    & \le \int_\Lambda |A(a', \lambda) + A(a, \lambda)| |B(b', \lambda)| d\rho(\lambda). \notag
+\end{aligned}
+$$
 
-Les fréquences (\ref{frequencies}) sont alors données par des sommes, étendues sur l’ensemble des valeurs possibles de $L$, des probabilités $p_1(L,a)$, $p_2(L,b)$ et $p_{12}(L,a,b)$ pondérées par la probabilité d’occurrence de $L$,
+Comme $B$ ne prend que les valeurs +1 et -1, on a donc
 
-$$ f_1(a)      = \sum_{i=1}^n p_1(L_i,a) Q(L_i) \label{freqform} $$
+$$ R(a, a', b, b') \le \int_\Lambda |A(a', \lambda) - A(a, \lambda)| + |A(a', \lambda) + A(a, \lambda)| d\rho(\lambda). \notag $$
 
-$$ f_2(b)      = \sum_{i=1}^n p_2(L_i,b) Q(L_i) \notag $$
+Si $A(a', \lambda)$ et $A(a, \lambda)$ ont la même valeur, alors le 1er terme est égal à 0 et le 2ème à 2; à l'inverse, si ils ont des valeurs différentes, le 1er terme est égal à 2 et le 2ème à 0. Donc dans tous les cas, l'intégrande est inférieur à 2.
 
-$$ f_{12}(a,b) = \sum_{i=1}^n p_{12}(L_i,a,b) Q(L_i) \notag $$
+CQFD.
 
-où j'ai aussi rendu explicite ce dont dépendent les fréquences.
+## 4. Violation des inégalités de Bell
 
-Tout cela suppose malheureusement (outre que le nombre total $n$ de paires est grand, ce qui est réalisable) que le détecteur est parfait. En effet si des particules ne sont pas comptées par le détecteur bien qu'elles soient passées au travers de l'analyseur, les fréquences mesurées ne correspondront pas aux probabilités ci-dessus. Cette faille potentielle est appelée "detector efficiency loophole" dans la littérature. L'expérience d'Aspect et al. fut la première à sérieusement fermer cette faille mais pas suffisamment au goût de beaucoup -- il faut savoir aussi que pour avoir un grand nombre total $n$ de paires, il est tentant d'augmenter la fréquence d'émission et on risque alors de compter de fausses coïncidences, entre des photons de deux paires successives. C'est pourquoi de nombreuses autres expériences testant les inégalités de Bell furent menées depuis. Finalement en 2001, le "detector efficiency loophole" semble avoir été fermé à la satisfaction de la communauté des physiciens par Rowe et ses collaborateurs [^3] (j'écris "semble" car je ne suis pas un expert).
+### a. Mesures
+
+Expérimentalement, tirant parti encore une fois du fait que $A$ et $B$ ne prennent que les valeurs +1 et -1, on mesurera la corrélation par
+
+$$ P(a,b) \approx \frac{N_\text{identique}(a,b)-N_\text{différente}(a,b)}{N_\text{identique}(a,b)+N_\text{différente}(a,b)} $$
+
+où $N_\text{identique}(a,b)$ (resp. $N_\text{différente}(a,b)$) sont respectivement le nombre de paires pour lesquelles les valeurs mesurées $A$ et $B$ sont identiques (resp. différentes).
+
+Tout cela suppose malheureusement (outre que le nombre total $n$ de paires est grand pour éviter les fluctuations statistiques, ce qui est réalisable) que les appareils de mesures sont parfaits. En effet si des particules échappent à la mesure, les fréquences mesurées ne correspondront pas aux probabilités ci-dessus. Cette faille potentielle est appelée "detector efficiency loophole" dans la littérature. L'expérience d'Aspect et al. fut la première à sérieusement fermer cette faille mais pas suffisamment au goût de beaucoup -- il faut savoir aussi que pour avoir un grand nombre total $n$ de paires, il est tentant d'augmenter la fréquence d'émission et on risque alors de compter de fausses coïncidences, entre des photons de deux paires successives, ce qui est un autre problème. C'est pourquoi de nombreuses autres expériences testant les inégalités de Bell furent menées depuis. Finalement en 2001, le "detector efficiency loophole" semble avoir été fermé pour la première fois à la satisfaction de la communauté des physiciens par Rowe et ses collaborateurs [^Rowe01] (j'écris "semble" car je ne suis pas un expert). Il restait donc à fermer les deux failles dans une seule et même expérience, ce qui fut fait très récemment par Hensen et al.[^Hensen15] Il y a eu plusieurs autres expériences marquantes s'attaquant à l'une ou l'autre de ces failles que je n'ai pas cité: je renvoie le lecteur à la bibliographie de Hensen et al.[^Hensen15]
 
 En passant, les expériences d'Aspect et al. ne furent donc pas du tout définitives, contrairement à ce que beaucoup de gens croient (et pas seulement en France).
 
-## 3. Une inégalité de Bell.
+### b. Choix des réglages
 
-C'est toute la physique dont j'ai besoin ! Le reste n'est que viles manipulations mathématiques ... Ah si ! Il y a juste un dernier point physique: on va faire quatre expériences telles que décrites au 1), la première avec la combinaison de réglage $(a,b)$ des analyseurs, la seconde avec $(a',b)$, la troisième avec $(a,b')$ et la dernière avec $(a',b')$ où $a, b, a', b'$ sont des valeurs a priori distinctes des réglages des analyseurs.
+Il faut trouver des réglages tels que la mécanique quantique prédise que $R(a, a', b, b')$ soit plus grand que 2, et le plus grand possible afin d'augmenter le poids statistique du résultat. Contrairement au modèle réaliste que nous avons analysé jusqu'à présent, il faut à priori rendre explicites les détails de l'expérience afin de pouvoir faire des prédictions quantiques.
 
-On va utiliser le lemme suivant, que je ne démontrerais pas (exercice !): si $x,x', y,y'$ sont des nombres réels entre 0 et 1 inclus, alors on a l'inégalité (large)
+Mais il se trouve que dans le cas des inégalités CHSH, on peut prouver que la borne supérieure pour $R(a, a', b, b')$ est $2\sqrt{2}$ quasiment sans faire aucune hypothèse supplémentaire. Ce résultat fut démontré pour la première fois par Cirel'son[^Cirel80] -- son nom est aussi orthographié Tsirelson parfois. Dans le cas qui nous concerne, nous supposons que toutes les paires sont dans le même état quantique $\mid \psi \rangle$ du fait des particularités du processus de création (ce qui est toujours vérifié en pratique) et nous commençons par remplacer $P(x,y)$ par son équivalent quantique, l'espérance du produit $A(x)B(y)$, où $A(x)$ et $B(y)$ sont maintenant des opérateurs hermitiens représentant les observables mesurées,
 
-$$ xy - xy' + x'y + x'y' \le x' + y $$
+$$  \newcommand{\ket}[1]{\left| #1 \right\rangle}
+    \newcommand{\bra}[1]{\left\langle #1 \right|}
+    \newcommand{\expect}[1]{\left\langle #1 \right\rangle}
+    \newcommand{\comm}[2]{\left[ #1, #2 \right]}
+    \newcommand{\Hsingle}{\mathcal{S}}
+    \newcommand{\Hpair}{\mathcal{P}}
+    \newcommand{\vec}[1]{\mathrm{Vec}\left(#1\right)}
+    \newcommand{\matnorm}[1]{\Vert #1 \Vert}
+\expect{A(x)B(y)} = \bra{\psi} A(x)B(y) \ket{\psi}.
+$$
 
-En utilisant (\ref{probaprod}) et en l'appliquant à
+L'expression $R(a, a', b, b')$ bornée par les inégalités de Bell s'écrit alors comme l'espérance
 
-$$ x = p_1(L,a),\ y = p_2(L,b),\ x' = p_1(L,a'),\ y' = p_2(L,b') \notag $$,
+$$ R(a, a', b, b') = \left| \bra{\psi} S(a, a', b, b') \ket{\psi} \right| \label{Rexpect} $$
 
-on obtient
+de l'opérateur
 
-$$ p_{12}(L,a,b) - p_{12}(L,a,b') + p_{12}(L,a',b) + p_{12}(L,a',b')
+$$ S(a,a',b,b') = A(a')B(b) - A(a)B(b) + A(a')B(b') + A(a)B(b'). $$
 
-    \le p_1(L,a') + p_2(L,b) \notag $$
-
-En utilisant (\ref{freqform}), une sommation de ces équations pondérées par $Q(L)$ sur toutes les valeurs de L donne
-
-$$ \frac{f_{12}(a,b) - f_{12}(a,b') + f_{12}(a',b) + f_{12}(a',b')}         {f_1(a') + f_2(b)} \le 1 \label{bellinequal} $$
-
-qui est l'inégalité de Bell que cet article se proposait de démontrer.
-
-
-## 4. Test de cette inégalité de Bell.
-
-Toutes les grandeurs apparaissant dans (\ref{bellinequal}) sont des taux de comptage et il est donc à priori possible de tester cette inégalité. Il se trouve que si l'on utilise des paires de photons dites dans un état singlet, que l'on sait produire en grand nombre, la mécanique quantique prédit qu'il existe des réglages $a$, $b$, $a'$ et $b'$ des polariseurs tels que le membre de gauche de (\ref{bellinequal}) soit égale à $2^\frac{3}{2}$. Ces réglages sont: $a$ perpendiculaire à $a'$ (je rappelle que pour des photons le réglage de l'analyseur est une direction), $b$ perpendiculaire à $b'$ et un angle de $\frac{\pi}{8}$ entre $a$ et $b$.
-
-Par conséquent, de telles expériences peuvent atteindre deux buts: (a) montrer que les inégalités de Bell sont violées et donc qu'une théorie locale avec variables cachées (dont les postulats fondamentaux ont été discutés dans cet article) n'est pas viable et (b) confirmer la prédiction de la mécanique quantique. Il existe maintenant un ensemble consistent d'expériences qui ont réalisé ces deux buts.
+À ce stade, il est utile d'introduire le reste du décor quantique. Nous faisons l'hypothèse que l'espace de Hilbert $\Hsingle$ des états non-corrélés de la particule 1 prise isolément, et bien sûr aussi de la particule 2 prise isolément, est de dimension 2, ce qui est réalisé en pratique. L'opérateur $A(x)$ s'écrit $A(x) = A_1(x) \otimes I$ où $A_1(x)$ opère sur $\Hsingle$ seulement et où $I$ est l'opérateur identité de $\Hsingle$. De même, $B(y) = I \otimes B_2(y)$. Par conséquent, les opérateurs $A(x)$ et $B(y)$ commutent quelque soit les réglages $x$ et $y$, et $A(x)B(y)=B(y)A(x)=A_1(x) \otimes B_2(y)$. Finalement, étant donné deux bases $(\ket{u}, \ket{u'})$ et $(\ket{v}, \ket{v'})$ de $\Hsingle$, les produits cartésiens $\ket{u}\ket{v}$, $\ket{u}\ket{v'}$, $\ket{u'}\ket{v}$ et $\ket{u'}\ket{v'}$ forment une base de l'espace de Hilbert $\Hpair$ des états de la paire, qui est donc de dimension 4.
 
 
-[^1]: J.F. Clauser and M.A. Horne, Phys. Rev. D 10 (1974) 526.
+Ceci étant posé, nous pouvons maintenant introduire un résultat fondamental (dont j'ai pris connaissance dans Braunstein et al.[^Braunstein92]),
 
-[^2]: A. Aspect, J. Dalibard and G. Roger, Phys. Rev. Lett. 49 (1982) 1804
+$$ S(a,a',b,b')^2 = 4I - \comm{A(a)}{A(a')} \comm{B(b)}{B(b')}. \label{Sfundamental} $$
 
-[^3]: M. Rowe et al., Nature 409 (2001) 791
+Nous allons en effet voir que cette propriété est pleine de conséquences pour les bornes de $R(a, a', b, b')$ mais nous allons tout d'abord la démontrer.
 
-[^4]: G. Weihs et al., Phys. Rev. Lett. 81 (1998) 5039
+Nous allons temporairement alléger les notations en écrivant $A, A', B, B'$ au lieu de $A(a), A(a'), B(b), B(b')$ respectivement. Comme les opérateurs $A, A'$ commutent avec les opérateurs $B, B'$, nous pouvons regrouper les premiers à gauche et les seconds à droite dans les termes de $S^2$. Ensuite, comme tous les $A, A', B, B'$ ont pour seules valeurs propres +1 et -1, nécessairement
+
+$$ A^2 = A'^2 = B^2 = B'^2 = I, $$
+
+et nous pouvons donc éliminer ces carrés dans les regroupements sus-cités. Cela donne
+
+$$  \begin{split}
+    S(a, a', b, b')^2  &= I - A'A + BB' + A'A BB' \\
+                     & -AA' + I - AA'BB' - BB' \\
+                     & + B'B - A'AB'B + I + A'A \\
+                     & + AA'B'B - B'B + AA' + I  \\
+    \end{split}
+$$
+
+CQFD
+
+Passons maintenant à l'exploitation de (\ref{Rexpect}) et (\ref{Sfundamental}). Comme un commutateur a une trace nulle, les valeurs propres de l'opérateur hermitien $i \comm{A_1(a)}{A_1(a')}$ sont $\alpha$ et $-\alpha$ pour un certain nombre réel $\alpha$. Soient $\ket{\alpha}$ et $\ket{-\alpha}$ les vecteurs propres associés. Avec le même raisonnement, les valeurs propres de $i \comm{B_2(b)}{B_2(b')}$ sont $\beta$ et $-\beta$ pour un certain nombre réel $\beta$ et les vecteurs propres associés seront notés $\ket{\beta}$ et $\ket{-\beta}$. Il est alors immédiat que $S^2$ a deux valeurs propres dégénérées, $4 + \alpha\beta$ et $4 -\alpha\beta$, qui sont nécessairement positives puisque $S^2$ est positif, et que les espaces propres associés sont respectivement $U = \vec{\ket{\alpha}\ket{\beta}, \ket{-\alpha}\ket{-\beta}}$ et $V = \vec{\ket{-\alpha}\ket{\beta}, \ket{\alpha}\ket{-\beta}}$. Par conséquent, les valeurs propres de $S$ s'écrivent ou bien $\pm\sqrt{4+\alpha\beta}$ ou bien $\pm\sqrt{4-\alpha\beta}$. Les premières (resp. les secondes) ont leurs vecteurs propres dans $U$ (resp. $V$).
+
+On voit donc que si $A(a)$ commute avec $A(a')$ ou bien si $B(b)$ commute avec $B(b')$, les valeurs propres de $S(a,a',b,b')$ sont égales à $\pm2$, et par conséquent $R(a,a',b,b')$ est toujours entre -2 et 2: la borne de l'inégalité de Bell n'est violée pour aucun réglage et pour aucun état quantique de la paire $\ket{\psi}$.
+
+Si au contraire aucune de ces paires d'opérateurs ne commute, alors ou bien $\alpha\beta > 0$, ou bien $\alpha\beta < 0$. Dans le premier cas, une valeur propre $\pm\sqrt{4+\alpha\beta}$ sera en dehors de l'intervalle $[-2,2]$ tandis que dans le second cas, une valeur propre $\pm\sqrt{4-\alpha\beta}$ sera en dehors de cet intervalle. Une paire préparée dans un état propre associé violera alors la borne de l'inégalité de Bell pour le choix de réglages correspondant à ces valeurs de $\alpha$ et $\beta$. Quelle violation maximale peut-on obtenir? Comme $\matnorm{\comm{A(a)}{A(a')}} \le 2 \matnorm{A(a)} \matnorm{A(a')}$, nécessairement $-2 \le \alpha \le 2$ puisque $\matnorm{A(a)}=\matnorm{A(a')}=1$. De même, $-2 \le \beta \le 2$. Cela démontre que la borne maximale est $2\sqrt{2}$ comme annoncé plus haut mais nous voyons aussi que cette borne est réalisée quand $\alpha = \beta = \pm 2$.
+
+
+## Bibliographie
+
+[^CHSH69]: John F. Clauser, Michael A. Horne, Abner Shimony, and Richard A. Holt. Proposed experiment to test local hidden-variable theories. Phys. Rev. Lett., 23:880–884, Oct 1969.
+
+[^CH74]: John F. Clauser and Michael A. Horne. Experimental consequences of objective local theories. Phys. Rev. D, 10:526–535, Jul 1974.
+
+[^Aspect82]: Alain Aspect, Jean Dalibard, and G ́erard Roger. Experimental test of bell’s inequalities using time- varying analyzers. Phys. Rev. Lett., 49:1804–1807, Dec 1982.
+
+[^Rowe01]: M. A. Rowe, D. Kielpinski, V. Meyer, C. A. Sackett, W. M. Itano, C. Monroe, and D. J. Wineland. Experimental violation of a bell’s inequality with efficient detection. Nature, 409(6822):791–794, 02 2001.
+
+[^Weihs98]: Gregor Weihs, Thomas Jennewein, Christoph Simon, Harald Weinfurter, and Anton Zeilinger. Violation of bell’s inequality under strict einstein locality conditions. Phys. Rev. Lett., 81:5039– 5043, Dec 1998.
+
+[^Hensen15]: B. Hensen, H. Bernien, A. E. Dreau, A. Reiserer, N. Kalb, M. S. Blok, J. Ruitenberg, R. F. L. Vermeulen, R. N. Schouten, C. Abellan, W. Amaya, V. Pruneri, M. W. Mitchell, M. Markham, D. J. Twitchen, D. Elkouss, S. Wehner, T. H. Taminiau, and R. Hanson. Loophole-free bell inequality violation using electron spins separated by 1.3 kilometres. Nature, 526(7575):682–686, 10 2015.
+
+[^Cirel80]: B. S. Cirel’son. Quantum generalizations of bell’s inequality. Letters in Mathematical Physics, 4:93–100, 1980.
+
+[^Braunstein92]: Samuel L. Braunstein, A. Mann, and M. Revzen. Maximal violation of bell inequalities for mixed states. Phys. Rev. Lett., 68:3259–3261, Jun 1992.]
