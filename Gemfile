@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'nanoc'
+gem 'nanoc', '3.8.0'
 gem 'adsf' # for nanoc view
 gem 'kramdown' # for Markdown
 gem 'nokogiri' # necessary for relative URL apparently
