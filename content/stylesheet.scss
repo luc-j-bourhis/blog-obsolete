@@ -44,13 +44,16 @@ sup {
   line-height: 0;
 }
 
+$sidebar_width: 200px;
+$main_margin: 80px;
+
 #main {
   position: absolute;
 
   top: 40px;
-  left: 280px;
-
-  width: 600px;
+  left: $sidebar_width;
+  margin-left: $main_margin;
+  margin-right: $main_margin;
 }
 
 #main h1, h2, h3, h4, h5, h6 {
@@ -104,7 +107,7 @@ sup {
 
   top: 40px;
   left: 20px;
-  width: 200px;
+  width: $sidebar_width;
 
   padding: 20px 20px 0 0;
 
