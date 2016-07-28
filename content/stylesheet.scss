@@ -3,7 +3,7 @@
 }
 
 @mixin main_paragraph_font_specs {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 20px;
 }
 
@@ -135,13 +135,13 @@ $main_margin: 80px;
 }
 
 #sidebar li {
-  font-size: 14px;
+  font-size: 15px;
 
   line-height: 20px;
 }
 
 #sidebar p {
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 30px;
   @include alignment_and_hyphenation;
 }
