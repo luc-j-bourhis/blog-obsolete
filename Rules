@@ -22,6 +22,7 @@ end
 
 compile '*' do
   if item[:extension] == 'md'
+    filter :textual_macros
     filter :kramdown
     layout 'default'
     filter :relativize_paths, type: :html
