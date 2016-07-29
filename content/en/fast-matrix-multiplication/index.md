@@ -2,6 +2,10 @@
 title: Fast Matrix Multiplication
 kind: article
 category: computing
+abbreviations:
+  - ATLAS
+  - OpenBLAS
+  - BLAS
 ---
 
 # How to multiply two matrices at peak performance?
