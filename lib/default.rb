@@ -1,14 +1,14 @@
 # All files in the 'lib' directory will be loaded
 # before nanoc starts compiling.
-include Nanoc3::Helpers::Blogging
-include Nanoc3::Helpers::LinkTo
+include Nanoc::Helpers::Blogging
+include Nanoc::Helpers::LinkTo
 
 def language_of(item)
     c = item.identifier.to_s.match(%r{/([a-z]{2})/})
     c && c[1]
 end
 
-class TextualMacros < Nanoc3::Filter
+class TextualMacros < Nanoc::Filter
   identifier :textual_macros
   attr_accessor :macro
 
@@ -32,7 +32,7 @@ class TextualMacros < Nanoc3::Filter
   end
 end
 
-class AbbreviationMarker < Nanoc3::Filter
+class AbbreviationMarker < Nanoc::Filter
   identifier :mark_abbreviations
   attr_accessor :abbr_rx
 

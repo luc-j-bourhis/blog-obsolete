@@ -1,60 +1,25 @@
 #!/usr/bin/env ruby
 
-# A few helpful tips about the Rules file:
-#
-# * The string given to #compile and #route are matching patterns for
-#   identifiers--not for paths. Therefore, you can’t match on extension.
-#
-# * The order of rules is important: for each item, only the first matching
-#   rule is applied.
-#
-# * Item identifiers start and end with a slash (e.g. “/about/” for the file
-#   “content/about.html”). To select all children, grandchildren, … of an
-#   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
-#   because “*” matches zero or more characters.
-
-# Do not process files 'card.xxx'
-compile '/*/card/' do
-end
-route '/*/card/' do
-  nil
+compile '/**/*.md' do
+  filter :textual_macros
+  filter :mark_abbreviations
+  filter :kramdown
+  layout '/default.*'
+  filter :relativize_paths, type: :html
+  write item.identifier.without_ext + '.html'
 end
 
-compile '*' do
-  if item[:extension] == 'md'
-    filter :textual_macros
-    filter :mark_abbreviations
-    filter :kramdown
-    layout 'default'
-    filter :relativize_paths, type: :html
-  elsif item[:extension] == 'scss'
-    filter :sass, syntax: :scss
-    filter :relativize_paths, type: :css
-  elsif item[:extension] == 'html'
-  elsif item[:extension] == 'graffle'
-    # don't filter OmniGraffle documents
-  elsif item.binary?
-    # don’t filter binary items
-  else
-    filter :erb
-    layout 'default'
-  end
+compile '/**/*.scss' do
+  filter :sass, syntax: :scss
+  filter :relativize_paths, type: :css
+  write item.identifier.without_ext + '.css'
 end
 
-route '*' do
-  if item[:extension] == 'scss'
-    # Write item with identifier /foo/ to /foo.css
-    item.identifier.chop + '.css'
-  elsif item[:extension] == 'graffle'
-    # Ignore Omnigraffle Document
-    nil
-  elsif item.binary?
-    # Write item with identifier /foo/ to /foo.ext
-    item.identifier.chop + (item[:extension] ? '.' + item[:extension] : '')
-  else
-    # Write item with identifier /foo/ to /foo/index.html
-    item.identifier + 'index.html'
-  end
+compile '/**/*.{png}' do
+  write item.identifier.to_s
 end
 
-layout '*', :erb
+compile '/**/*' do
+end
+
+layout '/**/*', :erb
