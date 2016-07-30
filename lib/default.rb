@@ -3,11 +3,23 @@
 include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::LinkTo
 
+# The 2-letter code of the language the given item is written in
 def language_of(item)
     c = item.identifier.to_s.match(%r{/([a-z]{2})/})
     c && c[1]
 end
 
+# Macro system
+#
+# Usage
+# -----
+# In the header of a Markdown file, put for example
+#
+#    macros:
+#        irf: Inertial Reference Frame
+#
+# Then anywhere in the same file, write `%irf` and this filter will replace
+# the macro with "Inertial Reference Frame".
 class TextualMacros < Nanoc::Filter
   identifier :textual_macros
   attr_accessor :macro
@@ -32,6 +44,19 @@ class TextualMacros < Nanoc::Filter
   end
 end
 
+# Automatic marking of abbreviations
+#
+# Usage
+# -----
+# In the header of a Markdown file, put for example
+#
+#    abbreviations:
+#        - ATLAS
+#        - BLAS
+#
+# Then anywhere in the same file, ATLAS and BLAS will be replaced by
+# <abbr>ATLAS</abbr> and <abbr>BLAS</abbr> respectively, thus allowing
+# styling with CSS for example.
 class AbbreviationMarker < Nanoc::Filter
   identifier :mark_abbreviations
   attr_accessor :abbr_rx
