@@ -22,4 +22,5 @@ end
 compile '/**/*' do
 end
 
-layout '/**/*', :erb
+layout '/**/*.html', :erb
+layout '/**/*.haml', :haml
