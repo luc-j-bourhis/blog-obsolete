@@ -1,0 +1,41 @@
+%head
+  %meta{:charset => "utf-8"}/
+  %title Luc J. Bourhis Musings - #{@item[:title]}
+  %link{:rel => "stylesheet", :href => "#{@items['/stylesheet.*'].path}"}/
+
+  -# you don't need to keep this, but it's cool for stats!
+  %meta{:name => "generator", :content => "nanoc #{Nanoc::VERSION}"}/
+  %script{:type => "text/x-mathjax-config"}
+    :plain
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$']],
+          displayMath: [['$$', '$$']],
+        },
+        TeX: {
+          equationNumbers: {
+            autoNumber: "all"
+          }
+        },
+        menuSettings: {
+          zoom: "Double-Click"
+        }
+      });
+  %script{:src => 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML'}
+
+%body
+  #main
+    #{yield}
+
+  #sidebar
+    %a{:href => "/fr/"}
+      %img{:src => "/fr/icon.png"}
+    %a{:href => "/en/"}
+      %img{:src => "/en/icon.png"}
+    %p= render "/#{language_of(@item)}/side_header.*"
+
+    - sidebar_tree(language_of(@item)).each do |key, entries|
+      %h2= key
+      %ul
+        - entries.each do |e|
+          %li= link_to(e[:title], e)

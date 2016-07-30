@@ -10,6 +10,17 @@ def language_of(item)
     c && c[1]
 end
 
+# Organise article titles in a tree for display in the side bar
+def sidebar_tree(lang)
+  tree = {}
+  articles.each do |e|
+    if language_of(e) == lang
+      (tree[e[:category]] ||= []).push(e)
+    end
+  end
+  tree
+end
+
 # Macro system
 #
 # Usage
