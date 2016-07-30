@@ -33,7 +33,7 @@
       <a href="/fr/"><img src="/fr/icon.png"></a>
       <a href="/en/"><img src="/en/icon.png"></a>
       <p>
-      <%= @items["/#{language_of(@item)}/side_header.*"].raw_content %>
+      <%= render "/#{language_of(@item)}/side_header.*" %>
       </p>
       <%
         tree = {}

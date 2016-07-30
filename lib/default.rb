@@ -2,6 +2,7 @@
 # before nanoc starts compiling.
 include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::LinkTo
+include Nanoc::Helpers::Rendering # to allow the use of `render` in layouts
 
 # The 2-letter code of the language the given item is written in
 def language_of(item)
