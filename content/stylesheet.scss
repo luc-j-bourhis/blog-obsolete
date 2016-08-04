@@ -3,7 +3,7 @@
 }
 
 @mixin main_paragraph_font_specs {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 20px;
 }
 
@@ -14,6 +14,10 @@
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
+}
+
+abbr {
+  hyphens: none;
 }
 
 * {
@@ -44,13 +48,16 @@ sup {
   line-height: 0;
 }
 
+$sidebar_width: 200px;
+$main_margin: 80px;
+
 #main {
   position: absolute;
 
   top: 40px;
-  left: 280px;
-
-  width: 600px;
+  left: $sidebar_width;
+  margin-left: $main_margin;
+  margin-right: $main_margin;
 }
 
 #main h1, h2, h3, h4, h5, h6 {
@@ -104,7 +111,7 @@ sup {
 
   top: 40px;
   left: 20px;
-  width: 200px;
+  width: $sidebar_width;
 
   padding: 20px 20px 0 0;
 
@@ -132,13 +139,13 @@ sup {
 }
 
 #sidebar li {
-  font-size: 14px;
+  font-size: 15px;
 
   line-height: 20px;
 }
 
 #sidebar p {
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 30px;
   @include alignment_and_hyphenation;
 }

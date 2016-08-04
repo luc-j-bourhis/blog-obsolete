@@ -2,6 +2,10 @@
 title: Fast Matrix Multiplication
 kind: article
 category: computing
+abbreviations:
+  - ATLAS
+  - OpenBLAS
+  - BLAS
 ---
 
 # How to multiply two matrices at peak performance?
@@ -10,7 +14,7 @@ category: computing
 
 This essay will discuss the principles underlying the coding of high performance matrix multiplication in libraries such as ATLAS[^3] or OpenBLAS.[^4] Those provide implementation of the so-called BLAS, for Basic Linear Algebra System. This is a comprehensive set of the typical operations with which any algorithm manipulating matrices and vectors in a linear manner can be written, i.e. linear combinations, matrix-vector products, matrix-matrix products, etc. BLAS is designed to be efficient on single or multi-processor systems with relativity fast communication between the CPU's and they are tuned to the class of processors which have dominated computing since the mid-90's, which are characterised by a deep memory hierarchy, the famous L1, L2, L3, … caches.
 
-The plan of this article is as follow. First we will explain why efficient matrix multiplication is of paramount importance for the whole of the field of computational linear algebra. Then we will explain the salient point of those ``modern'' architectures BLAS are optimised for.
+The plan of this article is as follow. First we will explain why efficient matrix multiplication is of paramount importance for the whole of the field of computational linear algebra. Then we will explain the salient point of those "modern" architectures BLAS are optimised for.
 
 ## On the importance of matrix multiplication
 
