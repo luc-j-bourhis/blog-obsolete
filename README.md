@@ -7,7 +7,15 @@
 5. `bundle install --binstubs`
 6. `rbenv rehash` (one-time action)
 
-then `nanoc` will build the site and `nanoc view -p 4000 > /tmp/luc-j-bourhis-github-io.log 2>&1 &` will run a server to preview the site locally. The French version of the generated site is at the following address:
+then `nanoc` will build the site and
+
+    nanoc view -p 4000 > /tmp/luc-j-bourhis-github-io.log 2>&1 &
+
+in `bash` or
+
+    nanoc view -p 4000 > /tmp/luc-j-bourhis-github-io.log ^&1 &
+
+in `fish` will run a server to preview the site locally. The French version of the generated site is at the following address:
 
 http://luc-j-bourhis.github.io/blog/fr/ and the English version at
 
