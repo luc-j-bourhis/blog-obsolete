@@ -87,3 +87,43 @@ class AbbreviationMarker < Nanoc::Filter
     end
   end
 end
+
+# Translation of LaTeX macros into the format used in  Mathjax configuration
+#
+# Usage
+# -----
+# In the header of a Mardown file, put for example
+#
+#     tex_macros:
+#         Lie: '\text{Lie}(#1)'
+#         vec: '\begin{pmatrix} #1 & #2 \end{pmatrix}'
+#
+# and Mathjax will be configured to use those macros in the rendering of
+# that page. Note the use of single quotes: the metadata uses YAML
+# as a format and # is normally a special character but the single quotes
+# forces the whole definition into a string.
+def macros_for_mathjax
+  macros = {}
+  macros_in_metadata = @item && @item[:tex_macros]
+  if not macros_in_metadata.nil?
+    macros.merge! macros_in_metadata
+  end
+  split = File.open("content/macros.sty")
+    .select { |line| not /^%/ =~ line }
+    .join
+    .split(/\\newcommand\{\\([[:alpha:]]+)\}(?:\[[0-9]+\])?/)
+    .slice(1..-1)
+  macros.merge! Hash[*split]
+    .each_value { |body|
+      body.sub!(/^ *\{/, "")
+      body.sub!(/\}[[:space:]]*$/, "")
+    }
+  macros.collect { |name, body|
+    max_arg = body.scan(/#(\d+)/).flatten.map(&:to_i).max
+    escaped = body.gsub('\\', '\\\\\\\\')
+    specs = ["\"#{escaped}\""]
+    if not max_arg.nil? then specs.push(max_arg) end
+    "#{name}: [#{specs.join(', ')}]"
+  }.join(",\n")
+end
+
