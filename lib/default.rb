@@ -34,23 +34,19 @@ end
 # the macro with "Inertial Reference Frame".
 class TextualMacros < Nanoc::Filter
   identifier :textual_macros
-  attr_accessor :macro
-
-  def initialize(arg)
-    super
-    @macro = {}
-    if not @item.nil? and not @item[:macros].nil?
-      @macro.merge!(@item[:macros])
-    end
-  end
 
   def run(content, params={})
-    content.gsub(/%(\w+)/) do |m|
-      key = $1.intern
-      if not @macro[key].nil?
-        @macro[key]
-      else
-        m
+    macro = @item && @item[:macros]
+    if macro.nil?
+      content
+    else
+      content.gsub(/%(\w+)/) do |m|
+        key = $1.intern
+        if not @macro[key].nil?
+          @macro[key]
+        else
+          m
+        end
       end
     end
   end
@@ -75,15 +71,12 @@ class AbbreviationMarker < Nanoc::Filter
 
   def initialize(arg)
     super
-    @abbreviations = []
-    if not @item.nil? and not @item[:abbreviations].nil?
-      @abbreviations << @item[:abbreviations]
-    end
-    if not @abbreviations.empty?
-      @abbr_rx = /(#{@abbreviations.join("|")})/
-    else
-      @abbr_rx = nil
-    end
+    abbreviations = @item && @item[:abbreviations]
+    @abbr_rx = if not abbreviations.nil? and not abbreviations.empty?
+                  /(#{abbreviations.join("|")})/
+                else
+                  nil
+                end
   end
 
   def run(content, params={})
