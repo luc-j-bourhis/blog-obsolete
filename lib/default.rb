@@ -7,7 +7,7 @@ include Nanoc::Helpers::Rendering # to allow the use of `render` in layouts
 # The 2-letter code of the language the given item is written in
 def language_of(item)
     c = item.identifier.to_s.match(%r{/([a-z]{2})/})
-    c && c[1]
+    if not c.nil? then c[1].intern else :unknown end
 end
 
 # Organise article titles in a tree for display in the side bar
