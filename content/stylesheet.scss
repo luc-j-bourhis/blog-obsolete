@@ -44,6 +44,21 @@ a:hover {
   color: #f90;
 }
 
+a:link.bibliography-reference,
+a:visited.bibliography-reference,
+span.MathJax_ref {
+  color: #003399;
+}
+
+a:hover.bibliography-reference,
+span:hover.MathJax_ref {
+  color: #007399;
+}
+
+.bibliography_entry {
+  margin-bottom: 0.5em;
+}
+
 sup {
   line-height: 0;
 }

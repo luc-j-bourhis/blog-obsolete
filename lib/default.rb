@@ -127,3 +127,83 @@ def macros_for_mathjax
   }.join(",\n")
 end
 
+# References
+#
+# Usage
+# -----
+# In the header of a Markdown file, put for example
+#
+#     bibliography:
+#         Lee:1975:
+#             authors:
+#                 - Lee, A. R.
+#                 - Kalotas, T. M.
+#             title: Lorentz transformations from the first postulate
+#             journal: American Journal of Physics
+#             volume: 43
+#             year: 1975
+#             pages: 434--437
+#
+# Then a Bibliography section is created by our layout whereas references
+# to its items in the text shall be [[Lee:1905]] and they will be replaced by
+# links to the bibliography items.
+class ReferenceFilter < Nanoc::Filter
+  identifier :generate_references
+
+  def run(content, params={})
+    bibitems = @item && @item[:bibliography]
+    if bibitems.nil?
+      content
+    else
+      content.gsub(/\[\[([[:alpha:]][^[[:space:]]]*)\]\]/) do |m|
+        key = $1.intern
+        if bibitems.has_key?(key)
+          "[[#{key}]](##{key}){: .bibliography-reference}"
+        else
+          m
+        end
+      end
+    end
+  end
+end
+
+# Author name
+class AuthorName
+  attr_reader :first, :von, :last, :jr
+
+  # Parse name in the normalised form 'von Last, Jr, First'
+  def initialize(author)
+    @first = @von = @last = @jr = nil
+    parts = author.split(/,[[:space:]]*/)
+    case parts.length
+      when 1
+        vonlast = author
+      when 2
+        vonlast, @first = parts
+      when 3
+        vonlast, @jr, @first = parts
+      else
+        return
+    end
+    m = vonlast.match(/[[:space:]]*([[:alpha:]]+)$/)
+    if m.nil? then return end
+    @last = m[1]
+    @von = m.pre_match
+  end
+
+  # Full name: First von Last, Jr
+  def full_name
+    [[@first, @von, @last].compact.join(' '), @jr].compact.join(', ')
+  end
+end
+
+# Format author list for bibliographie
+def format_authors(authors, language)
+  and_ = {:en => "and", :fr => "et"}[language]
+  names = authors.map{|a| AuthorName.new(a)}.map(&:full_name)
+  if names.length > 1
+    (names[0..-2] + ["#{and_} #{names[-1]}"]).join(', ')
+  else
+    names[0]
+  end
+end

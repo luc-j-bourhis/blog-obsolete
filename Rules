@@ -3,6 +3,7 @@
 compile '/**/*.md' do
   filter :textual_macros
   filter :mark_abbreviations
+  filter :generate_references
   filter :kramdown
   layout '/default.*'
   filter :relativize_paths, type: :html

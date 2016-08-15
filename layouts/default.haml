@@ -29,7 +29,7 @@
 %body
   #main
     #{yield}
-
+    #{render "/bibliography.*", :language => language_of(@item)}
   #sidebar
     %a{:href => "/fr/"}
       %img{:src => "/fr/icon.png"}
