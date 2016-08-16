@@ -35,7 +35,7 @@
       %img{:src => "/fr/icon.png"}
     %a{:href => "/en/"}
       %img{:src => "/en/icon.png"}
-    %p.whoami= render "/#{language_of(@item)}/side_header.*"
+    .whoami= render "/#{language_of(@item)}/side_header.*"
 
     - sidebar_tree(language_of(@item)).each do |key, entries|
       .topics= key
