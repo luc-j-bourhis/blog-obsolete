@@ -2,13 +2,115 @@
 title: Une Inégalité de Bell
 kind: article
 category: physique
+bibliography:
+    Aspect:1982:
+        authors:
+            - Aspect, Alain
+            - Dalibard, Jean
+            - Roger, G\'erard
+        title: Experimental Test of Bell's Inequalities Using Time- Varying Analyzers
+        journal: Phys. Rev. Lett.
+        volume: 49
+        year: 1982
+        pages: 1804--1807
+    Braunstein:1992:
+        authors:
+            - Braunstein, Samuel L.
+            - Mann, A.
+            - Revzen, M.
+        title: Maximal violation of Bell inequalities for mixed states
+        journal: Phys. Rev. Lett.
+        volume: 68
+        year: 1992
+        pages: 3259--3261
+    Cirelson:1980:
+        authors:
+            - Cirel'son, B. S.
+        title: Quantum generalizations of Bell's inequality
+        journal: Letters in Mathematical Physics
+        volume: 4
+        year: 1980
+        pages: 93--100
+    Clauser:1974:
+        authors:
+            - Clauser, John F.
+            - Horne, Michael A.
+        title: Experimental consequences of objective local theories
+        journal: Phys. Rev. D
+        volume: 10
+        year: 1974
+        pages: 526--535
+    Clauser:1969:
+        authors:
+            - Clauser, John F.
+            - Horne, Michael A.
+            - Shimony, Abner
+            - Holt, Richard A.
+        title: Proposed Experiment to Test Local Hidden-Variable Theories
+        journal: Phys. Rev. Lett.
+        volume: 23
+        year: 1969
+        pages: 880--884
+    Hensen:2015:
+        authors:
+            - Hensen, B.
+            - Bernien, H.
+            - Dreau, A. E.
+            - Reiserer, A.
+            - Kalb, N.
+            - Blok, M. S.
+            - Ruitenberg, J.
+            - Vermeulen, R. F. L.
+            - Schouten, R. N.
+            - Abellan, C.
+            - Amaya, W.
+            - Pruneri, V.
+            - Mitchell, M. W.
+            - Markham, M.
+            - Twitchen, D. J.
+            - Elkouss, D.
+            - Wehner, S.
+            - Taminiau, T. H.
+            - Hanson, R.
+        title: Loophole-free Bell inequality violation using electron spins separated by 1.3 kilometres
+        journal: Nature
+        volume: 526
+        year: 2015
+        pages: 682--686
+    Rowe:2001:
+        authors:
+            - Rowe, M. A.
+            - Kielpinski, D.
+            - Meyer, V.
+            - Sackett, C. A.
+            - Itano, W. M.
+            - Monroe, C.
+            - Wineland, D. J.
+        title: Experimental violation of a Bell's inequality with efficient detection
+        journal: Nature
+        volume: 409
+        year: 2001
+        pages: 791--794
+    Weihs:1998:
+        authors:
+            - Weihs, Gregor
+            - Jennewein, Thomas
+            - Simon, Christoph
+            - Weinfurter, Harald
+            - Zeilinger, Anton
+        title: Violation of Bell's Inequality under Strict Einstein Locality Conditions
+        journal: Phys. Rev. Lett.
+        volume: 81
+        year: 1998
+        pages: 5039--5043
+
 ---
 
 # Démonstration d'une <br>inégalité de Bell
 
 ## 1. L'expérience
 
-Toutes les expériences réalisées pour tester les inégalités de Bell utilisent la version de ces inégalités dite CHSH car introduites par Clauser, Horne, Shimony et Holt.[^CHSH69] Je vais donc présenter cette version. La discussion des points de physique suit celle de Clauser et Horne,[^CH74] où les auteurs démontrent une autre inégalité de Bell, dite CH, dont je dirais juste qu'elle est plus générale au sens où CHSH peut être démontrée à partir de CH.
+Toutes les expériences réalisées pour tester les inégalités de Bell utilisent la version de ces inégalités dite CHSH car introduites par Clauser, Horne, Shimony et Holt [[Clauser:1969]]. Je vais donc présenter cette version. La discussion des points de physique suit celle de Clauser et Horne [[Clauser:1974]], où les auteurs démontrent une autre inégalité de Bell, dite CH, dont je dirais juste qu'elle est plus générale au sens où CHSH peut être démontrée à partir de CH.
 
 Toutes les tests expérimentaux des inégalités de Bell peuvent être idéalisés comme suit. Il y a en premier lieu une source qui émet une à une des paires de particules -- en pratique des photons ou des ions. Pour chaque paire, l'une des particules, notée 1, va vers un appareil de mesure I tandis que l'autre, notée 2, va vers un appareil de mesure II. Ces deux appareils sont identiques mais chacun peut avoir des réglages différents, que je noterais $a$ et $b$ respectivement. L'appareil I va mesurer une observable $A$ de la particule 1 tandis que l'appareil II va mesurer une observable $B$ de la particule 2. Nous allons faire l'hypothèse que $A$ et $B$ ne peuvent prendre que les valeurs 1 et -1. En pratique, $a$ et $b$ sont des vecteurs unitaires et $A$ (resp. $B$) est la projection du spin de la particule 1 (resp. 2) selon la direction $a$ (resp. $b$). De plus, $a$ et $b$ sont assujettis à rester dans des plans fixes et donc, en pratique, ces réglages se résument à un angle pour chaque appareil.
 
@@ -31,7 +133,7 @@ Une théorie "réaliste" suppose l'existence d'une réalité, au sens de la méc
 
 Ce critère s'exprime ainsi: **l'analyseur 1 fonctionne indépendamment de l'analyseur 2**.
 
-À l'évidence cette hypothèse n'est guère évidente si les deux appareils sont très proches l'un de l'autre. Elle devient plus naturelle si ils sont distants mais cela reste subjectif. Cependant, la relativité restreinte permet de rendre ce critère quantitatif, puisque aucune information ne peut passer d'un analyseur à l'autre plus vite que la lumière. L'implémentation expérimentale de cette idée n'est pas aisée malheureusement. La seconde expérience de Aspect et al.[^Aspect82] fut une la première à tenter de fermet cette faille potentielle, appelée "timing loophole" dans la littérature car on fait varier les réglages des polariseurs pendant le vol des photons de la source aux détecteurs avec un timing suffisamment rapide pour s'assurer du critère de localité. Ce "timing loophole" fut finalement fermé pour la première fois de manière satisfaisante par Weihs et al. [^Weihs98] en 1998.
+À l'évidence cette hypothèse n'est guère évidente si les deux appareils sont très proches l'un de l'autre. Elle devient plus naturelle si ils sont distants mais cela reste subjectif. Cependant, la relativité restreinte permet de rendre ce critère quantitatif, puisque aucune information ne peut passer d'un analyseur à l'autre plus vite que la lumière. L'implémentation expérimentale de cette idée n'est pas aisée malheureusement. La seconde expérience de Aspect et al [[Aspect:1982]]. fut une la première à tenter de fermet cette faille potentielle, appelée "timing loophole" dans la littérature car on fait varier les réglages des polariseurs pendant le vol des photons de la source aux détecteurs avec un timing suffisamment rapide pour s'assurer du critère de localité. Ce "timing loophole" fut finalement fermé pour la première fois de manière satisfaisante par Weihs et al [[Weihs:1998]]. en 1998.
 
 Par souci de simplicité, laissons les détails de coté et admettons le critère de localité. Il en résulte une conséquence importante: combiné avec le critère de réalisme, la mesure $A$ par l'appareil I ne peut dépendre que du réglage $a$ de cet appareil et de l'état de la pair $\lambda$. On notera donc $A(a, \lambda)$. Et de même pour l'autre mesure, $B(b, \lambda)$.
 
@@ -94,7 +196,7 @@ $$ P(a,b) \approx \frac{N_\text{identique}(a,b)-N_\text{différente}(a,b)}{N_\te
 
 où $N_\text{identique}(a,b)$ (resp. $N_\text{différente}(a,b)$) sont respectivement le nombre de paires pour lesquelles les valeurs mesurées $A$ et $B$ sont identiques (resp. différentes).
 
-Tout cela suppose malheureusement (outre que le nombre total $n$ de paires est grand pour éviter les fluctuations statistiques, ce qui est réalisable) que les appareils de mesures sont parfaits. En effet si des particules échappent à la mesure, les fréquences mesurées ne correspondront pas aux probabilités ci-dessus. Cette faille potentielle est appelée "detector efficiency loophole" dans la littérature. L'expérience d'Aspect et al. fut la première à sérieusement fermer cette faille mais pas suffisamment au goût de beaucoup -- il faut savoir aussi que pour avoir un grand nombre total $n$ de paires, il est tentant d'augmenter la fréquence d'émission et on risque alors de compter de fausses coïncidences, entre des photons de deux paires successives, ce qui est un autre problème. C'est pourquoi de nombreuses autres expériences testant les inégalités de Bell furent menées depuis. Finalement en 2001, le "detector efficiency loophole" semble avoir été fermé pour la première fois à la satisfaction de la communauté des physiciens par Rowe et ses collaborateurs [^Rowe01] (j'écris "semble" car je ne suis pas un expert). Il restait donc à fermer les deux failles dans une seule et même expérience, ce qui fut fait très récemment par Hensen et al.[^Hensen15] Il y a eu plusieurs autres expériences marquantes s'attaquant à l'une ou l'autre de ces failles que je n'ai pas cité: je renvoie le lecteur à la bibliographie de Hensen et al.[^Hensen15]
+Tout cela suppose malheureusement (outre que le nombre total $n$ de paires est grand pour éviter les fluctuations statistiques, ce qui est réalisable) que les appareils de mesures sont parfaits. En effet si des particules échappent à la mesure, les fréquences mesurées ne correspondront pas aux probabilités ci-dessus. Cette faille potentielle est appelée "detector efficiency loophole" dans la littérature. L'expérience d'Aspect et al. fut la première à sérieusement fermer cette faille mais pas suffisamment au goût de beaucoup -- il faut savoir aussi que pour avoir un grand nombre total $n$ de paires, il est tentant d'augmenter la fréquence d'émission et on risque alors de compter de fausses coïncidences, entre des photons de deux paires successives, ce qui est un autre problème. C'est pourquoi de nombreuses autres expériences testant les inégalités de Bell furent menées depuis. Finalement en 2001, le "detector efficiency loophole" semble avoir été fermé pour la première fois à la satisfaction de la communauté des physiciens par Rowe et ses collaborateurs [[Rowe:2001]] --- j'écris "semble" car je ne suis pas un expert. Il restait donc à fermer les deux failles dans une seule et même expérience, ce qui fut fait très récemment par Hensen et al [[Hensen:2015]]. Il y a eu plusieurs autres expériences marquantes s'attaquant à l'une ou l'autre de ces failles que je n'ai pas cité: je renvoie le lecteur à la bibliographie de [[Hensen:2015]].
 
 En passant, les expériences d'Aspect et al. ne furent donc pas du tout définitives, contrairement à ce que beaucoup de gens croient (et pas seulement en France).
 
@@ -102,7 +204,7 @@ En passant, les expériences d'Aspect et al. ne furent donc pas du tout définit
 
 Il faut trouver des réglages tels que la mécanique quantique prédise que $R(a, a', b, b')$ soit plus grand que 2, et le plus grand possible afin d'augmenter le poids statistique du résultat. Contrairement au modèle réaliste que nous avons analysé jusqu'à présent, il faut à priori rendre explicites les détails de l'expérience afin de pouvoir faire des prédictions quantiques.
 
-Mais il se trouve que dans le cas des inégalités CHSH, on peut prouver que la borne supérieure pour $R(a, a', b, b')$ est $2\sqrt{2}$ quasiment sans faire aucune hypothèse supplémentaire. Ce résultat fut démontré pour la première fois par Cirel'son[^Cirel80] -- son nom est aussi orthographié Tsirelson parfois. Dans le cas qui nous concerne, nous supposons que toutes les paires sont dans le même état quantique $\mid \psi \rangle$ du fait des particularités du processus de création (ce qui est toujours vérifié en pratique) et nous commençons par remplacer $P(x,y)$ par son équivalent quantique, l'espérance du produit $A(x)B(y)$, où $A(x)$ et $B(y)$ sont maintenant des opérateurs hermitiens représentant les observables mesurées,
+Mais il se trouve que dans le cas des inégalités CHSH, on peut prouver que la borne supérieure pour $R(a, a', b, b')$ est $2\sqrt{2}$ quasiment sans faire aucune hypothèse supplémentaire. Ce résultat fut démontré pour la première fois par Cirel'son [[Cirelson:1980]] -- son nom est aussi orthographié Tsirelson parfois. Dans le cas qui nous concerne, nous supposons que toutes les paires sont dans le même état quantique $\mid \psi \rangle$ du fait des particularités du processus de création (ce qui est toujours vérifié en pratique) et nous commençons par remplacer $P(x,y)$ par son équivalent quantique, l'espérance du produit $A(x)B(y)$, où $A(x)$ et $B(y)$ sont maintenant des opérateurs hermitiens représentant les observables mesurées,
 
 $$  \newcommand{\ket}[1]{\left| #1 \right\rangle}
     \newcommand{\bra}[1]{\left\langle #1 \right|}
@@ -126,7 +228,7 @@ $$ S(a,a',b,b') = A(a')B(b) - A(a)B(b) + A(a')B(b') + A(a)B(b'). $$
 À ce stade, il est utile d'introduire le reste du décor quantique. Nous faisons l'hypothèse que l'espace de Hilbert $\Hsingle$ des états non-corrélés de la particule 1 prise isolément, et bien sûr aussi de la particule 2 prise isolément, est de dimension 2, ce qui est réalisé en pratique. L'opérateur $A(x)$ s'écrit $A(x) = A_1(x) \otimes I$ où $A_1(x)$ opère sur $\Hsingle$ seulement et où $I$ est l'opérateur identité de $\Hsingle$. De même, $B(y) = I \otimes B_2(y)$. Par conséquent, les opérateurs $A(x)$ et $B(y)$ commutent quelque soit les réglages $x$ et $y$, et $A(x)B(y)=B(y)A(x)=A_1(x) \otimes B_2(y)$. Finalement, étant donné deux bases $(\ket{u}, \ket{u'})$ et $(\ket{v}, \ket{v'})$ de $\Hsingle$, les produits cartésiens $\ket{u}\ket{v}$, $\ket{u}\ket{v'}$, $\ket{u'}\ket{v}$ et $\ket{u'}\ket{v'}$ forment une base de l'espace de Hilbert $\Hpair$ des états de la paire, qui est donc de dimension 4.
 
 
-Ceci étant posé, nous pouvons maintenant introduire un résultat fondamental (dont j'ai pris connaissance dans Braunstein et al.[^Braunstein92]),
+Ceci étant posé, nous pouvons maintenant introduire un résultat fondamental (dont j'ai pris connaissance dans Braunstein et al [[Braunstein:1992]].),
 
 $$ S(a,a',b,b')^2 = 4I - \comm{A(a)}{A(a')} \comm{B(b)}{B(b')}. \label{Sfundamental} $$
 
@@ -153,22 +255,3 @@ Passons maintenant à l'exploitation de (\ref{Rexpect}) et (\ref{Sfundamental}).
 On voit donc que si $A(a)$ commute avec $A(a')$ ou bien si $B(b)$ commute avec $B(b')$, les valeurs propres de $S(a,a',b,b')$ sont égales à $\pm2$, et par conséquent $R(a,a',b,b')$ est toujours entre -2 et 2: la borne de l'inégalité de Bell n'est violée pour aucun réglage et pour aucun état quantique de la paire $\ket{\psi}$.
 
 Si au contraire aucune de ces paires d'opérateurs ne commute, alors ou bien $\alpha\beta > 0$, ou bien $\alpha\beta < 0$. Dans le premier cas, une valeur propre $\pm\sqrt{4+\alpha\beta}$ sera en dehors de l'intervalle $[-2,2]$ tandis que dans le second cas, une valeur propre $\pm\sqrt{4-\alpha\beta}$ sera en dehors de cet intervalle. Une paire préparée dans un état propre associé violera alors la borne de l'inégalité de Bell pour le choix de réglages correspondant à ces valeurs de $\alpha$ et $\beta$. Quelle violation maximale peut-on obtenir? Comme $\matnorm{\comm{A(a)}{A(a')}} \le 2 \matnorm{A(a)} \matnorm{A(a')}$, nécessairement $-2 \le \alpha \le 2$ puisque $\matnorm{A(a)}=\matnorm{A(a')}=1$. De même, $-2 \le \beta \le 2$. Cela démontre que la borne maximale est $2\sqrt{2}$ comme annoncé plus haut mais nous voyons aussi que cette borne est réalisée quand $\alpha = \beta = \pm 2$.
-
-
-## Bibliographie
-
-[^CHSH69]: John F. Clauser, Michael A. Horne, Abner Shimony, and Richard A. Holt. Proposed experiment to test local hidden-variable theories. Phys. Rev. Lett., 23:880–884, Oct 1969.
-
-[^CH74]: John F. Clauser and Michael A. Horne. Experimental consequences of objective local theories. Phys. Rev. D, 10:526–535, Jul 1974.
-
-[^Aspect82]: Alain Aspect, Jean Dalibard, and G ́erard Roger. Experimental test of bell’s inequalities using time- varying analyzers. Phys. Rev. Lett., 49:1804–1807, Dec 1982.
-
-[^Rowe01]: M. A. Rowe, D. Kielpinski, V. Meyer, C. A. Sackett, W. M. Itano, C. Monroe, and D. J. Wineland. Experimental violation of a bell’s inequality with efficient detection. Nature, 409(6822):791–794, 02 2001.
-
-[^Weihs98]: Gregor Weihs, Thomas Jennewein, Christoph Simon, Harald Weinfurter, and Anton Zeilinger. Violation of bell’s inequality under strict einstein locality conditions. Phys. Rev. Lett., 81:5039– 5043, Dec 1998.
-
-[^Hensen15]: B. Hensen, H. Bernien, A. E. Dreau, A. Reiserer, N. Kalb, M. S. Blok, J. Ruitenberg, R. F. L. Vermeulen, R. N. Schouten, C. Abellan, W. Amaya, V. Pruneri, M. W. Mitchell, M. Markham, D. J. Twitchen, D. Elkouss, S. Wehner, T. H. Taminiau, and R. Hanson. Loophole-free bell inequality violation using electron spins separated by 1.3 kilometres. Nature, 526(7575):682–686, 10 2015.
-
-[^Cirel80]: B. S. Cirel’son. Quantum generalizations of bell’s inequality. Letters in Mathematical Physics, 4:93–100, 1980.
-
-[^Braunstein92]: Samuel L. Braunstein, A. Mann, and M. Revzen. Maximal violation of bell inequalities for mixed states. Phys. Rev. Lett., 68:3259–3261, Jun 1992.]
