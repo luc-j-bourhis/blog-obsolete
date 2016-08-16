@@ -3,7 +3,7 @@
 }
 
 @mixin main_paragraph_font_specs {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 20px;
 }
 
@@ -161,7 +161,7 @@ $main_margin: 80px;
 }
 
 #sidebar .whoami {
-  font-size: 15px;
+  font-size: 14px;
   margin-bottom: 30px;
   @include alignment_and_hyphenation;
 }
