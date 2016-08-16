@@ -136,7 +136,7 @@ $main_margin: 80px;
   text-align: right;
 }
 
-#sidebar h2 {
+#sidebar .topics {
   text-transform: uppercase;
 
   font-size: 13px;
@@ -148,19 +148,19 @@ $main_margin: 80px;
   line-height: 20px;
 }
 
-#sidebar ul {
+#sidebar .title-list {
   list-style-type: none;
 
   margin: 20px 0;
 }
 
-#sidebar li {
+#sidebar .title {
   font-size: 15px;
 
   line-height: 20px;
 }
 
-#sidebar p {
+#sidebar .whoami {
   font-size: 15px;
   margin-bottom: 30px;
   @include alignment_and_hyphenation;

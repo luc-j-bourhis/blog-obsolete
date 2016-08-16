@@ -35,10 +35,10 @@
       %img{:src => "/fr/icon.png"}
     %a{:href => "/en/"}
       %img{:src => "/en/icon.png"}
-    %p= render "/#{language_of(@item)}/side_header.*"
+    %p.whoami= render "/#{language_of(@item)}/side_header.*"
 
     - sidebar_tree(language_of(@item)).each do |key, entries|
-      %h2= key
-      %ul
+      .topics= key
+      %ul.title-list
         - entries.each do |e|
-          %li= link_to(e[:title], e)
+          %li.title= link_to(e[:title], e)
