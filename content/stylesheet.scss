@@ -56,6 +56,7 @@ span:hover.MathJax_ref {
 }
 
 .bibliography_entry {
+  @include main_paragraph_font_specs;
   margin-bottom: 0.5em;
 }
 
