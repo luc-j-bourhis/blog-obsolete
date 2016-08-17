@@ -29,15 +29,15 @@
 %body
   #main
     #{yield}
-    #{render "/bibliography.*", :language => language_of(@item)}
+    #{render "/bibliography.*"}
   #sidebar
     %a{:href => "/fr/"}
       %img{:src => "/fr/icon.png"}
     %a{:href => "/en/"}
       %img{:src => "/en/icon.png"}
-    .whoami= render "/#{language_of(@item)}/side_header.*"
+    .whoami= render "/#{language}/side_header.*"
 
-    - sidebar_tree(language_of(@item)).each do |key, entries|
+    - sidebar_tree(language).each do |key, entries|
       .topics= key
       %ul.title-list
         - entries.each do |e|

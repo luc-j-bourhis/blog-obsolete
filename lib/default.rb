@@ -11,6 +11,11 @@ def language_of(item)
     if not c.nil? then c[1].intern else :unknown end
 end
 
+# The 2-letter code of the language the current item is written in
+def language
+  if not @item.nil? then language_of(@item) else nil end
+end
+
 # Organise article titles in a tree for display in the side bar
 def sidebar_tree(lang)
   tree = {}
