@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 
 compile '/**/*.md' do
+  filter :bacchantes
+  filter :erb
   filter :mark_abbreviations
   filter :generate_references
   filter :kramdown
@@ -23,4 +25,5 @@ compile '/**/*' do
 end
 
 layout '/**/*.html', :erb
+layout '/**/*.erb', :erb
 layout '/**/*.haml', :haml

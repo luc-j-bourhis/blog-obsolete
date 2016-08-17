@@ -1,0 +1,26 @@
+<%#
+Theorem-like markup
+
+Usage
+-----
+
+{{Postulate 3}} ...
+
+{{Theorem 8}} ...
+
+- Which words can be used for Postulate, Theorem, ... shall be defined
+in /en/theorem-like.erb, /fr/theorem-like.erb, etc;
+- This will not only lay them out with a consistent typography but it will
+also define links so that one can later refer to [Theorem 8]
+and [Postulate 3] in our example.
+
+The following Rules shall be enabled
+
+   filter :bacchantes
+   filter :erb
+%>
+<%=
+id = "#{@kind}-#{@number}"
+text = "#{@kind.capitalize} #{@number}"
+"[#{text}]:##{id}\n**#{text}.**{:##{id}}"
+%>

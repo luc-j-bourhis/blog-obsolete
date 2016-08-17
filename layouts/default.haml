@@ -27,6 +27,8 @@
   %script{:src => 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML'}
 
 %body
+  -# define the theorem-like DSL so that ERB can later interpret it
+  - render "/#{language}/theorem-like.erb"
   #main
     #{yield}
     #{render "/bibliography.*"}

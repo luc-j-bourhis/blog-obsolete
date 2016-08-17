@@ -77,7 +77,7 @@ Lie groups form a large and complex field of mathematics but fortunately we will
 
 We will first list our postulates and then we will briefly motivate them.
 
-**Postulate 1**: linearity.
+{{Postulate 1}} Linearity.
 
 Thus the mapping of any time $$t$$ and any triplet of spatial coordinates $$x$$ in one frame onto their equivalent $$t'$$ and $$x'$$ in another frame has a matrix $$\mathcal{M}$$ and we choose the following convention:
 
@@ -96,7 +96,7 @@ x' &= v t + M x.
 \end{aligned}
 $$
 
-**Postulate 2**: Spatial isometries form a strict subgroup $$O$$ of $$G$$.
+{{Postulate 2}} Spatial isometries form a strict subgroup $$O$$ of $$G$$.
 
 Spatial isometries are the matrices
 
@@ -106,7 +106,7 @@ where $$R$$ is orthogonal, i.e. $$R R^T = I$$ where $$I$$ is the identity matrix
 
 $$ P = \mat{1}{0}{0}{-I}. $$
 
-**Postulate 3**: $$G$$ does not contain any change of scale
+{{Postulate 3}} $$G$$ does not contain any change of scale
 
 A change of scale has a diagonal matrix with positive coefficients, i.e.
 
@@ -121,17 +121,17 @@ $$
 
 where $$x_i$$ and $$x'_i$$ are the spatial coordinates, components of the vectors $$x$$ and $$x'$$ used so far, and $$(a_0, a_1, a_2, a_3)$$ are positive constants.
 
-**Postulate 4**: $$G$$ is a Lie subgroup of the Lie group of $$4 \times 4$$ matrices.
+{{Postulate 4}} $$G$$ is a Lie subgroup of the Lie group of $$4 \times 4$$ matrices.
 
 ## Motivation of the postulates
 
-*Postulate 1:* The classic argument for linearity is the homogeneity of space-time but a better, more modern argument is simply to state that we search the transforms in the tangent space of "curved spacetime" (i.e. spacetime manifold in rigorous mathematical terms). This does not mean assuming General Relativity, not even the existence of a spacetime metric.
+*[Postulate 1].* The classic argument for linearity is the homogeneity of space-time but a better, more modern argument is simply to state that we search the transforms in the tangent space of "curved spacetime" (i.e. spacetime manifold in rigorous mathematical terms). This does not mean assuming General Relativity, not even the existence of a spacetime metric.
 
-*Postulate 2:* Isometries are practically important because they change the orientation and the handedness of frame axes, an operation which is a very common occurence in the practice of physics. They are also theoretically important because verifying whether a physical model is invariant under rotations or space inversion is mundane. It should be noted that we do not make any preconceived statement about whether the model has such an invariance. For example, the Electroweak Model mentioned in the introduction is not invariant under parity.
+*[Postulate 2].* Isometries are practically important because they change the orientation and the handedness of frame axes, an operation which is a very common occurence in the practice of physics. They are also theoretically important because verifying whether a physical model is invariant under rotations or space inversion is mundane. It should be noted that we do not make any preconceived statement about whether the model has such an invariance. For example, the Electroweak Model mentioned in the introduction is not invariant under parity.
 
-*Postulate 3:* We assume we have fixed units of time and lengths in all frames once and for all, and that from that point on, we are interested only in all the other transforms.
+*[Postulate 3].* We assume we have fixed units of time and lengths in all frames once and for all, and that from that point on, we are interested only in all the other transforms.
 
-*Postulate 4:* The group structure directly emerges from the definition of changes of frame:
+*[Postulate 4].* The group structure directly emerges from the definition of changes of frame:
 
 1. the identity matrix correspond to no change of frame;
 2. given the change of frame $$(t,x) \mapsto (t',x')$$, we shall also have the change of frame $$(t',x') \mapsto (t,x)$$, and if $$M$$ is the matrix of the former, then $$M^{-1}$$ is the matrix of the latter;
@@ -159,7 +159,7 @@ This may seem rather abstract but it is actually just a different, powerful, way
 
 Our strategy will be to characterise $$\Lie{G}$$ and then use the matrix exponential to find $$G$$. We start by demonstrating a simple lemma we will reuse a couple of time.
 
-**Lemma 1**: If $$\mathcal{A} = \mat{a}{0}{0}{M} \in \Lie{G}$$, then $$a=0$$ and $$M$$ is antisymmetric, i.e. $$\mathcal{A} \in \Lie{O}$$.
+{{Lemma 1}} If $$\mathcal{A} = \mat{a}{0}{0}{M} \in \Lie{G}$$, then $$a=0$$ and $$M$$ is antisymmetric, i.e. $$\mathcal{A} \in \Lie{O}$$.
 
 *Proof.* With
 
@@ -182,11 +182,11 @@ $$\notag
 \exp \mathcal{B} = \mat{\exp a}{0}{0}{\exp B}.
 $$
 
-Postulate 3 requires that $$\exp \mathcal{B}$$ is a spatial isometry, and therefore that $$a=0$$ and $$(\exp B)(\exp B)^T = I$$. Since $$B$$ is symmetric, this means $$\exp 2B = I$$, and therefore that $$B=0$$. This completes the proof.
+[Postulate 3] requires that $$\exp \mathcal{B}$$ is a spatial isometry, and therefore that $$a=0$$ and $$(\exp B)(\exp B)^T = I$$. Since $$B$$ is symmetric, this means $$\exp 2B = I$$, and therefore that $$B=0$$. This completes the proof.
 
 Then we move to the keystone of our demonstration, as the subsequent work will simply be the computation of matrix exponentials.
 
-**Lemma 2**: One and only one of the following vector space is a subspace of $$\Lie{G}$$ and $$\Lie{G}$$ is the sum of $$\Lie{O}$$ and of this subspace:
+{{Lemma 2}} One and only one of the following vector space is a subspace of $$\Lie{G}$$ and $$\Lie{G}$$ is the sum of $$\Lie{O}$$ and of this subspace:
 
 $$
 \begin{align}
@@ -210,7 +210,7 @@ $$\notag
 B=\mat{a}{0}{0}{M}
 $$
 
-and lemma 1 implies that $$a=0$$ and $$M$$ is antisymmetric. Thus
+and [lemma 1] implies that $$a=0$$ and $$M$$ is antisymmetric. Thus
 
 $$\notag
 A = \mat{0}{u}{v}{0} + \mat{0}{0}{0}{M}
@@ -266,7 +266,7 @@ $$\notag
 [A,B]=\mat{-p^T v}{0}{0}{vp^T}.
 $$
 
-Lemma 1 requires that $$p^Tv=0$$. Since $$v$$ can be any 3-vector, this implies that $$p=0$$. We have therefore demonstrated that
+[Lemma 1] requires that $$p^Tv=0$$. Since $$v$$ can be any 3-vector, this implies that $$p=0$$. We have therefore demonstrated that
 
 $$\KLG \subset K_G.$$
 
@@ -296,7 +296,7 @@ $$\notag
 [A,B] = \mat{\kappa u^2 - \frac{1}{\kappa}v^2}{0}{0}{\frac{1}{\kappa}vv^T - \kappa uu^T}.
 $$
 
-Then lemma 1 requires that
+Then [lemma 1] requires that
 
 $$\notag
 \begin{aligned}
@@ -345,7 +345,7 @@ $$\notag
 [A,B] = \mat{\frac{1}{c}w^Tq - \epsilon c p^Tw}{0}{0}{\epsilon c w p^T - \frac{1}{c} q w^T}
 $$
 
-and lemma 1 then requires that
+and [lemma 1] then requires that
 
 $$\notag
 \begin{aligned}
@@ -369,18 +369,18 @@ is therefore in $$K_\epsilon$$. We have therefore demonstrated that
 
 $$\KLG \subset K_\epsilon.$$
 
-With the previous opposite inclusion (\ref{KepsSubsetKLG}), this completes the proof of this case and therefore of the proof of lemma 2 too.
+With the previous opposite inclusion (\ref{KepsSubsetKLG}), this completes the proof of this case and therefore of the proof of [lemma 2] too.
 
 We can now prove the following theorem.
 
-*Theorem 1*: A group $$G$$ of transforms satisfying postulate 1--3 is one of the following group:
+{{Theorem 1}} A group $$G$$ of transforms satisfying postulate 1--3 is one of the following group:
 
 - the Caroll group (I)
 - the Galilean group (II)
 - the Lorentz group (III^+^)
 - the group of rotations in spacetime (III^-^)
 
-*Proof* Those four cases obviously correspond to the four cases of lemma 2. Thus let us review them in turn.
+*Proof* Those four cases obviously correspond to the four cases of [lemma 2]. Thus let us review them in turn.
 
 *Case I and II*: it is trivial to verify that any $$K \in K_G$$ is such that $$K^2 = 0$$ and therefore $$K^n = 0$$ for any integer $$n \ge 2$$. As a result, the exponential series is trivial: $$\exp K = I + K$$. Thus in case I, this gives
 
@@ -476,23 +476,23 @@ Thus it would seem we have failed, since we not only recovered Galilean and Lore
 
 The concept of cause and effect would be meaningless if all observers could not agree which of two events happens first. Hence the following requirement
 
-*Postulate 4: Causality.* There exists a non-empty set $$E$$ of events so that for any two events $$e_1$$ and $$e_2$$ such that $$e_1$$ is seen to appear before $$e_2$$ in one frame, then in any other frame, $$e_1$$ is also seen to appear before $$e_2$$.
+{{Postulate 5}} (Causality) There exists a non-empty set $$E$$ of events so that for any two events $$e_1$$ and $$e_2$$ such that $$e_1$$ is seen to appear before $$e_2$$ in one frame, then in any other frame, $$e_1$$ is also seen to appear before $$e_2$$.
 
 Because of linearity, this is equivalent to state that for any $$t > 0$$, there exists spatial coordinates $$x$$ such that for every $$\mathcal{M} \in G$$, $$\vec{t'}{x'} = \mathcal{M} \vec{t}{x}$$ is such that $$t'>0$$. Then we wish to prove
 
-*Lemma 2*: The Carroll group and the group of rotations in spacetime violate causality.
+{{Lemma 3}} The Carroll group and the group of rotations in spacetime violate causality.
 
 For the carroll group, $$t' = t\left(1 - u^T \frac{x}{t}\right)$$. But for any $$x \in \reals^3$$ and any $$t > 0$$, one can find big enough a vector $$u$$ such that the factor of $$t$$ is negative.
 
 For the rotations in spacetime, $$t' = t\cos\varphi\left(1 - \frac{1}{c}\hat{u}^T \frac{x}{t}\tan\varphi\right)$$. Since $$\lim_{\varphi \to +\infty} \tan\varphi = +\infty$$, for any $$x \in \reals^3$$ and any $$t > 0$$, one can choose $$\varphi$$ such that the factor of $$t\cos\varphi$$ is negative. This concludes the proof.
 
-*Lemma 3*: The Galilean and the Lorentz group satisfy causality.
+{{Lemma 4}} The Galilean and the Lorentz group satisfy causality.
 
 This is trivial for the former. For the latter, we have $$t'=t\cosh\varphi\left(1-\frac{1}{c}\hat{u}^T \frac{x}{t}\tanh\varphi\right)$$. Since for any $$\varphi \in \reals$$, $$\tanh\varphi$$ is between -1 and 1, for any $$(t,x)$$ such that $$(ct)^2 - x^2 > 0$$ and $$t > 0$$, we have $$t' > 0$$. Thus the set of event $$E$$ is the interior of the light cone.
 
 We can now conclude with
 
-*Theorem 2*: The only groups $$G$$ of transforms satisfying postulates 1--4 are Galilean group and Lorentz group.
+{{Theorem 2}} The only groups $$G$$ of transforms satisfying postulates 1--4 are Galilean group and Lorentz group.
 
 
 

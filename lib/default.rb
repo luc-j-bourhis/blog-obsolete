@@ -27,9 +27,28 @@ def sidebar_tree(lang)
   tree
 end
 
+# Implementation of Theorem-like environment
+def theorem_like(n)
+  kind = __callee__.to_s.downcase
+  @theorem_like_numbers ||= {}
+  @theorem_like_numbers[kind] ||= []
+  if @theorem_like_numbers[kind].include?(n)
+    puts "Warning: Duplicate \"#{kind.capitalize} #{n}\" " +
+         "in #{@item.identifier}"
+  else
+    @theorem_like_numbers[kind].push(n)
+  end
+  render "/theorem-like.*", kind: kind, number: n
+end
+
+# Cast {{ ... }} to <%= ... %> so that a subsequent :erb filter can work on it
+class Bacchantes < Nanoc::Filter
+  identifier :bacchantes
 
   def run(content, params={})
-      end
+    content.gsub(/\{\{ (?<X> (?> [^{}]+ | \{ \g<X> \} )* ) \}\}/x) do |match|
+      m = Regexp.last_match[:X]
+      "<%=#{m}%>"
     end
   end
 end
