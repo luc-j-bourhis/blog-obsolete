@@ -1,5 +1,6 @@
 # All files in the 'lib' directory will be loaded
 # before nanoc starts compiling.
+require 'pp'
 include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::LinkTo
 include Nanoc::Helpers::Rendering # to allow the use of `render` in layouts
