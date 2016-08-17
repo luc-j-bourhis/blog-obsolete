@@ -1,6 +1,6 @@
 - if not @item[:bibliography].nil?
     %h2= {:en => "Bibliography", :fr => "Bibliographie"}[@language]
-    - @item[:bibliography].each do |key, e|
+    - @item[:bibliography].sort.each do |key, e|
         %div{:id => key, :class => "bibliography_entry"}
             [#{key}]
             #{format_authors(e[:authors], @language)}.
