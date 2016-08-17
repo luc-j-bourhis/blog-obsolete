@@ -65,15 +65,21 @@ sup {
 }
 
 $sidebar_width: 200px;
-$main_margin: 80px;
+$sidebar_padding: 20px;
+$sidebar_border_width: 1px;
+$sidebar_total_width: $sidebar_width + 2*$sidebar_padding + $sidebar_border_width;
+$main_padding_left: $sidebar_padding;
+$main_padding_right: 40px;
 
 #main {
   position: absolute;
 
   top: 40px;
-  left: $sidebar_width;
-  margin-left: $main_margin;
-  margin-right: $main_margin;
+  left: $sidebar_total_width;
+  padding: {
+    left: $main_padding_left;
+    right: $main_padding_right;
+  }
 }
 
 #main h1, h2, h3, h4, h5, h6 {
@@ -125,13 +131,11 @@ $main_margin: 80px;
 #sidebar {
   position: absolute;
 
-  top: 40px;
-  left: 20px;
   width: $sidebar_width;
 
-  padding: 20px 20px 0 0;
+  padding: $sidebar_padding;
 
-  border-right: 1px solid #ccc;
+  border-right: $sidebar_border_width solid #ccc;
 
   text-align: right;
 }
