@@ -36,23 +36,14 @@ a {
 }
 
 a:link,
-a:visited {
-  color: #f30;
-}
-
-a:hover {
-  color: #f90;
-}
-
-a:link.bibliography-reference,
-a:visited.bibliography-reference,
+a:visited,
 span.MathJax_ref {
-  color: #003399;
+  color: #000080; // Navy
 }
 
-a:hover.bibliography-reference,
+a:hover,
 span:hover.MathJax_ref {
-  color: #007399;
+  color: #008080;
 }
 
 .bibliography_entry {
