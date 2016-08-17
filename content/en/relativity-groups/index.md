@@ -320,9 +320,13 @@ Because of linearity, this is equivalent to state that for any $$t > 0$$, there 
 
 *Lemma 2*: The Carroll group and the group of rotations in spacetime violate causality.
 
-For the carroll group, $$t' = t\left(1 - u^T \frac{x}{t}\right)$$. But for every $$x \in \reals^3$$, one can find big enough a vector $$u$$ such that the factor of $$t$$ is negative.
+For the carroll group, $$t' = t\left(1 - u^T \frac{x}{t}\right)$$. But for any $$x \in \reals^3$$ and any $$t > 0$$, one can find big enough a vector $$u$$ such that the factor of $$t$$ is negative.
 
-For the rotations in spacetime, $$t' = t\cos\varphi\left(1 - \frac{1}{c}\hat{u}^T \frac{x}{t}\tan\varphi\right)$$. Since $$\lim_{\varphi \to +\infty} \tan\varphi = +\infty$$, for any $$x \in \reals^3$$, one can choose $$\varphi$$ such that the factor of $$t\cos\varphi$$ is negative. This concludes the proof.
+For the rotations in spacetime, $$t' = t\cos\varphi\left(1 - \frac{1}{c}\hat{u}^T \frac{x}{t}\tan\varphi\right)$$. Since $$\lim_{\varphi \to +\infty} \tan\varphi = +\infty$$, for any $$x \in \reals^3$$ and any $$t > 0$$, one can choose $$\varphi$$ such that the factor of $$t\cos\varphi$$ is negative. This concludes the proof.
+
+*Lemma 3*: The Galilean and the Lorentz group satisfy causality.
+
+This is trivial for the former. For the latter, we have $$t'=t\cosh\varphi\left(1-\frac{1}{c}\hat{u}^T \frac{x}{t}\tanh\varphi\right)$$. Since for any $$\varphi \in \reals$$, $$\tanh\varphi$$ is between -1 and 1, for any $$(t,x)$$ such that $$(ct)^2 - x^2 > 0$$ and $$t > 0$$, we have $$t' > 0$$. Thus the set of event $$E$$ is the interior of the light cone.
 
 We can now conclude with
 
