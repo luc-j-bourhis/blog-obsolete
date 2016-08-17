@@ -27,32 +27,8 @@ def sidebar_tree(lang)
   tree
 end
 
-# Macro system
-#
-# Usage
-# -----
-# In the header of a Markdown file, put for example
-#
-#    macros:
-#        irf: Inertial Reference Frame
-#
-# Then anywhere in the same file, write `%irf` and this filter will replace
-# the macro with "Inertial Reference Frame".
-class TextualMacros < Nanoc::Filter
-  identifier :textual_macros
 
   def run(content, params={})
-    macro = @item && @item[:macros]
-    if macro.nil?
-      content
-    else
-      content.gsub(/%(\w+)/) do |m|
-        key = $1.intern
-        if not @macro[key].nil?
-          @macro[key]
-        else
-          m
-        end
       end
     end
   end
