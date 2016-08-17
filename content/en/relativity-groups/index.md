@@ -90,10 +90,10 @@ $$ \mathcal{M} = \mat{a}{u}{v}{M} $$
 where $$a$$ is a scalar, $$u$$ and $$v$$ are 3-vectors (in column), and $$M$$ is a $$3 \times 3$$ matrix -- we will denote by $$\reals^3$$ the set of all such vectors. This block decomposition means that
 
 $$
-\begin{align*}
+\begin{aligned}
 t' &= a t + u^T x, \\
 x' &= v t + M x.
-\end{align*}
+\end{aligned}
 $$
 
 **Postulate 2**: Spatial isometries form a strict subgroup $$O$$ of $$G$$.
@@ -111,12 +111,12 @@ $$ P = \mat{1}{0}{0}{-I}. $$
 A change of scale has a diagonal matrix with positive coefficients, i.e.
 
 $$
-\begin{align*}
+\begin{aligned}
 t' &= a_0 t \\
 x'_1 &= a_1 x_1 \\
 x'_2 &= a_2 x_2 \\
 x'_3 &= a_3 x_3
-\end{align*}
+\end{aligned}
 $$
 
 where $$x_i$$ and $$x'_i$$ are the spatial coordinates, components of the vectors $$x$$ and $$x'$$ used so far, and $$(a_0, a_1, a_2, a_3)$$ are positive constants.
@@ -161,7 +161,28 @@ Our strategy will be to characterise $$\Lie{G}$$ and then use the matrix exponen
 
 **Lemma 1**: If $$\mathcal{A} = \mat{a}{0}{0}{M} \in \Lie{G}$$, then $$a=0$$ and $$M$$ is antisymmetric, i.e. $$\mathcal{A} \in \Lie{O}$$.
 
-*Proof.* With $$A=\frac{M+M^T}{2}$$ and $$B=\frac{M-M^T}{2}$$, we can write $$\mathcal{A} = \mat{0}{0}{0}{A} + \mat{a}{0}{0}{B}$$. On the right-hand side, the first term belongs to $$\Lie{O}$$ and therefore the second term $$\mathcal{B}$$ belongs to $$\Lie{G}$$. But then $$\exp \mathcal{B} = \mat{\exp a}{0}{0}{\exp B}$$. Postulate 3 requires that $$\exp \mathcal{B}$$ is a spatial isometry, and therefore that $$a=0$$ and $$(\exp B)(\exp B)^T = I$$. Since $$B$$ is symmetric, this means $$\exp 2B = I$$, and therefore that $$B=0$$. This completes the proof.
+*Proof.* With
+
+$$\notag
+\begin{aligned}
+A&=\frac{M+M^T}{2},\\
+B&=\frac{M-M^T}{2},
+\end{aligned}
+$$
+
+we can write
+
+$$\notag
+\mathcal{A} = \mat{0}{0}{0}{A} + \mat{a}{0}{0}{B}.
+$$
+
+On the right-hand side, the first term belongs to $$\Lie{O}$$ and therefore the second term $$\mathcal{B}$$ belongs to $$\Lie{G}$$. But then
+
+$$\notag
+\exp \mathcal{B} = \mat{\exp a}{0}{0}{\exp B}.
+$$
+
+Postulate 3 requires that $$\exp \mathcal{B}$$ is a spatial isometry, and therefore that $$a=0$$ and $$(\exp B)(\exp B)^T = I$$. Since $$B$$ is symmetric, this means $$\exp 2B = I$$, and therefore that $$B=0$$. This completes the proof.
 
 Then we move to the keystone of our demonstration, as the subsequent work will simply be the computation of matrix exponentials.
 
@@ -177,13 +198,79 @@ $$
 
 where $$c > 0$$ and $$\epsilon = \pm 1$$ are constants.
 
-*Proof.* Let us consider a generic element $$A=\mat{a}{u}{v}{M} \in \Lie{G}$$. Since $$P \in G$$, $$PAP^{-1}$$ is also in $$\Lie{G}$$, and therefore $$B = \frac{1}{2}(A + PAP^{-1})$$ too. But $$B=\mat{a}{0}{0}{M}$$ and lemma 1 implies that $$a=0$$ and $$M$$ is antisymmetric. Thus $$A = \mat{0}{u}{v}{0} + \mat{0}{0}{0}{M}$$ and the last term is in $$\Lie{G}$$, which proves that $$\mat{0}{u}{v}{0} \in \Lie{G}$$. Thus we have shown that any element of $$\Lie{G}$$ is the sum of an element of $$\Lie{O}$$ and of an element of the vector space $$K=\set{\mat{0}{u}{v}{0}}{u,v \in \reals^3}$$ and we are left with characterising $$\KLG$$. The case $$\KLG = \{ 0 \}$$ is ruled out by our second postulate, as this would leave only isometries. Thus we have three cases to study.
+*Proof.* Let us consider a generic element $$A \in \Lie{G}$$,
+
+$$\notag
+A = \mat{a}{u}{v}{M}.
+$$
+
+Since $$P \in G$$, $$PAP^{-1}$$ is also in $$\Lie{G}$$, and therefore $$B = \frac{1}{2}(A + PAP^{-1})$$ too. But
+
+$$\notag
+B=\mat{a}{0}{0}{M}
+$$
+
+and lemma 1 implies that $$a=0$$ and $$M$$ is antisymmetric. Thus
+
+$$\notag
+A = \mat{0}{u}{v}{0} + \mat{0}{0}{0}{M}
+$$
+
+and the last term is in $$\Lie{G}$$, which proves that
+
+$$\notag
+\mat{0}{u}{v}{0} \in \Lie{G}.
+$$
+
+Thus we have shown that any element of $$\Lie{G}$$ is the sum of an element of $$\Lie{O}$$ and of an element of the vector space
+
+$$
+K=\set{\mat{0}{u}{v}{0}}{u,v \in \reals^3}
+$$
+
+and we are left with characterising $$\KLG$$. The case $$\KLG = \{ 0 \}$$ is ruled out by our second postulate, as this would leave only isometries. Thus we have three cases to study.
 
 *Case 1:* $$\KLG$$ has an element $$A=\mat{0}{0}{v}{0}$$ with $$v \ne 0$$.
 
-Then for any rotation $$\mathcal{R} = \mat{1}{0}{0}{R}$$ and any real $$\lambda$$, $$A'=\lambda\mathcal{R}A\mathcal{R}^{-1} \in \Lie{G}$$ but $$A'=\mat{0}{0}{\lambda Rv}{0}$$ and $$\lambda R v$$ spans $$\reals^3$$ when $$\lambda$$ spans $$\reals$$ and $$R$$ spans all the rotations. Thus $$K_G \subset \KLG$$.
+Then for any rotation
 
-Then let $$B=\mat{0}{p}{q}{0}$$ be an element of $$\Lie{G} \cap K$$. For any $$A = \mat{0}{0}{v}{0} \in K_G$$, we have therefore $$[A,B] \in \Lie{G}$$ but $$[A,B]=\mat{-p^T v}{0}{0}{vp^T}$$. Lemma 1 requires that $$p^Tv=0$$. Since $$v$$ can be any 3-vector, this implies that $$p=0$$. This complete the proof for this case.
+$$\notag
+\mathcal{R} = \mat{1}{0}{0}{R}
+$$
+
+and any real $$\lambda$$, $$A'=\lambda\mathcal{R}A\mathcal{R}^{-1} \in \Lie{G}$$ but
+
+$$\notag
+A'=\mat{0}{0}{\lambda Rv}{0}
+$$
+
+and $$\lambda R v$$ spans $$\reals^3$$ when $$\lambda$$ spans $$\reals$$ and $$R$$ spans all the rotations. Thus
+
+$$K_G \subset \KLG.$$
+
+Then let
+
+$$\notag
+B=\mat{0}{p}{q}{0}
+$$
+
+be an element of $$\KLG$$. For any
+
+$$\notag
+A = \mat{0}{0}{v}{0} \in K_G,
+$$
+
+we have therefore $$[A,B] \in \Lie{G}$$ but
+
+$$\notag
+[A,B]=\mat{-p^T v}{0}{0}{vp^T}.
+$$
+
+Lemma 1 requires that $$p^Tv=0$$. Since $$v$$ can be any 3-vector, this implies that $$p=0$$. We have therefore demonstrated that
+
+$$\KLG \subset K_G.$$
+
+This completes the proof for this case.
 
 *Case 2:* $$\KLG$$ has an element $$A=\mat{0}{u}{0}{0}$$ with $$u \ne 0$$.
 
@@ -191,38 +278,80 @@ The analysis is completely similar to the previous case, replacing $$K_G$$ with 
 
 *Case 3:* $$\KLG$$ has an element $$A=\mat{0}{u}{v}{0}$$ with $$u \ne 0$$ and $$v \ne 0$$.
 
-Let $$R_0$$ be the rotation of angle $$\pi$$ around the bissector of $$(u,v)$$. Then it exists $$\kappa > 0$$ such that $$Rv = \kappa u$$ and $$Ru = \frac{1}{\kappa} v$$. Then, with $$\mathcal{R}_0 = \mat{1}{0}{0}{R_0}$$, we have $$B=\mathcal{R}_0A\cal{R}_0^{-1} \in G$$ and therefore $$[A,B] \in G$$. But $$B=\mat{0}{\frac{1}{\kappa} v}{\kappa u}{0}$$. Thus
+Let $$R_0$$ be the rotation of angle $$\pi$$ around the bissector of $$(u,v)$$. Then it exists $$\kappa > 0$$ such that $$Rv = \kappa u$$ and $$Ru = \frac{1}{\kappa} v$$. Then, with
 
+$$\notag
+\mathcal{R}_0 = \mat{1}{0}{0}{R_0},
 $$
+
+we have $$B=\mathcal{R}_0A\mathcal{R}_0^{-1} \in G$$ and therefore $$[A,B] \in G$$. But
+
+$$\notag
+B=\mat{0}{\frac{1}{\kappa} v}{\kappa u}{0}.
+$$
+
+Thus
+
+$$\notag
 [A,B] = \mat{\kappa u^2 - \frac{1}{\kappa}v^2}{0}{0}{\frac{1}{\kappa}vv^T - \kappa uu^T}.
 $$
 
 Then lemma 1 requires that
 
-$$
-\begin{align*}
+$$\notag
+\begin{aligned}
 \kappa u^2 &= \frac{1}{\kappa} v^2,\\
 \kappa uu^T &= \frac{1}{\kappa} vv^T.
-\end{align*}
+\end{aligned}
 $$
 
-Multiplying both sides of the second equation with $$v$$ on the right shows that $$v$$ is colinear to $$u$$, and the first equation then shows that $$v=\epsilon\kappa u$$ where $$\epsilon=\pm 1$$. Introducing $$c=\sqrt{\kappa}$$ and $$w=cu$$, we have $$v=\epsilon c w$$ and therefore $$A=\LorGen{w}$$.
-
-Then for any rotation $$\mathcal{R} = \mat{1}{0}{0}{R}$$ and any real $$\lambda$$, $$A'=\lambda\mathcal{R}A\mathcal{R}^{-1} \in \Lie{G}$$ but $$A'=\LorGen{\lambda Rw}$$ and since $$\lambda Rw$$ spans $$\reals^3$$ when $$\lambda$$ spans $$\reals$$ and $$R$$ spans all $$3 \times 3$$ rotations, we have proved that $$K_\epsilon \subset \KLG$$.
-
-Let $$B=\mat{0}{p}{q}{0}$$ be an element of $$\KLG$$. For any $$A=\LorGen{w} \in K_\epsilon$$, $$[A,B] \in \Lie{G}$$ but
+Multiplying both sides of the second equation with $$v$$ on the right shows that $$v$$ is colinear to $$u$$, and the first equation then shows that $$v=\epsilon\kappa u$$ where $$\epsilon=\pm 1$$. Introducing $$c=\sqrt{\kappa}$$ and $$w=cu$$, we have $$v=\epsilon c w$$ and therefore
 
 $$
+A=\LorGen{w}.
+$$
+
+Then for any rotation
+
+$$\notag
+\mathcal{R} = \mat{1}{0}{0}{R}
+$$
+
+and any real $$\lambda$$, $$A'=\lambda\mathcal{R}A\mathcal{R}^{-1} \in \Lie{G}$$ but
+
+$$\notag
+A'=\LorGen{\lambda Rw}
+$$
+
+and since $$\lambda Rw$$ spans $$\reals^3$$ when $$\lambda$$ spans $$\reals$$ and $$R$$ spans all $$3 \times 3$$ rotations, we have proved that
+
+$$K_\epsilon \subset \KLG. \label{KepsSubsetKLG}$$
+
+Let
+
+$$\notag
+B=\mat{0}{p}{q}{0}
+$$
+
+be an element of $$\KLG$$. For any $$A \in K_\epsilon$$,
+
+$$\notag
+A=\LorGen{w},
+$$
+
+$$[A,B] \in \Lie{G}$$ but
+
+$$\notag
 [A,B] = \mat{\frac{1}{c}w^Tq - \epsilon c p^Tw}{0}{0}{\epsilon c w p^T - \frac{1}{c} q w^T}
 $$
 
 and lemma 1 then requires that
 
-$$
-\begin{align*}
+$$\notag
+\begin{aligned}
 \frac{1}{c}w^Tq &= \epsilon c p^Tw, \\
 \epsilon c w p^T &- \frac{1}{c} q w^T = -\epsilon c p w^T + \frac{1}{c} w q^T.
-\end{align*}
+\end{aligned}
 $$
 
 Multiplying the second equation by $$w$$ on the right gives
@@ -230,7 +359,17 @@ $$
 \left(\epsilon c p^T w - \frac{1}{c}q^T w \right)w = \left(\frac{1}{c}q - \epsilon c p \right)w^2
 $$
 
-and therefore, using the first equation, and $$w \ne 0$$, we get $$q=\epsilon c^2 p$$, i.e. $$B \in K_\epsilon$$. We have therefore demonstrated that $$\KLG \subset K_\epsilon$$. With the previous opposite inclusion, this completes the proof of this case and therefore of the proof of lemma 2 too.
+and therefore, using the first equation, and $$w \ne 0$$, we get $$q=\epsilon c^2 p$$, i.e.
+
+$$\notag
+B =c\mat{0}{\frac{1}{c}p}{\epsilon c p}{0}
+$$
+
+is therefore in $$K_\epsilon$$. We have therefore demonstrated that
+
+$$\KLG \subset K_\epsilon.$$
+
+With the previous opposite inclusion (\ref{KepsSubsetKLG}), this completes the proof of this case and therefore of the proof of lemma 2 too.
 
 We can now prove the following theorem.
 
@@ -238,8 +377,8 @@ We can now prove the following theorem.
 
 - the Caroll group (I)
 - the Galilean group (II)
-- the Lorentz group (III$^+$)
-- the group of rotations in spacetime (III$^-$)
+- the Lorentz group (III^+^)
+- the group of rotations in spacetime (III^-^)
 
 *Proof* Those four cases obviously correspond to the four cases of lemma 2. Thus let us review them in turn.
 
@@ -249,10 +388,10 @@ $$ \exp K = \mat{1}{u}{0}{I} $$
 
 and the transforms
 
-$$ \begin{align}
+$$ \begin{aligned}
 t' &= t - u^T x,\\
 x' &= x.
-\end{align}$$
+\end{aligned}$$
 
 Lévy-Leblond named them "Carrol transforms" in [[Levy-Leblond:1965]], a term he reused in [[Levy-Leblond:1979]], in eqn (63). The first paper presents an interesting physical discussion of them (it is unfortunately in French!).
 
@@ -262,14 +401,27 @@ $$ \exp K = \mat{1}{0}{v}{I} $$
 
 and the transforms are the Galilean transforms
 
-$$\begin{align}
+$$\begin{aligned}
 t' &= t,\\
 x' &= x - vt.
-\end{align}$$
+\end{aligned}$$
 
-*Case III^+/-^*: the computation of the exponential is only slightly more involved. We will compute both cases at the same time by keeping $$\epsilon$$ unspecified. First, let us write $$u = \varphi \hat{u}$$ where $$\hat{u}$$ is a unit vector. Then $$\newcommand{Keps}{\hat{K}_\epsilon} K_\epsilon = \varphi\Keps$$ where $$\Keps = \mat{0}{\frac{1}{c}\hat{u}}{\epsilon c \hat{u}}{0}$$. Then $$\newcommand{\PPu}{\mat{1}{0}{0}{P_u}} \Keps^2 = \epsilon\mathcal{P}_u$$ where $$\mathcal{P}_u=\PPu$$ and $$P_u = \hat{u}\hat{u}^T$$ is the projection onto $$u$$. Therefore, on one hand, for any $$n \ge 1$$, $$\Keps^{2n} = \epsilon^n \mathcal{P}_u$$ since $$P_u^n = P_u$$ because $$P_u$$ is a projector. On the other hand, $$\Keps^{2n+1} = \epsilon^n \mathcal{P}_u \Keps = \epsilon^n\Keps$$. Thus the exponential series reads
+*Case III^±^*: the computation of the exponential is only slightly more involved. We will compute both cases at the same time by keeping $$\epsilon$$ unspecified. First, let us write $$u = \varphi \hat{u}$$ where $$\hat{u}$$ is a unit vector. Then $$\newcommand{Keps}{\hat{K}_\epsilon} K_\epsilon = \varphi\Keps$$ where
 
-$$ \exp K_\epsilon = I
+$$
+\Keps = \mat{0}{\frac{1}{c}\hat{u}}{\epsilon c \hat{u}}{0}.
+$$
+
+Then $$\newcommand{\PPu}{\mat{1}{0}{0}{P_u}} \Keps^2 = \epsilon\mathcal{P}_u$$ where
+
+$$\notag
+\mathcal{P}_u=\PPu
+$$
+
+and $$P_u = \hat{u}\hat{u}^T$$ is the projection onto $$u$$. Therefore, on one hand, for any $$n \ge 1$$, $$\Keps^{2n} = \epsilon^n \mathcal{P}_u$$ since $$P_u^n = P_u$$ because $$P_u$$ is a projector. On the other hand, $$\Keps^{2n+1} = \epsilon^n \mathcal{P}_u \Keps = \epsilon^n\Keps$$. Thus the exponential series reads
+
+$$\notag
+\exp K_\epsilon = I
 + \underbrace{\sum_{n=1}^{+\infty} \epsilon^n \frac{\varphi^{2n}}{(2n)!}}_{\displaystyle \begin{cases}
 \cos\varphi - 1, \text{ if $\epsilon=-1$}\\
 \cosh\varphi - 1, \text{ if $\epsilon=1$}
@@ -277,36 +429,46 @@ $$ \exp K_\epsilon = I
 + \underbrace{\sum_{n=0}^{+\infty} \epsilon^n \frac{\varphi^{2n+1}}{(2n+1)!}}_{\displaystyle \begin{cases}
 \sin\varphi, \text{ if $\epsilon=-1$}\\
 \sinh\varphi, \text{ if $\epsilon=1$}
-\end{cases}} \Keps $$
+\end{cases}} \Keps
+$$
 
-Thus we have the two cases
+Thus we have either case (III^-^),
 
-$$\newcommand{\boostmat}[2]{
+$$
+\newcommand{\boostmat}[2]{
     \mat{#1}{\frac{1}{c}#2\ \hat{u}}{c#2\ \hat{u}}{#1\ P_u + \projperp{u}}
 }
-\begin{cases}
-\exp K_{-} = \boostmat{\cos\varphi}{\sin\varphi}, \text{ in case (III$^-$),} \\
-\exp K_{+} = \boostmat{\cosh\varphi}{\sinh\varphi}, \text{ in case (III$^+$)}
-\end{cases}$$
+\exp K_{-} = \boostmat{\cos\varphi}{\sin\varphi},
+$$
 
-where $$\projperp{u} = I - P_u$$ is the projection onto the plane $$u^\perp$$ perpendicular to $$u$$. Thus the transformations read
+or case (III^+^),
+
+$$
+\exp K_{+} = \boostmat{\cosh\varphi}{\sinh\varphi},
+$$
+
+where $$\projperp{u} = I - P_u$$ is the projection onto the plane $$u^\perp$$ perpendicular to $$u$$. Thus the transformations are either, in case (III^-^),
 
 $$ \newcommand{\boosttrans}[2]{
     \begin{aligned}
     t' &= t #1 -\frac{\hat{u}^T x}{c} #2,\\
-    x'_\shortparallel &= x_\shortparallel #1 - ct \hat{u} #2,\\
+    x'_\parallel &= x_\parallel #1 - ct \hat{u} #2,\\
     x'_\perp &= x_\perp,
     \end{aligned}
 }
-\begin{cases}
-\left\{ \boosttrans{\cos\varphi}{\sin\varphi} \right., \text{ in case (III$^-$),} \\
-\\
-\left\{ \boosttrans{\cosh\varphi}{\sinh\varphi} \right., \text{ in case (III$^+$).}
-\end{cases}$$
 
-where $$x_\shortparallel$$ is the component of $$x$$ parallel to $$u$$ whereas $$x_\perp$$ is the component perpendicular to $$u$$.
+\boosttrans{\cos\varphi}{\sin\varphi},
+$$
 
-In case (III$^+$), we recognise a Lorentz boost, parametrised by the rapidity $$\varphi$$ and the direction of the boost $$\hat{u}$$. The case (III$^-$) is not mainstream but time and space are mixed as two spatial coordinates would be by a rotation of angle $$\varphi$$, hence the name "rotation in spacetime".
+or, in case (III^+^),
+
+$$
+\boosttrans{\cosh\varphi}{\sinh\varphi},
+$$
+
+where $$x_\parallel$$ is the component of $$x$$ parallel to $$u$$ whereas $$x_\perp$$ is the component perpendicular to $$u$$.
+
+In case (III^+^), we recognise a Lorentz boost, parametrised by the rapidity $$\varphi$$ and the direction of the boost $$\hat{u}$$. The case (III^-^) is not mainstream but time and space are mixed as two spatial coordinates would be by a rotation of angle $$\varphi$$, hence the name "rotation in spacetime".
 
 Thus it would seem we have failed, since we not only recovered Galilean and Lorentz transforms but also two exotic groups which have never played any role in physics. But we can prune them with an additional hypothesis.
 
