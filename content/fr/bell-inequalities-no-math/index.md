@@ -6,7 +6,7 @@ category: physique
 
 # Une présentation ludique des inégalités de Bell
 
-Mon but est de présenter le problème en imaginant une expérience avec des objets de tous les jours et en analysant cette expérience comme on le ferait pour les vraies expérience de physique réalisée en laboratoire. La problématique est évidemment simplifiée mais je ne commet pas de mensonges effrontés! Commençons…
+Mon but est de présenter le problème en imaginant une expérience avec des objets de tous les jours et en analysant cette expérience comme on le ferait pour les vraies expérience de physique réalisées en laboratoire. La problématique est évidemment simplifiée mais je ne commet pas de mensonges effrontés! Commençons…
 
 Je dispose de boites avec deux compartiments, un rouge et un bleu, dans
 chacun desquels je vais mettre un jeton, ou bien noir ou bien blanc. Les
@@ -116,5 +116,5 @@ L'une comme l'autre sont difficiles à avaler !»
 Luc, très docte: «Mes chers amis, laisser moi maintenant vous enseigner
 la mécanique quantique …»
 
-Évidemment, dans la réalité, les jetons et les boîtes se comporterait comme prédit par la mécanique classique et l'on observerait bien une fois sur deux en moyenne des jetons de même couleur sur le bleu de Jessica et le rouge de Paul. Mais ici je prétend que ce système simple se comporte en fait comme un système quantique, ce qui a pour conséquence de violer cette loi de probabilité, loi qui est l'équivalent des inégalités de Bell, même si dans mon histoire c'est une égalité! Je vous avais prévenu que l'analogie n'était pas parfaite … Les lecteurs intéressés par une présentation rigoureuse du sujet sont invité à lire [mon autre article de blog](/fr/bell-inequalities).
+Évidemment, dans la réalité, les jetons et les boîtes se comporteraient comme prédit par la mécanique classique et l'on observerait bien une fois sur deux en moyenne des jetons de même couleur sur le bleu de Jessica et le rouge de Paul. Mais ici je prétend que ce système simple se comporte en fait comme un système quantique, ce qui a pour conséquence de violer cette loi de probabilité, loi qui est l'équivalent des inégalités de Bell, même si dans mon histoire c'est une égalité! Je vous avais prévenu que l'analogie n'était pas parfaite … Les lecteurs intéressés par une présentation rigoureuse du sujet sont invités à lire [mon autre article de blog](/fr/bell-inequalities).
 
