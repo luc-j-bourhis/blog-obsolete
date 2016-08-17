@@ -5,27 +5,8 @@
 
   -# you don't need to keep this, but it's cool for stats!
   %meta{:name => "generator", :content => "nanoc #{Nanoc::VERSION}"}/
-  %script{:type => "text/x-mathjax-config"}
-    :plain
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$','$']],
-          displayMath: [['$$', '$$']],
-        },
-        TeX: {
-          equationNumbers: {
-            autoNumber: "AMS"
-          },
-          Macros: {
-            #{macros_for_mathjax}
-          }
-        },
-        menuSettings: {
-          zoom: "Double-Click"
-        },
-      });
-  %script{:src => 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML'}
-
+  #{render "/mathjax.*"}
+  %script{:src => "https://cdn.mathjax.org/mathjax/latest/MathJax.js"}
 %body
   -# define the theorem-like DSL so that ERB can later interpret it
   - render "/#{language}/theorem-like.erb"

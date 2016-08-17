@@ -1,0 +1,37 @@
+%script{:type => "text/x-mathjax-config"}
+  :plain
+    MathJax.Hub.Config({
+      // minimalistic: we only need TeX and the Mathjax menu is useful
+      extensions: ["tex2jax.js", "MathMenu.js"],
+
+      // SVG is the fastest
+      jax: ["input/TeX", "output/SVG"],
+
+      // we do not need delimiters as kramdown will transform a $$ XXX $$
+      // into span's or div's, the inner ones containing XXX,
+      // and with the appropriate id's and classes for an accompanying
+      // script to run Mathjax to render the content of those tags.
+      tex2jax: {
+        inlineMath: [],
+        displayMath: [],
+      },
+
+      TeX: {
+        // Minimalistic
+        extensions: ["AMSmath.js", "AMSsymbols.js"],
+
+        // this is part of our handmade management of equation numbers
+        equationNumbers: {
+          autoNumber: "AMS"
+        },
+
+        // this is part of our handmade LaTeX macro management
+        Macros: {
+          #{macros_for_mathjax}
+        }
+      },
+
+      menuSettings: {
+        zoom: "Double-Click",
+      },
+    });
