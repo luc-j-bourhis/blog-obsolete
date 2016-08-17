@@ -308,7 +308,7 @@ where $$x_\shortparallel$$ is the component of $$x$$ parallel to $$u$$ whereas $
 
 In case (III$^+$), we recognise a Lorentz boost, parametrised by the rapidity $$\varphi$$ and the direction of the boost $$\hat{u}$$. The case (III$^-$) is not mainstream but time and space are mixed as two spatial coordinates would be by a rotation of angle $$\varphi$$, hence the name "rotation in spacetime".
 
-Thus it would seem we have failed, since we not only recovered Galilean and Lorentz transforms but also two exotic groups which have never played any major role in change of inertial frames. But we can prune them with an additional hypothesis.
+Thus it would seem we have failed, since we not only recovered Galilean and Lorentz transforms but also two exotic groups which have never played any role in physics. But we can prune them with an additional hypothesis.
 
 ## Causality
 
