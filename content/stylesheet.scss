@@ -31,19 +31,19 @@ body {
   background: #fff;
 }
 
-a {
+@mixin link_colours {
+  &:link, &:visited {
+    color: #000080; // Navy
+  }
+
+  &:hover {
+    color: #008080;
+  }
+}
+
+a, span.MathJax_ref {
   text-decoration: none;
-}
-
-a:link,
-a:visited,
-span.MathJax_ref {
-  color: #000080; // Navy
-}
-
-a:hover,
-span:hover.MathJax_ref {
-  color: #008080;
+  @include link_colours;
 }
 
 .bibliography_entry {
@@ -71,52 +71,52 @@ $main_padding_right: 40px;
     left: $main_padding_left;
     right: $main_padding_right;
   }
-}
 
-#main h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-  margin-top: 0;
-  margin-bottom: 20px;
-  letter-spacing: -1px;
-}
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+  }
 
-#main h1 {
-  font-size: 40px;
-}
+  h1 {
+    font-size: 40px;
+  }
 
-#main h2 {
-  font-size: 28px;
-}
+  h2 {
+    font-size: 28px;
+  }
 
-#main h3 {
-  font-size: 20px;
-}
+  h3 {
+    font-size: 20px;
+  }
 
-#main p, #main ul, #main ol {
-  @include alignment_and_hyphenation;
-}
+  p, ul, ol {
+    @include alignment_and_hyphenation;
+  }
 
-#main p {
-  margin: 20px 0;
+  p {
+    margin: 20px 0;
 
-  @include main_paragraph_font_specs;
-}
+    @include main_paragraph_font_specs;
+  }
 
-#main .MathJax a {
-  @include font_families;
-  @include main_paragraph_font_specs;
-}
+  .MathJax a {
+    @include font_families;
+    @include main_paragraph_font_specs;
+  }
 
-#main ul, #main ol {
-  margin: 20px;
-}
+  ul,   ol {
+    margin: 20px;
+  }
 
-#main li {
-  @include main_paragraph_font_specs;
-}
+  li {
+    @include main_paragraph_font_specs;
+  }
 
-#main ul li {
-  list-style-type: square;
+  ul li {
+    list-style-type: square;
+  }
 }
 
 #sidebar {
@@ -129,34 +129,34 @@ $main_padding_right: 40px;
   border-right: $sidebar_border_width solid #ccc;
 
   text-align: right;
-}
 
-#sidebar .topics {
-  text-transform: uppercase;
+  .topics {
+    text-transform: uppercase;
 
-  font-size: 13px;
+    font-size: 13px;
 
-  color: #333;
+    color: #333;
 
-  letter-spacing: 1px;
-}
+    letter-spacing: 1px;
+  }
 
-#sidebar .title-list {
-  list-style-type: none;
+  .title-list {
+    list-style-type: none;
 
-  margin-top: 0.5em;
-  margin-right: 0;
-  margin-bottom: 1.2em;
-}
+    margin-top: 0.5em;
+    margin-right: 0;
+    margin-bottom: 1.2em;
+  }
 
-#sidebar .title {
-  font-size: 15px;
+  .title {
+    font-size: 15px;
 
-  line-height: 20px;
-}
+    line-height: 20px;
+  }
 
-#sidebar .whoami {
-  font-size: 14px;
-  margin-bottom: 30px;
-  @include alignment_and_hyphenation;
+  .whoami {
+    font-size: 14px;
+    margin-bottom: 30px;
+    @include alignment_and_hyphenation;
+  }
 }
