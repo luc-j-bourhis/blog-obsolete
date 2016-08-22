@@ -15,6 +15,7 @@
     -# if we are not on the main page for one of the language, then...
     - if %r{^/[a-z]{2}/index} !~ @item.identifier
       #{render "/bibliography.*"}
+      #{render "/#{language}/licence.*"}
   #sidebar
     %a{:href => "/fr/"}
       %img{:src => "/fr/icon.png"}

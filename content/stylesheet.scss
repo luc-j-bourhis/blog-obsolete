@@ -160,3 +160,17 @@ $main_padding_right: 40px;
     @include alignment_and_hyphenation;
   }
 }
+
+
+#license {
+  margin-top: 2em;
+  margin-bottom: 1em;
+
+  img {
+    border-width: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+  }
+}
