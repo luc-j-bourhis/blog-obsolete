@@ -4,6 +4,7 @@ require 'pp'
 include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::LinkTo
 include Nanoc::Helpers::Rendering # to allow the use of `render` in layouts
+require 'nanoc-git'
 
 # The 2-letter code of the language the given item is written in
 def language_of(item)
