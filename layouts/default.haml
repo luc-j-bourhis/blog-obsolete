@@ -12,7 +12,9 @@
   - render "/#{language}/theorem-like.erb"
   #main
     #{yield}
-    #{render "/bibliography.*"}
+    -# if we are not on the main page for one of the language, then...
+    - if %r{^/[a-z]{2}/index} !~ @item.identifier
+      #{render "/bibliography.*"}
   #sidebar
     %a{:href => "/fr/"}
       %img{:src => "/fr/icon.png"}
