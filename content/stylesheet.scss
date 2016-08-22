@@ -31,19 +31,13 @@ body {
   background: #fff;
 }
 
-@mixin link_colours {
-  &:link, &:visited {
-    color: #000080; // Navy
-  }
-
-  &:hover {
-    color: #008080;
-  }
-}
-
+// Style links as on Wikipedia
 a, span.MathJax_ref {
+  color: #0645ad;
   text-decoration: none;
-  @include link_colours;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .bibliography_entry {
