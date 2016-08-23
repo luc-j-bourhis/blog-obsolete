@@ -17,10 +17,16 @@
       #{render "/bibliography.*"}
       #{render "/#{language}/licence.*"}
   #sidebar
-    %a{:href => "/fr/"}
-      %img{:src => "/fr/icon.png"}
-    %a{:href => "/en/"}
-      %img{:src => "/en/icon.png"}
+    .flags
+      %span
+        %a{:href => "/fr/"}
+          %img{:src => "/fr/icon.png"}
+          %span Sommaire
+      %span.right
+        %a{:href => "/en/"}
+          %img{:src => "/en/icon.png"}
+          %span Home
+
     .whoami= render "/#{language}/side_header.*"
 
     - sidebar_tree(language).each do |key, entries|

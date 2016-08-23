@@ -124,6 +124,19 @@ $main_padding_right: 40px;
 
   text-align: right;
 
+  .flags {
+    text-align: justify;
+    margin-bottom: 1.2em;
+
+    img, span {
+      vertical-align: middle;
+    }
+
+    .right {
+      float: right;
+    }
+  }
+
   .topics {
     text-transform: uppercase;
 
@@ -150,7 +163,7 @@ $main_padding_right: 40px;
 
   .whoami {
     font-size: 14px;
-    margin-bottom: 30px;
+    margin-bottom: 2em;
     @include alignment_and_hyphenation;
   }
 }
