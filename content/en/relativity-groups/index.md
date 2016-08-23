@@ -153,7 +153,56 @@ $$ \exp A = \sum_{n=0}^{+\infty} \frac{1}{n!}A^n . \label{matrix:exp}$$
 
 *Matrix Lie group*: it is a group $$G$$ of matrices such that there exists a Lie algebra $$H$$ such that $$\exp H$$ is the connected component of the identity in $$G$$. We will denote $$H$$ by $$\Lie{G}$$.
 
-This may seem rather abstract but it is actually just a different, powerful, way to look at all the classic matrix groups.
+There is an important property of the Lie algebra of a Lie group which will play an important role in our demonstrations:
+
+{{Property "L1"}} For any $$A \in G$$, and any $$B \in \Lie{G}$$, $$A^{-1}BA \in \Lie{G}$$.
+
+*Proof* This is a trivial consequence of the following property of matrix exponential,
+
+$$A^{-1}\exp(B)A = \exp(A^{-1}BA),$$
+
+since $$(A^{-1}BA)^n = A^{-1}B^nA$$ for any integer $$n$$.
+
+Lie group of matrices may seem rather abstract but it is actually just a different, powerful, way to look at all the classic matrix groups. Let us study an example, which will be useful later: $$3\times 3$$ orthogonal matrices, i.e. the matrices of the isometry of 3-dimensional space.
+
+A classic result is that for any orthogonal matrix $$R$$, there is an orthogonal matrix $$P$$ such that
+
+$$ R = P R_0(\theta) P^T$$
+
+where
+
+$$ R_0(\theta) = \begin{bmatrix} \cos\theta & -\sin\theta & 0 \\
+                                 \sin\theta &  \cos\theta & 0 \\
+                                      0     &        0    & \epsilon
+                 \end{bmatrix}
+$$
+
+where $$\epsilon = \pm 1$$. We have a rotation of angle $$\theta$$ about
+
+$$ u = P \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} $$
+
+if $$\epsilon = 1$$. Otherwise, we have this rotation times the orthogonal symmetry about the plane $$u_\perp$$ perpendicular to $$u$$. Or alternatively a rotation of angle $$\theta+\pi$$ about $$u$$ times the inversion.
+
+(i) On the one hand, when $$\epsilon=1$$, since the mapping $$R'(\varphi) = P R_0(\varphi)P^T$$ is continuous, there is a continuous path from $$I=R'(0)$$ to $$R'(\theta)=R$$, which shows that the subgroup of rotations is the connected component of the identity. The orthogonal matrices with $$\epsilon = -1$$ belong to another connected component.
+
+(ii) On the other hand, the classic series for $$\cos$$ and $$\sin$$ gives in the $$\epsilon=1$$ case,
+
+$$\notag
+\newcommand{\pxy}{\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}}
+\newcommand{\az}{\begin{bmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}}
+R_0(\theta) = I + \sum_{n=1}^{+\infty} (-1)^n \frac{\theta^{2n}}{2n!} \underbrace{\pxy}_{P_{xy}} + \sum_{n=0}^{+\infty} (-1)^n \frac{\theta^{2n+1}}{2n+1!} \underbrace{\az}_{A_z}.
+$$
+
+Then trivially, $$A_z^2 = -P_{xy}$$, $$P_{xy}^2 = P_{xy}$$, and $$P_{xy}A_z = A_z$$. Thus, $$A_z^{2n} = (-1)^n P_{xy}$$ and $$A^{2n+1}=(-1)^n A_z$$ and therefore
+
+$$R_0(\theta) = \exp (\theta A_z),$$
+
+and then of course the definition of exponential implies that
+
+$$P (\exp A) P^T = \exp(P A P^T).$$
+
+Thus with points (i) and (ii), we have the theorem/definition we have introduced for Lie groups in the particular case of orthogonal matrices.
+
 
 ## Derivation of the group $$G$$ of viable transforms
 
