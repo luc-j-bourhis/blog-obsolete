@@ -139,7 +139,7 @@ where $$x_i$$ and $$x'_i$$ are the spatial coordinates, components of the vector
 
 The postulated Lie structure is as mundane, since every single non-discrete matrix group of practical use in physics is a Lie group. Instead of postulating the Lie structure, we could have postulated that $$G$$ is topologically closed and then invoked Cartan's theorem to conclude that $$G$$ is a Lie subgroup of the Lie group of $$4 \times 4$$ matrices. Whether requiring that any convergent sequence of matrices in $$G$$ converges in $$G$$, for example, is more intuitive than requiring a Lie structure in the first place is a moot point for a theoretical physicist in the 21st century, in my humble opinion!
 
-## Primer on Lie groups
+## Primer on matrix Lie groups
 
 We will succintly give here the essential properties we will use in our demonstration.
 
