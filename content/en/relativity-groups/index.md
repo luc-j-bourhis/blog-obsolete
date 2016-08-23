@@ -155,83 +155,96 @@ $$ \exp A = \sum_{n=0}^{+\infty} \frac{1}{n!}A^n . \label{matrix:exp}$$
 
 There is an important property of the Lie algebra of a Lie group which will play an important role in our demonstrations:
 
-{{Property "L1"}} For any $$A \in G$$, and any $$B \in \Lie{G}$$, $$A^{-1}BA \in \Lie{G}$$.
+{{Property 1}} For any $$A \in G$$, and any $$B \in \Lie{G}$$, $$A^{-1}BA \in \Lie{G}$$.
 
-*Proof* This is a trivial consequence of the following property of matrix exponential,
+*Proof.* First, $$(A^{-1}BA)^n = A^{-1}B^nA$$ for any integer $$n$$, and therefore the exponential series satisfies
 
 $$A^{-1}\exp(B)A = \exp(A^{-1}BA),$$
 
-since $$(A^{-1}BA)^n = A^{-1}B^nA$$ for any integer $$n$$.
+which proves the result.
 
-Lie group of matrices may seem rather abstract but it is actually just a different, powerful, way to look at all the classic matrix groups. Let us study an example, which will be useful later: $$3\times 3$$ orthogonal matrices, i.e. the matrices of the isometry of 3-dimensional space.
+{{Property 2}} $$\exp\Lie{G}$$ is actually the connected component of the identity in $$G$$.
 
-A classic result is that for any orthogonal matrix $$R$$, there is an orthogonal matrix $$P$$ such that
+*Proof.* Since $$\exp$$ is continuous and it maps the zero matrix onto the identity matrix, the result is obvious.
 
-$$ R = P R_0(\theta) P^T$$
+Lie group of matrices may seem rather abstract but it is actually just a different, powerful, way to look at all the classic matrix groups. Let us study an example, which will be useful later: the group $$O_3$$ of the $$3\times 3$$ orthogonal matrices, i.e. the matrices of the isometry of 3-dimensional space, and its subgroup $$SO_3$$ consisting of matrix rotations (those notations are standard but usually one specifies the field the matrix elements belong to, which is the field $$\reals$$ of real numbers here). It is important since it is the spatial part of the group $$O$$ introduced in [Postulate 2].
 
-where
+We will start by discussing the structure of $$O_3$$ and $$SO_3$$. Given a rotation $$R$$ of angle $$\theta$$ about some vector $$u$$, there is a continuous path from $$R$$ to the identity matrix, by continuously varying $$\theta$$ toward 0. By definition, this means that $$SO_3$$ is the connected component of the identity in $$O_3$$. Thus to prove that $$O_3$$ is a Lie group, we only need to prove that the matrix exponential maps some Lie algebra to be determined onto $$SO_3$$. As a side note, $$O_3$$ not only contains rotations but also the product of rotations by the spatial inversion. The latter form the other connected component of $$O_3$$, one which does obviously not contain the identity.
 
-$$ R_0(\theta) = \begin{bmatrix} \cos\theta & -\sin\theta & 0 \\
-                                 \sin\theta &  \cos\theta & 0 \\
-                                      0     &        0    & \epsilon
-                 \end{bmatrix}
-$$
+It is actually easy to find what this Lie algebra should be if it exists. Indeed, keeping only terms linear in $$\theta$$ when $$\theta \to 0$$,
 
-where $$\epsilon = \pm 1$$. We have a rotation of angle $$\theta$$ about
+$$ R = \exp(\theta A) = I + \theta A + \cdots. $$
 
-$$ u = P \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} $$
-
-if $$\epsilon = 1$$. Otherwise, we have this rotation times the orthogonal symmetry about the plane $$u_\perp$$ perpendicular to $$u$$. Or alternatively a rotation of angle $$\theta+\pi$$ about $$u$$ times the inversion.
-
-(i) On the one hand, when $$\epsilon=1$$, since the mapping $$R'(\varphi) = P R_0(\varphi)P^T$$ is continuous, there is a continuous path from $$I=R'(0)$$ to $$R'(\theta)=R$$, which shows that the subgroup of rotations is the connected component of the identity. The orthogonal matrices with $$\epsilon = -1$$ belong to another connected component.
-
-(ii) On the other hand, the classic series for $$\cos$$ and $$\sin$$ gives in the $$\epsilon=1$$ case,
+Thus
 
 $$\notag
-\newcommand{\pxy}{\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}}
-\newcommand{\az}{\begin{bmatrix} 0 & -1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}}
-R_0(\theta) = I + \sum_{n=1}^{+\infty} (-1)^n \frac{\theta^{2n}}{2n!} \underbrace{\pxy}_{P_{xy}} + \sum_{n=0}^{+\infty} (-1)^n \frac{\theta^{2n+1}}{2n+1!} \underbrace{\az}_{A_z}.
+R^T = I + \theta A^T + \cdots $$
+
+and then
+
+$$\notag
+R R^T = I + \theta(A + A^T) + \cdots. $$
+
+Thus if $$R$$ is orthogonal, then $$RR^T = I$$, and therefore all terms of order $$\theta$$ or higher must be zero in series of $$RR^T$$, which implies that $$A$$ is antisymmetric.
+
+Thus we shall consider the set $$A_3$$ of all $$3\times 3$$ antisymmetric matrix. It is a subspace of the algebra of $$3\times 3$$ matrices as any linear combination of antisymmetric matrices is antisymmetric. Then given two antisymmetric matrices $$A$$ and $$B$$, $$[A,B]$$ is clearly antisymmetric by the very definition of the Lie bracket. Thus $$A_3$$ is a Lie algebra and we just need to prove that $$\exp A_3 = SO_3$$ to conclude.
+
+For any antisymmetric matrix $$A$$, the exponential series implies that
+
+$$\notag
+(\exp A)^T \exp A = \exp(A^T) \exp A = \exp(-A) \exp A $$
+
+But then $$-A$$ commutes with $$A$$, and therefore, for any integer $$n$$, the coefficient of $$A^n$$ in the series of $$\exp(-A)\exp A$$ is the same as the coefficient of $$x^n$$ in the series $$\exp(-x)\exp x$$ for a real number $$x$$: they are all equal to zero, except for the order 0. Thus $$\exp(-A)\exp A = I$$ and therefore the equation above shows that $$\exp A$$ is orthogonal. Finally, any antisymmetric matrix $$A$$ has a zero eigenvalue. Indeed, the generic form of $$A$$ is
+
+$$ A = \begin{pmatrix}   0 & -u_3 &  u_2 \\
+                       u_3 &  0   & -u_1 \\
+                      -u_2 &  u_1 &  0   \\
+        \end{pmatrix}
 $$
 
-Then trivially, $$A_z^2 = -P_{xy}$$, $$P_{xy}^2 = P_{xy}$$, and $$P_{xy}A_z = A_z$$. Thus, $$A_z^{2n} = (-1)^n P_{xy}$$ and $$A^{2n+1}=(-1)^n A_z$$ and therefore
+for some vector $$u$$, and clearly $$Au = 0$$. Then $$(\exp A)u = u$$ and therefore $$\exp A$$ shall be a rotation, as if it belonged to the other connected component, consisting of rotations times the inversion, its only real eigenvalue would be -1.
 
-$$R_0(\theta) = \exp (\theta A_z),$$
+[#rodrigues]: https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula#Matrix_notation
 
-and then of course the definition of exponential implies that
+It should be noted that we could actually have written a constructive proof instead, based on [Rodrigues' rotation formula in matrix form][#rodrigues]. But the demonstration would have been rather similar to the one we will encounter when Lorentz boosts will emerge later in this article, and we therefore preferred the demonstration above which involves only very simple calculations. In any case, we have demonstrated
 
-$$P (\exp A) P^T = \exp(P A P^T).$$
+{{Theorem 1}} The group of orthogonal matrix $$O_3$$ is a Lie group and $$\Lie{O_3}$$ is the set of antisymmetric matrices $$A_3$$. The matrix exponential maps $$A_3$$ onto $$SO_3$$.
 
-Thus with points (i) and (ii), we have the theorem/definition we have introduced for Lie groups in the particular case of orthogonal matrices.
+{{Corollary 1}} The group $$O$$ introduced in [Postulate 2] is a Lie group and $$\Lie{O}$$ is the set of matrices
+
+$$ \mat{0}{0}{0}{A} $$
+
+where $$A$$ is any antisymmetric matrix.
 
 
 ## Derivation of the group $$G$$ of viable transforms
 
 Our strategy will be to characterise $$\Lie{G}$$ and then use the matrix exponential to find $$G$$. We start by demonstrating a simple lemma we will reuse a couple of time.
 
-{{Lemma 1}} If $$\mathcal{A} = \mat{a}{0}{0}{M} \in \Lie{G}$$, then $$a=0$$ and $$M$$ is antisymmetric, i.e. $$\mathcal{A} \in \Lie{O}$$.
+{{Lemma 1}} If $$A = \mat{a}{0}{0}{M} \in \Lie{G}$$, then $$a=0$$ and $$M$$ is antisymmetric, i.e. $$A \in \Lie{O}$$.
 
 *Proof.* With
 
 $$\notag
 \begin{aligned}
-A&=\frac{M+M^T}{2},\\
-B&=\frac{M-M^T}{2},
+M^+&=\frac{M+M^T}{2},\\
+M^-&=\frac{M-M^T}{2},
 \end{aligned}
 $$
 
 we can write
 
 $$\notag
-\mathcal{A} = \mat{0}{0}{0}{A} + \mat{a}{0}{0}{B}.
+A = \mat{0}{0}{0}{M^-} + \mat{a}{0}{0}{M^+}.
 $$
 
-On the right-hand side, the first term belongs to $$\Lie{O}$$ and therefore the second term $$\mathcal{B}$$ belongs to $$\Lie{G}$$. But then
+On the right-hand side, the first term belongs to $$\Lie{O}$$ and therefore the second term $$B$$ belongs to $$\Lie{G}$$. But then
 
 $$\notag
-\exp \mathcal{B} = \mat{\exp a}{0}{0}{\exp B}.
+\exp B = \mat{\exp a}{0}{0}{\exp M^+}.
 $$
 
-[Postulate 3] requires that $$\exp \mathcal{B}$$ is a spatial isometry, and therefore that $$a=0$$ and $$(\exp B)(\exp B)^T = I$$. Since $$B$$ is symmetric, this means $$\exp 2B = I$$, and therefore that $$B=0$$. This completes the proof.
+[Postulate 3] requires that $$\exp B$$ is a spatial isometry, and therefore that $$a=0$$ and $$(\exp M^+)(\exp M^+)^T = I$$. Since $$M^+$$ is symmetric, this means $$\exp 2M^+ = I$$, and therefore that $$M^+=0$$. This completes the proof.
 
 Then we move to the keystone of our demonstration, as the subsequent work will simply be the computation of matrix exponentials.
 
@@ -360,6 +373,8 @@ $$
 A=\LorGen{w}.
 $$
 
+The scalar $$c$$ has the dimension of a speed and we see that it appeared solely because rotations are a subgroup of the group of transforms we seek, and because we have a Lie group (since we used the fact that $$[A,B]$$ is in the Lie algebra).
+
 Then for any rotation
 
 $$\notag
@@ -422,14 +437,14 @@ With the previous opposite inclusion (\ref{KepsSubsetKLG}), this completes the p
 
 We can now prove the following theorem.
 
-{{Theorem 1}} A group $$G$$ of transforms satisfying postulate 1--3 is one of the following group:
+{{Theorem 2}} A group $$G$$ of transforms satisfying postulate 1--3 is one of the following group:
 
 - the Caroll group (I)
 - the Galilean group (II)
 - the Lorentz group (III^+^)
 - the group of rotations in spacetime (III^-^)
 
-*Proof* Those four cases obviously correspond to the four cases of [lemma 2]. Thus let us review them in turn.
+*Proof.* Those four cases obviously correspond to the four cases of [lemma 2]. Thus let us review them in turn.
 
 *Case I and II*: it is trivial to verify that any $$K \in K_G$$ is such that $$K^2 = 0$$ and therefore $$K^n = 0$$ for any integer $$n \ge 2$$. As a result, the exponential series is trivial: $$\exp K = I + K$$. Thus in case I, this gives
 
@@ -541,7 +556,7 @@ This is trivial for the former. For the latter, we have $$t'=t\cosh\varphi\left(
 
 We can now conclude with
 
-{{Theorem 2}} The only groups $$G$$ of transforms satisfying postulates 1--4 are Galilean group and Lorentz group.
+{{Theorem 3}} The only groups $$G$$ of transforms satisfying postulates 1--4 are Galilean group and Lorentz group.
 
 
 
