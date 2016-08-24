@@ -79,13 +79,13 @@ We will first list our postulates and then we will briefly motivate them.
 
 {{Postulate 1}} Linearity.
 
-Thus the mapping of any time $$t$$ and any triplet of spatial coordinates $$x$$ in one frame onto their equivalent $$t'$$ and $$x'$$ in another frame has a matrix $$\mathcal{M}$$ and we choose the following convention:
+Thus the mapping of any time $$t$$ and any triplet of spatial coordinates $$x$$ in one frame onto their equivalent $$t'$$ and $$x'$$ in another frame has a matrix $$A$$ and we choose the following convention:
 
-$$ \vec{t'}{x'} = \mathcal{M} \vec{t}{x} $$
+$$ \vec{t'}{x'} = A \vec{t}{x} $$
 
 The problem is therefore transformed into the search of a set of viable $$4 \times 4$$ matrices. We will denote this set by $$G$$. We will write the matrices by block as
 
-$$ \mathcal{M} = \mat{a}{u}{v}{M} $$
+$$ A = \mat{a}{u}{v}{M} $$
 
 where $$a$$ is a scalar, $$u$$ and $$v$$ are 3-vectors (in column), and $$M$$ is a $$3 \times 3$$ matrix -- we will denote by $$\reals^3$$ the set of all such vectors. This block decomposition means that
 
@@ -134,8 +134,8 @@ where $$x_i$$ and $$x'_i$$ are the spatial coordinates, components of the vector
 *[Postulate 4].* The group structure directly emerges from the definition of changes of frame:
 
 1. the identity matrix correspond to no change of frame;
-2. given the change of frame $$(t,x) \mapsto (t',x')$$, we shall also have the change of frame $$(t',x') \mapsto (t,x)$$, and if $$M$$ is the matrix of the former, then $$M^{-1}$$ is the matrix of the latter;
-3. given the change of frame $$(t,x) \mapsto (t',x')$$ followed by the change of frame $$(t',x') \mapsto (t'',x'')$$, we shall also have the change of frame $$(t,x) \mapsto (t'',x'')$$, and if $$M$$ and $$M'$$ are the matrix of the first and of the second respectively, then $$MM'$$ is the matrix of the last.
+2. given the change of frame $$(t,x) \mapsto (t',x')$$, we shall also have the change of frame $$(t',x') \mapsto (t,x)$$, and if $$A$$ is the matrix of the former, then $$A^{-1}$$ is the matrix of the latter;
+3. given the change of frame $$(t,x) \mapsto (t',x')$$ followed by the change of frame $$(t',x') \mapsto (t'',x'')$$, we shall also have the change of frame $$(t,x) \mapsto (t'',x'')$$, and if $$A$$ and $$A'$$ are the matrix of the first and of the second respectively, then $$AA'$$ is the matrix of the last.
 
 The postulated Lie structure is as mundane, since every single non-discrete matrix group of practical use in physics is a Lie group. Instead of postulating the Lie structure, we could have postulated that $$G$$ is topologically closed and then invoked Cartan's theorem to conclude that $$G$$ is a Lie subgroup of the Lie group of $$4 \times 4$$ matrices. Whether requiring that any convergent sequence of matrices in $$G$$ converges in $$G$$, for example, is more intuitive than requiring a Lie structure in the first place is a moot point for a theoretical physicist in the 21st century, in my humble opinion!
 
@@ -151,7 +151,7 @@ We will succintly give here the essential properties we will use in our demonstr
 
 $$ \exp A = \sum_{n=0}^{+\infty} \frac{1}{n!}A^n . \label{matrix:exp}$$
 
-*Matrix Lie group*: it is a group $$G$$ of matrices such that there exists a Lie algebra $$H$$ such that $$\exp H$$ is the connected component of the identity in $$G$$. We will denote $$H$$ by $$\Lie{G}$$.
+*Matrix Lie group*: it is a group $$G$$ of matrices such that there exists a Lie algebra $$H$$ with the property that $$\exp H$$ is a subgroup of $$G$$. We will denote $$H$$ by $$\Lie{G}$$.
 
 There is an important property of the Lie algebra of a Lie group which will play an important role in our demonstrations:
 
@@ -238,7 +238,7 @@ $$\notag
 A = \mat{0}{0}{0}{M^-} + \mat{a}{0}{0}{M^+}.
 $$
 
-On the right-hand side, the first term belongs to $$\Lie{O}$$ and therefore the second term $$B$$ belongs to $$\Lie{G}$$. But then
+On the right-hand side, the first term belongs to $$\Lie{O}$$, as $$M^-$$ is antisymmetric, and therefore the second term $$B$$ belongs to $$\Lie{G}$$ too. But then
 
 $$\notag
 \exp B = \mat{\exp a}{0}{0}{\exp M^+}.
@@ -254,7 +254,7 @@ $$
 \begin{align}
 K_G &= \set{\mat{0}{u}{0}{0}}{u \in \reals^3}  \tag{I} \\
 K_C &= \set{\mat{0}{0}{v}{0}}{v \in \reals^3}  \tag{II} \\
-K_\epsilon &= \set{\LorGen{u}}{u \in \reals^3} \tag{III} \\
+K_L^\epsilon &= \set{\LorGen{u}}{u \in \reals^3} \tag{III} \\
 \end{align}
 $$
 
@@ -340,7 +340,7 @@ The analysis is completely similar to the previous case, replacing $$K_G$$ with 
 
 *Case 3:* $$\KLG$$ has an element $$A=\mat{0}{u}{v}{0}$$ with $$u \ne 0$$ and $$v \ne 0$$.
 
-Let $$R_0$$ be the rotation of angle $$\pi$$ around the bissector of $$(u,v)$$. Then it exists $$\kappa > 0$$ such that $$Rv = \kappa u$$ and $$Ru = \frac{1}{\kappa} v$$. Then, with
+Let $$_0 $$ be the rotation of angle $$\pi$$ around the bissector of $$(u,v)$$. Then it exists $$\kappa > 0$$ such that $$R_0 v = \kappa u$$ and $$R_0 u = \frac{1}{\kappa} v$$. Then, with
 
 $$\notag
 \mathcal{R}_0 = \mat{1}{0}{0}{R_0},
@@ -389,7 +389,7 @@ $$
 
 and since $$\lambda Rw$$ spans $$\reals^3$$ when $$\lambda$$ spans $$\reals$$ and $$R$$ spans all $$3 \times 3$$ rotations, we have proved that
 
-$$K_\epsilon \subset \KLG. \label{KepsSubsetKLG}$$
+$$K_L^\epsilon \subset \KLG. \label{KepsSubsetKLG}$$
 
 Let
 
@@ -397,7 +397,7 @@ $$\notag
 B=\mat{0}{p}{q}{0}
 $$
 
-be an element of $$\KLG$$. For any $$A \in K_\epsilon$$,
+be an element of $$\KLG$$. For any $$A \in K_L^\epsilon$$,
 
 $$\notag
 A=\LorGen{w},
@@ -429,9 +429,9 @@ $$\notag
 B =c\mat{0}{\frac{1}{c}p}{\epsilon c p}{0}
 $$
 
-is therefore in $$K_\epsilon$$. We have therefore demonstrated that
+is therefore in $$K_L^\epsilon$$. We have therefore demonstrated that
 
-$$\KLG \subset K_\epsilon.$$
+$$\KLG \subset K_L^\epsilon.$$
 
 With the previous opposite inclusion (\ref{KepsSubsetKLG}), this completes the proof of this case and therefore of the proof of [lemma 2] too.
 
@@ -446,7 +446,7 @@ We can now prove the following theorem.
 
 *Proof.* Those four cases obviously correspond to the four cases of [lemma 2]. Thus let us review them in turn.
 
-*Case I and II*: it is trivial to verify that any $$K \in K_G$$ is such that $$K^2 = 0$$ and therefore $$K^n = 0$$ for any integer $$n \ge 2$$. As a result, the exponential series is trivial: $$\exp K = I + K$$. Thus in case I, this gives
+*Case I and II*: it is trivial to verify that any $$K \in K_G$$ and any $$K \in K_C$$ is such that $$K^2 = 0$$ and therefore $$K^n = 0$$ for any integer $$n \ge 2$$. As a result, the exponential series is trivial: $$\exp K = I + K$$. Thus in case I, this gives
 
 $$ \exp K = \mat{1}{u}{0}{I} $$
 
@@ -482,7 +482,7 @@ $$\notag
 \mathcal{P}_u=\PPu
 $$
 
-and $$P_u = \hat{u}\hat{u}^T$$ is the projection onto $$u$$. Therefore, on one hand, for any $$n \ge 1$$, $$\Keps^{2n} = \epsilon^n \mathcal{P}_u$$ since $$P_u^n = P_u$$ because $$P_u$$ is a projector. On the other hand, $$\Keps^{2n+1} = \epsilon^n \mathcal{P}_u \Keps = \epsilon^n\Keps$$. Thus the exponential series reads
+and $$P_u = \hat{u}\hat{u}^T$$ is the projection onto $$u$$. Therefore, on one hand, for any $$n \ge 1$$, $$\Keps^{2n} = \epsilon^n \mathcal{P}_u$$ since $$P_u^n = P_u$$ because $$P_u$$ is a projector. On the other hand, $$\Keps^{2n+1} = \epsilon^n \mathcal{P}_u \Keps = \epsilon^n\Keps$$. Thus the exponential series reads, by separating even and odds terms,
 
 $$\notag
 \exp K_\epsilon = I
@@ -542,7 +542,7 @@ The concept of cause and effect would be meaningless if all observers could not 
 
 {{Postulate 5}} (Causality) There exists a non-empty set $$E$$ of events so that for any two events $$e_1$$ and $$e_2$$ such that $$e_1$$ is seen to appear before $$e_2$$ in one frame, then in any other frame, $$e_1$$ is also seen to appear before $$e_2$$.
 
-Because of linearity, this is equivalent to state that for any $$t > 0$$, there exists spatial coordinates $$x$$ such that for every $$\mathcal{M} \in G$$, $$\vec{t'}{x'} = \mathcal{M} \vec{t}{x}$$ is such that $$t'>0$$. Then we wish to prove
+Because of linearity, this is equivalent to state that for any $$t > 0$$, there exists spatial coordinates $$x$$ such that for every $$M \in G$$, $$\vec{t'}{x'} = M \vec{t}{x}$$ is such that $$t'>0$$. Then we wish to prove
 
 {{Lemma 3}} The Carroll group and the group of rotations in spacetime violate causality.
 
@@ -552,11 +552,11 @@ For the rotations in spacetime, $$t' = t\cos\varphi\left(1 - \frac{1}{c}\hat{u}^
 
 {{Lemma 4}} The Galilean and the Lorentz group satisfy causality.
 
-This is trivial for the former. For the latter, we have $$t'=t\cosh\varphi\left(1-\frac{1}{c}\hat{u}^T \frac{x}{t}\tanh\varphi\right)$$. Since for any $$\varphi \in \reals$$, $$\tanh\varphi$$ is between -1 and 1, for any $$(t,x)$$ such that $$(ct)^2 - x^2 > 0$$ and $$t > 0$$, we have $$t' > 0$$. Thus the set of event $$E$$ is the interior of the light cone.
+This is trivial for the former. For the latter, we have $$t'=t\cosh\varphi\left(1-\frac{1}{c}\hat{u}^T \frac{x}{t}\tanh\varphi\right)$$. Since for any $$\varphi \in \reals$$, $$\tanh\varphi$$ is between -1 and 1, for any $$(t,x)$$ such that $$(ct)^2 - x^2 > 0$$ and $$t > 0$$, we have $$t' > 0$$. Thus the set of event $$E$$ is the interior of the so-called light cone.
 
 We can now conclude with
 
-{{Theorem 3}} The only groups $$G$$ of transforms satisfying postulates 1--4 are Galilean group and Lorentz group.
+{{Theorem 3}} The only groups $$G$$ of transforms satisfying postulates 1--4 are the Galilean group and the Lorentz group.
 
 
 
