@@ -352,7 +352,7 @@ The analysis is completely similar to the previous case, replacing $$K_G$$ with 
 
 *Case 3:* $$\KLG$$ has an element $$A=\mat{0}{u}{v}{0}$$ with $$u \ne 0$$ and $$v \ne 0$$.
 
-Let $$_0 $$ be the rotation of angle $$\pi$$ around the bissector of $$(u,v)$$. Then it exists $$\kappa > 0$$ such that $$R_0 v = \kappa u$$ and $$R_0 u = \frac{1}{\kappa} v$$. Then, with
+Let $$R_0 $$ be the rotation of angle $$\pi$$ around the bissector of $$(u,v)$$. Then it exists $$\kappa > 0$$ such that $$R_0 v = \kappa u$$ and $$R_0 u = \frac{1}{\kappa} v$$. Then, with
 
 $$\notag
 \mathcal{R}_0 = \mat{1}{0}{0}{R_0},
