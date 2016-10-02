@@ -238,13 +238,25 @@ $$\notag
 A = \mat{0}{0}{0}{M^-} + \mat{a}{0}{0}{M^+}.
 $$
 
-On the right-hand side, the first term belongs to $$\Lie{O}$$, as $$M^-$$ is antisymmetric, and therefore the second term $$B$$ belongs to $$\Lie{G}$$ too. But then
+On the right-hand side, the first term belongs to $$\Lie{O}$$, as $$M^-$$ is antisymmetric, and therefore the second term $$B$$ belongs to $$\Lie{G}$$ too. Since $$M^+$$ is symmetric, there is an invertible matrix $$P$$ and a diagonal matrix $$\Delta$$ such that $$P^{-1}M^+P = \Delta$$. But then with
 
 $$\notag
-\exp B = \mat{\exp a}{0}{0}{\exp M^+}.
+Q = \mat{1}{0}{0}{P}
 $$
 
-[Postulate 3] requires that $$\exp B$$ is a spatial isometry, and therefore that $$a=0$$ and $$(\exp M^+)(\exp M^+)^T = I$$. Since $$M^+$$ is symmetric, this means $$\exp 2M^+ = I$$, and therefore that $$M^+=0$$. This completes the proof.
+we have
+
+$$\notag
+B' = Q^{-1} B Q = \mat{a}{0}{0}{\Delta}.
+$$
+
+With [Property 1], $$B'$$ is in $$\Lie{G}$$, and therefore
+
+$$\notag
+\exp B' = \mat{\exp a}{0}{0}{\exp \Delta}.
+$$
+
+is in $$G$$. But this is a change of scale, and therefore [Postulate 3] requires that $$a=0$$ and $$\Delta=0$$. This completes the proof.
 
 Then we move to the keystone of our demonstration, as the subsequent work will simply be the computation of matrix exponentials.
 
