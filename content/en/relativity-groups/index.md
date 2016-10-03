@@ -48,7 +48,6 @@ bibliography:
         pages: 1--12
 
 tex_macros:
-    Lie: '\text{Lie}(#1)'
     KLG: '\Lie{G} \cap K'
     LorGen: '\mat{0}{\frac{1}{c}#1}{\epsilon c#1}{0}'
     projperp: ' P_{#1^\perp}'
