@@ -6,6 +6,11 @@ include Nanoc::Helpers::LinkTo
 include Nanoc::Helpers::Rendering # to allow the use of `render` in layouts
 require 'nanoc-git'
 
+# Are we on the main page for one of the language?
+def main_page?
+  not @item.nil? and %r{^/[a-z]{2}/index} =~ @item.identifier
+end
+
 # The 2-letter code of the language the given item is written in
 def language_of(item)
     c = item.identifier.to_s.match(%r{/([a-z]{2})/})

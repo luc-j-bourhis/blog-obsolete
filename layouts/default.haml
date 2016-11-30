@@ -13,7 +13,7 @@
   #main
     #{yield}
     -# if we are not on the main page for one of the language, then...
-    - if %r{^/[a-z]{2}/index} !~ @item.identifier
+    - if not main_page?
       #{render "/bibliography.*"}
       #{render "/#{language}/licence.*"}
   #sidebar
@@ -26,9 +26,7 @@
         %a{:href => "/en/"}
           %img{:src => "/en/icon.png"}
           %span Home
-
     .whoami= render "/#{language}/side_header.*"
-
     - sidebar_tree(language).each do |key, entries|
       .topics= key
       %ul.title-list
