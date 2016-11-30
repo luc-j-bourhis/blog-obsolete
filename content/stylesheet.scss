@@ -53,13 +53,12 @@ $sidebar_width: 200px;
 $sidebar_padding: 20px;
 $sidebar_border_width: 1px;
 $sidebar_total_width: $sidebar_width + 2*$sidebar_padding + $sidebar_border_width;
-$main_padding_left: $sidebar_padding;
-$main_padding_right: 40px;
+$main_padding_left: 40px;
+$main_padding_right: $sidebar_padding;
 
 #main {
-  position: absolute;
+  margin-right: $sidebar_total_width;
 
-  left: $sidebar_total_width;
   padding: {
     top: 40px;
     left: $main_padding_left;
@@ -114,13 +113,15 @@ $main_padding_right: 40px;
 }
 
 #sidebar {
-  position: absolute;
+  position: fixed;
+  top: 0em;
+  right: 0em;
 
   width: $sidebar_width;
 
   padding: $sidebar_padding;
 
-  border-right: $sidebar_border_width solid #ccc;
+  border-left: $sidebar_border_width solid #ccc;
 
   text-align: right;
 
