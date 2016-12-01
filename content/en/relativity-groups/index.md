@@ -11,7 +11,7 @@ bibliography:
         volume: 17
         year: 1905
         pages: 891
-        note: An English translation is available at <https://www.fourmilab.ch/etexts/einstein/specrel/www/> both as a web page and as a print-quality PDF
+        note: An English translation is available [here](https://www.fourmilab.ch/etexts/einstein/specrel/www) both as a web page and as a print-quality PDF
     Lee:1975:
         authors:
             - Lee, A. R.
