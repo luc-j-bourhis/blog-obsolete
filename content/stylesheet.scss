@@ -182,14 +182,15 @@ $main_padding_right: $sidebar_padding;
   }
 
   .title-list {
-    list-style-type: none;
-
+    padding-left: 1em;
     margin-top: 0.5em;
     margin-bottom: 1.2em;
+    line-height: 1.5em;
   }
 
   .title {
-    line-height: 2em;
+    list-style-type: disc;
+    list-style-position: outside;
   }
 
   .whoami {
