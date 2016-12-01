@@ -1,3 +1,19 @@
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin tablet {
+  @media only screen and (min-device-width: #{$tablet-width})
+  and (max-device-width: #{$desktop-width}) {
+    @content
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-device-width: #{$desktop-width}) {
+    @content
+  }
+}
+
 @mixin font_families {
   font-family: Palatino, serif;
 }
@@ -56,13 +72,28 @@ $sidebar_total_width: $sidebar_width + 2*$sidebar_padding + $sidebar_border_widt
 $main_padding_left: 40px;
 $main_padding_right: $sidebar_padding;
 
+.optional-sidebar {
+  #main {
+    @include tablet {
+      margin-right: 0;
+      padding-right: $main_padding_left;
+    }
+  }
+
+  #sidebar {
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
 #main {
   margin-right: $sidebar_total_width;
+  padding-right: $main_padding_right;
 
   padding: {
     top: 40px;
     left: $main_padding_left;
-    right: $main_padding_right;
   }
 
   h1, h2, h3, h4, h5, h6 {

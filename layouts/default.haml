@@ -10,25 +10,26 @@
 %body
   -# define the theorem-like DSL so that ERB can later interpret it
   - render "/#{language}/theorem-like.erb"
-  #main
-    #{yield}
-    -# if we are not on the main page for one of the language, then...
-    - if not main_page?
-      #{render "/bibliography.*"}
-      #{render "/#{language}/licence.*"}
-  #sidebar
-    .flags
-      %span
-        %a{:href => "/fr/"}
-          %img{:src => "/fr/icon.png"}
-          %span Sommaire
-      %span.right
-        %a{:href => "/en/"}
-          %img{:src => "/en/icon.png"}
-          %span Home
-    .whoami= render "/#{language}/side_header.*"
-    - sidebar_tree(language).each do |key, entries|
-      .topics= key
-      %ul.title-list
-        - entries.each do |e|
-          %li.title= link_to(e[:title], e)
+  %div{:class => ("optional-sidebar" unless main_page?)}
+    #main
+      #{yield}
+      -# if we are not on the main page for one of the language, then...
+      - if not main_page?
+        #{render "/bibliography.*"}
+        #{render "/#{language}/licence.*"}
+    #sidebar
+      .flags
+        %span
+          %a{:href => "/fr/"}
+            %img{:src => "/fr/icon.png"}
+            %span Sommaire
+        %span.right
+          %a{:href => "/en/"}
+            %img{:src => "/en/icon.png"}
+            %span Home
+      .whoami= render "/#{language}/side_header.*"
+      - sidebar_tree(language).each do |key, entries|
+        .topics= key
+        %ul.title-list
+          - entries.each do |e|
+            %li.title= link_to(e[:title], e)
