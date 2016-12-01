@@ -9,4 +9,5 @@
             #{e[:volume]}:#{e[:pages]},
             #{e[:year]}
             - if e.has_key?(:note)
-                &mdash; #{e[:note]}
+                :markdown
+                    &mdash; #{e[:note]}
