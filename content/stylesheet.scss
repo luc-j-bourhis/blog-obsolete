@@ -106,20 +106,21 @@ $main_padding_right: $sidebar_padding;
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
-    margin-top: 0;
-    margin-bottom: 0.5em;
   }
 
   h1 {
     text-align: center;
     font-size: 2.0581em;
+    margin-bottom: 2.059em;
   }
 
   h2 {
+    margin-top: 1em;
     font-size: 1.618em;
   }
 
   h3 {
+    margin-top: 0.786em;
     font-size: 1.272em;
   }
 
