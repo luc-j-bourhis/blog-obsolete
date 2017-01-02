@@ -73,8 +73,8 @@ sup {
 
 $sidebar_width: 200px;
 $sidebar_padding: 20px;
-$sidebar_border_width: 1px;
-$sidebar_total_width: $sidebar_width + 2*$sidebar_padding + $sidebar_border_width;
+$divider_width: 1px;
+$sidebar_total_width: $sidebar_width + 2*$sidebar_padding;
 $main_padding_left: 40px;
 $main_padding_right: $sidebar_padding;
 
@@ -96,6 +96,8 @@ $main_padding_right: $sidebar_padding;
 #main {
   margin-right: $sidebar_total_width;
   padding-right: $main_padding_right;
+
+  border-right: $divider_width solid #ccc;
 
   padding: {
     top: 40px;
@@ -151,8 +153,6 @@ $main_padding_right: $sidebar_padding;
   width: $sidebar_width;
 
   padding: $sidebar_padding;
-
-  border-left: $sidebar_border_width solid #ccc;
 
   font-size: 0.9em;
 
