@@ -559,7 +559,7 @@ Because of linearity, this is equivalent to state that for any $$t > 0$$, there 
 
 For the carroll group, $$t' = t\left(1 - u^T \frac{x}{t}\right)$$. But for any $$x \in \reals^3$$ and any $$t > 0$$, one can find big enough a vector $$u$$ such that the factor of $$t$$ is negative.
 
-For the rotations in spacetime, $$t' = t\cos\varphi\left(1 - \frac{1}{c}\hat{u}^T \frac{x}{t}\tan\varphi\right)$$. Since $$\lim_{\varphi \to +\infty} \tan\varphi = +\infty$$, for any $$x \in \reals^3$$ and any $$t > 0$$, one can choose $$\varphi$$ such that the factor of $$t\cos\varphi$$ is negative. This concludes the proof.
+For the rotations in spacetime, $$t' = t\cos\varphi\left(1 - \frac{1}{c}\hat{u}^T \frac{x}{t}\tan\varphi\right)$$. Since $$\lim_{\varphi \to \frac{\pi}{2}} \tan\varphi = +\infty$$, for any $$x \in \reals^3$$ and any $$t > 0$$, one can choose $$\varphi$$ such that the factor of $$t\cos\varphi$$ is negative. This concludes the proof.
 
 {{Lemma 4}} The Galilean and the Lorentz group satisfy causality.
 
@@ -567,7 +567,7 @@ This is trivial for the former. For the latter, we have $$t'=t\cosh\varphi\left(
 
 We can now conclude with
 
-{{Theorem 3}} The only groups $$G$$ of transforms satisfying postulates 1--4 are the Galilean group and the Lorentz group.
+{{Theorem 3}} The only groups $$G$$ of transforms satisfying postulates 1--5 are the Galilean group and the Lorentz group.
 
 
 
