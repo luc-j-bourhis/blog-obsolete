@@ -89,6 +89,23 @@ $main_padding_right: $sidebar_padding;
   ul,   ol {
     margin: 0.5em;
   }
+
+  .bibliography_entry {
+    margin-bottom: 0.5em;
+  }
+
+  #license {
+    margin-top: 2em;
+    margin-bottom: 1em;
+
+    img {
+      border-width: 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1em;
+    }
+  }
 }
 
 #sidebar {
@@ -123,22 +140,6 @@ $main_padding_right: $sidebar_padding;
   }
 }
 
-.bibliography_entry {
-  margin-bottom: 0.5em;
-}
-
-#license {
-  margin-top: 2em;
-  margin-bottom: 1em;
-
-  img {
-    border-width: 0;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1em;
-  }
-}
 
 // === Typography and colours ===
 body {
