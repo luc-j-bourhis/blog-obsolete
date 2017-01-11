@@ -3,6 +3,7 @@
   box-sizing: border-box;
 }
 
+// === Mixins for typography ===
 $tablet-width: 768px;
 $desktop-width: 1024px;
 
@@ -43,37 +44,10 @@ $desktop-width: 1024px;
   hyphens: auto;
 }
 
-abbr {
-  hyphens: none;
-}
-
+// === Layout ===
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
-  background: #fff;
-  line-height: 1.3;
-  @include font_families;
-  @include main_paragraph_font_specs;
-}
-
-// Style links as on Wikipedia
-a, span.MathJax_ref {
-  color: #0645ad;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-.bibliography_entry {
-  margin-bottom: 0.5em;
-}
-
-sup {
-  line-height: 0;
 }
 
 $sidebar_width: 250px;
@@ -108,6 +82,90 @@ $main_padding_right: $sidebar_padding;
     left: $main_padding_left;
   }
 
+  p {
+    margin: 0.5em 0;
+  }
+
+  ul,   ol {
+    margin: 0.5em;
+  }
+}
+
+#sidebar {
+  position: fixed;
+  top: 0em;
+  right: 0em;
+
+  width: $sidebar_width;
+
+  padding: $sidebar_padding;
+
+  .flags {
+    margin-bottom: 1.2em;
+
+    img, span {
+      vertical-align: middle;
+    }
+
+    .right {
+      float: right;
+    }
+  }
+
+  .title-list {
+    padding-left: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 1.2em;
+  }
+
+  .whoami {
+    margin-bottom: 2em;
+  }
+}
+
+.bibliography_entry {
+  margin-bottom: 0.5em;
+}
+
+#license {
+  margin-top: 2em;
+  margin-bottom: 1em;
+
+  img {
+    border-width: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+  }
+}
+
+// === Typography and colours ===
+body {
+  background: #fff;
+  line-height: 1.3;
+  @include font_families;
+  @include main_paragraph_font_specs;
+}
+
+// Style links as on Wikipedia
+a, span.MathJax_ref {
+  color: #0645ad;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+abbr {
+  hyphens: none;
+}
+
+sup {
+  line-height: 0;
+}
+
+#main {
   h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
   }
@@ -132,46 +190,17 @@ $main_padding_right: $sidebar_padding;
     @include alignment_and_hyphenation;
   }
 
-  p {
-    margin: 0.5em 0;
-  }
-
   .MathJax a {
     @include font_families;
     @include main_paragraph_font_specs;
   }
-
-  ul,   ol {
-    margin: 0.5em;
-  }
-
-  ul li {
-    list-style-type: square;
-  }
 }
 
 #sidebar {
-  position: fixed;
-  top: 0em;
-  right: 0em;
-
-  width: $sidebar_width;
-
-  padding: $sidebar_padding;
-
   font-size: 0.9em;
 
   .flags {
     text-align: justify;
-    margin-bottom: 1.2em;
-
-    img, span {
-      vertical-align: middle;
-    }
-
-    .right {
-      float: right;
-    }
   }
 
   .topics {
@@ -182,33 +211,22 @@ $main_padding_right: $sidebar_padding;
     letter-spacing: 1px;
   }
 
-  .title-list {
-    padding-left: 1em;
-    margin-top: 0.5em;
-    margin-bottom: 1.2em;
-  }
-
-  .title {
-    list-style-type: disc;
-    list-style-position: outside;
-  }
-
   .whoami {
-    margin-bottom: 2em;
     @include alignment_and_hyphenation;
   }
 }
 
-
-#license {
-  margin-top: 2em;
-  margin-bottom: 1em;
-
-  img {
-    border-width: 0;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1em;
+// === List markers ===
+#main {
+  ul li {
+    list-style-type: square;
   }
 }
+
+#sidebar {
+  .title {
+    list-style-type: disc;
+    list-style-position: outside;
+  }
+}
+
