@@ -89,6 +89,7 @@ checks:
     #   exclude_files: ['blog/page']
     exclude_files: []
 
+# Deployment, Github style
 deploy:
   default:
     kind: git
