@@ -26,7 +26,8 @@ The reason for the efficiency of level 3 operations is rooted in the memory hier
 
 Modern architectures are characterised by a strong memory hierarchy, whose key layers are sketched on the following diagram.
 
-![Memory hierarchy](/en/fast-matrix-multiplication/memory-hierarchy.png)
+![Memory hierarchy](/en/fast-matrix-multiplication/memory-hierarchy.svg)
+{:.width640px}
 
 There is a huge speed difference between the different memory layers. For example, on "recent" x86 processors, it takes 1 cycle to add two floating point values stored in registers, about 4 cycles to load a value from L1 cache into registers, about 10 cycles to do so from L2 cache, from 40 to a few hundred cycles to load a value from L3 cache, and finally about 60 ns to get a value all the way from DRAM. Thus we should design our algorithms so that once a chunk of data has been moved upward through this memory hierarchy, as many floating point operations are performed on it that do not require further data motion.
 

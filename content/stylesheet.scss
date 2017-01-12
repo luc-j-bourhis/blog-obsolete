@@ -90,6 +90,17 @@ $main_padding_right: $sidebar_padding;
     margin: 0.5em;
   }
 
+  @each $width in 640px {
+    .width#{$width} {
+      img {
+        display: block;
+        width: $width;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
   .bibliography_entry {
     margin-bottom: 0.5em;
   }
