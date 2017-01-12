@@ -71,6 +71,24 @@ $main_padding_right: $sidebar_padding;
   }
 }
 
+img[src$=".svg"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include tablet {
+    width: 100%;
+  }
+
+  @include desktop {
+    @each $width in 640px {
+      .width#{$width} > & {
+          max-width: $width;
+      }
+    }
+  }
+}
+
 #main {
   margin-right: $sidebar_width;
   padding-right: $main_padding_right;
@@ -88,17 +106,6 @@ $main_padding_right: $sidebar_padding;
 
   ul,   ol {
     margin: 0.5em;
-  }
-
-  @each $width in 640px {
-    .width#{$width} {
-      img {
-        display: block;
-        width: $width;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
   }
 
   .bibliography_entry {
