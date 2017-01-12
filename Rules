@@ -17,7 +17,7 @@ compile '/**/*.scss' do
   write item.identifier.without_ext + '.css'
 end
 
-compile '/**/*.{png}' do
+compile '/**/*.{png,svg,jpg,tiff}' do
   write item.identifier.to_s
 end
 
