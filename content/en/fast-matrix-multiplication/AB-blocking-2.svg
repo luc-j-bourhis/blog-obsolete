@@ -1,0 +1,535 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+    "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 640 480"
+    version="1.1" xmlns="http://www.w3.org/2000/svg">
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M87.00 27.00
+                L104.00 27.00
+                L104.00 48.00
+                L87.00 48.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="96.12" y="44.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:12px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">p</tspan>
+        </text>
+        <text x="87.19" y="38.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:12px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">A</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M480.00 27.00
+                L515.00 27.00
+                L515.00 48.00
+                L480.00 48.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="506.62" y="44.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">p</tspan>
+        </text>
+        <text x="496.57" y="39.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)"> B</tspan>
+        </text>
+        <text x="489.51" y="44.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">p</tspan>
+        </text>
+        <text x="481.32" y="39.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">A</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M239.00 27.00
+                L254.00 27.00
+                L254.00 48.00
+                L239.00 48.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="246.32" y="44.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">p</tspan>
+        </text>
+        <text x="239.62" y="39.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">B</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M19.00 190.00
+                L36.00 190.00
+                L36.00 211.00
+                L19.00 211.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="29.90" y="207.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">c</tspan>
+        </text>
+        <text x="19.50" y="202.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">m</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M90.00 422.00
+                L102.00 422.00
+                L102.00 440.00
+                L90.00 440.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="96.45" y="436.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:10px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">c</tspan>
+        </text>
+        <text x="90.46" y="432.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:10px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">k</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M364.00 190.00
+                L381.00 190.00
+                L381.00 211.00
+                L364.00 211.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="374.90" y="207.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">c</tspan>
+        </text>
+        <text x="364.50" y="202.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">m</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="67.00" y="64.00" width="57.00" height="91.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="412.00" y="64.00" width="170.00" height="91.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="155.00" y="64.00" width="170.00" height="57.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="67.00" y="155.00" width="57.00" height="91.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <text x="95.49" y="209.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">ip</tspan>
+        </text>
+        <text x="85.07" y="204.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:14px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">A</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="412.00" y="155.00" width="170.00" height="91.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <text x="509.84" y="209.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">p</tspan>
+        </text>
+        <text x="501.31" y="204.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:14px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">B</tspan>
+        </text>
+        <text x="487.52" y="209.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">ip </tspan>
+        </text>
+        <text x="477.11" y="204.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:14px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">A</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="67.00" y="246.00" width="57.00" height="90.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="412.00" y="246.00" width="170.00" height="90.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="67.00" y="336.00" width="57.00" height="38.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="412.00" y="336.00" width="170.00" height="38.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Line *************** -->
+    
+    <g>
+        <defs>
+            <clipPath id="clipPath-CC854CEB-08F9-4DFA-9F85-9503E72F2CDA">
+                <path d="
+                    M-10000,-10000 h100000 v100000 h-100000 v-100000
+                    "
+                clip-rule="evenodd"/>
+            </clipPath>
+        </defs>
+        
+        <path
+            d="
+                M49.00 156.00
+                L48.00 246.00
+                "
+            clip-path="url(#clipPath-CC854CEB-08F9-4DFA-9F85-9503E72F2CDA)"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <path
+            d="
+                M43.50 156.43
+                L55.50 156.57
+                "
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        <path
+            d="
+                M54.50 246.57
+                L42.50 246.43
+                "
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+    </g>
+    
+    
+    <!-- ** Line *************** -->
+    
+    <g>
+        <defs>
+            <clipPath id="clipPath-DA94BA6B-28D5-4A65-A9E0-9216EF946546">
+                <path d="
+                    M-10000,-10000 h100000 v100000 h-100000 v-100000
+                    "
+                clip-rule="evenodd"/>
+            </clipPath>
+        </defs>
+        
+        <path
+            d="
+                M394.00 156.00
+                L393.00 246.00
+                "
+            clip-path="url(#clipPath-DA94BA6B-28D5-4A65-A9E0-9216EF946546)"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <path
+            d="
+                M388.50 156.43
+                L400.50 156.57
+                "
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        <path
+            d="
+                M399.50 246.57
+                L387.50 246.43
+                "
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M64.00 182.00
+                L70.00 182.00
+                L70.00 189.00
+                L64.00 189.00
+                Z
+                "
+            fill="none"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M409.00 182.00
+                L415.00 182.00
+                L415.00 189.00
+                L409.00 189.00
+                Z
+                "
+            fill="none"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M352.00 49.00
+                L389.00 49.00
+                L389.00 121.00
+                L352.00 121.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="352.25" y="107.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:60px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">=</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Line *************** -->
+    
+    <g>
+        <defs>
+            <clipPath id="clipPath-B4F1C2ED-7D4B-45C5-A9AD-B0C69BD9FD96">
+                <path d="
+                    M-10000,-10000 h100000 v100000 h-100000 v-100000
+                    "
+                clip-rule="evenodd"/>
+            </clipPath>
+        </defs>
+        
+        <path
+            d="
+                M67.00 404.00
+                L124.00 404.00
+                "
+            clip-path="url(#clipPath-B4F1C2ED-7D4B-45C5-A9AD-B0C69BD9FD96)"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <path
+            d="
+                M67.50 410.50
+                L67.50 398.50
+                "
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        <path
+            d="
+                M124.50 398.50
+                L124.50 410.50
+                "
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+    </g>
+    
+</svg>
+

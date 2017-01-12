@@ -49,11 +49,13 @@ Given a matrix $$A$$ of dimension $$m \times k$$, a matrix $$B$$ of dimension $$
 
 The first layer is a decomposition of $$A$$ into vertical panels and of $$B$$ into horizontal ones:
 
-![Matrix multiplication blocking (1)](/en/fast-matrix-multiplication/AB-blocking-1.png)
+![Matrix multiplication blocking (1)](/en/fast-matrix-multiplication/AB-blocking-1.svg)
+{:.width640px}
 
 The rightmost block of $$A$$ (resp. the bottommost block of $$B$$) may have less than $$k_c$$ columns (resp. rows). Each product $$A_p B_p$$ is called a general panel-panel product (GEPP) by Goto et al. For matrices with large $$m$$ or large $$n$$, either of these panels may not fit in the L1/L2 caches. As a result, one relies on a second layer of decompositions: each $$A_p$$ is cut into blocks. The resulting decomposition of GEPP can then be represented as follow.
 
-![Matrix multiplication blocking (2)](/en/fast-matrix-multiplication/AB-blocking-2.png)
+![Matrix multiplication blocking (2)](/en/fast-matrix-multiplication/AB-blocking-2.svg)
+{:.width640px}
 
 Again the bottommost block has likely a dimension smaller than $$m_c$$. The general block-panel product $$A_{ip} B_p$$ is called GEBP by Goto et al. All the floating point operations are performed in GEBP. This is therefore the only place to optimise to the fullest. It is especially essential to choose dimensions $$k_c$$ and $$m_c$$ as large as possible to amortise the memory operations but not so large that those blocks and panels would trash the L1/L2 caches and the TLB (c.f. Appendices). Specifically, Goto and van de Geijn advocates that the following properties should hold:
 
@@ -64,7 +66,8 @@ The values $$k_c$$ = 256 and $$m_c$$ = 512 fit well with a wide variety of proce
 Eventually, the operations shall be performed on the CPU registers. The third and last layer of blocks is designed to use the registers as efficiently as possible.
 The left-hand side is split into thin slices of rows whereas of the right-hand side is split into thin slices of columns, resulting in the decomposition of GEBP into a grid of tiny block, each being the product of two thin panels:
 
-![Matrix multiplication blocking (3)](/en/fast-matrix-multiplication/AB-blocking-3.png)
+![Matrix multiplication blocking (3)](/en/fast-matrix-multiplication/AB-blocking-3.svg)
+{:.width640px}
 
 The values of $$m_r$$ and $$n_r$$ are chosen so that each tiny block of the product can be held entirely in CPU registers. The only memory operations involved in the computation of each of these tiny block consist in loading the elements of the two thin panels into the registers. Moreover the loops over the $$m_r$$ rows of the left-hand side and over the $$n_r$$ columns of the right-hand side can be entirely unrolled because $$m_r$$ and $$n_r$$ are very small. This leaves only one loop over $$k_c$$ columns of the left-hand side and $$k_c$$ rows of the right-hand side during the execution of which the elements of the tiny block of $$C$$ are updated entirely inside registers. When this loop terminates, and only then, the corresponding block of $$C$$ is updated in RAM. $$m_r$$ and $$n_r$$ are highly dependent on the number of registers and the size of vector units (the SIMD type commonly found on modern processors[^5]) featured by the processor. For a purely scalar processor, $$m_r$$ = 2 and $$n_r$$ = 4 usually provide a bottom line.
 

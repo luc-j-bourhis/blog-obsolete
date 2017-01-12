@@ -1,0 +1,1316 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+    "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 640 800"
+    version="1.1" xmlns="http://www.w3.org/2000/svg">
+    
+    <!-- ** Rounded Rectangle *************** -->
+    
+    <g>
+        <path
+            d="
+                M266.16 759.00
+                C245.09 759.00 228.00 741.91 228.00 720.84
+                L228.00 584.16
+                C228.00 563.09 245.09 546.00 266.16 546.00
+                L526.84 546.00
+                C547.91 546.00 565.00 563.09 565.00 584.16
+                L565.00 720.84
+                C565.00 741.91 547.91 759.00 526.84 759.00
+                Z
+                "
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(255, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="302.00" y="602.00" width="119.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Line *************** -->
+    
+    <g>
+        <defs>
+            <clipPath id="clipPath-8CE4941F-D2C8-4D30-8794-5FFB3947CA62">
+                <path d="
+                    M-10000,-10000 h100000 v100000 h-100000 v-100000
+                    "
+                clip-rule="evenodd"/>
+            </clipPath>
+        </defs>
+        
+        <path
+            d="
+                M282.00 602.00
+                L282.00 632.00
+                "
+            clip-path="url(#clipPath-8CE4941F-D2C8-4D30-8794-5FFB3947CA62)"
+            transform="
+                translate(0.5 0.5)
+                "
+            fill="none"
+            stroke-width="1.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <path
+            transform="translate(0.5 0.5)"
+            d="
+                M277.00 602.00
+                L287.00 602.00
+                "
+            fill="none"
+            stroke-width="1.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        <path
+            transform="translate(0.5 0.5)"
+            d="
+                M287.00 632.00
+                L277.00 632.00
+                "
+            fill="none"
+            stroke-width="1.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+    </g>
+    
+    
+    <!-- ** Line *************** -->
+    
+    <g>
+        <defs>
+            <clipPath id="clipPath-E9405BCA-6D0E-445A-938A-09F0E5B8499D">
+                <path d="
+                    M-10000,-10000 h100000 v100000 h-100000 v-100000
+                    "
+                clip-rule="evenodd"/>
+            </clipPath>
+        </defs>
+        
+        <path
+            d="
+                M421.00 588.00
+                L302.00 588.00
+                "
+            clip-path="url(#clipPath-E9405BCA-6D0E-445A-938A-09F0E5B8499D)"
+            transform="
+                translate(0.5 0.5)
+                "
+            fill="none"
+            stroke-width="1.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <path
+            transform="translate(0.5 0.5)"
+            d="
+                M421.00 583.00
+                L421.00 593.00
+                "
+            fill="none"
+            stroke-width="1.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        <path
+            transform="translate(0.5 0.5)"
+            d="
+                M302.00 593.00
+                L302.00 583.00
+                "
+            fill="none"
+            stroke-width="1.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+    </g>
+    
+    
+    <!-- ** Line *************** -->
+    
+    <g>
+        <defs>
+            <clipPath id="clipPath-B312CA63-41BB-4B7B-AEC0-61E987400462">
+                <path d="
+                    M-10000,-10000 h100000 v100000 h-100000 v-100000
+                    "
+                clip-rule="evenodd"/>
+            </clipPath>
+        </defs>
+        
+        <path
+            d="
+                M515.00 722.00
+                L515.00 602.00
+                "
+            clip-path="url(#clipPath-B312CA63-41BB-4B7B-AEC0-61E987400462)"
+            transform="
+                translate(0.5 0.5)
+                "
+            fill="none"
+            stroke-width="1.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <path
+            transform="translate(0.5 0.5)"
+            d="
+                M520.00 722.00
+                L510.00 722.00
+                "
+            fill="none"
+            stroke-width="1.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        <path
+            transform="translate(0.5 0.5)"
+            d="
+                M510.00 602.00
+                L520.00 602.00
+                "
+            fill="none"
+            stroke-width="1.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+    </g>
+    
+    
+    <!-- ** Line *************** -->
+    
+    <g>
+        <defs>
+            <clipPath id="clipPath-BAFDC3B5-5754-48F2-8D17-4277F7BA3AE6">
+                <path d="
+                    M-10000,-10000 h100000 v100000 h-100000 v-100000
+                    "
+                clip-rule="evenodd"/>
+            </clipPath>
+        </defs>
+        
+        <path
+            d="
+                M498.00 588.00
+                L447.00 588.00
+                "
+            clip-path="url(#clipPath-BAFDC3B5-5754-48F2-8D17-4277F7BA3AE6)"
+            transform="
+                translate(0.5 0.5)
+                "
+            fill="none"
+            stroke-width="1.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <path
+            transform="translate(0.5 0.5)"
+            d="
+                M498.00 583.00
+                L498.00 593.00
+                "
+            fill="none"
+            stroke-width="1.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        <path
+            transform="translate(0.5 0.5)"
+            d="
+                M447.00 593.00
+                L447.00 583.00
+                "
+            fill="none"
+            stroke-width="1.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M247.00 607.00
+                L264.00 607.00
+                L264.00 628.00
+                L247.00 628.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="258.54" y="624.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:12px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">r</tspan>
+        </text>
+        <text x="247.19" y="618.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:12px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">m</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M466.00 561.00
+                L479.00 561.00
+                L479.00 582.00
+                L466.00 582.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="473.65" y="578.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:12px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">r</tspan>
+        </text>
+        <text x="466.07" y="572.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:12px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">n</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M355.00 561.00
+                L368.00 561.00
+                L368.00 582.00
+                L355.00 582.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="362.00" y="578.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">c</tspan>
+        </text>
+        <text x="355.40" y="573.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">k</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M528.00 652.00
+                L541.00 652.00
+                L541.00 673.00
+                L528.00 673.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="535.00" y="669.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">c</tspan>
+        </text>
+        <text x="528.40" y="664.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">k</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="447.00" y="602.00" width="51.00" height="120.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="132.00" y="67.00" width="119.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="132.00" y="97.00" width="119.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="132.00" y="127.00" width="119.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="132.00" y="157.00" width="119.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="132.00" y="187.00" width="119.00" height="21.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M193.00 31.00
+                L214.00 31.00
+                L214.00 52.00
+                L193.00 52.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="202.27" y="48.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:12px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">ip</tspan>
+        </text>
+        <text x="193.34" y="42.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:12px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">A</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M405.00 31.00
+                L420.00 31.00
+                L420.00 52.00
+                L405.00 52.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="412.32" y="48.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">p</tspan>
+        </text>
+        <text x="405.62" y="43.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">B</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Line *************** -->
+    
+    <g>
+        <defs>
+            <clipPath id="clipPath-2F742595-AA28-40F0-8519-EF7D7337B3AD">
+                <path d="
+                    M-10000,-10000 h100000 v100000 h-100000 v-100000
+                    "
+                clip-rule="evenodd"/>
+            </clipPath>
+        </defs>
+        
+        <path
+            d="
+                M109.00 127.00
+                L109.00 157.00
+                "
+            clip-path="url(#clipPath-2F742595-AA28-40F0-8519-EF7D7337B3AD)"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <path
+            d="
+                M103.50 127.50
+                L115.50 127.50
+                "
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        <path
+            d="
+                M115.50 157.50
+                L103.50 157.50
+                "
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+    </g>
+    
+    
+    <!-- ** Line *************** -->
+    
+    <g>
+        <defs>
+            <clipPath id="clipPath-AF2BC22F-5FCC-49C2-A9C9-7CA4C0FA44B4">
+                <path d="
+                    M-10000,-10000 h100000 v100000 h-100000 v-100000
+                    "
+                clip-rule="evenodd"/>
+            </clipPath>
+        </defs>
+        
+        <path
+            d="
+                M251.00 233.00
+                L132.00 233.00
+                "
+            clip-path="url(#clipPath-AF2BC22F-5FCC-49C2-A9C9-7CA4C0FA44B4)"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <path
+            d="
+                M251.50 227.50
+                L251.50 239.50
+                "
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        <path
+            d="
+                M132.50 239.50
+                L132.50 227.50
+                "
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+    </g>
+    
+    
+    <!-- ** Line *************** -->
+    
+    <g>
+        <defs>
+            <clipPath id="clipPath-C864AF65-B107-4E23-81B2-A4E728D42453">
+                <path d="
+                    M-10000,-10000 h100000 v100000 h-100000 v-100000
+                    "
+                clip-rule="evenodd"/>
+            </clipPath>
+        </defs>
+        
+        <path
+            d="
+                M412.00 208.00
+                L361.00 208.00
+                "
+            clip-path="url(#clipPath-C864AF65-B107-4E23-81B2-A4E728D42453)"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <path
+            d="
+                M412.50 202.50
+                L412.50 214.50
+                "
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        <path
+            d="
+                M361.50 214.50
+                L361.50 202.50
+                "
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M76.00 132.00
+                L93.00 132.00
+                L93.00 153.00
+                L76.00 153.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="87.54" y="149.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:12px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">r</tspan>
+        </text>
+        <text x="76.19" y="143.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:12px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">m</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M379.00 223.00
+                L392.00 223.00
+                L392.00 244.00
+                L379.00 244.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="386.65" y="240.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:12px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">r</tspan>
+        </text>
+        <text x="379.07" y="234.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:12px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">n</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M197.00 247.00
+                L210.00 247.00
+                L210.00 268.00
+                L197.00 268.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="204.00" y="264.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">c</tspan>
+        </text>
+        <text x="197.40" y="259.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:11px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">k</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="310.00" y="67.00" width="51.00" height="120.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="361.00" y="67.00" width="51.00" height="120.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="412.00" y="67.00" width="51.00" height="120.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="463.00" y="67.00" width="51.00" height="120.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="514.00" y="67.00" width="18.00" height="120.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M185.00 323.00
+                L222.00 323.00
+                L222.00 395.00
+                L185.00 395.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="185.25" y="381.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:60px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">=</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="302.00" y="306.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="302.00" y="336.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="302.00" y="366.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="302.00" y="396.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="302.00" y="426.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="302.00" y="456.00" width="51.00" height="21.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="353.00" y="306.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="353.00" y="336.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="353.00" y="366.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="353.00" y="396.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="353.00" y="426.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="353.00" y="456.00" width="51.00" height="21.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="404.00" y="306.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="404.00" y="336.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <defs>
+            <radialGradient id="fillGradient-86242CB3-BF0F-4B37-8DF5-C825D5BAFDAE" cx="50%" cy="50%" r="100%" fx="50%" fy="50%">
+                <stop offset="0.00%" style="stop-color:rgb(43, 255, 253);stop-opacity:1.00;" />
+                <stop offset="100.00%" style="stop-color:rgb(24, 1, 255);stop-opacity:1.00;" />
+            </radialGradient>
+        </defs>
+        
+        <rect x="404.00" y="366.00" width="51.00" height="30.00"
+            fill="url(#fillGradient-86242CB3-BF0F-4B37-8DF5-C825D5BAFDAE)"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="404.00" y="396.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="404.00" y="426.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="404.00" y="456.00" width="51.00" height="21.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="455.00" y="306.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="455.00" y="336.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="455.00" y="366.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="455.00" y="396.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="455.00" y="426.00" width="51.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="455.00" y="456.00" width="51.00" height="21.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="506.00" y="306.00" width="18.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="506.00" y="336.00" width="18.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="506.00" y="366.00" width="18.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="506.00" y="396.00" width="18.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="506.00" y="426.00" width="18.00" height="30.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="506.00" y="456.00" width="18.00" height="21.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Line *************** -->
+    
+    <g>
+        <defs>
+            <clipPath id="clipPath-9627DA7F-9839-47D1-B512-81E2E57431BA">
+                <path d="
+                    M-10000,-10000 h100000 v100000 h-100000 v-100000
+                    M399.85 534.73
+                    L404.76 535.71
+                    L400.44 557.29
+                    L390.64 555.33
+                    L394.95 533.75
+                    Z
+                    "
+                clip-rule="evenodd"/>
+            </clipPath>
+        </defs>
+        
+        <path
+            d="
+                M430.00 381.00
+                L397.00 546.00
+                "
+            clip-path="url(#clipPath-9627DA7F-9839-47D1-B512-81E2E57431BA)"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(255, 102, 102)"
+            />
+        
+        
+        <path
+            d="
+                M399.74 535.31
+                L404.07 536.17
+                L397.70 545.52
+                L395.41 534.44
+                Z
+                "
+            fill="rgb(255, 102, 102)"
+            stroke-width="1.41"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(255, 102, 102)"
+            />
+    </g>
+    
+</svg>
+
