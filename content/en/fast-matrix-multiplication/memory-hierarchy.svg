@@ -1,0 +1,310 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+    "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 640 480"
+    version="1.1" xmlns="http://www.w3.org/2000/svg">
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M75.00 11.00
+                L103.00 11.00
+                L103.00 41.00
+                L75.00 41.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="75.09" y="31.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:14px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">Fast</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M73.00 425.00
+                L105.00 425.00
+                L105.00 455.00
+                L73.00 455.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="73.23" y="445.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:14px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">Slow</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Line *************** -->
+    
+    <g>
+        <defs>
+            <clipPath id="clipPath-177C1FC4-ED51-4A21-8FF3-66C0554EE6E4">
+                <path d="
+                    M-10000,-10000 h100000 v100000 h-100000 v-100000
+                    M94.00 41.00
+                    C97.00 41.00 100.00 41.00 103.00 41.00
+                    C103.00 31.00 103.00 21.00 103.00 11.00
+                    C94.00 11.00 84.00 11.00 75.00 11.00
+                    C75.00 21.00 75.00 31.00 75.00 41.00
+                    C78.00 41.00 81.00 41.00 85.00 41.00
+                    C85.00 44.00 85.00 47.00 85.00 50.00
+                    C86.00 50.00 88.00 50.00 90.00 50.00
+                    C91.00 50.00 93.00 50.00 95.00 50.00
+                    C95.00 47.00 95.00 44.00 95.00 41.00
+                    M85.00 425.00
+                    C81.00 425.00 77.00 425.00 73.00 425.00
+                    C73.00 435.00 73.00 445.00 73.00 455.00
+                    C84.00 455.00 94.00 455.00 105.00 455.00
+                    C105.00 445.00 105.00 435.00 105.00 425.00
+                    C102.00 425.00 98.00 425.00 95.00 425.00
+                    C95.00 423.00 95.00 420.00 95.00 418.00
+                    C93.00 418.00 91.00 418.00 90.00 418.00
+                    C88.00 418.00 86.00 418.00 85.00 418.00
+                    C85.00 420.00 85.00 423.00 85.00 425.00
+                    "
+                clip-rule="evenodd"/>
+            </clipPath>
+        </defs>
+        
+        <path
+            d="
+                M89.00 26.00
+                L89.00 440.00
+                "
+            clip-path="url(#clipPath-177C1FC4-ED51-4A21-8FF3-66C0554EE6E4)"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <path
+            d="
+                M89.50 48.91
+                L85.09 48.91
+                L89.50 42.50
+                L93.91 48.91
+                Z
+                "
+            fill="rgb(0, 0, 0)"
+            stroke-width="1.41"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        <path
+            d="
+                M89.50 418.09
+                L93.91 418.09
+                L89.50 424.50
+                L85.09 418.09
+                Z
+                "
+            fill="rgb(0, 0, 0)"
+            stroke-width="1.41"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke="rgb(0, 0, 0)"
+            />
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="163.00" y="354.00" width="320.00" height="45.00"
+            fill="rgb(255, 255, 255)"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <text x="241.93" y="382.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:14px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">Virtual Memory on Disk</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="237.00" y="171.00" width="172.00" height="56.00"
+            fill="rgb(255, 255, 255)"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <text x="280.60" y="204.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:14px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">L2/L3 Cache</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="264.00" y="115.00" width="117.00" height="56.00"
+            fill="rgb(255, 255, 255)"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <text x="291.85" y="148.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:14px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">L1 Cache</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="287.00" y="59.00" width="72.00" height="56.00"
+            fill="rgb(255, 255, 255)"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <text x="309.09" y="84.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:14px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">CPU
+            </tspan>
+        </text>
+        <text x="295.34" y="101.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:14px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">Register</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="206.00" y="227.00" width="232.00" height="127.00"
+            fill="rgb(255, 255, 255)"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <text x="213.00" y="296.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:14px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">RAM</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="336.00" y="263.00" width="46.00" height="35.00"
+            transform="
+                translate(0.5 0.5)
+                "
+            fill="rgb(255, 255, 255)"
+            stroke-width="1.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <text x="346.70" y="286.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:14px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">TLB</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="303.00" y="298.00" width="113.00" height="35.00"
+            transform="
+                translate(0.5 0.5)
+                "
+            fill="rgb(255, 255, 255)"
+            stroke-width="1.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="rgb(0, 0, 0)"
+            />
+        
+        
+        <text x="323.74" y="321.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:14px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">Page Table</tspan>
+        </text>
+    </g>
+    
+    
+    <!-- ** Rectangle *************** -->
+    
+    <g>
+        <rect x="180.00" y="160.00" width="286.00" height="88.00"
+            fill="none"
+            stroke-width="2.00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-dasharray="8.00 4.00 "
+            stroke="rgb(102, 102, 255)"
+            />
+        
+    </g>
+    
+    
+    <!-- ** Text *************** -->
+    
+    <g>
+        <path
+            d="
+                M438.00 143.00
+                L567.00 143.00
+                L567.00 160.00
+                L438.00 160.00
+                Z
+                "
+            fill="none"
+            />
+        
+        
+        <text x="438.05" y="156.00"
+        >
+            <tspan style="font-family:LucidaBright; font-size:14px; font-style:normal; font-weight:normal;" fill="rgb(0, 0, 0)">TLB Address Space</tspan>
+        </text>
+    </g>
+    
+</svg>
+
