@@ -1,5 +1,5 @@
 # All files in the 'lib' directory will be loaded
-# before nanoc starts compiling.
+# before nanoc starts compiling. The search is recursive.
 require 'pp'
 include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::LinkTo
