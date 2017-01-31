@@ -6,7 +6,6 @@
   -# you don't need to keep this, but it's cool for stats!
   %meta{:name => "generator", :content => "nanoc #{Nanoc::VERSION}"}/
   #{render "/mathjax.*"}
-  %script{:src => "https://cdn.mathjax.org/mathjax/latest/MathJax.js"}
 %body
   -# define the theorem-like DSL so that ERB can later interpret it
   - render "/#{language}/theorem-like.erb"
