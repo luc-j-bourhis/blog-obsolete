@@ -4,12 +4,10 @@
 }
 
 // === Mixins for typography ===
-$tablet-width: 768px;
 $desktop-width: 1024px;
 
-@mixin tablet {
-  @media only screen and (min-device-width: #{$tablet-width})
-  and (max-device-width: #{$desktop-width}) {
+@mixin mobile {
+  @media only screen and (max-device-width: #{$desktop-width}) {
     @content
   }
 }
@@ -25,7 +23,7 @@ $desktop-width: 1024px;
 }
 
 @mixin main_paragraph_font_specs {
-  @include tablet {
+  @include mobile {
     #main {
       font-size: 150%;
     }
@@ -58,14 +56,14 @@ $main_padding_right: $sidebar_padding;
 
 .optional-sidebar {
   #main {
-    @include tablet {
+    @include mobile {
       margin-right: 0;
       padding-right: $main_padding_left;
     }
   }
 
   #sidebar {
-    @include tablet {
+    @include mobile {
       display: none;
     }
   }
@@ -76,7 +74,7 @@ img[src$=".svg"] {
   margin-left: auto;
   margin-right: auto;
 
-  @include tablet {
+  @include mobile {
     width: 100%;
   }
 
