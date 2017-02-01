@@ -41,12 +41,6 @@ require 'kramdown/converter'
 # Monkey-patching
 module KramdownMonkeyPatching
 
-    # Add a span parser for superscript and subscript
-    def initialize(source, options)
-        super
-        @span_parsers.unshift(:supersub)
-    end
-
     # Wrap a block math inside \begin{equation} ... \end{equation}
     # unless the LaTeX starts with an align or an equation environment.
     def parse_block_math
