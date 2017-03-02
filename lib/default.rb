@@ -1,6 +1,7 @@
 # All files in the 'lib' directory will be loaded
 # before nanoc starts compiling. The search is recursive.
 require 'pp'
+require 'yaml'
 include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::LinkTo
 include Nanoc::Helpers::Rendering # to allow the use of `render` in layouts
@@ -108,22 +109,12 @@ end
 # that page. Note the use of single quotes: the metadata uses YAML
 # as a format and # is normally a special character but the single quotes
 # forces the whole definition into a string.
+#
+# The file tex_macros.yaml in the content directory can be used to define
+# macros available on any page, with the same format and syntax as above.
 def macros_for_mathjax
-  macros = {}
-  macros_in_metadata = @item && @item[:tex_macros]
-  if not macros_in_metadata.nil?
-    macros.merge! macros_in_metadata
-  end
-  split = File.open("content/macros.sty")
-    .select { |line| not /^%/ =~ line }
-    .join
-    .split(/\\newcommand\{\\([[:alpha:]]+)\}(?:\[[0-9]+\])?/)
-    .slice(1..-1)
-  macros.merge! Hash[*split]
-    .each_value { |body|
-      body.sub!(/^ *\{/, "")
-      body.sub!(/\}[[:space:]]*$/, "")
-    }
+  macros = YAML.load_file("content/tex_macros.yaml")
+  macros.merge! @item[:tex_macros] unless @item.nil? || @item[:tex_macros].nil?
   macros.collect { |name, body|
     max_arg = body.scan(/#(\d+)/).flatten.map(&:to_i).max
     escaped = body.gsub('\\', '\\\\\\\\')

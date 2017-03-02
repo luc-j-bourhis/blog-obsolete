@@ -1,0 +1,8 @@
+# General purpose LaTeX macros
+reals:    '\mathbb{R}'
+integers: '\mathbb{}'
+vec:      '\begin{bmatrix} #1 \\ #2 \end{bmatrix}'
+mat:      '\begin{bmatrix} #1 & {#2}^T \\ #3 & #4 \end{bmatrix}'
+Lie:      '\text{Lie}(#1)'
+set:      '\left\{\left. #1 \right| #2 \right\}'
+SO:       '\text{SO}_{#1}'
