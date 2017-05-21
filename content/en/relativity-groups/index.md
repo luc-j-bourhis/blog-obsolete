@@ -12,6 +12,15 @@ bibliography:
         year: 1905
         pages: 891
         note: An English translation is available [here](https://www.fourmilab.ch/etexts/einstein/specrel/www) both as a web page and as a print-quality PDF
+    Rothe:1911:
+        authors:
+            - Rothe, H.
+            - Frank, P.
+        title: Über die Transformation der Raumzeitkoordinaten von ruhenden auf bewegte Systeme
+        journal: Annalen der Physik (Leipzig)
+        volume: 34
+        year: 1911
+        pages: 825--853
     Lee:1975:
         authors:
             - Lee, A. R.
@@ -46,6 +55,12 @@ bibliography:
         volume: 3
         year: 1965
         pages: 1--12
+    Stepanov:2010:
+        authors:
+            - Stepanov, Sergey S.
+        title: On simplified axiomatic foundations of special relativity
+        year: 2010
+        note: http://synset.com/pdf/100_en.pdf
 
 tex_macros:
     KLG: '\Lie{G} \cap K'
@@ -64,11 +79,13 @@ As it is well known, the transforms which have been in use for more than a centu
 
 The only other transforms to have found a widespread use in physics are the Galilean transforms, which had been unchallenged from the beginning of modern physics in the 16th century to the middle of the 19th century when tensions started to appear with electromagnetism. At the time, Galilean transforms were motivated by the postulates of absolute time and absolute length, which were stronly motivated experimentally. Nowadays we know that Lorentz transforms degenerate into Galilean transforms when the relative speed $$v$$ between the frames is small compared to the speed of light $$c$$, and that this is why they had been successful before interferometry made possible experiments sensitive enough to probe effects proportional to $$\left(\frac{v}{c}\right)^2$$ which appear as Lorentz transform deviates from Galilean transforms (Michelson-Morley experiments for example). Thus, Galilean transforms seem to derived either from obsolete concepts or from a special role played by the speed of light.
 
-However, it has been realised since the 70's that very general postulates which do not involve the properties of any particular physical theory, and especially which do not rely on any assumption regarding the speed of light, can be used to demonstrate that the only possible transforms are either Galilean transforms or Lorentz transforms. I am referring here to the paper of Lee and Kalotas [[Lee:1975]] and Lévy-Leblond [[Levy-Leblond:1976]] and Lévy-Leblond and Provost [[Levy-Leblond:1979]]. The purpose of this article is to give another demonstration of this result using a different approach: Lie Groups.
+However, it has been realised just a couple of years after the publication of Einstein's seminal paper that very general postulates which do not involve the properties of any particular physical theory, and especially which do not rely on any assumption regarding the speed of light, can be used to demonstrate that the only possible transforms are either Galilean transforms or Lorentz transforms. One of the earliest complete analysis is that of H. Rothe and P. Frank [[Rothe:1911]], based on an even earlier work by Wladimir Ignatowsky. The most recent papers[^1] I have studied are by Lee and Kalotas [[Lee:1975]] and Lévy-Leblond [[Levy-Leblond:1976]] and Lévy-Leblond and Provost [[Levy-Leblond:1979]]. The purpose of this article is to give another demonstration of this result using a different approach: Lie Groups.
 
-The main advantage is that I will be able to reason with three dimensions of space throughout, contrary to Lévy-Leblond who first derived transforms for one dimension of time and one dimension of space, then extrapolated the results to three dimensions of space by using an argument of isotropy. As for Lee and Kalotas, they started with the assumption that the transforms for the two dimensions of space perpendicular to the speed between the frames was the identity, only referring to “well-known arguments” to justify it. I will not need such preparatory arguments.
+[^1]: a more extensive bibliography on the subject of proving Lorentz transforms can be found in [[Lee:1975]] and the unpublished paper [[Stepanov:2010]].
 
-The drawback is that those simplifications allowed the first two cited papers  [[Lee:1975]] and [[Levy-Leblond:1976]] to rely only on elementary mathematics. It should be noted that last paper [[Levy-Leblond:1979]] used a powerful theorem about matrix group whose elements are parametrised by a single scalar (the speed between the two frames), allowing the authors to greatly simplify the discussion. This theorem is actually a special case of the theory of Lie groups and my demonstration is therefore conceptually closer to the paper of Lévy-Leblond and Provost [[Levy-Leblond:1979]].
+The main advantage is that I will be able to reason with three dimensions of space throughout, contrary to Lévy-Leblond who first derived transforms for one dimension of time and one dimension of space, then extrapolated the results to three dimensions of space by using an argument of isotropy. As for Lee and Kalotas, they started with the assumption that the transforms for the two dimensions of space perpendicular to the speed between the frames was the identity, only referring to “well-known arguments” to justify it. I will not need such preparatory arguments. Moreover Lee and Kalotas make heavy use of the definition of the speed between the two frames, further assuming that the speed of $$R'$$ with respect to $$R$$ is the opposite of the speed of $$R$$ with respect to $$R'$$. Those hypotheses are very well motivated, of course, but our demonstration will make this relative speed "magically" appear as we proceed, which is another nice touch.
+
+The drawback is that those simplifications and extra physical postulates allowed the first two cited papers  [[Lee:1975]] and [[Levy-Leblond:1976]] to rely only on elementary mathematics. It should be noted that last paper [[Levy-Leblond:1979]] used a powerful theorem about matrix group whose elements are parametrised by a single scalar (the speed between the two frames), allowing the authors to greatly simplify the discussion. This theorem is actually a special case of the theory of Lie groups and my demonstration is therefore conceptually closer to the paper of Lévy-Leblond and Provost [[Levy-Leblond:1979]].
 
 Lie groups form a large and complex field of mathematics but fortunately we will only need a handful of their most simple properties. Nevertheless my demonstration does require more mathematical background than those of Lee and Kalotas [[Lee:1975]], and Lévy-Leblond [[Levy-Leblond:1976]]. I greatly encourage readers to read them.
 
