@@ -5,8 +5,9 @@
             [#{key}]
             #{format_authors(e[:authors], @language)}.
             #{e[:title]},
-            <em>#{e[:journal]}</em>,
-            #{e[:volume]}:#{e[:pages]},
+            - if e.has_key?(:journal)
+                <em>#{e[:journal]}</em>,
+                #{e[:volume]}:#{e[:pages]},
             #{e[:year]}
             - if e.has_key?(:note)
                 :markdown
