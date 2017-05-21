@@ -34,8 +34,7 @@ def sidebar_tree(lang)
 end
 
 # Implementation of Theorem-like environment
-def theorem_like(n)
-  kind = __callee__.to_s.downcase
+def theorem_like(kind, n)
   @theorem_like_numbers ||= {}
   @theorem_like_numbers[kind] ||= []
   if @theorem_like_numbers[kind].include?(n)
@@ -47,14 +46,14 @@ def theorem_like(n)
   render "/theorem-like.*", kind: kind, number: n
 end
 
-# Cast {{ ... }} to <%= ... %> so that a subsequent :erb filter can work on it
+# Cast {{XXXX ddd}} to <%=theorem_like(XXXX, ddd)%>
+# so that a subsequent :erb filter can work on it
 class Bacchantes < Nanoc::Filter
   identifier :bacchantes
 
   def run(content, params={})
-    content.gsub(/\{\{ (?<X> (?> [^{}]+ | \{ \g<X> \} )* ) \}\}/x) do |match|
-      m = Regexp.last_match[:X]
-      "<%=#{m}%>"
+    content.gsub(/\{\{ (\w+) \s+ (\d+) \}\}/x) do |match|
+      "<%=theorem_like('#{$1}', #{$2})%>"
     end
   end
 end

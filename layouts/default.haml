@@ -9,8 +9,6 @@
     %meta{:name => "generator", :content => "nanoc #{Nanoc::VERSION}"}/
     #{render "/mathjax.*"}
   %body
-    -# define the theorem-like DSL so that ERB can later interpret it
-    - render "/#{language}/theorem-like.erb"
     %div{:class => ("optional-sidebar" unless main_page?)}
       #main
         #{yield}
