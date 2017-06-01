@@ -254,10 +254,10 @@ $$\notag
 A = \mat{0}{0}{0}{M^-} + \mat{a}{0}{0}{M^+}.
 $$
 
-On the right-hand side, the first term belongs to $$\Lie{O}$$, as $$M^-$$ is antisymmetric, and therefore the second term $$B$$ belongs to $$\Lie{G}$$ too. Since $$M^+$$ is symmetric, there is an invertible matrix $$P$$ and a diagonal matrix $$\Delta$$ such that $$P^{-1}M^+P = \Delta$$. But then with
+On the right-hand side, the first term belongs to $$\Lie{O}$$, as $$M^-$$ is antisymmetric, and therefore the second term $$B$$ belongs to $$\Lie{G}$$ too. Since $$M^+$$ is symmetric, there is an orthogonal matrix $$R$$ and a diagonal matrix $$\Delta$$ such that $$R^{-1}M^+R = \Delta$$. But then with
 
 $$\notag
-Q = \mat{1}{0}{0}{P}
+Q = \mat{1}{0}{0}{R}
 $$
 
 we have
