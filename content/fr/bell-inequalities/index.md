@@ -207,7 +207,7 @@ $$ S(a,a',b,b') = A(a')B(b) - A(a)B(b) + A(a')B(b') + A(a)B(b'). $$
 À ce stade, il est utile d'introduire le reste du décor quantique. Nous faisons l'hypothèse que l'espace de Hilbert $$\Hsingle$$ des états non-corrélés de la particule 1 prise isolément, et bien sûr aussi de la particule 2 prise isolément, est de dimension 2, ce qui est réalisé en pratique. L'opérateur $$A(x)$$ s'écrit $$A(x) = A_1(x) \otimes I$$ où $$A_1(x)$$ opère sur $$\Hsingle$$ seulement et où $$I$$ est l'opérateur identité de $$\Hsingle$$. De même, $$B(y) = I \otimes B_2(y)$$. Par conséquent, les opérateurs $$A(x)$$ et $$B(y)$$ commutent quelque soit les réglages $$x$$ et $$y$$, et $$A(x)B(y)=B(y)A(x)=A_1(x) \otimes B_2(y)$$. Finalement, étant donné deux bases $$(\ket{u}, \ket{u'})$$ et $$(\ket{v}, \ket{v'})$$ de $$\Hsingle$$, les produits cartésiens $$\ket{u}\ket{v}$$, $$\ket{u}\ket{v'}$$, $$\ket{u'}\ket{v}$$ et $$\ket{u'}\ket{v'}$$ forment une base de l'espace de Hilbert $$\Hpair$$ des états de la paire, qui est donc de dimension 4.
 
 
-Ceci étant posé, nous pouvons maintenant introduire un résultat fondamental (dont j'ai pris connaissance dans Braunstein et al [[Braunstein:1992]].),
+Le fait que les opérateurs $$A(x)$$ et $$B(y)$$ commutent a une conséquence important: $$S(a,a',b,b')$$ est hermitien, puisque $$A(x)$$ et $$B(y)$$ le sont pour tous réglages $$x$$ et $$y$$.
 
 $$ S(a,a',b,b')^2 = 4I - \comm{A(a)}{A(a')} \comm{B(b)}{B(b')}. \label{Sfundamental} $$
 
