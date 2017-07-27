@@ -194,6 +194,8 @@ $$  \newcommand{\ket}[1]{\left| #1 \right\rangle}
 \expect{A(x)B(y)} = \bra{\psi} A(x)B(y) \ket{\psi}.
 $$
 
+En pratique, $$A$$ et $$B$$ vont être des opérateurs de polarisation, spin ou moment angulaire, et éventuellement au prix d'une renormalisation, on peut se ramener au cas où leurs valeurs propres sont $\pm 1$, ce qui justifie l'hypothèse faite pour la démonstration de l'inégalité CHSH.
+
 L'expression $$R(a, a', b, b')$$ bornée par les inégalités de Bell s'écrit alors comme l'espérance
 
 $$ R(a, a', b, b') = \left| \bra{\psi} S(a, a', b, b') \ket{\psi} \right| \label{Rexpect} $$
