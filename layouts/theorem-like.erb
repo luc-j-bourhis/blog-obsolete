@@ -20,7 +20,7 @@ The following Rules shall be enabled
    filter :erb
 %>
 <%=
-id = "#{@kind}-#{@number}"
+id = "id-#{@kind.hash}-#{@number}"
 text = "#{@kind.capitalize} #{@number}"
 "[#{text}]:##{id}\n**#{text}.**{:##{id}}"
 %>

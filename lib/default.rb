@@ -52,7 +52,7 @@ class Bacchantes < Nanoc::Filter
   identifier :bacchantes
 
   def run(content, params={})
-    content.gsub(/\{\{ (\w+) \s+ (\d+) \}\}/x) do |match|
+    content.gsub(/\{\{ ([[:alpha:]]+) \s+ (\d+) \}\}/x) do |match|
       "<%=theorem_like('#{$1}', #{$2})%>"
     end
   end
