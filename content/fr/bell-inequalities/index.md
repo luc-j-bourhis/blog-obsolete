@@ -127,7 +127,7 @@ Toutes les inégalités de Bell résulte des deux hypothèses fondamentales de l
 
 ### a. Le critère de réalisme
 
-Une théorie "réaliste" suppose l'existence d'une réalité, au sens de la mécanique classique, c'est à dire déterministe, et introduit des probabilités, comme en physique statistique, uniquement parce que l'on ne peut pas décrire complètement les détails microscopiques des systèmes en jeu. Plus précisément, une telle théorie fait l'hypothèse que **l'état de la paire $$\lambda$$ est entièrement suffisant pour déterminer, conjointement avec les réglages des appareils, le résultat des mesures** mais que l'état de chaque paire ne pouvant être connu, il nous faut introduire une densité de probabilité $$\rho(\lambda)$$ sur l'ensemble $$\Lambda$$ des valeurs pouvant être prises par $$\lambda$$. Notons que cette densité ne dépend que du mécanisme de production des paires et donc pas des réglages des appareils de mesure, un point très important pour démontrer les inégalités de Bell. Notons aussi que nous n'avons à priori aucune idée de la forme que peut prendre $$\rho(\lambda)$$, et que cette information n'est pas nécessaire pour démontrer les inégalités de Bell.
+Une théorie "réaliste" suppose l'existence d'une réalité, au sens de la mécanique classique, c'est à dire déterministe, et introduit des probabilités, comme en physique statistique, uniquement parce que l'on ne peut pas décrire complètement les détails microscopiques des systèmes en jeu. Plus précisément, une telle théorie fait l'hypothèse que **l'état de la paire $$\lambda$$ est entièrement suffisant pour déterminer, conjointement avec les réglages des appareils, le résultat des mesures** mais que l'état de chaque paire ne pouvant être connu, il nous faut introduire une mesure de probabilité $$\rho$$ sur l'ensemble $$\Lambda$$ des valeurs pouvant être prises par $$\lambda$$. Notons que cette mesure ne dépend que du mécanisme de production des paires et donc pas des réglages des appareils de mesure, un point très important pour démontrer les inégalités de Bell. Notons aussi que nous n'avons à priori aucune idée de la forme que peut prendre $$\rho$$, et que cette information n'est pas nécessaire pour démontrer les inégalités de Bell.
 
 ### b. Le critère de localité
 
@@ -149,42 +149,13 @@ On considère maintenant deux réglage $$a$$ et $$a'$$ de l'appareil I et deux r
 
 $$ R(a, a', b, b') = |P(a',b) - P(a,b) + P(a',b') + P(a,b')| \le 2 $$
 
-Tout d'abord,
+La démonstration est très simple. On commence par majoré la valeur absolue de l'intégrale par l'intégrale de la valeur absolue,
 
-$$ |P(a',b) - P(a,b) + P(a',b') + P(a,b')|
-    \le |P(a',b) - P(a,b)| + |P(a',b') + P(a,b')| \notag $$
+$$ R(a, a', b, b')
+    \le \int_\Lambda \big|[A(a', \lambda) - A(a, \lambda)] B(b, \lambda)
+    + [A(a', \lambda) + A(a, \lambda)]B(b', \lambda) \big| d\rho(\lambda).\notag $$
 
-et chaque terme du membre de droite peut alors être majoré séparément:
-
-$$
-\begin{aligned}
-    |P(a',b) - P(a,b)| & =
-    \left|
-    \int_\Lambda (A(a', \lambda) - A(a, \lambda)) B(b, \lambda) d\rho(\lambda)
-    \right| \notag \\
-    & \le \int_\Lambda |A(a', \lambda) - A(a, \lambda)| |B(b, \lambda)| d\rho(\lambda) \notag
-\end{aligned}
-$$
-
-et
-
-$$
-\begin{aligned}
-    |P(a',b') + P(a,b')| & =
-    \left|
-    \int_\Lambda (A(a', \lambda) + A(a, \lambda)) B(b', \lambda) d\rho(\lambda)
-    \right| \notag \\
-    & \le \int_\Lambda |A(a', \lambda) + A(a, \lambda)| |B(b', \lambda)| d\rho(\lambda). \notag
-\end{aligned}
-$$
-
-Comme $$B$$ ne prend que les valeurs +1 et -1, on a donc
-
-$$ R(a, a', b, b') \le \int_\Lambda |A(a', \lambda) - A(a, \lambda)| + |A(a', \lambda) + A(a, \lambda)| d\rho(\lambda). \notag $$
-
-Si $$A(a', \lambda)$$ et $$A(a, \lambda)$$ ont la même valeur, alors le 1er terme est égal à 0 et le 2ème à 2; à l'inverse, si ils ont des valeurs différentes, le 1er terme est égal à 2 et le 2ème à 0. Donc dans tous les cas, l'intégrande est inférieur à 2.
-
-CQFD.
+Comme $$A$$ prend seulement les valeurs $$\pm 1$$, ou bien $$A(a', \lambda) \ne A(a, \lambda)$$, auquel cas le premier crochet vaut $$\pm 2$$ et le second crochet 0, ou bien  $$A(a', \lambda) = A(a, \lambda)$$, auquel cas le premier crochet vaut 0 et le second crochet vaut $$\pm 2$$. Comme $$B$$ ne prend que les valeurs +1 et -1, dans les deux cas, l'intégrande est majoré par 2, ce qui finit la preuve puisque par définition d'une mesure de probabilité, $$\int_\Lambda d\rho(\lambda)=1$$.
 
 ## 4. Violation des inégalités de Bell
 
