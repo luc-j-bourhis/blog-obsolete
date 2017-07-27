@@ -210,9 +210,25 @@ Afin d'alléger les notations, nous écrirons parfois $$A, A', B, B'$$ au lieu d
 
 Le fait que les opérateurs $$A(x)$$ et $$B(y)$$ commutent a une conséquence important: $$S(a,a',b,b')$$ est hermitien, puisque $$A(x)$$ et $$B(y)$$ le sont pour tous réglages $$x$$ et $$y$$.
 
-$$ S(a,a',b,b')^2 = 4I - \comm{A(a)}{A(a')} \comm{B(b)}{B(b')}. \label{Sfundamental} $$
+Ceci étant posé, le premier résultat important que:
 
-Nous allons en effet voir que cette propriété est pleine de conséquences pour les bornes de $$R(a, a', b, b')$$ mais nous allons tout d'abord la démontrer.
+{{Théorème 1}} L'espérance de $$S$$ pour un ket séparable $$\ket{\psi}=\ket{\phi}\ket{\xi}$$ ne viole pas les inégalités CHSH.
+
+En effet,
+
+$$\expect{S}=\big[\expect{A} - \expect{A'}\big]\expect{B} + \expect{A}\expect{B'} + \expect{A'}\expect{B'}, \notag$$
+
+où les espérances sont pour $$\ket{\phi}$$ dans le cas de $$A$$ et $$A'$$ et pour $$\ket{\xi}$$ dans le cas de $$B$$ et $$B'$$. Si le premier terme est positif, alors
+
+$$\expect{S} \ge \expect{A}\expect{B'} + \expect{A'}\expect{B'} \ge -2,$$
+
+tandis que si le premier terme est négatif,
+
+$$\expect{S} \le \expect{A}\expect{B'} + \expect{A'}\expect{B'} \le 2,$$
+
+puisque toutes ces espérances sont entre -1 et 1 car les valeurs propres de ces opérateurs sont -1 et 1.
+
+CQFD.
 
 Nous allons temporairement alléger les notations en écrivant $$A, A', B, B'$$ au lieu de $$A(a), A(a'), B(b), B(b')$$ respectivement. Comme les opérateurs $$A, A'$$ commutent avec les opérateurs $$B, B'$$, nous pouvons regrouper les premiers à gauche et les seconds à droite dans les termes de $$S^2$$. Ensuite, comme tous les $$A, A', B, B'$$ ont pour seules valeurs propres +1 et -1, nécessairement
 
