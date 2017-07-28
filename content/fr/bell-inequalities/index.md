@@ -167,6 +167,8 @@ $$ P(a,b) \approx \frac{N_\text{identique}(a,b)-N_\text{différente}(a,b)}{N_\te
 
 où $$N_\text{identique}(a,b)$$ (resp. $$N_\text{différente}(a,b)$$) sont respectivement le nombre de paires pour lesquelles les valeurs mesurées $$A$$ et $$B$$ sont identiques (resp. différentes).
 
+### b. Historique
+
 À ce stade, il est temps de présenter succinctement un historique des expériences réelles que nous avons modélisé de manière générique dans la section précédente. Historiquement, les premières expériences utilisèrent des paires de photons dont les polarisations sont corrélées. L'expérience d'Aspect et al. est sans doute une des plus célèbre. Une difficulté de ce type d'expérience vient de ce qu'un nombre significatif de photons ne sont pas détectés. Cela a deux conséquents importantes.
 
 Tout d'abord, l'équation (\ref{countingRatios}) suppose que toutes les particules soient comptées, ce qui n'est pas le cas comme nous venons de l'expliquer. C'est pourquoi l'inégalité CHSH n'est pas utilisé dans ce cas. On lui préfère une inégalité apparentée, découverte par Clauser et Horn [[Clauser:1974]], et donc dite inégalité CH, car cette dernière peut s'exprimer à l'aide de ratio de probabilités, ce qui élimine $$n$$ entre le numérateur et le dénominateur.
@@ -177,7 +179,7 @@ Pour cela, les expérimentateurs abandonnèrent les paires de photons et utilis�
 
 En passant, les expériences d'Aspect et al. ne furent donc pas du tout définitives, contrairement à ce que beaucoup de gens croient (et pas seulement en France).
 
-### b. Choix des réglages
+### b. Violation maximale
 
 Il faut trouver des réglages tels que la mécanique quantique prédise que $$R(a, a', b, b')$$ soit plus grand que 2, et le plus grand possible afin d'augmenter le poids statistique du résultat. Contrairement au modèle réaliste que nous avons analysé jusqu'à présent, il faut à priori rendre explicites les détails de l'expérience afin de pouvoir faire des prédictions quantiques.
 
