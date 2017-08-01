@@ -8,6 +8,14 @@
             - if e.has_key?(:journal)
                 <em>#{e[:journal]}</em>,
                 #{e[:volume]}:#{e[:pages]},
+            - if e.has_key?(:publisher)
+                <em>#{e[:publisher]}</em>,
+                - if e.has_key?(:pages)
+                    - if e[:pages].length == 1
+                        'page #{e[:pages][0]}'
+                    - else
+                        pages #{e[:pages][0...-1].join(', ')}
+                        and #{e[:pages][-1]},
             #{e[:year]}
             - if e.has_key?(:note)
                 :markdown
