@@ -1,12 +1,6 @@
 %script{:type => "text/x-mathjax-config"}
   :plain
     MathJax.Hub.Config({
-      // minimalistic: we only need TeX and the Mathjax menu is useful
-      extensions: ["tex2jax.js", "MathMenu.js"],
-
-      // SVG is the fastest
-      jax: ["input/TeX", "output/SVG"],
-
       // we do not need delimiters as kramdown will transform a $$ XXX $$
       // into span's or div's, the inner ones containing XXX,
       // and with the appropriate id's and classes for an accompanying
@@ -17,9 +11,6 @@
       },
 
       TeX: {
-        // Minimalistic
-        extensions: ["AMSmath.js", "AMSsymbols.js"],
-
         // this is part of our handmade management of equation numbers
         equationNumbers: {
           autoNumber: "AMS"
@@ -37,4 +28,4 @@
     });
 
 -# As instructed at https://www.mathjax.org/cdn-shutting-down/
-%script{:src => "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"}
+%script{:src => "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_SVG"}
