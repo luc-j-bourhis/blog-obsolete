@@ -104,6 +104,10 @@ bibliography:
         year: 1998
         pages: 5039--5043
 
+tex_macros:
+    Hsingle:    \mathcal{S}
+    Hpair:      \mathcal{P}
+    vec:        \mathrm{Vec}\left(#1\right)
 ---
 
 # Démonstration d'une <br>inégalité de Bell
@@ -185,17 +189,7 @@ Il faut trouver des réglages tels que la mécanique quantique prédise que $$R(
 
 Mais il se trouve que dans le cas des inégalités CHSH, on peut prouver que la borne supérieure pour $$R(a, a', b, b')$$ est $$2\sqrt{2}$$ quasiment sans faire aucune hypothèse supplémentaire. Ce résultat fut démontré pour la première fois par Cirel'son [[Cirelson:1980]] -- son nom est aussi orthographié Tsirelson parfois. Dans le cas qui nous concerne, nous supposons que toutes les paires sont dans le même état quantique $$\mid \psi \rangle$$ du fait des particularités du processus de création (ce qui est toujours vérifié en pratique) et nous commençons par remplacer $$P(x,y)$$ par son équivalent quantique, l'espérance du produit $$A(x)B(y)$$, où $$A(x)$$ et $$B(y)$$ sont maintenant des opérateurs hermitiens représentant les observables mesurées,
 
-$$  \newcommand{\ket}[1]{\left| #1 \right\rangle}
-    \newcommand{\bra}[1]{\left\langle #1 \right|}
-    \newcommand{\braket}[2]{\left\langle #1 \rvert #2 \right\rangle}
-    \newcommand{\expect}[1]{\left\langle #1 \right\rangle}
-    \newcommand{\comm}[2]{\left[ #1, #2 \right]}
-    \newcommand{\Hsingle}{\mathcal{S}}
-    \newcommand{\Hpair}{\mathcal{P}}
-    \newcommand{\vec}[1]{\mathrm{Vec}\left(#1\right)}
-    \newcommand{\matnorm}[1]{\Vert #1 \Vert}
-\expect{A(x)B(y)} = \bra{\psi} A(x)B(y) \ket{\psi}.
-$$
+$$\expect{A(x)B(y)} = \bra{\psi} A(x)B(y) \ket{\psi}.$$
 
 En pratique, $$A$$ et $$B$$ vont être des opérateurs de polarisation, spin ou moment angulaire, et éventuellement au prix d'une renormalisation, on peut se ramener au cas où leurs valeurs propres sont $\pm 1$, ce qui justifie l'hypothèse faite pour la démonstration de l'inégalité CHSH.
 
