@@ -1,11 +1,7 @@
 # General purpose LaTeX macros
 reals:    '\mathbb{R}'
 integers: '\mathbb{}'
-vec:      '\begin{bmatrix} #1 \\ #2 \end{bmatrix}'
-mat:      '\begin{bmatrix} #1 & {#2}^T \\ #3 & #4 \end{bmatrix}'
-Lie:      '\text{Lie}(#1)'
 set:      '\left\{\left. #1 \right| #2 \right\}'
-SO:       '\text{SO}_{#1}'
 ket:      '\left| #1 \right\rangle'
 bra:      '\left\langle #1 \right|'
 braket:   '\left\langle #1 \rvert #2 \right\rangle'

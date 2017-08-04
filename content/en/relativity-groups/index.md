@@ -63,8 +63,12 @@ bibliography:
         note: http://synset.com/pdf/100_en.pdf
 
 tex_macros:
-    KLG: '\Lie{G} \cap K'
-    LorGen: '\mat{0}{\frac{1}{c}#1}{\epsilon c#1}{0}'
+    vec:      '\begin{bmatrix} #1 \\ #2 \end{bmatrix}'
+    mat:      '\begin{bmatrix} #1 & {#2}^T \\ #3 & #4 \end{bmatrix}'
+    Lie:      '\text{Lie}(#1)'
+    SO:       '\text{SO}_{#1}'
+    KLG:      '\Lie{G} \cap K'
+    LorGen:   '\mat{0}{\frac{1}{c}#1}{\epsilon c#1}{0}'
     projperp: ' P_{#1^\perp}'
 
 ---
