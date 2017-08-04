@@ -112,8 +112,10 @@ end
 # The file tex_macros.yaml in the content directory can be used to define
 # macros available on any page, with the same format and syntax as above.
 def macros_for_mathjax
-  macros = YAML.load_file("content/tex_macros.yaml")
-  macros.merge! @item[:tex_macros] unless @item.nil? || @item[:tex_macros].nil?
+  macros = @items['/tex_macros.*'][:tex_macros]
+  if not @item.nil? and not @item[:tex_macros].nil?
+    macros = macros.merge @item[:tex_macros]
+  end
   macros.collect { |name, body|
     max_arg = body.scan(/#(\d+)/).flatten.map(&:to_i).max
     escaped = body.gsub('\\', '\\\\\\\\')
