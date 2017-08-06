@@ -182,25 +182,60 @@ sup {
   line-height: 0;
 }
 
+// Typographic scale
+
+$major-second: 1.125;
+$minor-third: 1.2;
+
+$fontscaling1: $minor-third;
+$fontscaling2: $fontscaling1*$fontscaling1;
+$fontscaling3: $fontscaling2*$fontscaling1;
+$fontscaling4: $fontscaling2*$fontscaling2;
+$fontscaling5: $fontscaling4*$fontscaling1;
+$fontscaling6: $fontscaling3*$fontscaling3;
+
+
 #main {
   h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
   }
 
-  h1 {
-    text-align: center;
-    font-size: 2.0581em;
-    margin-bottom: 2.059em;
+  h5, h6 {
+    font-size: $fontscaling1*1rem;
   }
 
-  h2 {
-    margin-top: 1em;
-    font-size: 1.618em;
+  h6 {
+    font-style: italic;
+  }
+
+  h4 {
+    font-size: $fontscaling2*1rem;
   }
 
   h3 {
-    margin-top: 0.786em;
-    font-size: 1.272em;
+    font-size: $fontscaling3*1rem;
+  }
+
+  h2 {
+    font-size: $fontscaling4*1rem;
+  }
+
+  h1 {
+    margin-top: 0;
+    text-align: center;
+    font-size: $fontscaling5*1rem;
+  }
+
+  $paragraph-spacing: 0.5em;
+
+  p {
+    margin-top: $paragraph-spacing;
+    margin-bottom: $paragraph-spacing;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.15*$paragraph-spacing;
+    margin-bottom: $paragraph-spacing;
   }
 
   p, ul, ol {
