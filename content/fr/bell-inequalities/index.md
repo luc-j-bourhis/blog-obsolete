@@ -108,6 +108,7 @@ tex_macros:
     Hsingle:    \mathcal{S}
     Hpair:      \mathcal{P}
     vec:        \mathrm{Vec}\left(#1\right)
+    Qmax:       \frac{\sin2\varphi}{\sqrt{\sin^2 2\varphi+1}}
 ---
 
 # Démonstration d'une <br>inégalité de Bell
@@ -183,55 +184,151 @@ Pour cela, les expérimentateurs abandonnèrent les paires de photons et utilis�
 
 En passant, les expériences d'Aspect et al. ne furent donc pas du tout définitives, contrairement à ce que beaucoup de gens croient (et pas seulement en France).
 
-### b. Violation maximale
+### b. Preuve de la violation des inégalités de Bell
 
-Il faut trouver des réglages tels que la mécanique quantique prédise que $$R(a, a', b, b')$$ soit plus grand que 2, et le plus grand possible afin d'augmenter le poids statistique du résultat. Contrairement au modèle réaliste que nous avons analysé jusqu'à présent, il faut à priori rendre explicites les détails de l'expérience afin de pouvoir faire des prédictions quantiques.
+Il faut trouver des réglages tels que la mécanique quantique prédise que $$R(a, a', b, b')$$ soit plus grand que 2, et le plus grand possible afin d'augmenter le poids statistique du résultat. Commençons par établir le modèle quantique.
 
-Mais il se trouve que dans le cas des inégalités CHSH, on peut prouver que la borne supérieure pour $$R(a, a', b, b')$$ est $$2\sqrt{2}$$ quasiment sans faire aucune hypothèse supplémentaire. Ce résultat fut démontré pour la première fois par Cirel'son [[Cirelson:1980]] -- son nom est aussi orthographié Tsirelson parfois. Dans le cas qui nous concerne, nous supposons que toutes les paires sont dans le même état quantique $$\mid \psi \rangle$$ du fait des particularités du processus de création (ce qui est toujours vérifié en pratique) et nous commençons par remplacer $$P(x,y)$$ par son équivalent quantique, l'espérance du produit $$A(x)B(y)$$, où $$A(x)$$ et $$B(y)$$ sont maintenant des opérateurs hermitiens représentant les observables mesurées,
+Nous supposerons que toutes les paires sont dans le même état quantique $$\mid \psi \rangle$$ du fait des particularités du processus de création (ce qui est toujours vérifié en pratique) et nous commençons par remplacer $$P(x,y)$$ par son équivalent quantique, l'espérance du produit $$A(x)B(y)$$, où $$A(x)$$ et $$B(y)$$ sont maintenant des opérateurs hermitiens représentant les observables mesurées,
 
-$$\expect{A(x)B(y)} = \bra{\psi} A(x)B(y) \ket{\psi}.$$
+$$\expect{A(x)B(y)} = \bra\psi A(x)B(y) \ket\psi.$$
 
-En pratique, $$A$$ et $$B$$ vont être des opérateurs de polarisation, spin ou moment angulaire, et éventuellement au prix d'une renormalisation, on peut se ramener au cas où leurs valeurs propres sont $\pm 1$, ce qui justifie l'hypothèse faite pour la démonstration de l'inégalité CHSH.
+En pratique, $$A$$ et $$B$$ vont être des opérateurs de polarisation, spin ou moment angulaire, et éventuellement au prix d'une renormalisation, on peut se ramener au cas où leurs valeurs propres sont $$\pm 1$$, ce qui justifie l'hypothèse faite pour la démonstration de l'inégalité CHSH.
 
-L'expression $$R(a, a', b, b')$$ bornée par les inégalités de Bell s'écrit alors comme l'espérance
+L'expression $$R(a, a', b, b')$$ bornée par les inégalités de Bell s'écrit alors comme la valeur absolue
 
-$$ R(a, a', b, b') = \left| \bra{\psi} S(a, a', b, b') \ket{\psi} \right| \label{Rexpect} $$
+$$ R(a, a', b, b') = \left| \bra\psi S(a, a', b, b') \ket\psi \right| \label{Rexpect} $$
 
-de l'opérateur
+de l'espérance de l'opérateur
 
 $$ S(a,a',b,b') = A(a')B(b) - A(a)B(b) + A(a')B(b') + A(a)B(b'). $$
 
-Afin d'alléger les notations, nous écrirons parfois $$A, A', B, B'$$ au lieu de $$A(a), A(a'), B(b), B(b')$$ respectivement.
-
-À ce stade, il est utile d'introduire le reste du décor quantique. Nous faisons l'hypothèse que l'espace de Hilbert $$\Hsingle$$ des états non-corrélés de la particule 1 prise isolément, et bien sûr aussi de la particule 2 prise isolément, est de dimension 2, ce qui est réalisé en pratique. L'opérateur $$A(x)$$ s'écrit $$A(x) = A_1(x) \otimes I$$ où $$A_1(x)$$ opère sur $$\Hsingle$$ seulement et où $$I$$ est l'opérateur identité de $$\Hsingle$$. De même, $$B(y) = I \otimes B_2(y)$$. Par conséquent, les opérateurs $$A(x)$$ et $$B(y)$$ commutent quelque soit les réglages $$x$$ et $$y$$, et $$A(x)B(y)=B(y)A(x)=A_1(x) \otimes B_2(y)$$. Finalement, étant donné deux bases $$(\ket{u}, \ket{u'})$$ et $$(\ket{v}, \ket{v'})$$ de $$\Hsingle$$, les produits tensoriels $$\ket{u}\ket{v}$$, $$\ket{u}\ket{v'}$$, $$\ket{u'}\ket{v}$$ et $$\ket{u'}\ket{v'}$$ forment une base de l'espace de Hilbert $$\Hpair$$ des états de la paire, qui est donc de dimension 4.
+Nous faisons l'hypothèse que l'espace de Hilbert $$\Hsingle$$ des états non-corrélés de la particule 1 prise isolément, et bien sûr aussi de la particule 2 prise isolément, est de dimension 2, ce qui est réalisé en pratique. L'espace de Hilbert pour une paire est alors le produit tensoriel $$\Hpair=\Hsingle\otimes\Hsingle$$. L'opérateur $$A(x)$$ s'écrit alors $$A(x) = A_1(x) \otimes I$$ où $$A_1(x)$$ opère sur $$\Hsingle$$ seulement et où $$I$$ est l'opérateur identité de $$\Hsingle$$. De même, $$B(y) = I \otimes B_2(y)$$. Par conséquent, les opérateurs $$A(x)$$ et $$B(y)$$ commutent quelque soit les réglages $$x$$ et $$y$$, et $$A(x)B(y)=B(y)A(x)=A_1(x) \otimes B_2(y)$$.
 
 Le fait que les opérateurs $$A(x)$$ et $$B(y)$$ commutent a une conséquence important: $$S(a,a',b,b')$$ est hermitien, puisque $$A(x)$$ et $$B(y)$$ le sont pour tous réglages $$x$$ et $$y$$.
 
+#### Une condition nécessaire: la non-séparabilité
+
 Ceci étant posé, le premier résultat important que:
 
-{{Théorème 1}} L'espérance de $$S$$ pour un ket séparable $$\ket{\psi}=\ket{\phi}\ket{\xi}$$ ne viole pas les inégalités CHSH.
+{{Théorème 1}} L'espérance de $$S$$ pour un ket séparable $$\ket\psi=\ket\phi\ket\xi$$ ne viole pas les inégalités CHSH.
 
-En effet,
+Pour démontrer ce résultat, je vais avoir besoin du lemme suivant, que je réutiliserais plus tard.
 
-$$\expect{S}=\big[\expect{A} - \expect{A'}\big]\expect{B} + \expect{A}\expect{B'} + \expect{A'}\expect{B'}, \notag$$
+{{Lemme 1}} Si $$u$$, $$v$$, $$x$$, et $$y$$ sont dans $$[-1, 1]$$, alors
 
-où les espérances sont pour $$\ket{\phi}$$ dans le cas de $$A$$ et $$A'$$ et pour $$\ket{\xi}$$ dans le cas de $$B$$ et $$B'$$. Si le premier terme est positif, alors
+$$-2 \le u(x-y)+v(x+y) \le 2.$$
 
-$$\expect{S} \ge \expect{A}\expect{B'} + \expect{A'}\expect{B'} \ge -2,$$
+En effet, comme $$(x-y)^2 + (x+y)^2 = 2(x^2 + y^2) \le 4$$, il en résulte que $$x-y$$ et $$x+y$$ sont entre -2 et 2, et le résultat est alors immédiat.
 
-tandis que si le premier terme est négatif,
+Appliquer à
 
-$$\expect{S} \le \expect{A}\expect{B'} + \expect{A'}\expect{B'} \le 2,$$
+$$\expect{S}=\big[\expect{A_1} - \expect{A'_1}\big]\expect{B_2} + \big[\expect{A_1} + \expect{A'_1}\big]\expect{B'_2}, \notag$$
 
-puisque toutes ces espérances sont entre -1 et 1 car les valeurs propres de ces opérateurs sont -1 et 1.
+où les espérances sont pour $$\ket\phi$$ dans le cas de $$A_1$$ et $$A'_1$$ et pour $$\ket\xi$$ dans le cas de $$B_2$$ et $$B'_2$$, le lemme 1 prouve le théorème 1.
 
-CQFD.
+#### La non-séparabilité: une condition suffisante
 
-Le second résultat important (dont j'ai pris connaissance dans Braunstein et al [[Braunstein:1992]].) est,
+La question est maintenant de savoir si, étant donné un état non-séparable $$\ket\psi$$, on peut trouver un réglage des détecteurs tel que l'inégalité CHSH est violée. Il faudrait donc choisir une configuration expérimentale particulière pour donner un sens à "réglage". Mais une très grande partie de l'analyse est complètement générale.
+
+Tout d'abord, en utilisant la décomposition de Schmidt, $$\ket\psi$$ s'écrit:
+
+$$\ket\psi = c_1 \ket{\phi_1}\ket{\chi_1} + c_2 \ket{\phi_2}\ket{\chi_2},\notag$$
+
+où $$\mathcal{B}_1=(\phi_1, \phi_2)$$ et $$\mathcal{B}_2=(\chi_1, \chi_2)$$ sont deux bases orthonormées de $$\Hsingle$$, et $$c_1$$ et $$c_2$$ sont deux nombres réels positifs. Ils doivent satisfaire $$c_1^2+c_2^2=1$$ pour normaliser $$\ket\psi$$, et donc il existe $$\varphi\in[0,\pi/2]$$ tel que
+
+$$\ket\psi = \cos\varphi \ket{\phi_1}\ket{\chi_1} + \sin\varphi \ket{\phi_2}\ket{\chi_2}.$$
+
+La condition que $$\ket\psi$$ soit non-séparable est alors équivalent à demander que
+
+$$\sin2\varphi \ne 0.\label{nonsepcond}$$
+
+Intéressons nous maintenant aux matrices des opérateurs $$A_1(x)$$ et $$B_2(y)$$ dans les bases respectives $$\mathcal{B}_1$$ et $$\mathcal{B}_2$$. Comme par hypothèse, leurs valeurs propres sont 1 et -1, leur trace est nulle. Comme ils sont hermitiens, leur matrice est de la forme:
+
+$$\begin{pmatrix} p_3 & p_1 - i p_2 \\ p_1 + i p_2 & -p_3 \end{pmatrix}.\notag$$
+
+Le déterminant $$-(p_1^2 + p_2^2 + p_3^2)$$ doit alors être égale à -1. On voit donc que ces matrices sont de la forme
+
+$$p_1\sigma_1 + p_2\sigma_2 + p_3\sigma_3 = p\cdot\sigma\notag$$
+
+où les $$\sigma_i$$ sont les matrices de Pauli, $$\sigma=(\sigma_1, \sigma_2, \sigma_3)$$, et où $$p=(p_1, p_2, p_3)$$ peut être vu comme un vecteur unitaire de $$\reals^3$$. On écrira donc, en identifiant les opérateurs avec leur matrice,
+
+$$\begin{aligned}
+A_1(x) &= p(x)\cdot\sigma,\\
+B_2(y) &= q(y)\cdot\sigma.
+\end{aligned}\label{pauliDecomposition}$$
+
+et comme pour les opérateurs, on simplifiera parfois les notations en écrivant $$p$$, $$p'$$, $$q$$, et $$q'$$ pour respectivement $$p(a)$$, $$p(a')$$, $$q(b)$$, et $$q(b')$$.
+
+Exprimons maintenant l'espérance $$\bra\psi A(x)B(y) \ket\psi$$ en fonction de $$p(x)$$ et $$q(y)$$,
+
+$$\begin{aligned}
+\expect{A(x)B(y)} &=
+\cos^2\varphi
+\underbrace{\bra{\phi_1} A_1(x)\ket{\phi_1}}_{p_3}
+\underbrace{\bra{\chi_1} B_2(y)\ket{\chi_1}}_{q_3} \\
+&+ \sin^2\varphi
+\underbrace{\bra{\phi_2} A_1(x)\ket{\phi_2}}_{-p_3}
+\underbrace{\bra{\chi_2} B_2(y)\ket{\chi_2}}_{-q_3} \\
+&+ \cos\varphi\sin\varphi(
+\underbrace{\bra{\phi_1} A_1(x)\ket{\phi_2}}_{p_1 - ip_2}
+\underbrace{\bra{\chi_1} B_2(y)\ket{\chi_2}}_{q_1 - iq_2}
++ \underbrace{\bra{\phi_2} A_1(x)\ket{\phi_1} \bra{\chi_2} B_2(y)\ket{\chi_1}}_{\text{complexe conjugué du terme précédent}})
+\end{aligned}.\notag$$
+
+En utilisant (\ref{pauliDecomposition}), on obtient donc
+
+$$\expect{A(x)B(y)} = p_3(x)q_3(y) + (p_1(x)q_1(y)-p_2(x)q_2(y))\sin 2\varphi.$$
+
+Puis
+
+$$\begin{aligned}
+\expect{S(a,a',b,b')}=
+&\big[q_3(b)(p_3(a')-p_3(a)) + q_3(b')(p_3(a')+p_3(a))\big]\\
++ \sin2\varphi &\big[q_1(b)(p_1(a')-p_1(a)) + q_1(b')(p_1(a')+p_1(a))\big]\\
+- \sin2\varphi &\big[q_2(b)(p_2(a')-p_2(a)) + q_2(b')(p_2(a')+p_2(a))\big].
+\end{aligned}$$
+
+Chaque terme entre crochets est entre -2 et 2 d'après le [lemme 1], et par conséquent, on retrouve le fait que si $$\ket\psi$$ est séparable ($$\sin2\varphi=0$$ d'après (\ref{nonsepcond})), alors $$\expect{S(a,a',b,b')}$$ ne viole pas l'inégalité de Bell. La question devient maintenant de trouver des $$p(a)$$, $$p(a')$$, $$q(b)$$, et $$q(b')$$ tels que $$\expect{S(a,a',b,b')}$$ ne soit pas dans $$[-2,2]$$. On voit que si un seul des crochets est non nul, le [lemme 1] impose que l'inégalité de Bell soit vérifiée. Prenons donc deux crochets non nuls, avec
+
+$$\begin{aligned}
+p(a) &= (1, 0, 0),\\
+p(a') &= (0, 0, 1),\\
+q_2(b) &= q_2(b') = 0.
+\end{aligned}\notag$$
+
+Alors,
+
+$$\expect{S(a,a',b,b')}=q_3' + q_3 + (q_1'-q_1)\sin2\varphi .\notag$$
+
+Prenons alors $$q_3'=q_3=\sqrt{1-Q^2}$$ et $$q_1'=-q_1=Q$$. Alors,
+
+$$\expect{S(a,a',b,b')}=2\left(\sqrt{1-Q^2} + Q\sin2\varphi\right)=f(Q).\notag$$
+
+Comme
+
+$$f'(Q) = 2\left(-\frac{Q}{\sqrt{1-Q^2}} + \sin2\varphi\right),\notag$$
+
+$$f$$ est croissante sur $$[0,\Qmax]$$ et décroissante sur $$[\Qmax,1]$$, et le maximum de $$f(Q)$$ est donc $$f\left(\Qmax\right)$$, i.e.
+
+$$2\sqrt{1+\sin^2 2\varphi} > 2,\label{maxviolation}$$
+
+et c'est la violation maximale que l'on peut obtenir avec cette famille d'observable. Par ailleurs, il est facile de voir que $$f(Q)>2$$ est équivalent à
+
+$$Q<\frac{2\sin2\varphi}{1+\sin^2 2\varphi}.$$
+
+Faisons maintenant le lien avec un type de réalisation expérimentale: des électrons ou des ions de spin 1/2. Dans ce cas, un réglage $$x$$ du détecteur I serait un vecteur unitaire et on mesurerait la composante du spin $$S_{1,x}$$de la particule 1 dans cette direction. De même, le détecteur II dans un réglage $$y$$ mesurerait le spin de la particule 2 dans la direction de ce vecteur unitaire $$y$$. Notre utilisation des matrices de Pauli rend la correspondance particulièrement transparente: $$A_1(x) = 2S_{1,x}$$ et $$B_2(y) = S_{2,y}$$, ou de manière équivalente $$p(x) = x$$ et $$q(y) = y$$. Cette "renormalisation" d'un facteur 2 a pour seul but de se ramener au cas de valeurs propres +1 et -1.
+
+Nous avons donc bien montrer que pour tout état non-séparable, on pouvait trouver des réglages qui violent les inégalités de Bell, ou du moins des opérateurs réalisant cela, laissant la question des réglages à la réalisation d'un protocole expérimental faisant apparaître ces opérateurs.
+
+#### Violation maximale
+
+La dernière question que nous voudrions nous poser est: quelle violation maximale peut)on obtenir? Dans notre exemple ci-dessus, l'équation (\ref{maxviolation}) montre que  la borne est supérieure $$2\sqrt2$$, atteinte quand $$\varphi=\pi/4$$. On peut alors se demander si l'on peut faire mieux que $$2\sqrt{2}$$. La réponse est négative: la borne supérieure pour $$R(a, a', b, b')$$ est $$2\sqrt{2}$$. Ce résultat fut démontré pour la première fois par Cirel'son [[Cirelson:1980]] -- son nom est aussi orthographié Tsirelson parfois. La démonstration suivante est celle de Braunstein et al [[Braunstein:1992]].
+
+Elle dépend du résultat suivant:
 
 $$ S(a,a',b,b')^2 = 4I - \comm{A(a)}{A(a')} \comm{B(b)}{B(b')}. \label{Sfundamental} $$
 
-Nous allons en effet voir que cette propriété est pleine de conséquences pour les bornes de $$R(a, a', b, b')$$ mais nous allons tout d'abord la démontrer. Comme les opérateurs $$A, A'$$ commutent avec les opérateurs $$B, B'$$, nous pouvons regrouper les premiers à gauche et les seconds à droite dans les termes de $$S^2$$. Ensuite, comme tous les $$A, A', B, B'$$ ont pour seules valeurs propres +1 et -1, nécessairement
+Nous allons en effet voir que cette propriété est pleine de conséquences pour les bornes de $$R(a, a', b, b')$$ mais nous allons tout d'abord la démontrer. Afin d'alléger les notations, écrivons temporairement $$A, A', B, B'$$ au lieu de $$A(a), A(a'), B(b), B(b')$$, respectivement. Comme les opérateurs $$A, A'$$ commutent avec les opérateurs $$B, B'$$, nous pouvons regrouper les premiers à gauche et les seconds à droite dans les termes de $$S^2$$. Ensuite, comme tous les $$A, A', B, B'$$ ont pour seules valeurs propres +1 et -1, nécessairement
 
 $$ A^2 = A'^2 = B^2 = B'^2 = I, $$
 
@@ -247,9 +344,9 @@ $$
 
 CQFD
 
-Passons maintenant à l'exploitation de (\ref{Rexpect}) et (\ref{Sfundamental}). Comme un commutateur a une trace nulle, les valeurs propres de l'opérateur hermitien $$i \comm{A_1(a)}{A_1(a')}$$ sont $$\alpha$$ et $$-\alpha$$ pour un certain nombre réel $$\alpha > 0$$. Soient $$\ket{\alpha}$$ et $$\ket{-\alpha}$$ les vecteurs propres associés. Avec le même raisonnement, les valeurs propres de $$i \comm{B_2(b)}{B_2(b')}$$ sont $$\beta$$ et $$-\beta$$ pour un certain nombre réel $$\beta > 0$$ et les vecteurs propres associés seront notés $$\ket{\beta}$$ et $$\ket{-\beta}$$. Il est alors immédiat que $$S^2$$ a deux valeurs propres dégénérées, $$4 + \alpha\beta$$ et $$4 -\alpha\beta$$, qui sont nécessairement positives puisque $$S^2$$ est positif, et que les espaces propres associés sont respectivement $$U = \vec{\ket{\alpha}\ket{\beta}, \ket{-\alpha}\ket{-\beta}}$$ et $$V = \vec{\ket{-\alpha}\ket{\beta}, \ket{\alpha}\ket{-\beta}}$$. Par conséquent, les valeurs propres de $$S$$ s'écrivent ou bien $$\pm\sqrt{4+\alpha\beta}$$ ou bien $$\pm\sqrt{4-\alpha\beta}$$. Les premières (resp. les secondes) ont leurs vecteurs propres dans $$U$$ (resp. $$V$$).
+Passons maintenant à l'exploitation de (\ref{Rexpect}) et (\ref{Sfundamental}). Comme un commutateur a une trace nulle, les valeurs propres de l'opérateur hermitien $$i \comm{A_1(a)}{A_1(a')}$$ sont $$\alpha$$ et $$-\alpha$$ pour un certain nombre réel $$\alpha > 0$$. Soient $$\ket\alpha$$ et $$\ket{-\alpha}$$ les vecteurs propres associés. Avec le même raisonnement, les valeurs propres de $$i \comm{B_2(b)}{B_2(b')}$$ sont $$\beta$$ et $$-\beta$$ pour un certain nombre réel $$\beta > 0$$ et les vecteurs propres associés seront notés $$\ket\beta$$ et $$\ket{-\beta}$$. Il est alors immédiat que $$S^2$$ a deux valeurs propres dégénérées, $$4 + \alpha\beta$$ et $$4 -\alpha\beta$$, qui sont nécessairement positives puisque $$S^2$$ est positif, et que les espaces propres associés sont respectivement $$U = \vec{\ket\alpha\ket\beta, \ket{-\alpha}\ket{-\beta}}$$ et $$V = \vec{\ket{-\alpha}\ket\beta, \ket\alpha\ket{-\beta}}$$. Par conséquent, les valeurs propres de $$S$$ s'écrivent ou bien $$\pm\sqrt{4+\alpha\beta}$$ ou bien $$\pm\sqrt{4-\alpha\beta}$$. Les premières (resp. les secondes) ont leurs vecteurs propres dans $$U$$ (resp. $$V$$).
 
-On voit donc que si $$A(a)$$ commute avec $$A(a')$$ ou bien si $$B(b)$$ commute avec $$B(b')$$, les valeurs propres de $$S(a,a',b,b')$$ sont égales à $$\pm2$$, et par conséquent $$R(a,a',b,b')$$ est toujours entre -2 et 2: la borne de l'inégalité de Bell n'est violée pour aucun réglage et pour aucun état quantique de la paire $$\ket{\psi}$$. Rappellons en effet que pour un opérateur hermitien tel que $$S(a,a',b,b')$$, la borne supérieure de l'espérance $$\bra{\psi}S(a,a',b,b')\ket{\psi}$$, quand $$\ket{\psi}$$ décrit l'ensemble des kets tels que $$\braket{\psi}{\psi}=1$$, est la plus grande des valeurs propres de $$S(a,a',b,b')$$.
+On voit donc que si $$A(a)$$ commute avec $$A(a')$$ ou bien si $$B(b)$$ commute avec $$B(b')$$, les valeurs propres de $$S(a,a',b,b')$$ sont égales à $$\pm2$$, et par conséquent $$R(a,a',b,b')$$ est toujours entre -2 et 2: la borne de l'inégalité de Bell n'est violée pour aucun réglage et pour aucun état quantique de la paire $$\ket\psi$$. Rappellons en effet que pour un opérateur hermitien tel que $$S(a,a',b,b')$$, la borne supérieure de l'espérance $$\bra\psi S(a,a',b,b')\ket\psi$$, quand $$\ket\psi$$ décrit l'ensemble des kets tels que $$\braket{\psi}{\psi}=1$$, est la plus grande des valeurs propres de $$S(a,a',b,b')$$.
 
 Si au contraire aucune de ces paires d'opérateurs ne commute, alors $$\alpha\beta > 0$$. Dans ce cas, les valeurs propres $$\pm\sqrt{4+\alpha\beta}$$ sont en dehors de l'intervalle $$[-2,2]$$.
 Quelle violation maximale peut-on obtenir? Comme $$\matnorm{\comm{A(a)}{A(a')}} \le 2 \matnorm{A(a)} \matnorm{A(a')}$$, nécessairement $$-2 \le \alpha \le 2$$ puisque $$\matnorm{A(a)}=\matnorm{A(a')}=1$$. De même, $$-2 \le \beta \le 2$$. Cela démontre que la borne maximale est $$2\sqrt{2}$$ comme annoncé plus haut mais nous voyons aussi que cette borne est réalisée quand $$\alpha = \beta = \pm 2$$.
