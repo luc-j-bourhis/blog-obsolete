@@ -5,6 +5,10 @@
     %title Luc J. Bourhis Musings - #{@item[:title]}
     %link{:rel => "stylesheet", :href => "#{@items['/stylesheet.*'].path}"}/
 
+    - if not google_fonts.empty?
+      %link{:rel => "stylesheet",
+            :href => "https://fonts.googleapis.com/css?family=#{google_fonts}"}
+
     -# you don't need to keep this, but it's cool for stats!
     %meta{:name => "generator", :content => "nanoc #{Nanoc::VERSION}"}/
     #{render "/mathjax.*"}

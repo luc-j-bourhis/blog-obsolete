@@ -205,3 +205,11 @@ def format_authors(authors, language)
     names[0]
   end
 end
+
+# Google Fonts
+def google_fonts
+  # With `to_a`, nil would become [] whereas an array would pass through
+  @config[:google_fonts].to_a.map { |name, variants|
+      name.to_s.gsub(/\s+/, '+') + ':' + variants.join(',')
+  }.join('|')
+end
