@@ -96,3 +96,15 @@ deploy:
     remote: git@github.com:luc-j-bourhis/blog.git
     branch: gh-pages
     forced: true
+
+# Google Fonts
+google_fonts:
+  # Free font recommened by typewolf as the best match for Times New Roman
+  # https://www.typewolf.com/site-of-the-day/fonts/times-new-roman
+  # We load regular, and semi-bold, both with italic variant too.
+  Archivo Narrow:
+    - 400
+    - 400i
+    - 600
+    - 600i
+
