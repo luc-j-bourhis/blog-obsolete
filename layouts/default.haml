@@ -11,15 +11,15 @@
 
     -# you don't need to keep this, but it's cool for stats!
     %meta{:name => "generator", :content => "nanoc #{Nanoc::VERSION}"}/
-    #{render "/mathjax.*"}
+    = render "/mathjax.*"
   %body
     %div{:class => ("optional-sidebar" unless main_page?)}
       #main
-        #{yield}
+        = yield
         -# if we are not on the main page for one of the language, then...
         - if not main_page?
-          #{render "/bibliography.*"}
-          #{render "/#{language}/licence.*"}
+          = render "/bibliography.*"
+          = render "/#{language}/licence.*"
       #sidebar
         .flags
           %span
