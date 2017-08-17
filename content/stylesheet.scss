@@ -1,0 +1,16 @@
+// Preamble
+
+/**
+ * Universal border-box fix
+ * Listing 3.6 of Keith J. Grant "CSS in Depth",
+ * referred to as [CSSD] in the following
+ */
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
