@@ -30,3 +30,18 @@
 @mixin hyphenate {
   @include prefix((hyphens: auto));
 }
+
+// Browser default font being 16px...
+@mixin font-spec($names, $sizing: null) {
+  font-family: $names;
+  @each $size, $breakpoint  in $sizing {
+    @if $breakpoint { // ... breakpoint in em
+      @media (min-device-width: $breakpoint/16*1em) {
+        font-size: $size/16*1em; // ... rescaling to given size in px
+      }
+    }
+    @else {
+      font-size: $size/16*1em; // ... rescaling to given size in px
+    }
+  }
+}
