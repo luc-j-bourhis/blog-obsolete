@@ -14,3 +14,15 @@
 ::after {
   box-sizing: inherit;
 }
+
+// Mixins
+@mixin prefix($declarations) {
+  @each $property, $value in $declarations {
+    @each $prefix in (webkit, moz, ms) {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }
+
+    // Output standard non-prefixed declaration
+    #{$property}: $value;
+  }
+}
