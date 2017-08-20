@@ -2,6 +2,11 @@
 %html
   %head
     %meta{:charset => "utf-8"}/
+    -# Viewport meta tag, to tell tell mobile devices that we have intentionally
+    -# designed for small screens, and that the whole viewport should be used,
+    -# at a starting scale of 1
+    %meta{ :name => "viewport",
+           :content => "width=device-width, initial-scale=1"}/
     %title Luc J. Bourhis Musings - #{@item[:title]}
     %link{:rel => "stylesheet", :href => "#{@items['/stylesheet.*'].path}"}/
 
