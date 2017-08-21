@@ -73,7 +73,10 @@ tex_macros:
 
 ---
 
-# Which transforms are viable to change from one inertial frame to another?
+# Change of inertial frames: what transforms are possible?
+
+We discuss how to prove that Galilean and Lorentz transforms are the only possibilities besides rotations using only very general postulates about changes of inertial frames. Most interestingly, we do not make any of the traditional assumptions, about the speed of light for Lorentz transforms, and about the universality of time and length for Galilean transforms.
+{: .abstract}
 
 ## Introduction
 
