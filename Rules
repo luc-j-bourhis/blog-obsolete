@@ -1,15 +1,20 @@
 #!/usr/bin/env ruby
 
-compile '/**/*.md' do
-  filter :bacchantes
-  filter :erb
-  filter :mark_abbreviations
-  filter :generate_references
-  filter :kramdown
-  layout '/default.*'
-  filter :relativize_paths, type: :html
-  write item.identifier.without_ext + '.html'
+def compile_my_markdown(source_path, layout_path)
+  compile source_path do
+    filter :bacchantes
+    filter :erb
+    filter :mark_abbreviations
+    filter :generate_references
+    filter :kramdown
+    layout layout_path
+    filter :relativize_paths, type: :html
+    write item.identifier.without_ext + '.html'
+  end
 end
+
+compile_my_markdown('/**/*.md', '/article.*')
+
 
 compile '/**/*.scss' do
   filter :sass, syntax: :scss

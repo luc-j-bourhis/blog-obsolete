@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}/
+    -# Viewport meta tag, to tell tell mobile devices that we have intentionally
+    -# designed for small screens, and that the whole viewport should be used,
+    -# at a starting scale of 1
+    %meta{ :name => "viewport",
+           :content => "width=device-width, initial-scale=1"}/
+    %title Luc J. Bourhis Musings - #{@item[:title]}
+    %link{:rel => "stylesheet", :href => %Q[#{@items["/#{@stylesheet}.*"].path}]}/
+
+    - if not google_fonts.empty?
+      %link{:rel => "stylesheet",
+            :href => "https://fonts.googleapis.com/css?family=#{google_fonts}"}
+
+    -# you don't need to keep this, but it's cool for stats!
+    %meta{:name => "generator", :content => "nanoc #{Nanoc::VERSION}"}/
+    = render "/mathjax.*"
+  %body
+    = yield

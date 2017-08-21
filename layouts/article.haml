@@ -1,0 +1,5 @@
+= render '/base.*', :stylesheet => 'stylesheet' do
+  #main
+    = yield
+    = render "/bibliography.*"
+    = render "/#{language}/licence.*"
