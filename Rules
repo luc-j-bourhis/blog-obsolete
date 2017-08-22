@@ -15,6 +15,12 @@ end
 
 compile_my_markdown('/**/*.md', '/article.*')
 
+preprocess do
+  @items.each do |i|
+    c = i.identifier.to_s.match(%r{/([a-z]{2})/})
+    i[:language] = if not c.nil? then c[1].intern else :unknown end
+  end
+end
 
 compile '/**/*.scss' do
   filter :sass, syntax: :scss

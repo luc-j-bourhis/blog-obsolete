@@ -6,28 +6,12 @@ include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::LinkTo
 include Nanoc::Helpers::Rendering # to allow the use of `render` in layouts
 
-# Are we on the main page for one of the language?
-def main_page?
-  not @item.nil? and %r{^/[a-z]{2}/index} =~ @item.identifier
-end
-
-# The 2-letter code of the language the given item is written in
-def language_of(item)
-    c = item.identifier.to_s.match(%r{/([a-z]{2})/})
-    if not c.nil? then c[1].intern else :unknown end
-end
-
-# The 2-letter code of the language the current item is written in
-def language
-  if not @item.nil? then language_of(@item) else nil end
-end
-
 # Organise article titles in a tree for display in the side bar
 def sidebar_tree(lang)
   tree = {}
   articles.each do |e|
-    if language_of(e) == lang
-      (tree[e[:category]] ||= []).push(e)
+    if e[:language] == lang
+      (tree[e[:category]] ||= []) << e
     end
   end
   tree
