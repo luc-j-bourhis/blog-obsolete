@@ -13,14 +13,18 @@ def compile_my_markdown(source_path, layout_path)
   end
 end
 
-compile_my_markdown('/**/*.md', '/article.*')
-
 preprocess do
   @items.each do |i|
     c = i.identifier.to_s.match(%r{/([a-z]{2})/})
     i[:language] = if not c.nil? then c[1].intern else :unknown end
   end
+  @items.map {|i| i[:language]}.uniq.select {|l| l != :unknown}.each do |l|
+    @items.create('', {:language => l}, "/#{l}/index.md")
+  end
 end
+
+compile_my_markdown('/*/index.md', '/abstracts.*')
+compile_my_markdown('/**/*.md', '/article.*')
 
 compile '/**/*.scss' do
   filter :sass, syntax: :scss

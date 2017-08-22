@@ -1,0 +1,5 @@
+= render '/base.*', :stylesheet => 'stylesheet' do
+  - abstracts[@item[:language]].each do |cat, articles|
+    %h2= cat
+    - articles.each do |a|
+      %h3= a[:title]

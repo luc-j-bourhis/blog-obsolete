@@ -17,6 +17,19 @@ def sidebar_tree(lang)
   tree
 end
 
+# Extract all abstracts
+def abstracts
+  by_lang = {}
+  @items.each do |i|
+    if not i[:category].nil?
+      by_cat = by_lang[i[:language]] ||= {}
+      articles = by_cat[i[:category]] ||= []
+      articles << i
+    end
+  end
+  by_lang
+end
+
 # Implementation of Theorem-like environment
 def theorem_like(kind, n)
   @theorem_like_numbers ||= {}
