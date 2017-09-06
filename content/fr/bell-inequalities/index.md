@@ -162,9 +162,11 @@ $$ R(a, a', b, b') = |P(a',b) - P(a,b) + P(a',b') + P(a,b')| \le 2.$$
 
 La démonstration est très simple. On commence par majoré la valeur absolue de l'intégrale par l'intégrale de la valeur absolue,
 
-$$ R(a, a', b, b')
-    \le \int_\Lambda \big|[A(a', \lambda) - A(a, \lambda)] B(b, \lambda)
-    + [A(a', \lambda) + A(a, \lambda)]B(b', \lambda) \big| d\rho(\lambda).\notag $$
+$$ \begin{aligned}
+R(a, a', b, b')
+    &\le \int_\Lambda \big|[A(a', \lambda) - A(a, \lambda)] B(b, \lambda)\\
+    &+ [A(a', \lambda) + A(a, \lambda)]B(b', \lambda) \big| d\rho(\lambda).
+\end{aligned}\notag $$
 
 Comme $$A$$ prend seulement les valeurs $$\pm 1$$, ou bien $$A(a', \lambda) \ne A(a, \lambda)$$, auquel cas le premier crochet vaut $$\pm 2$$ et le second crochet 0, ou bien  $$A(a', \lambda) = A(a, \lambda)$$, auquel cas le premier crochet vaut 0 et le second crochet vaut $$\pm 2$$. Comme $$B$$ ne prend que les valeurs +1 et -1, dans les deux cas, l'intégrande est majoré par 2, ce qui finit la preuve puisque par définition d'une mesure de probabilité, $$\int_\Lambda d\rho(\lambda)=1$$.
 
@@ -275,11 +277,13 @@ $$\begin{aligned}
 &+ \sin^2\varphi
 \underbrace{\bra{\phi_2} A_1(x)\ket{\phi_2}}_{-p_3}
 \underbrace{\bra{\chi_2} B_2(y)\ket{\chi_2}}_{-q_3} \\
-&+ \cos\varphi\sin\varphi(
-\underbrace{\bra{\phi_1} A_1(x)\ket{\phi_2}}_{p_1 - ip_2}
-\underbrace{\bra{\chi_1} B_2(y)\ket{\chi_2}}_{q_1 - iq_2}
-+ \underbrace{\bra{\phi_2} A_1(x)\ket{\phi_1} \bra{\chi_2} B_2(y)\ket{\chi_1}}_{\text{complexe conjugué du terme précédent}})
-\end{aligned}.\notag$$
+&+ \cos\varphi\sin\varphi%
+\!\!\begin{aligned}[t](&
+    \underbrace{\bra{\phi_1} A_1(x)\ket{\phi_2}}_{p_1 - ip_2}
+    \underbrace{\bra{\chi_1} B_2(y)\ket{\chi_2}}_{q_1 - iq_2}\\
+ + &\underbrace{\bra{\phi_2} A_1(x)\ket{\phi_1} \bra{\chi_2} B_2(y)\ket{\chi_1}}_{\text{complexe conjugué du terme précédent}})
+\end{aligned}
+\end{aligned}\notag$$
 
 En utilisant (\ref{pauliDecomposition}), on obtient donc
 
