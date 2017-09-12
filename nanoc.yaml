@@ -102,9 +102,150 @@ google_fonts:
   # Free font recommened by typewolf as the best match for Times New Roman
   # https://www.typewolf.com/site-of-the-day/fonts/times-new-roman
   # We load regular, and semi-bold, both with italic variant too.
-  Archivo Narrow:
+  # Archivo Narrow:
+  #   - 400
+  #   - 400i
+  #   - 500
+  #   - 500i
+  #   - 600
+  #   - 600i
+
+  # Free font recommended by typewolf as the best match for Georgia
+  # https://www.typewolf.com/site-of-the-day/fonts/georgia
+  # We load semi-bold
+  # Libre Franklin:
+  #   - 600
+  #   - 600i
+
+  # One of typewolf 30 best Google fonts
+  # Cormorant Garamond:
+  #   - 300
+  #   - 400
+  #   - 500
+  #   - 600
+  #   - 700
+  #   - 300i
+  #   - 400i
+  #   - 500i
+  #   - 600i
+  #   - 700i
+
+  # Recommended by typewolf to go with Cormorant
+  # Cabin:
+  #   - 400
+  #   - 500
+  #   - 600
+  #   - 700
+  #   - 400i
+  #   - 500i
+  #   - 600i
+
+  # Droid Serif:
+  #   - 400
+  #   - 700
+  #   - 400i
+  #   - 700i
+  # Droid Sans:
+  #   - 700
+  #   - 700i
+
+  # Pairs recommended by typewolf in "The Definitive Guide to Free Fonts"
+  # 1)
+  # Playfair Display:
+  #   - 400
+  #   - 400i
+  #   - 700
+  #   - 700i
+  # Fira Sans:
+  #   - 400
+  #   - 400i
+  #   - 500
+  #   - 500i
+
+  # 2) [+]
+  # Open Sans:
+  #   - 400
+  #   - 400i
+  #   - 700
+  #   - 700i
+  # Domine:
+  #   - 700
+  #   - 700i
+
+  # 3) [++] (Sans for body)
+  # Alegreya:
+  #   - 400
+  #   - 400i
+  #   - 700
+  #   - 700i
+  # Alegreya Sans:
+  #   - 400
+  #   - 400i
+  #   - 700
+  #   - 700i
+
+  # 4) [++]
+  # Montserrat:
+  #   - 500
+  #   - 500i
+  # Arvo: # a bit too thick
+  #   - 400
+  #   - 400i
+  #   - 700
+  #   - 700i
+
+  # 6) [++]
+  # Neuton:
+  #   - 400
+  #   - 400i
+  #   - 700
+  #   - 700i
+  # Lato:
+  #   - 400
+  #   - 400i
+  #   - 700
+  #   - 700i
+
+  # 7) [+]
+  Merriweather:
+    - 300
+    - 300i
     - 400
     - 400i
-    - 600
-    - 600i
+    - 700
+    - 700i
+  Merriweather Sans:
+    - 400
+    - 400i
+    - 700
+    - 700i
 
+  # 8) [++]
+  # Crimson Text: # line height a bit too big
+  #   - 400
+  #   - 400i
+  #   - 700
+  #   - 700i
+  # Rosario:
+  #   - 700
+  #   - 700i
+
+  # 9) [+]
+  # Beware: no italic for sans-serif
+  # Varela Round:
+  #   - 700
+  # Lora:
+  #   - 400
+  #   - 400i
+  #   - 700
+  #   - 700i
+
+  # 10)
+  # Roboto Slab:
+  #   - 400
+  #   - 700
+  # Roboto:
+  #   - 400
+  #   - 700
+  #   - 400i
+  #   - 700i

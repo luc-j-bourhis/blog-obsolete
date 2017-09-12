@@ -34,7 +34,7 @@
 // Browser default font being 16px...
 @mixin font-spec($names, $sizing: null) {
   font-family: $names;
-  @each $size, $breakpoint  in $sizing {
+  @each $size, $breakpoint in $sizing {
     @if $breakpoint { // ... breakpoint in em
       @media (min-device-width: $breakpoint/16*1em) {
         font-size: $size/16*1em; // ... rescaling to given size in px
@@ -43,5 +43,96 @@
     @else {
       font-size: $size/16*1em; // ... rescaling to given size in px
     }
+  }
+}
+
+// Styles
+
+:root {
+  /*
+   * Do not forget to add those Google web fonts to config file `nanoc.yaml`
+   */
+  // @include font-spec(('Libre Baskerville', serif), 20 (16, 1920));
+  // @include font-spec(("Roboto Slab", serif), 21 (16, 1920));
+  // @include font-spec(("Faustina", serif), 23 (18, 1920));
+  // @include font-spec(("Fira Sans", sans-serif), 21 (18, 1920));
+  // font-weight: 400;
+  // @include font-spec(("Alegreya", serif), 25 (20, 1920));
+  // @include font-spec(("Alegreya Sans", sans-serif), 23 (19, 1920));
+  // @include font-spec(("Open Sans", sans-serif), 20 (16, 1920));
+  // @include font-spec(("Arvo", serif), 20 (17, 1920));
+  @include font-spec(("Merriweather", serif), 22 (17, 1920));
+  // @media (-webkit-max-device-pixel-ratio: 1) {
+  //   font-weight: 300;
+  // }
+  // @include font-spec(("Crimson Text", serif), 25 (21, 1920));
+  // @include font-spec(("Neuton", serif), 23 (21, 1920));
+  // @include font-spec(("Georgia", serif), 22 (18, 1920));
+  // @include font-spec(("Lato", sans-serif), 20 (17, 1920));
+  // @include font-spec(("Lora", serif), 21 (18, 1920));
+  // font-weight: 600;
+  // @include font-spec(("Cormorant Garamond", serif), 28 (21, 1920));
+  // @media all and (-webkit-max-device-pixel-ratio: 1) {
+  //   font-weight: 500;
+  // }
+  // @media not all and (-webkit-max-device-pixel-ratio: 1) {
+  //   font-weight: 600;
+  // }
+  // @include font-spec(("Playfair Display", serif), 22 (17, 1920));
+  // @include font-spec(("Roboto", sans-serif), 22 (17, 1920));
+  // @include font-spec(("Droid Serif", serif), 22 (18, 1920));
+
+  /*
+   * Those are available on MacOS and iOS
+   */
+  // @include font-spec(("Georgia", serif), 24 (18, 1920));
+  // @include font-spec(('Baskerville', serif), 25 (20, 1920));
+  // @include font-spec(("Iowan Old Style", serif), 22 (18, 1920));
+  // @include font-spec(("Hoefler Text", serif), 24 (19, 1920), 1.2);
+  // @include font-spec(("Times New Roman", serif), 24 (19, 1920));
+
+  // @include font-spec(serif, 25 (20, 1920));
+}
+
+h1, h2, h3, h4, h5, h6 {
+  // font-family: "Archivo Narrow", sans-serif;
+  // font-weight: 500;
+  // font-family: "Domine", sans-serif;
+  // font-family: "Alegreya Sans", sans-serif;
+  // font-family: "Alegreya", serif;
+  // font-family: "Montserrat", sans-serif;
+  // font-weight: 500;
+  font-family: "Merriweather Sans", sans-serif;
+  // font-family: "Rosario", sans-serif;
+  // font-weight: bold;
+  // font-family: "Playfair Display", serif;
+  // font-family: Neuton, serif;
+  // font-family: Lato, sans-serif;
+  // font-family: "Varela Round", sans-serif;
+  // font-family: "Libre Franklin", sans-serif;
+  // font-weight: 600;
+  // font-family: "Fira Sans";
+  // font-weight: 500;
+  // font-family: "Computer Modern Sans", sans-serif;
+  // font-family: "Cooper Hewitt", sans-serif;
+  // font-family: "Cabin", sans-serif;
+  // font-family: "Roboto Slab", serif;
+  // font-family: "Droid Sans", sans-serif;
+  // font-family: sans-serif;
+}
+
+#main {
+  p {
+    text-align: justify;
+    @include hyphenate;
+  }
+
+  ul, ol {
+    text-align: justify;
+    @include hyphenate;
+  }
+
+  h1 {
+    text-align: center;
   }
 }
