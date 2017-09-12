@@ -158,7 +158,9 @@ $$ P(a,b) = \int_{\Lambda} A(a, \lambda) B(b, \lambda) d\rho(\lambda). $$
 
 On considère maintenant deux réglage $$a$$ et $$a'$$ de l'appareil I et deux réglages $$b$$ et $$b'$$ de l'appareil II. Nous allons démontré une inégalité due à Clauser, Horne, Shimony et Holt [[Clauser:1969]], et donc appelée inégalité CHSH,
 
-$$ R(a, a', b, b') = |P(a',b) - P(a,b) + P(a',b') + P(a,b')| \le 2.$$
+$$\underbrace{|P(a',b) - P(a,b) + P(a',b') + P(a,b')|}_{\displaystyle R(a, a', b, b')} \le 2$$
+
+quelques soient les réglages.
 
 La démonstration est très simple. On commence par majoré la valeur absolue de l'intégrale par l'intégrale de la valeur absolue,
 
@@ -208,7 +210,10 @@ $$ R(a, a', b, b') = \left| \bra\psi S(a, a', b, b') \ket\psi \right| \label{Rex
 
 de l'espérance de l'opérateur
 
-$$ S(a,a',b,b') = A(a')B(b) - A(a)B(b) + A(a')B(b') + A(a)B(b'). $$
+$$\begin{aligned}
+S(a,a',b,b') &= A(a')B(b) - A(a)B(b) \\
+             &+ A(a')B(b') + A(a)B(b').
+\end{aligned}$$
 
 Nous faisons l'hypothèse que l'espace de Hilbert $$\Hsingle$$ des états non-corrélés de la particule 1 prise isolément, et bien sûr aussi de la particule 2 prise isolément, est de dimension 2, ce qui est réalisé en pratique. L'espace de Hilbert pour une paire est alors le produit tensoriel $$\Hpair=\Hsingle\otimes\Hsingle$$. L'opérateur $$A(x)$$ s'écrit alors $$A(x) = A_1(x) \otimes I$$ où $$A_1(x)$$ opère sur $$\Hsingle$$ seulement et où $$I$$ est l'opérateur identité de $$\Hsingle$$. De même, $$B(y) = I \otimes B_2(y)$$. Par conséquent, les opérateurs $$A(x)$$ et $$B(y)$$ commutent quelque soit les réglages $$x$$ et $$y$$, et $$A(x)B(y)=B(y)A(x)=A_1(x) \otimes B_2(y)$$.
 
@@ -287,16 +292,19 @@ $$\begin{aligned}
 
 En utilisant (\ref{pauliDecomposition}), on obtient donc
 
-$$\expect{A(x)B(y)} = p_3(x)q_3(y) + (p_1(x)q_1(y)-p_2(x)q_2(y))\sin 2\varphi.$$
+$$\expect{A(x)B(y)} = p_3(x)q_3(y) + (p_1(x)q_1(y)-p_2(x)q_2(y))\sin 2\varphi.
+\notag$$
 
 Puis
 
 $$\begin{aligned}
-\expect{S(a,a',b,b')}=
+&\expect{S(a,a',b,b')}=\\
+&\begin{aligned}
 &\big[q_3(b)(p_3(a')-p_3(a)) + q_3(b')(p_3(a')+p_3(a))\big]\\
 + \sin2\varphi &\big[q_1(b)(p_1(a')-p_1(a)) + q_1(b')(p_1(a')+p_1(a))\big]\\
 - \sin2\varphi &\big[q_2(b)(p_2(a')-p_2(a)) + q_2(b')(p_2(a')+p_2(a))\big].
-\end{aligned}$$
+\end{aligned}
+\end{aligned}\notag$$
 
 Chaque terme entre crochets est entre -2 et 2 d'après le [lemme 1], et par conséquent, on retrouve le fait que si $$\ket\psi$$ est séparable ($$\sin2\varphi=0$$ d'après (\ref{nonsepcond})), alors $$\expect{S(a,a',b,b')}$$ ne viole pas l'inégalité de Bell. La question devient maintenant de trouver des $$p(a)$$, $$p(a')$$, $$q(b)$$, et $$q(b')$$ tels que $$\expect{S(a,a',b,b')}$$ ne soit pas dans $$[-2,2]$$. On voit que si un seul des crochets est non nul, le [lemme 1] impose que l'inégalité de Bell soit vérifiée. Prenons donc deux crochets non nuls, avec
 
