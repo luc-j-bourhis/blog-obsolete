@@ -26,13 +26,16 @@ end
 compile_my_markdown('/*/index.md', '/abstracts.*')
 compile_my_markdown('/**/*.md', '/article.*')
 
+compile '/fonts/*.scss' do
+end
+
 compile '/**/*.scss' do
   filter :sass, syntax: :scss
   filter :relativize_paths, type: :css
   write item.identifier.without_ext + '.css'
 end
 
-compile '/**/*.{png,svg,jpg,tiff,js}' do
+compile '/**/*.{png,svg,jpg,tiff,js,woff}' do
   write item.identifier.to_s
 end
 
