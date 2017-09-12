@@ -194,7 +194,7 @@ Pour cela, les expérimentateurs abandonnèrent les paires de photons et utilis�
 
 En passant, les expériences d'Aspect et al. ne furent donc pas du tout définitives, contrairement à ce que beaucoup de gens croient (et pas seulement en France).
 
-### b. Preuve de la violation des inégalités de Bell
+### c. Le cadre quantique
 
 Il faut trouver des réglages tels que la mécanique quantique prédise que $$R(a, a', b, b')$$ soit plus grand que 2, et le plus grand possible afin d'augmenter le poids statistique du résultat. Commençons par établir le modèle quantique.
 
@@ -219,7 +219,7 @@ Nous faisons l'hypothèse que l'espace de Hilbert $$\Hsingle$$ des états non-co
 
 Le fait que les opérateurs $$A(x)$$ et $$B(y)$$ commutent a une conséquence important: $$S(a,a',b,b')$$ est hermitien, puisque $$A(x)$$ et $$B(y)$$ le sont pour tous réglages $$x$$ et $$y$$.
 
-#### Une condition nécessaire: la non-séparabilité
+### d. Une condition nécessaire: la non-séparabilité
 
 Ceci étant posé, le premier résultat important que:
 
@@ -239,7 +239,7 @@ $$\expect{S}=\big[\expect{A_1} - \expect{A'_1}\big]\expect{B_2} + \big[\expect{A
 
 où les espérances sont pour $$\ket\phi$$ dans le cas de $$A_1$$ et $$A'_1$$ et pour $$\ket\xi$$ dans le cas de $$B_2$$ et $$B'_2$$, le lemme 1 prouve le théorème 1.
 
-#### La non-séparabilité: une condition suffisante
+### e. La non-séparabilité: une condition suffisante
 
 La question est maintenant de savoir si, étant donné un état non-séparable $$\ket\psi$$, on peut trouver un réglage des détecteurs tel que l'inégalité CHSH est violée. Il faudrait donc choisir une configuration expérimentale particulière pour donner un sens à "réglage". Mais une très grande partie de l'analyse est complètement générale.
 
@@ -338,7 +338,7 @@ Faisons maintenant le lien avec un type de réalisation expérimentale: des éle
 
 Nous avons donc bien montrer que pour tout état non-séparable, on pouvait trouver des réglages qui violent les inégalités de Bell, ou du moins des opérateurs réalisant cela, laissant la question des réglages à la réalisation d'un protocole expérimental faisant apparaître ces opérateurs.
 
-#### Violation maximale
+### f. Violation maximale
 
 La dernière question que nous voudrions nous poser est: quelle violation maximale peut)on obtenir? Dans notre exemple ci-dessus, l'équation (\ref{maxviolation}) montre que  la borne est supérieure $$2\sqrt2$$, atteinte quand $$\varphi=\pi/4$$. On peut alors se demander si l'on peut faire mieux que $$2\sqrt{2}$$. La réponse est négative: la borne supérieure pour $$R(a, a', b, b')$$ est $$2\sqrt{2}$$. Ce résultat fut démontré pour la première fois par Cirel'son [[Cirelson:1980]] -- son nom est aussi orthographié Tsirelson parfois. La démonstration suivante est celle de Braunstein et al [[Braunstein:1992]].
 
