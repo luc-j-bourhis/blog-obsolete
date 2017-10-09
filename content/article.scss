@@ -40,3 +40,11 @@ header {
   text-align: center;
   font-size: 0.8em;
 }
+
+.topics {
+  display: none;
+}
+
+.menu.is-open .topics {
+  display: block;
+}

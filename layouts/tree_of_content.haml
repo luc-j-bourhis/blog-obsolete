@@ -1,0 +1,5 @@
+- tree_of_content(@item[:language]).each do |key, entries|
+  .topic_categories= key
+  %ul.topic_list
+    - entries.each do |e|
+      %li= link_to(e[:title], e)

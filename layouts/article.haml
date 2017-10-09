@@ -1,4 +1,23 @@
 = render '/base.*', :stylesheet => 'article' do
+  :javascript
+    (function () {
+      window.onload = function() {
+        var button = document.getElementById('topics-menu-toggle');
+        button.addEventListener('click', function(event) {
+          event.preventDefault();
+          var menu = document.getElementById('topics-menu');
+          menu.classList.toggle('is-open');
+        });
+      }
+    })();
+  %nav.menu#topics-menu
+    %button.menu-toggle#topics-menu-toggle
+    .topics
+      - tree_of_content(@item[:language]).each do |key, entries|
+        .topic_categories= key
+        %ul.topic_list
+          - entries.each do |e|
+            %li= link_to(e[:title], e)
   #main
     = yield
     = render "/bibliography.*"
