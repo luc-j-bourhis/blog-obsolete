@@ -105,6 +105,10 @@
   // @include font-spec(serif, 25 (20, 1920));
 }
 
+body {
+  margin: 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
   // font-family: "Archivo Narrow", sans-serif;
   // font-weight: 500;
@@ -130,20 +134,4 @@ h1, h2, h3, h4, h5, h6 {
   // font-family: "Roboto Slab", serif;
   // font-family: "Droid Sans", sans-serif;
   // font-family: sans-serif;
-}
-
-#main {
-  p {
-    text-align: justify;
-    @include hyphenate;
-  }
-
-  ul, ol {
-    text-align: justify;
-    @include hyphenate;
-  }
-
-  h1 {
-    text-align: center;
-  }
 }

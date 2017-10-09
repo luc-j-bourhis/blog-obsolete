@@ -1,0 +1,42 @@
+@import 'base.scss';
+
+#main {
+  padding: 1em;
+
+  p {
+    text-align: justify;
+    @include hyphenate;
+  }
+
+  ul, ol {
+    text-align: justify;
+    @include hyphenate;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .bibliography_entry {
+    margin-bottom: 0.5em;
+  }
+
+  #license {
+    margin-top: 2em;
+    margin-bottom: 1em;
+
+    img {
+      border-width: 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1em;
+    }
+  }
+
+}
+
+header {
+  text-align: center;
+  font-size: 0.8em;
+}
