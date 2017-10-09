@@ -7,7 +7,7 @@ include Nanoc::Helpers::LinkTo
 include Nanoc::Helpers::Rendering # to allow the use of `render` in layouts
 
 # Organise article titles in a tree for display in the side bar
-def sidebar_tree(lang)
+def tree_of_content(lang)
   tree = {}
   articles.each do |e|
     if e[:language] == lang
