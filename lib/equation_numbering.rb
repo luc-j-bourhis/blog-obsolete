@@ -46,7 +46,8 @@ module KramdownMonkeyPatching
     def parse_block_math
         if super
             block = @tree.children[-1]
-            if not block.value.match /^\\begin\{(?:align|equation)\*?\}/
+            if not block.value.match \
+                /^\\begin\{(?:align|equation|gather|multline)\*?\}/
                 block.value = "\\begin{equation}\n#{block.value}\n\\end{equation}"
             end
             true
