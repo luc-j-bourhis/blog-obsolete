@@ -85,11 +85,13 @@
   // @include font-spec(("Playfair Display", serif), 22 (17, 1920));
   // @include font-spec(("Roboto", sans-serif), 22 (17, 1920));
   // @include font-spec(("Droid Serif", serif), 22 (18, 1920));
+  @include font-spec(("PT Serif", serif), 22 (18, 1920));
 
   /*
    * Fonts installed on this site
    */
   // @include font-spec(("Cooper Hewitt", serif), 22 (18, 1920));
+  // font-weight: 500;
   // @include font-spec(("Computer Modern Serif", serif), 24 (19, 1920));
   // @include font-spec(("Aleo", serif), 23 (18, 1920));
 
