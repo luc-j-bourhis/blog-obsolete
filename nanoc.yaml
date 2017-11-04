@@ -158,6 +158,14 @@ google_fonts:
   #   - 600
   #   - 700
 
+  # PT Serif
+  # Typewolf recommends it as an alternative for Le Monde
+  PT Serif:
+    - 400
+    - 400i
+    - 700
+    - 700i
+
   # Pairs recommended by typewolf in "The Definitive Guide to Free Fonts"
   # 1)
   # Playfair Display:
@@ -253,8 +261,8 @@ google_fonts:
   # Roboto Slab:
   #   - 400
   #   - 700
-  # Roboto:
-  #   - 400
-  #   - 700
-  #   - 400i
-  #   - 700i
+  Roboto:
+    - 400
+    - 700
+    - 400i
+    - 700i
