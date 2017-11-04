@@ -149,6 +149,15 @@ google_fonts:
   #   - 700
   #   - 700i
 
+  # Source Serif Pro
+  # Typewolf recommends it as a replacement for Galaxie Copernicus,
+  # which he recommends to combine with Cooper Hewitt,
+  # which is the best free font according to him.
+  # Source Serif Pro:
+  #   - 400
+  #   - 600
+  #   - 700
+
   # Pairs recommended by typewolf in "The Definitive Guide to Free Fonts"
   # 1)
   # Playfair Display:
