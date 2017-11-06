@@ -36,15 +36,50 @@
 
 }
 
-header {
-  text-align: center;
-  font-size: 0.8em;
+.menu {
+  margin: 1em;
+}
+
+.menu-toggle {
+  font-size: 1.5em;
+}
+
+.toc_label {
+  display: none;
+  margin-left: 0.2em;
 }
 
 .topics {
   display: none;
+  margin: {
+    top: 0.5em;
+    bottom: 1em;
+  }
+}
+
+a.flags img {
+  vertical-align: text-bottom;
+  margin-left: 0.1em;
+}
+
+a.flags {
+  text-decoration: none;
+}
+
+.topic_categories {
+  text-transform: uppercase;
+  margin-top: 0.6em;
+}
+
+.topic_list {
+  margin: 0;
+  list-style-type: none;
 }
 
 .menu.is-open .topics {
   display: block;
+}
+
+.menu.is-open .toc_label {
+  display: inline;
 }

@@ -11,13 +11,33 @@
       }
     })();
   %nav.menu#topics-menu
-    %button.menu-toggle#topics-menu-toggle
+    %span.menu-toggle#topics-menu-toggle
+      %span.fa.fa-bars
+      - case @item[:language]
+      - when :en
+        %span.toc_label
+          Table of Contents
+      - when :fr
+        %span.toc_label
+          Table des Matières
     .topics
+      %hr
+      %span.topic_categories
+        - case @item[:language]
+        - when :en
+          = "Home"
+        - when :fr
+          = "Page Principale"
+        %a.flags{:href => "/en"}
+          %img{:src => "/en/icon.png"}
+        %a.flags{:href => "/fr"}
+          %img{:src => "/fr/icon.png"}
       - tree_of_content(@item[:language]).each do |key, entries|
         .topic_categories= key
         %ul.topic_list
           - entries.each do |e|
             %li= link_to(e[:title], e)
+      %hr
   #main
     = yield
     = render "/bibliography.*"
