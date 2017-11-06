@@ -16,6 +16,9 @@
 
     -# you don't need to keep this, but it's cool for stats!
     %meta{:name => "generator", :content => "nanoc #{Nanoc::VERSION}"}/
+
     = render "/mathjax.*"
+
+    %script{:src => "https://use.fontawesome.com/0e6d8b9bc7.js"}
   %body
     = yield
