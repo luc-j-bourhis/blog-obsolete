@@ -1,23 +1,6 @@
 @import 'base.scss';
 
 #main {
-  padding: 1em;
-  padding-top: 0;
-
-  p {
-    text-align: justify;
-    @include hyphenate;
-  }
-
-  ul, ol {
-    text-align: justify;
-    @include hyphenate;
-  }
-
-  h1 {
-    text-align: center;
-  }
-
   .bibliography_entry {
     margin-bottom: 0.5em;
   }

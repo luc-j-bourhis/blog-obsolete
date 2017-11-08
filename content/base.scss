@@ -139,3 +139,27 @@ h1, h2, h3, h4, h5, h6 {
   // font-family: "Source Serif Pro", serif;
   // font-family: sans-serif;
 }
+
+#main {
+  padding: 1em;
+  padding-top: 0;
+
+  p {
+    text-align: justify;
+    @include hyphenate;
+  }
+
+  ul, ol {
+    text-align: justify;
+    @include hyphenate;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .author {
+    text-align: center;
+    font-style: italic;
+  }
+}
