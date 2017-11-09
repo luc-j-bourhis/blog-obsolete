@@ -39,6 +39,10 @@
             %li= link_to(e[:title], e)
       %hr
   #main
+    %h1
+      = @item[:title]
+    .author
+      = @item[:author]
     = yield
     = render "/bibliography.*"
     = render "/#{@item[:language]}/licence.*"

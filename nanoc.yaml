@@ -97,6 +97,10 @@ deploy:
     branch: gh-pages
     forced: true
 
+# Web site editor
+editor:
+  Luc J. Bourhis
+
 # Google Fonts
 google_fonts:
   # Free font recommened by typewolf as the best match for Times New Roman

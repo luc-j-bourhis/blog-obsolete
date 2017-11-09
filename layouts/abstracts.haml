@@ -1,5 +1,18 @@
 = render '/base.*', :stylesheet => 'abstracts' do
-  - abstracts[@item[:language]].each do |cat, articles|
-    %h2= cat
-    - articles.each do |a|
-      %h3= a[:title]
+  #main
+    %h1
+      - case @item[:language]
+      - when :en
+        Cartesian Musings
+      - when :fr
+        Idées aux quatre vents
+    .author
+      = @config[:editor]
+    - abstracts[@item[:language]].each do |cat, articles|
+      %h2.categories= cat
+      - articles.each do |a|
+        %a{:href => a.path}
+          %h3= a[:title]
+        %div
+          :markdown
+            #{content_for(a, :summary) || ''}

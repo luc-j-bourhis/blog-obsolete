@@ -1,5 +1,6 @@
 ---
-title: Une Inégalité de Bell
+title: Étude d'une Inégalité de Bell
+author: Luc J. Bourhis
 kind: article
 category: physique
 bibliography:
@@ -111,13 +112,13 @@ tex_macros:
     Qmax:       \frac{\sin2\varphi}{\sqrt{\sin^2 2\varphi+1}}
 ---
 
-# Démonstration d'une inégalité de Bell
+<% content_for :summary do %>
 
 Les inégalités de Bell sont un moyen de tester certains principes implicites en mécanique classique, où le mot "classique" est par opposition à "quantique". Partant de deux de ces principes, localité et réalisme, que je définis clairement dans cet article, on peut démontrer que certains résultats expérimentaux doivent satisfaire des inégalités, dite de Bell, en l'honneur du chercheur qui en a démontré l'existence. De nombreuses expériences différentes ont été réalisées (je donnerais les références de certaines d'entre elles) et leurs résultats violent ces inégalités, et par conséquent falsifient ces hypothèses de localité et de réalisme.
-{: .abstract}
 
 Ce type de présentation informelle résulte trop souvent en des contre-sens et par conséquent, je me propose de démontrer mathématiquement une inégalité de Bell pour un protocole expérimental bien précis en mettant clairement et précisément en lumière les hypothèses utilisées. J'espère ainsi rendre limpide ce qui est réellement infirmé par une violation de ces inégalités. Par contraposée, cela met en lumière ce qui est spécifique à la mécanique quantique (il va sans dire que les résultats des expériences sus-citées sont en agrément avec les prédictions de la mécanique quantique).
-{: .abstract}
+
+<% end %>
 
 ## 1. L'expérience
 

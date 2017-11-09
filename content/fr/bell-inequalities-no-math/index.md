@@ -1,13 +1,15 @@
 ---
-title: Inégalités de Bell sans math
+title: Une présentation ludique des inégalités de Bell
+author: Luc J. Bourhis
 kind: article
 category: physique
 ---
 
-# Une présentation ludique des inégalités de Bell
+<% content_for :summary do %>
 
-Mon but est de présenter le problème sous la forme d'un dialogue, sans mathématique, en imaginant une expérience avec des objets de tous les jours et en analysant cette expérience comme on le ferait pour les vraies expérience de physique réalisées en laboratoire. L'analogie développée est loin d'être parfaite mais je pense qu'elle donne les bonnes idées en ne sacrifiant que sur des détails non conceptuels. Commençons…
-{: .abstract}
+Mon but est de présenter le problème sous la forme d'un dialogue, sans mathématique, en imaginant une expérience avec des objets de tous les jours et en analysant cette expérience comme on le ferait pour les vraies expérience de physique réalisées en laboratoire. L'analogie développée est loin d'être parfaite mais je pense qu'elle donne les bonnes idées en ne sacrifiant que sur des détails non conceptuels.
+
+<% end %>
 
 Je dispose de boites avec deux compartiments, un rouge et un bleu, dans
 chacun desquels je vais mettre un jeton, ou bien noir ou bien blanc. Les

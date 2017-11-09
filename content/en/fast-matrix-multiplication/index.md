@@ -1,5 +1,6 @@
 ---
-title: Fast Matrix Multiplication
+title: Matrix Multiplication at Peak Performance
+author: Luc J. Bourhis
 kind: article
 category: computing
 abbreviations:
@@ -8,10 +9,11 @@ abbreviations:
   - BLAS
 ---
 
-# How to multiply two matrices at peak performance?
+<% content_for :summary do %>
 
 High performance matrix multiplication is the workhorse which makes possible the whole field of high performance linear algebra. In this article, we succinctly motivate the importance of that field, and explain in simple terms why it must rely so much on fast matrix multiplication. Then we explore how to implement the latter with more technical details.
-{: .abstract}
+
+<% end %>
 
 ## Introduction
 

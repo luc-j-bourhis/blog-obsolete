@@ -1,5 +1,6 @@
 ---
-title: Viable Changes of Inertial Frames
+title: "Change of inertial frames: what transforms are possible?"
+author: Luc J. Bourhis
 kind: article
 category: physics
 bibliography:
@@ -73,10 +74,11 @@ tex_macros:
 
 ---
 
-# Change of inertial frames: what transforms are possible?
+<% content_for :summary do %>
 
 We discuss how to prove that Galilean and Lorentz transforms are the only possibilities besides rotations using only very general postulates about changes of inertial frames. Most interestingly, we do not make any of the traditional assumptions, about the speed of light for Lorentz transforms, and about the universality of time and length for Galilean transforms.
-{: .abstract}
+
+<% end %>
 
 ## Introduction
 
