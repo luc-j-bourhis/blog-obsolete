@@ -153,7 +153,21 @@ class ReferenceFilter < Nanoc::Filter
       content.gsub(/\[\[([[:alpha:]][^[[:space:]]]*)\]\]/) do |m|
         key = $1.intern
         if bibitems.has_key?(key)
-          "[[#{key}]](##{key}){: .bibliography-reference}"
+          a = bibitems[key][:authors].map do |n|
+            no = AuthorName.new(n)
+            no.full_name_without_first_name
+          end
+          txt = case a.length
+            when 1
+              a[0]
+            when 2
+              "#{a[0]} and #{a[1]}"
+            when 3
+              "#{a[0]}, #{a[1]}, and #{a[2]}"
+            else
+              "#{a[0]} et al"
+          end
+          "[#{txt}](##{key}){: .bibliography-reference}"
         else
           m
         end
@@ -189,6 +203,11 @@ class AuthorName
   # Full name: First von Last, Jr
   def full_name
     [[@first, @von, @last].compact.join(' '), @jr].compact.join(', ')
+  end
+
+  # Last name: von Last, Jr
+  def full_name_without_first_name
+    [[@von, @last].compact.join(' '), @jr].compact.join(', ')
   end
 end
 
