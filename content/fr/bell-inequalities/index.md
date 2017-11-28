@@ -175,7 +175,7 @@ Nous nous intéressons à la fonction de corrélation entre les mesures sur les 
 
 $$ P(a,b) = \int_{\Lambda} A(a, \lambda) B(b, \lambda) d\rho(\lambda). $$
 
-On considère maintenant deux réglage $$a$$ et $$a'$$ de l'appareil I et deux réglages $$b$$ et $$b'$$ de l'appareil II. Nous allons démontré une inégalité due à  [[Clauser:1969]], et donc appelée inégalité CHSH,
+On considère maintenant deux réglage $$a$$ et $$a'$$ de l'appareil I et deux réglages $$b$$ et $$b'$$ de l'appareil II. Nous allons démontré une inégalité due à  (Clauser, Horne, Shimony et Holt)[[Clauser:1969]], et donc appelée inégalité CHSH,
 
 $$\underbrace{|P(a',b) - P(a,b) + P(a',b') + P(a,b')|}_{\displaystyle R(a, a', b, b')} \le 2$$
 

@@ -141,7 +141,13 @@ end
 #
 # Then a Bibliography section is created by our layout whereas references
 # to its items in the text shall be [[Lee:1905]] and they will be replaced by
-# links to the bibliography items.
+# links to the bibliography items. The citation text is in the natbib style,
+# i.e. Bob and Alice, Alice, Bob and Jennifer, Alice et al.
+#
+# One may also override the automatically generated citation text with
+# (Paul, Jessica, Leto and Alia)[[Dune]]
+# For example in this case, the generated text would have been "Paul et al"
+# but now it will be as specified.
 class ReferenceFilter < Nanoc::Filter
   identifier :generate_references
 
@@ -150,19 +156,24 @@ class ReferenceFilter < Nanoc::Filter
     if bibitems.nil?
       content
     else
-      content.gsub(/\[ \[ ( [[:alpha:]] [^[[:space:]]]*) \] \]/x) do |m|
-        key = $1.intern
+      content.gsub(/(?: \( (.+?) \) )?
+                    \[ \[ ( [[:alpha:]] [^[[:space:]]]* ) \] \]/x) do |m|
+        key = $2.intern
         if bibitems.has_key?(key)
-          a = bibitems[key][:authors].map(&:full_name_without_first_name)
-          txt = case a.length
-            when 1
-              a[0]
-            when 2
-              "#{a[0]} and #{a[1]}"
-            when 3
-              "#{a[0]}, #{a[1]}, and #{a[2]}"
-            else
-              "#{a[0]} et al"
+          if !$1.nil?
+            txt = $1
+          else
+            a = bibitems[key][:authors].map(&:full_name_without_first_name)
+            txt = case a.length
+              when 1
+                a[0]
+              when 2
+                "#{a[0]} and #{a[1]}"
+              when 3
+                "#{a[0]}, #{a[1]}, and #{a[2]}"
+              else
+                "#{a[0]} et al"
+            end
           end
           "[#{txt}](##{key}){: .bibliography-reference}"
         else
