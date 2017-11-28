@@ -153,10 +153,7 @@ class ReferenceFilter < Nanoc::Filter
       content.gsub(/\[\[([[:alpha:]][^[[:space:]]]*)\]\]/) do |m|
         key = $1.intern
         if bibitems.has_key?(key)
-          a = bibitems[key][:authors].map do |n|
-            no = AuthorName.new(n)
-            no.full_name_without_first_name
-          end
+          a = bibitems[key][:authors].map(&:full_name_without_first_name)
           txt = case a.length
             when 1
               a[0]
@@ -214,7 +211,7 @@ end
 # Format author list for bibliographie
 def format_authors(authors, language)
   and_ = {:en => "and", :fr => "et"}[language]
-  names = authors.map{|a| AuthorName.new(a)}.map(&:full_name)
+  names = authors.map(&:full_name)
   if names.length > 1
     (names[0..-2] + ["#{and_} #{names[-1]}"]).join(', ')
   else

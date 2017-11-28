@@ -17,6 +17,12 @@ preprocess do
   @items.each do |i|
     c = i.identifier.to_s.match(%r{/([a-z]{2})/})
     i[:language] = if not c.nil? then c[1].intern else :unknown end
+    b = i[:bibliography]
+    unless b.nil?
+      b.each_value {|e|
+        e[:authors] = e[:authors].map {|n| AuthorName.new(n)}
+      }
+    end
   end
   @items.map {|i| i[:language]}.uniq.select {|l| l != :unknown}.each do |l|
     @items.create('', {:language => l}, "/#{l}/index.md")
