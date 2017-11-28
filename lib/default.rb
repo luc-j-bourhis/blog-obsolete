@@ -150,7 +150,7 @@ class ReferenceFilter < Nanoc::Filter
     if bibitems.nil?
       content
     else
-      content.gsub(/\[\[([[:alpha:]][^[[:space:]]]*)\]\]/) do |m|
+      content.gsub(/\[ \[ ( [[:alpha:]] [^[[:space:]]]*) \] \]/x) do |m|
         key = $1.intern
         if bibitems.has_key?(key)
           a = bibitems[key][:authors].map(&:full_name_without_first_name)
