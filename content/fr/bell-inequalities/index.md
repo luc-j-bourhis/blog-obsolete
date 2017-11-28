@@ -14,6 +14,14 @@ bibliography:
         volume: 49
         year: 1982
         pages: 1804--1807
+    Bell:1964:
+        authors:
+            - Bell, John S.
+        title: On the Einstein Podolsky Rosen paradox
+        journal: Physics
+        volume: 1
+        year: 1964
+        pages: 195--200
     Braunstein:1992:
         authors:
             - Braunstein, Samuel L.
@@ -52,6 +60,16 @@ bibliography:
         volume: 23
         year: 1969
         pages: 880--884
+    Einstein:1935aa:
+        authors:
+            - Einstein, A.
+            - Podolsky, B.
+            - Rosen, N.
+        title: Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?
+        journal: Phys. Rev.
+        volume: 47
+        year: 1935
+        pages: 777--780
     Hensen:2015:
         authors:
             - Hensen, B.
