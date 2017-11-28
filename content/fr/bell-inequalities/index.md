@@ -9,7 +9,7 @@ bibliography:
             - Aspect, Alain
             - Dalibard, Jean
             - Roger, Gérard
-        title: Experimental Test of Bell's Inequalities Using Time- Varying Analyzers
+        title: Experimental Test of Bell's Inequalities Using Time-Varying Analyzers
         journal: Phys. Rev. Lett.
         volume: 49
         year: 1982
