@@ -1,4 +1,9 @@
 = render '/base.*', :stylesheet => 'abstracts' do
+  %nav#home_lang_nav
+    %a.flags{:href => "/en"}
+      %img{:src => "/en/icon.png"}
+    %a.flags{:href => "/fr"}
+      %img{:src => "/fr/icon.png"}
   #main
     %h1
       - case @item[:language]

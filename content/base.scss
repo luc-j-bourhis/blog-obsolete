@@ -163,3 +163,12 @@ h1, h2, h3, h4, h5, h6 {
     font-style: italic;
   }
 }
+
+a.flags img {
+  vertical-align: text-bottom;
+  margin-left: 0.1em;
+}
+
+a.flags {
+  text-decoration: none;
+}
