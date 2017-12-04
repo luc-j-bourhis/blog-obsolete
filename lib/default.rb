@@ -142,7 +142,8 @@ end
 # Then a Bibliography section is created by our layout whereas references
 # to its items in the text shall be [[Lee:1905]] and they will be replaced by
 # links to the bibliography items. The citation text is in the natbib style,
-# i.e. Bob and Alice, Alice, Bob and Jennifer, Alice et al.
+# i.e. Bob and Alice (year), Alice, Bob and Jennifer (year), or
+# Alice et al (year).
 #
 # One may also override the automatically generated citation text with
 # (Paul, Jessica, Leto and Alia)[[Dune]]
@@ -163,17 +164,8 @@ class ReferenceFilter < Nanoc::Filter
           if !$1.nil?
             txt = $1
           else
-            a = bibitems[key][:authors].map(&:full_name_without_first_name)
-            txt = case a.length
-              when 1
-                a[0]
-              when 2
-                "#{a[0]} and #{a[1]}"
-              when 3
-                "#{a[0]}, #{a[1]}, and #{a[2]}"
-              else
-                "#{a[0]} et al"
-            end
+            item = bibitems[key]
+            txt = format_reference(item[:authors], item[:year], @item[:language])
           end
           "[#{txt}](##{key}){: .bibliography-reference}"
         else
@@ -219,15 +211,35 @@ class AuthorName
   end
 end
 
+# The translation of "and" in the given language
+def and_(language)
+  {:en => "and", :fr => "et"}[language]
+end
+
 # Format author list for bibliographie
 def format_authors(authors, language)
-  and_ = {:en => "and", :fr => "et"}[language]
   names = authors.map(&:full_name)
   if names.length > 1
-    (names[0..-2] + ["#{and_} #{names[-1]}"]).join(', ')
+    (names[0..-2] + ["#{and_(language)} #{names[-1]}"]).join(', ')
   else
     names[0]
   end
+end
+
+# Format bibliographic reference: used when citing and in bibliography
+def format_reference(authors, year, language)
+  a = authors.map(&:full_name_without_first_name)
+  txt = case a.length
+    when 1
+      a[0]
+    when 2
+      "#{a[0]} #{and_(language)} #{a[1]}"
+    when 3
+      "#{a[0]}, #{a[1]}, #{and_(language)} #{a[2]}"
+    else
+      "#{a[0]} et al"
+  end
+  "#{txt} (#{year})"
 end
 
 # Google Fonts

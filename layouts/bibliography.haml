@@ -2,7 +2,8 @@
     %h2= {:en => "Bibliography", :fr => "Bibliographie"}[@item[:language]]
     - @item[:bibliography].sort.each do |key, e|
         %div{:id => key, :class => "bibliography_entry"}
-            [#{key}]
+            %span{:class => "bibliography_key"}
+                #{format_reference(e[:authors], e[:year], @item[:language])}
             #{format_authors(e[:authors], @item[:language])}.
             #{e[:title]},
             - if e.has_key?(:journal)
