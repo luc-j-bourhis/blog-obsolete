@@ -43,6 +43,7 @@
       = @item[:title]
     .author
       = @item[:author]
-    = yield
+    #body
+      = yield
     = render "/bibliography.*"
     = render "/#{@item[:language]}/licence.*"
