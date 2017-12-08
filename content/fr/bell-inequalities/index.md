@@ -129,11 +129,9 @@ tex_macros:
     vec:        \mathrm{Vec}\left(#1\right)
 ---
 
-<% content_for :summary do %>
-
+~~~~
 Les inégalités de Bell sont un moyen de tester certains principes implicites en mécanique classique, où le mot "classique" est ici entendu par opposition à "quantique". Partant de deux de ces principes, localité et réalisme, que je définis clairement dans cet article, je vais démontrer que certains résultats expérimentaux doivent satisfaire des inégalités, dite de Bell, en l'honneur du chercheur qui en a démontré l'existence. De nombreuses expériences différentes ont été réalisées, dont je donnerais un aperçu, menant à une double conclusion: d'une part, leurs résultats violent ces inégalités, et par conséquent falsifient ces hypothèses de localité et de réalisme; d'autre part, ils sont en accord avec les prédictions de la mécanique quantique.
-
-<% end %>
+~~~~
 
 ## 1. L'expérience
 

@@ -43,6 +43,21 @@ def theorem_like(kind, n)
   render "/theorem-like.*", kind: kind, number: n
 end
 
+# Extract article abstracts, appearing between two lines of more than 4 tildes
+class AbstractFilter < Nanoc::Filter
+  identifier :abstract
+
+  def run(content, params={})
+    content.gsub(/^~~~~(.+?)^~~~~/m,
+                 "<% content_for :summary do %>\\1<% end %>\n" +
+                 "<%= content_for(@item, :summary) %>\n")
+  end
+end
+
+def abstract_of(item)
+  AbstractFilter.abstract_of[item.identifier] || ''
+end
+
 # Cast {{XXXX ddd}} to <%=theorem_like(XXXX, ddd)%>
 # so that a subsequent :erb filter can work on it
 class Bacchantes < Nanoc::Filter
