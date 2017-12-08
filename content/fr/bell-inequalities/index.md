@@ -127,263 +127,215 @@ tex_macros:
     Hsingle:    \mathcal{S}
     Hpair:      \mathcal{P}
     vec:        \mathrm{Vec}\left(#1\right)
-    Qmax:       \frac{\sin2\varphi}{\sqrt{\sin^2 2\varphi+1}}
 ---
 
 <% content_for :summary do %>
 
-Les inégalités de Bell sont un moyen de tester certains principes implicites en mécanique classique, où le mot "classique" est ici entendu par opposition à "quantique". Partant de deux de ces principes, localité et réalisme, que je définis clairement dans cet article, on peut démontrer que certains résultats expérimentaux doivent satisfaire des inégalités, dite de Bell, en l'honneur du chercheur qui en a démontré l'existence. De nombreuses expériences différentes ont été réalisées (je donnerais les références de certaines d'entre elles) et leurs résultats violent ces inégalités, et par conséquent falsifient ces hypothèses de localité et de réalisme.
-
-Ce type de présentation informelle résulte trop souvent en des contre-sens et par conséquent, je me propose de démontrer mathématiquement une inégalité de Bell pour un protocole expérimental bien précis en mettant clairement et précisément en lumière les hypothèses utilisées. J'espère ainsi rendre limpide ce qui est réellement infirmé par une violation de ces inégalités. Par contraposée, cela met en lumière ce qui est spécifique à la mécanique quantique (il va sans dire que les résultats des expériences sus-citées sont en agrément avec les prédictions de la mécanique quantique).
+Les inégalités de Bell sont un moyen de tester certains principes implicites en mécanique classique, où le mot "classique" est ici entendu par opposition à "quantique". Partant de deux de ces principes, localité et réalisme, que je définis clairement dans cet article, je vais démontrer que certains résultats expérimentaux doivent satisfaire des inégalités, dite de Bell, en l'honneur du chercheur qui en a démontré l'existence. De nombreuses expériences différentes ont été réalisées, dont je donnerais un aperçu, menant à une double conclusion: d'une part, leurs résultats violent ces inégalités, et par conséquent falsifient ces hypothèses de localité et de réalisme; d'autre part, ils sont en accord avec les prédictions de la mécanique quantique.
 
 <% end %>
 
 ## 1. L'expérience
 
-[[Bell:1964]] montra qu'une théorie ayant les qualités voulues par [[Einstein:1935aa]] prédisait des inégalités que les espérances des quantités mesurées devaient nécessairement satisfaire dans certaines conditions mais que les prédictions de la mécanique quantique violaient ces inégalités. Les inégalités de Bell n'étaient pas directement testable expérimentalement mais d'autres chercheurs découvrirent d'autres inégalités, dérivées des mêmes hypothèses, qui elles purent être testées. Nous allons démontré une d'entre elles mais d'abord nous allons présenter les traits caractéristiques d'une expérience testant ces inégalités.
+Je vais présenter une expérience idéalisée. Il ne s'agit pas d'une pure expérience de pensée car des expériences réelles furent réalisées sur les mêmes principes mais l'analyse rigoureuses de ces dernières est trop complexe pour le but pédagogique que je me suis fixé pour cet article. Je me conteterais de faire quelques liens qualitatifs avec ces expériences réelles.
 
-Toutes les tests expérimentaux des inégalités de Bell peuvent être idéalisés comme suit. Il y a en premier lieu une source qui émet une à une des paires de particules -- en pratique des photons, des ions ou des électrons. Pour chaque paire, l'une des particules, notée 1, va vers un appareil de mesure I tandis que l'autre, notée 2, va vers un appareil de mesure II. Ces deux appareils sont identiques mais chacun peut avoir des réglages différents, que je noterais $$a$$ et $$b$$ respectivement. L'appareil I va mesurer une observable $$A$$ de la particule 1 tandis que l'appareil II va mesurer une observable $$B$$ de la particule 2. Nous allons faire l'hypothèse que $$A$$ et $$B$$ ne peuvent prendre que les valeurs 1 et -1, ce qui est vrai en pratique comme nous le verrons plus loin.
+Il y a en premier lieu une source qui émet une à une des paires de particules -- en pratique des photons, des ions ou des électrons. Pour chaque paire, l'une des particules, notée 1, va vers un appareil de mesure I tandis que l'autre, notée 2, va vers un appareil de mesure II. Ces deux appareils sont identiques mais chacun peut avoir des réglages différents, respectivement $$a$$ et $$b$$. En pratique, on mesurera la polarisation d'un photon ou le spin d'un ion, et le réglage sera la direction dans laquelle on mesurera cette grandeur. Je vais appeler $$A$$ l'observable de la particule 1 mesurée par l'appareil I et $$B$$ celle mesurée sur de la particule 2. Ces observables dépendent donc des réglages $$a$$ et $$b$$.
 
-L'expérience consiste alors à mesurer $$A$$ et $$B$$ pour un grand nombre de paires et à calculer leur corrélation, en prenant la moyenne du produit $$AB$$. Il faut s'assurer que les paires sont émises à des intervalles de temps suffisamment grands pour que l'on puisse être certain que les appareils I et II font des mesures sur les membres de la même paire. L'astuce est alors de répéter l'expérience avec des réglages différents, de combiner les résultats, et de les comparer avec les prédictions du modèle, comme nous allons le voir maintenant.
+Nous allons faire l'hypothèse que $$A$$ et $$B$$ ne peuvent prendre que les valeurs 1 et -1, ce qui est vrai en pratique comme nous le verrons quand j'aborderais le traitement quantique. L'expérience consiste alors à mesurer $$A$$ et $$B$$ pour un grand nombre $$N$$ de paires et à calculer
+
+$$ D_N(a,b) = \frac{N_\text{identique}(a,b)-N_\text{différente}(a,b)}{N} \label{countingRatios},$$
+
+où $$N_\text{identique}(a,b)$$ (resp. $$N_\text{différente}(a,b)$$) est le nombre de paires pour lesquelles $$A$$ et $$B$$ ont la même valeur (resp. des valeurs différentes). Ces comptages dépendent à priori des réglages $$a$$ et $$b$$, ce que j'ai rendu explicite dans cette équation. Comme $$A$$ et $$B$$ ne peuvent prendre que les valeurs +1 et -1, $$D_N(a,b)$$ est la moyenne du produit $$AB$$ sur les $$N$$ paires mesurées, c'est à dire ce que l'on appelle la corrélation entre $$A$$ et $$B$$.
+L'astuce est alors de répéter l'expérience avec des réglages différents, de combiner ces différentes corrélations, et de les comparer avec les prédictions du modèle, que nous allons maintenant étudier.
 
 ## 2. Le modèle
 
-L'information contenue dans chaque paire, ou du moins celle qui aura une influence sur les mesures, sera notée $$\lambda$$, qui est aussi appelée l'état de la paire à cause de l'influence du vocabulaire de la mécanique quantique. Le point fondamental est qu'une partie de cette information ne nous est pas connue: ce sont les fameuses variables cachées. En pratique, $$\lambda$$ comprend donc le spin de chaque particule et peut-être aussi des élements d'information dont nous n'avons pas la moindre idée. On connaît le spin total de chaque paire grâce à ce que l'on connaît du mécanisme de production des paires mais on ignore le spin de chaque particule avant mesure. Je voudrais insister sur deux points importants:
+L'information contenue dans chaque paire, ou du moins celle qui aura une influence sur les mesures, sera notée $$\lambda$$, qui est aussi appelée l'état de la paire à cause de l'influence du vocabulaire de la mécanique quantique. Le point fondamental est qu'une partie de cette information ne nous est pas connue: ce sont les fameuses variables cachées. En pratique, $$\lambda$$ comprend donc au moins la polarisation des photons, ou le spin des électrons ou des ions. Mais il comprend peut-être aussi des élements d'information dont nous n'avons pas la moindre idée. En fait, [[Einstein:1935aa]] ont argumenté de la nécessité de tels éléments d'information en plus de ce que la mécanique quantique prend en compete, et cet argument fut la motivation de [[Bell:1964]], comme le montre clairement le titre de l'article.
+
+Je voudrais insister sur deux points importants:
 
 - $$\lambda$$ varie aléatoirement d'une paire à l'autre et $$\lambda$$ évolue peut-être aussi stochastiquement pendant le temps de vol des photons d'une même paire. Cela ne signifie pas que l'on renie le déterminisme de la mécanique classique mais simplement que l'on doit se contenter de traiter statistiquement des processus dont tous les détails ne nous sont pas connus;
-- on ne suppose pas que l'information $$\lambda$$ au sujet de la paire est un simple juxtaposition d'informations indépendantes $$\lambda_1$$ et $$\lambda_2$$ au sujet de respectivement la première et la deuxième particule de la paire -- cette supposition est ce que l'on peut appeler un critère de séparabilité. Pour enfoncer le clou on laisse la porte ouverte à des corrélations entre les états des deux particules -- au minimum des corrélations entre les spins en pratique. L'idée est que ces corrélations sont causées par le mécanisme de production de la paire, que malheureusement nous ne connaissons pas.
+- on ne suppose pas que l'information $$\lambda$$ au sujet de la paire est un simple juxtaposition d'informations indépendantes $$\lambda_1$$ et $$\lambda_2$$ au sujet de respectivement la première et la deuxième particule de la paire -- cette supposition est ce que l'on peut appeler un critère de séparabilité. On laisse donc la porte ouverte à des corrélations entre les états des deux particules -- au minimum des corrélations entre les spins ou les polarisations en pratique. L'idée est que ces corrélations sont causées par le mécanisme de production de la paire, dont malheureusement nous ne connaissons pas tous les détails.
 
-Toutes les inégalités de Bell résulte des deux hypothèses fondamentales de localité et de réalisme (en anglais Objective Local Theory, parfois abrégé en OLT). Nous allons maintenant les présenter en détails. Tout l'enjeu est de décrire précisément de quoi dépendent les mesures $$A$$ et $$B$$.
+Toutes les inégalités de Bell résulte des deux hypothèses fondamentales de localité et de réalisme (en anglais Objective Local Theory, parfois abrégé en OLT). Nous allons maintenant les présenter en détails. Tout l'enjeu est de décrire précisément de quoi dépendent les mesures de $$A$$ et $$B$$.
 
 ### a. Le critère de réalisme
 
-Une théorie "réaliste" suppose l'existence d'une réalité, au sens de la mécanique classique, c'est à dire déterministe, et introduit des probabilités, comme en physique statistique, uniquement parce que l'on ne peut pas décrire complètement les détails microscopiques des systèmes en jeu. Plus précisément, une telle théorie fait l'hypothèse que *l'état de la paire $$\lambda$$ est entièrement suffisant pour déterminer, conjointement avec les réglages des appareils, le résultat des mesures* mais que l'état de chaque paire ne pouvant être connu, il nous faut introduire une mesure de probabilité $$\rho$$ sur l'ensemble $$\Lambda$$ des valeurs pouvant être prises par $$\lambda$$. Notons que cette mesure ne dépend que du mécanisme de production des paires et donc pas des réglages des appareils de mesure, un point très important pour démontrer les inégalités de Bell. Notons aussi que nous n'avons à priori aucune idée de la forme que peut prendre $$\rho$$, et que cette information n'est pas nécessaire pour démontrer les inégalités de Bell.
+Une théorie "réaliste" suppose l'existence d'une réalité indépendente de l'observateur et déterministe, ce qui constitue un des piliers de la mécanique classique. Une telle théorie introduit des probabilités, comme en physique statistique, uniquement parce que l'on ne peut pas décrire complètement les détails microscopiques des systèmes en jeu. Plus précisément, une telle théorie fait l'hypothèse que *l'état de la paire $$\lambda$$ est entièrement suffisant pour déterminer, conjointement avec les réglages des appareils, le résultat des mesures* mais que l'état de chaque paire ne pouvant être connu, il nous faut introduire une mesure de probabilité $$\rho$$ sur l'ensemble $$\Lambda$$ des valeurs pouvant être prises par $$\lambda$$. Par conséquent, cette mesure ne dépend que du mécanisme de production des paires et donc pas des réglages des appareils de mesure, un point très important pour démontrer les inégalités de Bell. Notons que nous n'avons à priori aucune idée de la forme que peut prendre $$\rho$$, et que cette information n'est pas nécessaire pour démontrer les inégalités de Bell.
 
 ### b. Le critère de localité
 
-Ce critère s'exprime ainsi: *l'analyseur 1 fonctionne indépendamment de l'analyseur 2*.
-
-À l'évidence cette hypothèse n'est guère évidente si les deux appareils sont très proches l'un de l'autre. Elle devient plus naturelle si ils sont distants mais cela reste subjectif. Cependant, la relativité restreinte permet de rendre ce critère quantitatif, puisque aucune information ne peut passer d'un analyseur à l'autre plus vite que la lumière. L'implémentation expérimentale de cette idée n'est pas aisée malheureusement. La seconde expérience d'[[Aspect:1982]] fut une la première à tenter de fermet cette faille potentielle, appelée "timing loophole" dans la littérature car on fait varier les réglages des polariseurs pendant le vol des photons de la source aux détecteurs avec un timing suffisamment rapide pour s'assurer du critère de localité. Ce "timing loophole" fut finalement fermé pour la première fois de manière satisfaisante par [[Weihs:1998]].
-
-Par souci de simplicité, laissons les détails de coté et admettons le critère de localité. Il en résulte une conséquence importante: combiné avec le critère de réalisme, la mesure $$A$$ par l'appareil I ne peut dépendre que du réglage $$a$$ de cet appareil et de l'état de la pair $$\lambda$$. On notera donc $$A(a, \lambda)$$. Et de même pour l'autre mesure, $$B(b, \lambda)$$.
+Ce critère s'exprime ainsi: *l'analyseur 1 fonctionne indépendamment de l'analyseur 2*. On pourrait imaginer à l'inverse que des facteurs extérieurs influencent les deux analyseurs, créant ainsi une corrélation entre les mesures. La conséquence essentielle de ce postulat est que, combiné avec le critère de réalisme, la mesure $$A$$ par l'appareil I ne peut dépendre que du réglage $$a$$ de cet appareil et de l'état de la pair $$\lambda$$. On notera donc $$A(\lambda)$$ en laissant la dépendence en $$a$$ implicite. Et de même pour l'autre mesure, $$B(\lambda)$$.
 
 On pourrait être tenté d'aller plus loin et de dire que $$A$$ ne peut dépendre que de l'état de la particule 1 mais comme cet état peut être corrélé avec celui de la particule 2, cette hypothèse est en générale fausse. Le critère de localité, qui s'applique aux analyseurs, n'est donc pas équivalent au critère de séparabilité, comme nous l'avions déjà mentionné plus haut.
 
 ## 3. Démonstration des inégalités de Bell
 
-Nous nous intéressons à la fonction de corrélation entre les mesures sur les membres d'une paire:
+La quantité mesurée étant la corrélation entre les mesures sur les membres d'une paire comme nous l'avons expliqué plus haut, le point de départ est donc l'expression de cette corrélation dans notre modèle,
 
-$$ P(a,b) = \int_{\Lambda} A(a, \lambda) B(b, \lambda) d\rho(\lambda). $$
+$$ P(A,B) = \int_{\Lambda} A(\lambda) B(\lambda) d\rho(\lambda). $$
 
-On considère maintenant deux réglage $$a$$ et $$a'$$ de l'appareil I et deux réglages $$b$$ et $$b'$$ de l'appareil II. Nous allons démontré une inégalité due à  (Clauser, Horne, Shimony et Holt)[[Clauser:1969]], et donc appelée inégalité CHSH,
+Avec un suffisament grand nombre $$N$$ de paires, on aura alors $$D_N(a,b) \approx P(A,B)$$. On voit que la moyenne qui apparaît dans $$D_N(a,b)$$ devient naturellemnt une moyenne prenant en compte la distribution de l'états de la paire de particule.
 
-$$\underbrace{|P(a',b) - P(a,b) + P(a',b') + P(a,b')|}_{\displaystyle R(a, a', b, b')} \le 2$$
+On considère maintenant deux réglages $$a$$ et $$a'$$ de l'appareil I et deux réglages $$b$$ et $$b'$$ de l'appareil II et on introduit les observables associées $$A$$, $$A'$$, $$B$$ et $$B'$$. Nous allons démontré une inégalité due à  (Clauser, Horne, Shimony et Holt (1969))[[Clauser:1969]], et donc appelée inégalité CHSH,
+
+$$\underbrace{|P(A',B) - P(A,B) + P(A',B') + P(A,B')|}_{\displaystyle R(A, A', B, B')} \le 2$$
 
 quelques soient les réglages.
 
-La démonstration est très simple. On commence par majoré la valeur absolue de l'intégrale par l'intégrale de la valeur absolue,
+La démonstration est très simple. On commence par majorer la valeur absolue de l'intégrale par l'intégrale de la valeur absolue,
 
 $$ \begin{aligned}
-R(a, a', b, b')
-    &\le \int_\Lambda \big|[A(a', \lambda) - A(a, \lambda)] B(b, \lambda)\\
-    &+ [A(a', \lambda) + A(a, \lambda)]B(b', \lambda) \big| d\rho(\lambda).
+R(A, A', B, B')
+    &\le \int_\Lambda \big|[A'(\lambda) - A(\lambda)] B(\lambda)\\
+    &+ [A'(\lambda) + A(\lambda)]B'(\lambda) \big| d\rho(\lambda).
 \end{aligned}\notag $$
 
-Comme $$A$$ prend seulement les valeurs $$\pm 1$$, ou bien $$A(a', \lambda) \ne A(a, \lambda)$$, auquel cas le premier crochet vaut $$\pm 2$$ et le second crochet 0, ou bien  $$A(a', \lambda) = A(a, \lambda)$$, auquel cas le premier crochet vaut 0 et le second crochet vaut $$\pm 2$$. Comme $$B$$ ne prend que les valeurs +1 et -1, dans les deux cas, l'intégrande est majoré par 2, ce qui finit la preuve puisque par définition d'une mesure de probabilité, $$\int_\Lambda d\rho(\lambda)=1$$.
+Comme $$A$$ et $$A'$$ prennent seulement les valeurs $$\pm 1$$, ou bien $$A'(\lambda) \ne A(\lambda)$$, auquel cas le premier crochet vaut $$\pm 2$$ et le second crochet 0, ou bien  $$A'(\lambda) = A(\lambda)$$, auquel cas le premier crochet vaut 0 et le second crochet vaut $$\pm 2$$. Comme $$B$$ et $$B'$$ ne prennent que les valeurs +1 et -1, dans les deux cas, l'intégrande est majoré par 2, ce qui finit la preuve puisque par définition d'une mesure de probabilité, $$\int_\Lambda d\rho(\lambda)=1$$.
 
-## 4. Violation des inégalités de Bell
+Un test expérimental consistera alors à mesurer
 
-### a. Mesures
+$$R(a,a',b,b') = D_N(a',b) - D_N(a,b) + D_N(a',b') + D_N(a,b')$$
 
-Expérimentalement, tirant parti encore une fois du fait que $$A$$ et $$B$$ ne prennent que les valeurs +1 et -1, on mesure la corrélation par
+et à chercher des réglages $$a$$, $$a'$$, $$b$$, $$b'$$ des appareils de mesure tels que $$R(a,a',b,b')$$ soit plus grand que 2 en valeur absolue. De telles expériences furent réalisées, et cette borne fut effectivement violée. La conclusion est donc que l'une ou l'autre des deux hypothèses de réalisme ou de localité est falsifiée. L'étape suivante est alors d'étudier les prédictions des théories qui ne contiennent pas ces hypothèses, et de comparer leur prédictions pour les bornes de $$R(a,a',b,b')$$. En premier lieu, vient la mécanique quantique, pour laquelle les deux hypothèses sont fausses, mais il est aussi intéressant de chercher si il est possible de déveloper une théorie conservant l'une des deux.
 
-$$ P(a,b) \approx \frac{N_\text{identique}(a,b)-N_\text{différente}(a,b)}{N_\text{identique}(a,b)+N_\text{différente}(a,b)} \label{countingRatios}$$
+## 4. Violation des inégalités de Bell en mécanique quantique
 
-où $$N_\text{identique}(a,b)$$ (resp. $$N_\text{différente}(a,b)$$) sont respectivement le nombre de paires pour lesquelles les valeurs mesurées $$A$$ et $$B$$ sont identiques (resp. différentes).
+Nous allons maintenant étudier la violation des inégalités de Bell prédite par la mécanique quantique.
 
-### b. Historique
+### a. Le cadre quantique
 
-À ce stade, il est temps de présenter succinctement un historique des expériences réelles que nous avons modélisé de manière générique dans la section précédente. Historiquement, les premières expériences utilisèrent des paires de photons dont les polarisations sont corrélées. L'expérience d'Aspect et al. est sans doute une des plus célèbre. Une difficulté de ce type d'expérience vient de ce qu'un nombre significatif de photons ne sont pas détectés. Cela a deux conséquents importantes.
+Il faut trouver des réglages tels que la mécanique quantique prédise que $$R(A, A', B, B')$$ soit plus grand que 2, et le plus grand possible afin d'augmenter le poids statistique du résultat. Pour cela, il me faut d'abord introduire la machinerie quantique. Je noterais $$\Hsingle$$ l'espace de Hilbert des états non-corrélés de la particule 1 prise isolément, et comme les deux particules sont identiques, il s'agit aussi de l'espace de Hilbert pour la particule 2 prise isolément. L'espace de Hilbert pour une paire est alors le produit tensoriel $$\Hpair=\Hsingle\otimes\Hsingle$$. Ensuite, les observables $$A$$, $$A'$$, $$B$$ et $$B'$$ deviennent tout d'abord des opérateurs hermitiens de $$\Hsingle$$ opérant sur la première particule pour les deux premiers, et la seconde particule pour les deux derniers, dans les deux cas sur une particule isolée. La propriété que les observables prennent seulement les valeurs $$\pm 1$$ se traduit par le fait que les valeurs propres de $$A$$, $$A'$$, $$B$$ et $$B'$$ sont $$\pm 1$$.
 
-Tout d'abord, l'équation (\ref{countingRatios}) suppose que toutes les particules soient comptées, ce qui n'est pas le cas comme nous venons de l'expliquer. C'est pourquoi l'inégalité CHSH n'est pas utilisé dans ce cas. On lui préfère une inégalité apparentée, découverte par [[Clauser:1974]], et donc dite inégalité CH, car cette dernière peut s'exprimer à l'aide de ratio de probabilités, ce qui élimine $$n$$ entre le numérateur et le dénominateur.
+Ensuite, les observables $$AB$$, $$A'B$$, etc deviennent les produits tensoriels des opérateurs correspondants, $$A\otimes B$$, $$A'\otimes B$$, etc. Enfin, les espérances doivent maintenant s'entendre au sens quantique, i.e. pour tout opérator $$O$$,
 
-Ensuite, il se pourrait que les particules non détectées satisfassent les inégalités de Bell tandis que les particules détectées les violent, résultant globalement en un respect des inégalités de Bell. En quelque sorte, il y aurait une conspiration contre les expérimentateurs. C'est ce que l'on appelle le "detection loophole" dans la littérature scientifique. Bien que peu satisfaisante intellectuellement, cette hypothèse se doit d'être testée.
+$$\expect{O} = \bra\psi O \ket\psi,$$
 
-Pour cela, les expérimentateurs abandonnèrent les paires de photons et utilisèrent des paires d'électrons ou d'ions car alors l'efficacité des détecteurs est suffisante; ou alors utilisèrent des astuces permettant de s'assurer de l'émission d'une paire, dont il serait trop long de discuter ici; ou une combinaison des deux. On peut alors utiliser les inégalités CHSH discutée dans cet article, et fermer le "detection loophole", ce qui semble avoir été fait pour la première fois en 2001 à la satisfaction de la communauté des physiciens par [[Rowe:2001]] --- j'écris "semble" car je ne suis pas un expert. Il restait donc à fermer les deux failles dans une seule et même expérience, ce qui fut fait très récemment par [[Hensen:2015]]. Il y a eu plusieurs autres expériences marquantes s'attaquant à l'une ou l'autre de ces failles que je n'ai pas cité: je renvoie le lecteur à la bibliographie de [[Hensen:2015]].
+où $$\ket\psi$$ est l'état quantique dans lequelle toutes les paires sont préparées.
 
-En passant, les expériences d'Aspect et al. ne furent donc pas du tout définitives, contrairement à ce que beaucoup de gens croient (et pas seulement en France).
+L'expression $$R(A, A', B, B')$$ bornée par les inégalités de Bell s'écrit alors comme la valeur absolue
 
-### c. Le cadre quantique
-
-Il faut trouver des réglages tels que la mécanique quantique prédise que $$R(a, a', b, b')$$ soit plus grand que 2, et le plus grand possible afin d'augmenter le poids statistique du résultat. Commençons par établir le modèle quantique.
-
-Nous supposerons que toutes les paires sont dans le même état quantique $$\mid \psi \rangle$$ du fait des particularités du processus de création (ce qui est toujours vérifié en pratique) et nous commençons par remplacer $$P(x,y)$$ par son équivalent quantique, l'espérance du produit $$A(x)B(y)$$, où $$A(x)$$ et $$B(y)$$ sont maintenant des opérateurs hermitiens représentant les observables mesurées,
-
-$$\expect{A(x)B(y)} = \bra\psi A(x)B(y) \ket\psi.$$
-
-En pratique, $$A$$ et $$B$$ vont être des opérateurs de polarisation, spin ou moment angulaire, et éventuellement au prix d'une renormalisation, on peut se ramener au cas où leurs valeurs propres sont $$\pm 1$$, ce qui justifie l'hypothèse faite pour la démonstration de l'inégalité CHSH.
-
-L'expression $$R(a, a', b, b')$$ bornée par les inégalités de Bell s'écrit alors comme la valeur absolue
-
-$$ R(a, a', b, b') = \left| \bra\psi S(a, a', b, b') \ket\psi \right| \label{Rexpect} $$
+$$ R(A, A', B, B') = \left| \expect{S} \right| \label{Rexpect} $$
 
 de l'espérance de l'opérateur
 
-$$\begin{aligned}
-S(a,a',b,b') &= A(a')B(b) - A(a)B(b) \\
-             &+ A(a')B(b') + A(a)B(b').
-\end{aligned}$$
+$$S = A'\otimes B - A\otimes B + A'\otimes B' + A\otimes B'.$$
 
-Nous faisons l'hypothèse que l'espace de Hilbert $$\Hsingle$$ des états non-corrélés de la particule 1 prise isolément, et bien sûr aussi de la particule 2 prise isolément, est de dimension 2, ce qui est réalisé en pratique. L'espace de Hilbert pour une paire est alors le produit tensoriel $$\Hpair=\Hsingle\otimes\Hsingle$$. L'opérateur $$A(x)$$ s'écrit alors $$A(x) = A_1(x) \otimes I$$ où $$A_1(x)$$ opère sur $$\Hsingle$$ seulement et où $$I$$ est l'opérateur identité de $$\Hsingle$$. De même, $$B(y) = I \otimes B_2(y)$$. Par conséquent, les opérateurs $$A(x)$$ et $$B(y)$$ commutent quelque soit les réglages $$x$$ et $$y$$, et $$A(x)B(y)=B(y)A(x)=A_1(x) \otimes B_2(y)$$.
-
-Le fait que les opérateurs $$A(x)$$ et $$B(y)$$ commutent a une conséquence important: $$S(a,a',b,b')$$ est hermitien, puisque $$A(x)$$ et $$B(y)$$ le sont pour tous réglages $$x$$ et $$y$$.
-
-### d. Une condition nécessaire: la non-séparabilité
+### b. Une condition nécessaire: la non-séparabilité
 
 Ceci étant posé, le premier résultat important que:
 
 {{Théorème 1}} L'espérance de $$S$$ pour un ket séparable $$\ket\psi=\ket\phi\ket\xi$$ ne viole pas les inégalités CHSH.
 
-Pour démontrer ce résultat, je vais avoir besoin du lemme suivant, que je réutiliserais plus tard.
+Dans ce cas,
+
+$$\expect{S}=\left[\expect{A'} - \expect{A}\right]\expect{B} + \left[\expect{A'} + \expect{A}\right]\expect{B'}, \notag$$
+
+où les espérances sont pour $$\ket\phi$$ dans le cas de $$A$$ et $$A'$$ et pour $$\ket\xi$$ dans le cas de $$B$$ et $$B'$$. Le théorème résulte alors du lemme suivant.
 
 {{Lemme 1}} Si $$u$$, $$v$$, $$x$$, et $$y$$ sont dans $$[-1, 1]$$, alors
 
 $$-2 \le u(x-y)+v(x+y) \le 2.$$
 
-En effet, comme $$(x-y)^2 + (x+y)^2 = 2(x^2 + y^2) \le 4$$, il en résulte que $$x-y$$ et $$x+y$$ sont entre -2 et 2, et le résultat est alors immédiat.
+### c. La non-séparabilité: une condition suffisante
 
-Appliquer à
+Je vais dans cette section et les suivantes considérer le cas de particule de spin 1/2, pour des raisons pédagogiques de simplicité mais les résultats que je vais démontrer peuvent être prouver pour d'autres systèmes quantiques. La dimension de $$\Hsingle$$ est donc 2 et l'on y définit les opérateurs de spin habituels $$S_x, S_y, S_z$$, à une normalisation de $$\hbar/2$$ près, de manière à avoir des valeurs propres $$\pm 1$$. On peut alors se donner une base $$\mathcal{B}$$ où les matrices de ces opérateurs sont les matrices de Pauli $$\sigma_x$$, $$\sigma_y$$, et $$\sigma_z$$.
 
-$$\expect{S}=\big[\expect{A_1} - \expect{A'_1}\big]\expect{B_2} + \big[\expect{A_1} + \expect{A'_1}\big]\expect{B'_2}, \notag$$
+Ensuite, je vais avoir besoin d'un représentation simple et générale d'un état non-séparable de la paire: une décomposition de Schmidt. Tout ket $$\ket\psi$$ peut se décomposer en
 
-où les espérances sont pour $$\ket\phi$$ dans le cas de $$A_1$$ et $$A'_1$$ et pour $$\ket\xi$$ dans le cas de $$B_2$$ et $$B'_2$$, le lemme 1 prouve le théorème 1.
+$$\ket\psi = c_1 \ket{\phi_1}\ket{\theta_1} + c_2 \ket{\phi_2}\ket{\theta_2},\notag$$
 
-### e. La non-séparabilité: une condition suffisante
+où $$\mathcal{B}_1=(\ket{\phi_1}, \ket{\phi_2})$$ et $$\mathcal{B}_2=(\ket{\theta_1}, \ket{\theta_2})$$ sont deux bases orthonormées de $$\Hsingle$$, et $$c_1$$ et $$c_2$$ sont deux nombres réels positifs. Ils doivent satisfaire $$c_1^2+c_2^2=1$$ pour normaliser $$\ket\psi$$, et donc il existe $$\varphi\in[0,\pi/2]$$ tel que
 
-La question est maintenant de savoir si, étant donné un état non-séparable $$\ket\psi$$, on peut trouver un réglage des détecteurs tel que l'inégalité CHSH est violée. Il faudrait donc choisir une configuration expérimentale particulière pour donner un sens à "réglage". Mais une très grande partie de l'analyse est complètement générale.
+$$\ket\psi = \cos\varphi \ket{\phi_1}\ket{\theta_1} + \sin\varphi \ket{\phi_2}\ket{\theta_2}.$$
 
-Tout d'abord, en utilisant la décomposition de Schmidt, $$\ket\psi$$ s'écrit:
+On peut maintenant établir la condition suivante.
 
-$$\ket\psi = c_1 \ket{\phi_1}\ket{\chi_1} + c_2 \ket{\phi_2}\ket{\chi_2},\notag$$
+{{Théorème 2}}
+$$\ket\psi$$ est non-séparable si et seulement si $$\sin2\varphi \ne 0.$$
 
-où $$\mathcal{B}_1=(\phi_1, \phi_2)$$ et $$\mathcal{B}_2=(\chi_1, \chi_2)$$ sont deux bases orthonormées de $$\Hsingle$$, et $$c_1$$ et $$c_2$$ sont deux nombres réels positifs. Ils doivent satisfaire $$c_1^2+c_2^2=1$$ pour normaliser $$\ket\psi$$, et donc il existe $$\varphi\in[0,\pi/2]$$ tel que
+En effet, si $$\ket\psi$$ est séparable, alors
 
-$$\ket\psi = \cos\varphi \ket{\phi_1}\ket{\chi_1} + \sin\varphi \ket{\phi_2}\ket{\chi_2}.$$
+$$\ket\psi = \ket\xi\ket\eta,$$
 
-La condition que $$\ket\psi$$ soit non-séparable est alors équivalent à demander que
+mais il existe alors des nombres complexes $$u_1$$, $$u_2$$, $$v_1$$, et $$v_2$$ tels que
 
-$$\sin2\varphi \ne 0.\label{nonsepcond}$$
+$$\begin{align*}
+\ket\xi &= u_1\ket\phi_1 + u_2\ket\phi_2,\\
+\ket\eta &= v_1\ket\theta_1 + v_2\ket\theta_2,
+\end{align*}$$
 
-Intéressons nous maintenant aux matrices des opérateurs $$A_1(x)$$ et $$B_2(y)$$ dans les bases respectives $$\mathcal{B}_1$$ et $$\mathcal{B}_2$$. Comme par hypothèse, leurs valeurs propres sont 1 et -1, leur trace est nulle. Comme ils sont hermitiens, leur matrice est de la forme:
+et on a donc
 
-$$\begin{pmatrix} p_3 & p_1 - i p_2 \\ p_1 + i p_2 & -p_3 \end{pmatrix}.\notag$$
+$$\begin{align*}
+&\cos\varphi \ket{\phi_1}\ket{\theta_1} + \sin\varphi \ket{\phi_2}\ket{\theta_2} \\
+&= u_1v_1\ket\phi_1 +u_2v_2\ket\phi_2\ket\theta_2 + u_1v_2\ket\phi_1\ket\theta_2 + u_2v_1\ket\phi_2\ket\theta_1.
+\end{align*}$$
 
-Le déterminant $$-(p_1^2 + p_2^2 + p_3^2)$$ doit alors être égale à -1. On voit donc que ces matrices sont de la forme
+Par conséquent, $$u_1v_2=u_2v_1=0$$ et donc $$\cos\varphi=u_1v_1=0$$ ou $$\sin\varphi=u_2v_2=0$$. À l'inverse, si $$\sin2\varphi=0$$, alors $$\ket\psi=\ket{\phi_1}\ket{\theta_1}$$ ou $$\ket{\phi_2}\ket{\theta_2}$$. Ceci démontre le théorème par contraposée.
 
-$$p_1\sigma_1 + p_2\sigma_2 + p_3\sigma_3 = p\cdot\sigma\notag$$
+CQFD.
 
-où les $$\sigma_i$$ sont les matrices de Pauli, $$\sigma=(\sigma_1, \sigma_2, \sigma_3)$$, et où $$p=(p_1, p_2, p_3)$$ peut être vu comme un vecteur unitaire de $$\reals^3$$. On écrira donc, en identifiant les opérateurs avec leur matrice,
+Je vais maintenant choisir les opérateurs suivants
 
 $$\begin{aligned}
-A_1(x) &= p(x)\cdot\sigma,\\
-B_2(y) &= q(y)\cdot\sigma.
+A &= S_{1,x},\\
+B &= S_{1,x}\sin b + S_{1,z}\cos b,\\
+A' &= S_{2,z},\\
+B' &= -S_{2,x}\sin b + S_{2,z}\cos b,
 \end{aligned}\label{pauliDecomposition}$$
 
-et comme pour les opérateurs, on simplifiera parfois les notations en écrivant $$p$$, $$p'$$, $$q$$, et $$q'$$ pour respectivement $$p(a)$$, $$p(a')$$, $$q(b)$$, et $$q(b')$$.
+où $$S_{1,x}$$ et $$S_{1,z}$$ ont les matrices respectives $$\sigma_x$$ et $$\sigma_z$$ dans $$\mathcal{B}_1$$ tandis que $$S_{2,x}$$ et $$S_{2,z}$$ ont les matrices respectives $$\sigma_x$$ et $$\sigma_z$$ dans $$\mathcal{B}_2$$.
 
-Exprimons maintenant l'espérance $$\bra\psi A(x)B(y) \ket\psi$$ en fonction de $$p(x)$$ et $$q(y)$$,
+En utilisant alors le fait que
 
-$$\begin{aligned}
-\expect{A(x)B(y)} &=
-\cos^2\varphi
-\underbrace{\bra{\phi_1} A_1(x)\ket{\phi_1}}_{p_3}
-\underbrace{\bra{\chi_1} B_2(y)\ket{\chi_1}}_{q_3} \\
-&+ \sin^2\varphi
-\underbrace{\bra{\phi_2} A_1(x)\ket{\phi_2}}_{-p_3}
-\underbrace{\bra{\chi_2} B_2(y)\ket{\chi_2}}_{-q_3} \\
-&+ \cos\varphi\sin\varphi%
-\!\!\begin{aligned}[t](&
-    \underbrace{\bra{\phi_1} A_1(x)\ket{\phi_2}}_{p_1 - ip_2}
-    \underbrace{\bra{\chi_1} B_2(y)\ket{\chi_2}}_{q_1 - iq_2}\\
- + &\underbrace{\bra{\phi_2} A_1(x)\ket{\phi_1} \bra{\chi_2} B_2(y)\ket{\chi_1}}_{\text{complexe conjugué du terme précédent}})
-\end{aligned}
-\end{aligned}\notag$$
+$$\bra{\phi_i}\bra{\theta_i}S_{1,e}\otimes S_{2,f}\ket{\phi_j}\ket{\theta_j} = \bra{\phi_i}S_{1,e}\ket{\phi_j}\bra{\theta_i}S_{2,f}\ket{\theta_j}=\left(\sigma_e\right)_{ij}\left(\sigma_f\right)_{ij},$$
 
-En utilisant (\ref{pauliDecomposition}), on obtient donc
+on trouve facilement, en notant que les termes $$S_x\otimes S_z$$ et $$S_z\otimes S_x$$ donnent des contributions nulles, que
 
-$$\expect{A(x)B(y)} = p_3(x)q_3(y) + (p_1(x)q_1(y)-p_2(x)q_2(y))\sin 2\varphi.
-\notag$$
+$$\begin{align*}
+\expect{A'\otimes B} &= \expect{A'\otimes B'} = \cos b,\\
+\expect{A\otimes B} &= \sin2\varphi\sin b = -\expect{A\otimes B'},
+\end{align*}$$
 
-Puis
+et donc que
 
-$$\begin{aligned}
-&\expect{S(a,a',b,b')}=\\
-&\begin{aligned}
-&\big[q_3(b)(p_3(a')-p_3(a)) + q_3(b')(p_3(a')+p_3(a))\big]\\
-+ \sin2\varphi &\big[q_1(b)(p_1(a')-p_1(a)) + q_1(b')(p_1(a')+p_1(a))\big]\\
-- \sin2\varphi &\big[q_2(b)(p_2(a')-p_2(a)) + q_2(b')(p_2(a')+p_2(a))\big].
-\end{aligned}
-\end{aligned}\notag$$
+$$\expect{S} = 2\cos b(1 - \sin 2\varphi\tan b).$$
 
-Chaque terme entre crochets est entre -2 et 2 d'après le [lemme 1], et par conséquent, on retrouve le fait que si $$\ket\psi$$ est séparable ($$\sin2\varphi=0$$ d'après (\ref{nonsepcond})), alors $$\expect{S(a,a',b,b')}$$ ne viole pas l'inégalité de Bell. La question devient maintenant de trouver des $$p(a)$$, $$p(a')$$, $$q(b)$$, et $$q(b')$$ tels que $$\expect{S(a,a',b,b')}$$ ne soit pas dans $$[-2,2]$$. On voit que si un seul des crochets est non nul, le [lemme 1] impose que l'inégalité de Bell soit vérifiée. Prenons donc deux crochets non nuls, avec
+En choisissant $$\tan b = -\sin 2\varphi$$, on a
 
-$$\begin{aligned}
-p(a) &= (1, 0, 0),\\
-p(a') &= (0, 0, 1),\\
-q_2(b) &= q_2(b') = 0.
-\end{aligned}\notag$$
+$$\expect{S} = 2(1 + \sin^2 2\varphi)^\frac{1}{2},$$
 
-Alors,
+qui est en dehors de l'intervalle $$[-2,2]$$ pour toutes les valeurs de $$\varphi\in]0,\pi/2[$$, c'est à dire pour toutes les kets non-séparables.
 
-$$\expect{S(a,a',b,b')}=q_3' + q_3 + (q_1'-q_1)\sin2\varphi .\notag$$
+### d. Violation maximale
 
-Prenons alors $$q_3'=q_3=\sqrt{1-Q^2}$$ et $$q_1'=-q_1=Q$$. Alors,
-
-$$\expect{S(a,a',b,b')}=2\left(\sqrt{1-Q^2} + Q\sin2\varphi\right)=f(Q).\notag$$
-
-Comme
-
-$$f'(Q) = 2\left(-\frac{Q}{\sqrt{1-Q^2}} + \sin2\varphi\right),\notag$$
-
-$$f$$ est croissante sur $$[0,\Qmax]$$ et décroissante sur $$[\Qmax,1]$$, et le maximum de $$f(Q)$$ est donc $$f\left(\Qmax\right)$$, i.e.
-
-$$2\sqrt{1+\sin^2 2\varphi} > 2,\label{maxviolation}$$
-
-et c'est la violation maximale que l'on peut obtenir avec cette famille d'observable. Par ailleurs, il est facile de voir que $$f(Q)>2$$ est équivalent à
-
-$$Q<\frac{2\sin2\varphi}{1+\sin^2 2\varphi}.$$
-
-Faisons maintenant le lien avec un type de réalisation expérimentale: des électrons ou des ions de spin 1/2. Dans ce cas, un réglage $$x$$ du détecteur I serait un vecteur unitaire et on mesurerait la composante du spin $$S_{1,x}$$de la particule 1 dans cette direction. De même, le détecteur II dans un réglage $$y$$ mesurerait le spin de la particule 2 dans la direction de ce vecteur unitaire $$y$$. Notre utilisation des matrices de Pauli rend la correspondance particulièrement transparente: $$A_1(x) = 2S_{1,x}$$ et $$B_2(y) = S_{2,y}$$, ou de manière équivalente $$p(x) = x$$ et $$q(y) = y$$. Cette "renormalisation" d'un facteur 2 a pour seul but de se ramener au cas de valeurs propres +1 et -1.
-
-Nous avons donc bien montrer que pour tout état non-séparable, on pouvait trouver des réglages qui violent les inégalités de Bell, ou du moins des opérateurs réalisant cela, laissant la question des réglages à la réalisation d'un protocole expérimental faisant apparaître ces opérateurs.
-
-### f. Violation maximale
-
-La dernière question que nous voudrions nous poser est: quelle violation maximale peut)on obtenir? Dans notre exemple ci-dessus, l'équation (\ref{maxviolation}) montre que  la borne est supérieure $$2\sqrt2$$, atteinte quand $$\varphi=\pi/4$$. On peut alors se demander si l'on peut faire mieux que $$2\sqrt{2}$$. La réponse est négative: la borne supérieure pour $$R(a, a', b, b')$$ est $$2\sqrt{2}$$. Ce résultat fut démontré pour la première fois par [[Cirelson:1980]] -- son nom est aussi orthographié Tsirelson parfois. La démonstration suivante est celle de [[Braunstein:1992]].
+Le dernier résultat de la section précédente montre que la valeur maximum de $$\expect{S}$$ est égale à $$2\sqrt2$$, obtenue pour $$\varphi=\pi/4$$. On peut alors se demander si il est possible de faire mieux. La réponse est non. Cette borne supérieure fut démontré pour la première fois par [[Cirelson:1980]] -- son nom est aussi orthographié Tsirelson parfois mais nous allons ici utiliser la démonstration de [[Braunstein:1992]].
 
 Elle dépend du résultat suivant:
 
-$$ S(a,a',b,b')^2 = 4I - \comm{A(a)}{A(a')} \comm{B(b)}{B(b')}. \label{Sfundamental} $$
+$$ S^2 = 4I - \comm{A}{A'} \otimes \comm{B}{B'}. \label{Sfundamental} $$
 
-Nous allons en effet voir que cette propriété est pleine de conséquences pour les bornes de $$R(a, a', b, b')$$ mais nous allons tout d'abord la démontrer. Afin d'alléger les notations, écrivons temporairement $$A, A', B, B'$$ au lieu de $$A(a), A(a'), B(b), B(b')$$, respectivement. Comme les opérateurs $$A, A'$$ commutent avec les opérateurs $$B, B'$$, nous pouvons regrouper les premiers à gauche et les seconds à droite dans les termes de $$S^2$$. Ensuite, comme tous les $$A, A', B, B'$$ ont pour seules valeurs propres +1 et -1, nécessairement
+Nous allons en effet voir que cette propriété est pleine de conséquences pour les bornes de $$R(A,A',B,B')$$ mais nous allons tout d'abord la démontrer. Tout d'abord, comme les opérateurs hermitiens $$A$$, $$A'$$, $$B$$ et $$B'$$ ont toute leur valeur propre égale à $$\pm 1$$, nécessairement
 
-$$ A^2 = A'^2 = B^2 = B'^2 = I, $$
+$$ A^2 = A'^2 = B^2 = B'^2 = I. $$
 
-et nous pouvons donc éliminer ces carrés dans les regroupements sus-cités. Cela donne
+Ensuite, dans les termes de $$S^2$$, les multiplications de produits tensoriels deviennent des produits tensoriels de multiplications, dans lesquelles on peut alors éliminer tous ces carrés. Cela donne
 
 $$  \begin{split}
-    S(a, a', b, b')^2  &= I - A'A + BB' + A'A BB' \\
-                     & -AA' + I - AA'BB' - BB' \\
-                     & + B'B - A'AB'B + I + A'A \\
-                     & + AA'B'B - B'B + AA' + I  \\
+    S(a, a', b, b')^2  &= I - A'\otimes A + B\otimes B' + A'A\otimes  BB' \\
+                     & -A\otimes A' + I - AA'\otimes BB' - B\otimes B' \\
+                     & + B'\otimes B - A'A\otimes B'B + I + A'\otimes A \\
+                     & + AA'\otimes B'B - B'\otimes B + A\otimes A' + I  \\
     \end{split}
 $$
 
 CQFD
 
-Passons maintenant à l'exploitation de (\ref{Rexpect}) et (\ref{Sfundamental}). Comme un commutateur a une trace nulle, les valeurs propres de l'opérateur hermitien $$i \comm{A_1(a)}{A_1(a')}$$ sont $$\alpha$$ et $$-\alpha$$ pour un certain nombre réel $$\alpha > 0$$. Soient $$\ket\alpha$$ et $$\ket{-\alpha}$$ les vecteurs propres associés. Avec le même raisonnement, les valeurs propres de $$i \comm{B_2(b)}{B_2(b')}$$ sont $$\beta$$ et $$-\beta$$ pour un certain nombre réel $$\beta > 0$$ et les vecteurs propres associés seront notés $$\ket\beta$$ et $$\ket{-\beta}$$. Il est alors immédiat que $$S^2$$ a deux valeurs propres dégénérées, $$4 + \alpha\beta$$ et $$4 -\alpha\beta$$, qui sont nécessairement positives puisque $$S^2$$ est positif, et que les espaces propres associés sont respectivement $$U = \vec{\ket\alpha\ket\beta, \ket{-\alpha}\ket{-\beta}}$$ et $$V = \vec{\ket{-\alpha}\ket\beta, \ket\alpha\ket{-\beta}}$$. Par conséquent, les valeurs propres de $$S$$ s'écrivent ou bien $$\pm\sqrt{4+\alpha\beta}$$ ou bien $$\pm\sqrt{4-\alpha\beta}$$. Les premières (resp. les secondes) ont leurs vecteurs propres dans $$U$$ (resp. $$V$$).
+Passons maintenant à l'exploitation de (\ref{Rexpect}) et (\ref{Sfundamental}). Comme un commutateur a une trace nulle, les valeurs propres de l'opérateur hermitien $$i \comm{A}{A'}$$ sont $$\alpha$$ et $$-\alpha$$ pour un certain nombre réel $$\alpha \ge 0$$. Soient $$\ket\alpha$$ et $$\ket{-\alpha}$$ les vecteurs propres associés. Avec le même raisonnement, les valeurs propres de $$i \comm{B}{B'}$$ sont $$\beta$$ et $$-\beta$$ pour un certain nombre réel $$\beta \ge 0$$ et les vecteurs propres associés seront notés $$\ket\beta$$ et $$\ket{-\beta}$$. Il est alors immédiat que $$S^2$$ a deux valeurs propres dégénérées, $$4 + \alpha\beta$$ et $$4 -\alpha\beta$$, qui sont nécessairement positives puisque $$S^2$$ est positif, et que les espaces propres associés sont respectivement $$\mathcal{U} = \vec{\ket\alpha\ket\beta, \ket{-\alpha}\ket{-\beta}}$$ et $$\mathcal{V} = \vec{\ket{-\alpha}\ket\beta, \ket\alpha\ket{-\beta}}$$.
+Par conséquent, les valeurs propres de $$S$$ s'écrivent ou bien $$\pm\sqrt{4+\alpha\beta}$$ ou bien $$\pm\sqrt{4-\alpha\beta}$$. Les premières (resp. les secondes) ont leurs vecteurs propres dans $$U$$ (resp. $$V$$).
 
-On voit donc que si $$A(a)$$ commute avec $$A(a')$$ ou bien si $$B(b)$$ commute avec $$B(b')$$, les valeurs propres de $$S(a,a',b,b')$$ sont égales à $$\pm2$$, et par conséquent $$R(a,a',b,b')$$ est toujours entre -2 et 2: la borne de l'inégalité de Bell n'est violée pour aucun réglage et pour aucun état quantique de la paire $$\ket\psi$$. Rappellons en effet que pour un opérateur hermitien tel que $$S(a,a',b,b')$$, la borne supérieure de l'espérance $$\bra\psi S(a,a',b,b')\ket\psi$$, quand $$\ket\psi$$ décrit l'ensemble des kets tels que $$\braket{\psi}{\psi}=1$$, est la plus grande des valeurs propres de $$S(a,a',b,b')$$.
+On voit donc que si $$A$$ commute avec $$A'$$ ou bien si $$B$$ commute avec $$B'$$, les valeurs propres de $$S$$ sont égales à $$\pm2$$, et par conséquent $$R(A,A',B,B')$$ est toujours entre -2 et 2: la borne de l'inégalité de Bell n'est violée pour aucun réglage et pour aucun état quantique de la paire $$\ket\psi$$. Rappellons en effet que pour un opérateur hermitien tel que $$S$$, la borne supérieure de l'espérance $$\bra\psi S\ket\psi$$, quand $$\ket\psi$$ décrit l'ensemble des kets tels que $$\braket{\psi}{\psi}=1$$, est la plus grande des valeurs propres de $$S$$.
 
 Si au contraire aucune de ces paires d'opérateurs ne commute, alors $$\alpha\beta > 0$$. Dans ce cas, les valeurs propres $$\pm\sqrt{4+\alpha\beta}$$ sont en dehors de l'intervalle $$[-2,2]$$.
-Quelle violation maximale peut-on obtenir? Comme $$\matnorm{\comm{A(a)}{A(a')}} \le 2 \matnorm{A(a)} \matnorm{A(a')}$$, nécessairement $$-2 \le \alpha \le 2$$ puisque $$\matnorm{A(a)}=\matnorm{A(a')}=1$$. De même, $$-2 \le \beta \le 2$$. Cela démontre que la borne maximale est $$2\sqrt{2}$$ comme annoncé plus haut mais nous voyons aussi que cette borne est réalisée quand $$\alpha = \beta = \pm 2$$.
+Quelle violation maximale peut-on obtenir? Comme $$\matnorm{\comm{A}{A'}} \le 2 \matnorm{A} \matnorm{A'}$$, nécessairement $$-2 \le \alpha \le 2$$ puisque $$\matnorm{A}=\matnorm{A'}=1$$. De même, $$-2 \le \beta \le 2$$. Cela démontre que la borne maximale est $$2\sqrt{2}$$ comme annoncé plus haut mais nous voyons aussi que cette borne est réalisée quand $$\alpha = \beta = \pm 2$$.
