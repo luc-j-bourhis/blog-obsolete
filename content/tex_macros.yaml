@@ -5,7 +5,7 @@ tex_macros:
     set:      '\left\{\left. #1 \right| #2 \right\}'
     ket:      '\left| #1 \right\rangle'
     bra:      '\left\langle #1 \right|'
-    braket:   '\left\langle #1 | #2 \right\rangle'
+    braket:   '\left\langle #1 \vphantom{#2}\right|\left.\vphantom{#1} #2 \right\rangle'
     expect:   '\left\langle #1 \right\rangle'
     comm:     '\left[ #1, #2 \right]'
     matnorm:  '\Vert #1 \Vert'
