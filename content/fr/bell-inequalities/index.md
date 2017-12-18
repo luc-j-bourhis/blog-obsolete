@@ -139,21 +139,21 @@ tex_macros:
 ---
 
 ~~~~
-Les inégalités de Bell sont un moyen de tester certains principes implicites en mécanique classique, où le mot "classique" est ici entendu par opposition à "quantique". Partant de deux de ces principes, localité et réalisme, que je définis clairement dans cet article, je vais démontrer que certains résultats expérimentaux doivent satisfaire des inégalités, dite de Bell, en l'honneur du chercheur qui en a démontré l'existence. De nombreuses expériences différentes ont été réalisées, dont je donnerais un aperçu, menant à une double conclusion: d'une part, leurs résultats violent ces inégalités, et par conséquent falsifient ces hypothèses de localité et de réalisme; d'autre part, ils sont en accord avec les prédictions de la mécanique quantique.
+Les inégalités de Bell sont un moyen de tester certains principes implicites en mécanique classique, où le mot "classique" est ici entendu par opposition à "quantique". Partant de deux de ces principes, localité et réalisme, que je définis clairement dans cet article, je vais démontrer que certains résultats expérimentaux doivent satisfaire des inégalités, dite de Bell, en l'honneur du chercheur qui démontra la première d'entre elles. De nombreuses expériences différentes ont été réalisées, dont je donnerais un aperçu, menant à une double conclusion: d'une part, leurs résultats violent ces inégalités, et par conséquent falsifient ces hypothèses de localité et de réalisme; d'autre part, ils sont en accord avec les prédictions de la mécanique quantique.
 ~~~~
 
 ## 1. L'expérience
 
 Je vais présenter une expérience idéalisée. Il ne s'agit pas d'une pure expérience de pensée car des expériences réelles furent réalisées sur les mêmes principes mais l'analyse rigoureuses de ces dernières est trop complexe pour le but pédagogique que je me suis fixé pour cet article. Je me conteterais de faire quelques liens qualitatifs avec ces expériences réelles.
 
-Il y a en premier lieu une source qui émet une à une des paires de particules -- en pratique des photons, des ions ou des électrons. Pour chaque paire, l'une des particules, notée 1, va vers un appareil de mesure I tandis que l'autre, notée 2, va vers un appareil de mesure II. Ces deux appareils sont identiques mais chacun peut avoir des réglages différents, respectivement $$a$$ et $$b$$. En pratique, on mesurera la polarisation d'un photon ou le spin d'un ion, et le réglage sera la direction dans laquelle on mesurera cette grandeur. Je vais appeler $$A$$ l'observable de la particule 1 mesurée par l'appareil I et $$B$$ celle mesurée sur de la particule 2. Ces observables dépendent donc des réglages $$a$$ et $$b$$.
+Il y a en premier lieu une source qui émet une à une des paires de particules -- en pratique des photons, des ions ou des électrons. Pour chaque paire, l'une des particules, notée 1, va vers un appareil de mesure I tandis que l'autre, notée 2, va vers un appareil de mesure II. Ces deux appareils sont identiques mais chacun peut avoir des réglages différents, respectivement $$a$$ et $$b$$. En pratique, on mesurera la polarisation d'un photon ou le spin d'un ion, et le réglage sera la direction dans laquelle on mesurera cette grandeur. Je vais appeler $$A$$ l'observable de la particule 1 mesurée par l'appareil I et $$B$$ celle mesurée sur  la particule 2. Ces observables dépendent donc des réglages $$a$$ et $$b$$.
 
 Nous allons faire l'hypothèse que $$A$$ et $$B$$ ne peuvent prendre que les valeurs 1 et -1, ce qui est vrai en pratique comme nous le verrons quand j'aborderais le traitement quantique. L'expérience consiste alors à mesurer $$A$$ et $$B$$ pour un grand nombre $$N$$ de paires et à calculer
 
 $$ D_N(a,b) = \frac{N_\text{identique}(a,b)-N_\text{différente}(a,b)}{N} \label{countingRatios},$$
 
 où $$N_\text{identique}(a,b)$$ (resp. $$N_\text{différente}(a,b)$$) est le nombre de paires pour lesquelles $$A$$ et $$B$$ ont la même valeur (resp. des valeurs différentes). Ces comptages dépendent à priori des réglages $$a$$ et $$b$$, ce que j'ai rendu explicite dans cette équation. Comme $$A$$ et $$B$$ ne peuvent prendre que les valeurs +1 et -1, $$D_N(a,b)$$ est la moyenne du produit $$AB$$ sur les $$N$$ paires mesurées, c'est à dire ce que l'on appelle la corrélation entre $$A$$ et $$B$$.
-L'astuce est alors de répéter l'expérience avec des réglages différents, de combiner ces différentes corrélations, et de les comparer avec les prédictions du modèle, que nous allons maintenant étudier.
+L'astuce est alors de répéter l'expérience avec des réglages différents, de combiner ces différentes corrélations, et de les comparer avec les prédictions du modèle réaliste et locale, que nous allons maintenant étudier.
 
 ## 2. Le modèle
 
@@ -161,7 +161,7 @@ L'information contenue dans chaque paire, ou du moins celle qui aura une influen
 
 Je voudrais insister sur deux points importants:
 
-- $$\lambda$$ varie aléatoirement d'une paire à l'autre et $$\lambda$$ évolue peut-être aussi stochastiquement pendant le temps de vol des photons d'une même paire. Cela ne signifie pas que l'on renie le déterminisme de la mécanique classique mais simplement que l'on doit se contenter de traiter statistiquement des processus dont tous les détails ne nous sont pas connus;
+- $$\lambda$$ varie aléatoirement d'une paire à l'autre et $$\lambda$$ évolue peut-être aussi stochastiquement pendant le temps de vol des particules d'une même paire. Cela ne signifie pas que l'on renie le déterminisme de la mécanique classique mais simplement que l'on doit se contenter de traiter statistiquement des processus dont tous les détails ne nous sont pas connus;
 - on ne suppose pas que l'information $$\lambda$$ au sujet de la paire est un simple juxtaposition d'informations indépendantes $$\lambda_1$$ et $$\lambda_2$$ au sujet de respectivement la première et la deuxième particule de la paire -- cette supposition est ce que l'on peut appeler un critère de séparabilité. On laisse donc la porte ouverte à des corrélations entre les états des deux particules -- au minimum des corrélations entre les spins ou les polarisations en pratique. L'idée est que ces corrélations sont causées par le mécanisme de production de la paire, dont malheureusement nous ne connaissons pas tous les détails.
 
 Toutes les inégalités de Bell résulte des deux hypothèses fondamentales de localité et de réalisme (en anglais Objective Local Theory, parfois abrégé en OLT). Nous allons maintenant les présenter en détails. Tout l'enjeu est de décrire précisément de quoi dépendent les mesures de $$A$$ et $$B$$.
@@ -182,7 +182,7 @@ La quantité mesurée étant la corrélation entre les mesures sur les membres d
 
 $$ P(A,B) = \int_{\Lambda} A(\lambda) B(\lambda) d\rho(\lambda). $$
 
-Avec un suffisament grand nombre $$N$$ de paires, on aura alors $$D_N(a,b) \approx P(A,B)$$. On voit que la moyenne qui apparaît dans $$D_N(a,b)$$ devient naturellemnt une moyenne prenant en compte la distribution de l'états de la paire de particule.
+Avec un suffisament grand nombre $$N$$ de paires, on aura alors $$D_N(a,b) \approx P(A,B)$$. On voit que la moyenne qui apparaît dans $$D_N(a,b)$$ devient naturellement une moyenne prenant en compte la distribution de l'états de la paire de particule.
 
 On considère maintenant deux réglages $$a$$ et $$a'$$ de l'appareil I et deux réglages $$b$$ et $$b'$$ de l'appareil II et on introduit les observables associées $$A$$, $$A'$$, $$B$$ et $$B'$$. Nous allons démontré une inégalité due à  (Clauser, Horne, Shimony et Holt (1969))[[Clauser:1969]], et donc appelée inégalité CHSH,
 
