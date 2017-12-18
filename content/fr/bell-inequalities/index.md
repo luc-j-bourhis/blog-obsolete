@@ -70,6 +70,15 @@ bibliography:
         volume: 47
         year: 1935
         pages: 777--780
+    Gisin:1992aa:
+        authors:
+            - Gisin, N.
+            - Peres, A.
+        title: Maximal violation of {B}ell's inequality for arbitrarily large spin
+        journal: Physics Letters A
+        volume: 162
+        year: 1992
+        pages: 15 - 17
     Hensen:2015:
         authors:
             - Hensen, B.
@@ -304,7 +313,7 @@ En choisissant $$\tan b = -\sin 2\varphi$$, on a
 
 $$\expect{S} = 2(1 + \sin^2 2\varphi)^\frac{1}{2},$$
 
-qui est en dehors de l'intervalle $$[-2,2]$$ pour toutes les valeurs de $$\varphi\in]0,\pi/2[$$, c'est à dire pour toutes les kets non-séparables.
+qui est en dehors de l'intervalle $$[-2,2]$$ pour toutes les valeurs de $$\varphi\in]0,\pi/2[$$, c'est à dire pour toutes les kets non-séparables. Cette démonstration est un simplification dans un cas spécial simple de celle beaucoup plus générale de [[Gisin:1992aa]].
 
 ### d. Violation maximale
 
