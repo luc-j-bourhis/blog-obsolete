@@ -581,7 +581,7 @@ Because of linearity, this is equivalent to state that for any $$t > 0$$, there 
 
 {{Lemma 3}} The synchrony group and the group of rotations in spacetime violate causality.
 
-For the synchrony group, $$t' = t\left(1 - u^T \frac{x}{t}\right)$$. But for any $$x \in \reals^3$$ and any $$t > 0$$, one can find big enough a vector $$u$$ such that the factor of $$t$$ is negative.
+For the synchrony group, $$t' = t\left(1 - u^T \frac{x}{t}\right)$$. But for any $$x \in \reals^3$$ and any $$t > 0$$, one can find big enough a vector $$u$$ such that the factor of $$t$$ is negative. This was intuitively obvious: causality as we defined it cannot hold with an arbitrary synchronisation of clocks but we see that we need $$u$$ to span the whole of $$\reals^3$$ for this argument to work mathematically, a property which, in turns, comes from requiring a group in the first place as we saw in the previous section.
 
 For the rotations in spacetime, $$t' = t\cos\varphi\left(1 - \frac{1}{c}\hat{u}^T \frac{x}{t}\tan\varphi\right)$$. Since $$\lim_{\varphi \to \frac{\pi}{2}} \tan\varphi = +\infty$$, for any $$x \in \reals^3$$ and any $$t > 0$$, one can choose $$\varphi$$ such that the factor of $$t\cos\varphi$$ is negative. This concludes the proof.
 
