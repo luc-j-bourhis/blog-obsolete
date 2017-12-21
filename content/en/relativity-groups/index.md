@@ -288,7 +288,7 @@ Then we move to the keystone of our demonstration, as the subsequent work will s
 $$
 \begin{align}
 K_G &= \set{\mat{0}{u}{0}{0}}{u \in \reals^3}  \tag{I} \\
-K_C &= \set{\mat{0}{0}{v}{0}}{v \in \reals^3}  \tag{II} \\
+K_S &= \set{\mat{0}{0}{v}{0}}{v \in \reals^3}  \tag{II} \\
 K_L^\epsilon &= \set{\LorGen{u}}{u \in \reals^3} \tag{III} \\
 \end{align}
 $$
@@ -371,7 +371,7 @@ This completes the proof for this case.
 
 *Case 2:* $$\KLG$$ has an element $$A=\mat{0}{u}{0}{0}$$ with $$u \ne 0$$.
 
-The analysis is completely similar to the previous case, replacing $$K_G$$ with $$K_C$$.
+The analysis is completely similar to the previous case, replacing $$K_G$$ with $$K_S$$.
 
 *Case 3:* $$\KLG$$ has an element $$A=\mat{0}{u}{v}{0}$$ with $$u \ne 0$$ and $$v \ne 0$$.
 
@@ -474,14 +474,14 @@ We can now prove the following theorem.
 
 {{Theorem 2}} A group $$G$$ of transforms satisfying postulate 1--3 is one of the following group:
 
-- the Caroll group (I)
+- the synchrony group (I)
 - the Galilean group (II)
 - the Lorentz group (III^+^)
 - the group of rotations in spacetime (III^-^)
 
 *Proof.* Those four cases obviously correspond to the four cases of [lemma 2]. Thus let us review them in turn.
 
-*Case I and II*: it is trivial to verify that any $$K \in K_G$$ and any $$K \in K_C$$ is such that $$K^2 = 0$$ and therefore $$K^n = 0$$ for any integer $$n \ge 2$$. As a result, the exponential series is trivial: $$\exp K = I + K$$. Thus in case I, this gives
+*Case I and II*: it is trivial to verify that any $$K \in K_G$$ and any $$K \in K_S$$ is such that $$K^2 = 0$$ and therefore $$K^n = 0$$ for any integer $$n \ge 2$$. As a result, the exponential series is trivial: $$\exp K = I + K$$. Thus in case I, this gives
 
 $$ \exp K = \mat{1}{u}{0}{I} $$
 
@@ -492,7 +492,7 @@ t' &= t - u^T x,\\
 x' &= x.
 \end{aligned}$$
 
-Lévy-Leblond named them "Carrol transforms" in [[Levy-Leblond:1965]], a term he reused in [[Levy-Leblond:1979]], in eqn (63). The first paper presents an interesting physical discussion of them (it is unfortunately in French!).
+These transformations are synchrony transformations. This ties in the well-known presentation of Special Relativity in which a clock sits at each location $$x$$, motionless in that system of coordinates, clock which defines the time $$t$$ at that location. Because those transformations leave the position invariant while shifting the time in a location-dependent manner, we are therefore just changing how those clocks are synchronised with each others. Hence the name synchrony group for $$K_S$$. It should be noted that Lévy-Leblond calls them the Carroll transforms for reasons he developped in [[Levy-Leblond:1965]], an article which expounds in great details this group of transforms, including its quantum representations.
 
 In case II, this gives
 
@@ -569,7 +569,7 @@ where $$x_\parallel$$ is the component of $$x$$ parallel to $$u$$ whereas $$x_\p
 
 In case (III^+^), we recognise a Lorentz boost, parametrised by the rapidity $$\varphi$$ and the direction of the boost $$\hat{u}$$. The case (III^-^) is not mainstream but time and space are mixed as two spatial coordinates would be by a rotation of angle $$\varphi$$, hence the name "rotation in spacetime".
 
-Thus it would seem we have failed, since we not only recovered Galilean and Lorentz transforms but also two exotic groups which have never played any role in physics. But we can prune them with an additional hypothesis.
+Thus it would seem we have failed, since we not only recovered Galilean and Lorentz transforms but two other groups. The rotations of spacetime are definitively "exotic" in the sense that they have never played any role in physics: it is rather puzzling they appear and it is very desirable we find a criteria to eliminate them. The synchrony group is important on the contrary as a way to formalise the conventionality of synchronicity which plays a very important role when considering experimental aspects, either real experiments or gedanken ones. Nevertheless it turns out that we can prune both the rotations and the synchrony group with just one additional hypothesis.
 
 ## Causality
 
@@ -579,9 +579,9 @@ The concept of cause and effect would be meaningless if all observers could not 
 
 Because of linearity, this is equivalent to state that for any $$t > 0$$, there exists spatial coordinates $$x$$ such that for every $$M \in G$$, $$\vec{t'}{x'} = M \vec{t}{x}$$ is such that $$t'>0$$. Then we wish to prove
 
-{{Lemma 3}} The Carroll group and the group of rotations in spacetime violate causality.
+{{Lemma 3}} The synchrony group and the group of rotations in spacetime violate causality.
 
-For the carroll group, $$t' = t\left(1 - u^T \frac{x}{t}\right)$$. But for any $$x \in \reals^3$$ and any $$t > 0$$, one can find big enough a vector $$u$$ such that the factor of $$t$$ is negative.
+For the synchrony group, $$t' = t\left(1 - u^T \frac{x}{t}\right)$$. But for any $$x \in \reals^3$$ and any $$t > 0$$, one can find big enough a vector $$u$$ such that the factor of $$t$$ is negative.
 
 For the rotations in spacetime, $$t' = t\cos\varphi\left(1 - \frac{1}{c}\hat{u}^T \frac{x}{t}\tan\varphi\right)$$. Since $$\lim_{\varphi \to \frac{\pi}{2}} \tan\varphi = +\infty$$, for any $$x \in \reals^3$$ and any $$t > 0$$, one can choose $$\varphi$$ such that the factor of $$t\cos\varphi$$ is negative. This concludes the proof.
 
