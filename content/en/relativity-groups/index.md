@@ -123,7 +123,7 @@ $$
 
 Spatial isometries are the matrices
 
-$$ \mathcal{R} = \mat{1}{0}{0}{R} $$
+$$ Q = \mat{1}{0}{0}{R} $$
 
 where $$R$$ is orthogonal, i.e. $$R R^T = I$$ where $$I$$ is the identity matrix in dimension 3. This includes the subgroup of rotations, as well as the space inversion, which physicists call parity,
 
@@ -332,10 +332,10 @@ and we are left with characterising $$\KLG$$. The case $$\KLG = \{ 0 \}$$ is rul
 Then for any rotation
 
 $$\notag
-\mathcal{R} = \mat{1}{0}{0}{R}
+Q = \mat{1}{0}{0}{R}
 $$
 
-and any real $$\lambda$$, $$A'=\lambda\mathcal{R}A\mathcal{R}^{-1} \in \Lie{G}$$ but
+and any real $$\lambda$$, $$A'=\lambda QAQ^{-1} \in \Lie{G}$$ but
 
 $$\notag
 A'=\mat{0}{0}{\lambda Rv}{0}
@@ -378,10 +378,10 @@ The analysis is completely similar to the previous case, replacing $$K_G$$ with 
 Let $$R_0 $$ be the rotation of angle $$\pi$$ around the bissector of $$(u,v)$$. Then it exists $$\kappa > 0$$ such that $$R_0 v = \kappa u$$ and $$R_0 u = \frac{1}{\kappa} v$$. Then, with
 
 $$\notag
-\mathcal{R}_0 = \mat{1}{0}{0}{R_0},
+Q_0 = \mat{1}{0}{0}{R_0},
 $$
 
-we have $$B=\mathcal{R}_0A\mathcal{R}_0^{-1} \in G$$ and therefore $$[A,B] \in G$$. But
+we have $$B=Q_0AQ_0^{-1} \in G$$ and therefore $$[A,B] \in G$$. But
 
 $$\notag
 B=\mat{0}{\frac{1}{\kappa} v}{\kappa u}{0}.
@@ -413,10 +413,10 @@ The scalar $$c$$ has the dimension of a speed and we see that it appeared solely
 Then for any rotation
 
 $$\notag
-\mathcal{R} = \mat{1}{0}{0}{R}
+Q = \mat{1}{0}{0}{R}
 $$
 
-and any real $$\lambda$$, $$A'=\lambda\mathcal{R}A\mathcal{R}^{-1} \in \Lie{G}$$ but
+and any real $$\lambda$$, $$A'=\lambda QAQ^{-1} \in \Lie{G}$$ but
 
 $$\notag
 A'=\LorGen{\lambda Rw}
