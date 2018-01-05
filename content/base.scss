@@ -56,55 +56,55 @@
   /*
    * Do not forget to add those Google web fonts to config file `nanoc.yaml`
    */
-  // @include font-spec(('Libre Baskerville', serif), 20 (16, 1920));
-  // @include font-spec(("Roboto Slab", serif), 21 (16, 1920));
-  // @include font-spec(("Faustina", serif), 23 (18, 1920));
-  // @include font-spec(("Fira Sans", sans-serif), 21 (18, 1920));
+  // @include font-spec(('Libre Baskerville', serif), 20 (16, 1441));
+  // @include font-spec(("Roboto Slab", serif), 21 (16, 1441));
+  // @include font-spec(("Faustina", serif), 23 (18, 1441));
+  // @include font-spec(("Fira Sans", sans-serif), 21 (18, 1441));
   // font-weight: 400;
-  // @include font-spec(("Alegreya", serif), 25 (20, 1920));
-  // @include font-spec(("Alegreya Sans", sans-serif), 23 (19, 1920));
-  // @include font-spec(("Open Sans", sans-serif), 20 (16, 1920));
-  // @include font-spec(("Arvo", serif), 20 (17, 1920));
-  // @include font-spec(("Merriweather", serif), 21 (16, 1920));
+  // @include font-spec(("Alegreya", serif), 25 (20, 1441));
+  // @include font-spec(("Alegreya Sans", sans-serif), 23 (19, 1441));
+  // @include font-spec(("Open Sans", sans-serif), 20 (16, 1441));
+  // @include font-spec(("Arvo", serif), 20 (17, 1441));
+  // @include font-spec(("Merriweather", serif), 21 (16, 1441));
   // @media (-webkit-max-device-pixel-ratio: 1) {
   //   font-weight: 300;
   // }
-  // @include font-spec(("Crimson Text", serif), 25 (21, 1920));
-  // @include font-spec(("Neuton", serif), 23 (21, 1920));
-  // @include font-spec(("Georgia", serif), 22 (18, 1920));
-  // @include font-spec(("Lato", sans-serif), 20 (17, 1920));
-  // @include font-spec(("Lora", serif), 21 (18, 1920));
+  // @include font-spec(("Crimson Text", serif), 25 (21, 1441));
+  // @include font-spec(("Neuton", serif), 23 (21, 1441));
+  // @include font-spec(("Georgia", serif), 22 (18, 1441));
+  // @include font-spec(("Lato", sans-serif), 20 (17, 1441));
+  // @include font-spec(("Lora", serif), 21 (18, 1441));
   // font-weight: 600;
-  // @include font-spec(("Cormorant Garamond", serif), 28 (21, 1920));
+  // @include font-spec(("Cormorant Garamond", serif), 28 (21, 1441));
   // @media all and (-webkit-max-device-pixel-ratio: 1) {
   //   font-weight: 500;
   // }
   // @media not all and (-webkit-max-device-pixel-ratio: 1) {
   //   font-weight: 600;
   // }
-  // @include font-spec(("Playfair Display", serif), 22 (17, 1920));
-  // @include font-spec(("Roboto", sans-serif), 22 (17, 1920));
-  // @include font-spec(("Droid Serif", serif), 22 (18, 1920));
-  @include font-spec(("PT Serif", serif), 22 (17, 1920));
+  // @include font-spec(("Playfair Display", serif), 22 (17, 1441));
+  // @include font-spec(("Roboto", sans-serif), 22 (17, 1441));
+  // @include font-spec(("Droid Serif", serif), 22 (18, 1441));
+  @include font-spec(("PT Serif", serif), 22 (17, 1441));
 
   /*
    * Fonts installed on this site
    */
-  // @include font-spec(("Cooper Hewitt", serif), 22 (18, 1920));
+  // @include font-spec(("Cooper Hewitt", serif), 22 (18, 1441));
   // font-weight: 500;
-  // @include font-spec(("Computer Modern Serif", serif), 24 (19, 1920));
-  // @include font-spec(("Aleo", serif), 23 (18, 1920));
+  // @include font-spec(("Computer Modern Serif", serif), 24 (19, 1441));
+  // @include font-spec(("Aleo", serif), 23 (18, 1441));
 
   /*
    * Those are available on MacOS and iOS
    */
-  // @include font-spec(("Georgia", serif), 24 (18, 1920));
-  // @include font-spec(('Baskerville', serif), 25 (20, 1920));
-  // @include font-spec(("Iowan Old Style", serif), 23 (18, 1920));
-  // @include font-spec(("Hoefler Text", serif), 24 (19, 1920));
-  // @include font-spec(("Times New Roman", serif), 25 (19, 1920));
+  // @include font-spec(("Georgia", serif), 24 (18, 1441));
+  // @include font-spec(('Baskerville', serif), 25 (20, 1441));
+  // @include font-spec(("Iowan Old Style", serif), 23 (18, 1441));
+  // @include font-spec(("Hoefler Text", serif), 24 (19, 1441));
+  // @include font-spec(("Times New Roman", serif), 25 (19, 1441));
 
-  // @include font-spec(serif, 25 (20, 1920));
+  // @include font-spec(serif, 25 (20, 1441));
 }
 
 body {
