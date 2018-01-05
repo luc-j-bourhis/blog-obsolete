@@ -1,1 +1,1 @@
-cmd: bundle exec nanoc; WID=`xdotool search --name "Mozilla Firefox" | head -1`; xdotool windowactivate $WID; xdotool key F5
+cmd: bundle exec nanoc; xdotool windowactivate $(xdotool search --name "Mozilla Firefox" | head -1); sleep 1; xdotool key F5
