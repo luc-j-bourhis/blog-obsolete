@@ -244,7 +244,7 @@ où les espérances sont pour $$\ket\phi$$ dans le cas de $$A$$ et $$A'$$ et pou
 
 $$-2 \le u(x-y)+v(x+y) \le 2.$$
 
-### c. La non-séparabilité: une condition suffisante
+### c. La non-séparabilité: une condition suffisante {#section-c}
 
 Je vais dans cette section et les suivantes considérer le cas de particule de spin 1/2, pour des raisons pédagogiques de simplicité mais les résultats que je vais démontrer peuvent être prouver pour d'autres systèmes quantiques. La dimension de $$\Hsingle$$ est donc 2 et l'on y définit les opérateurs de spin habituels $$S_x, S_y, S_z$$, à une normalisation de $$\hbar/2$$ près, de manière à avoir des valeurs propres $$\pm 1$$. On peut alors se donner une base $$\mathcal{B}$$ où les matrices de ces opérateurs sont les matrices de Pauli $$\sigma_x$$, $$\sigma_y$$, et $$\sigma_z$$.
 
@@ -309,7 +309,11 @@ et donc que
 
 $$\expect{S} = 2\cos b(1 - \sin 2\varphi\tan b).$$
 
-En choisissant $$\tan b = -\sin 2\varphi$$, on a
+En choisissant
+
+$$\tan b = -\sin 2\varphi, \label{choice:of:b:for:max:violation}$$
+
+on a
 
 $$\expect{S} = 2(1 + \sin^2 2\varphi)^\frac{1}{2},$$
 
@@ -346,3 +350,5 @@ On voit donc que si $$A$$ commute avec $$A'$$ ou bien si $$B$$ commute avec $$B'
 
 Si au contraire aucune de ces paires d'opérateurs ne commute, alors $$\alpha\beta > 0$$. Dans ce cas, les valeurs propres $$\pm\sqrt{4+\alpha\beta}$$ sont en dehors de l'intervalle $$[-2,2]$$.
 Quelle violation maximale peut-on obtenir? Comme $$\matnorm{\comm{A}{A'}} \le 2 \matnorm{A} \matnorm{A'}$$, nécessairement $$-2 \le \alpha \le 2$$ puisque $$\matnorm{A}=\matnorm{A'}=1$$. De même, $$-2 \le \beta \le 2$$. Cela démontre que la borne maximale est $$2\sqrt{2}$$ comme annoncé plus haut mais nous voyons aussi que cette borne est réalisée quand $$\alpha = \beta = \pm 2$$.
+
+Il est facile de voir que l'exemple étudié en [section c](#section-c) rentre dans ce théorème. En effet, nous avons vu que la violation maximale est obtenue pour $$\varphi=\pi/4$$, et donc avec l'équation (\ref{choice:of:b:for:max:violation}), on a $$b=-\pi/4$$, et donc les équations (\ref{pauliDecomposition}) impliquent que $$\comm{A}{A'}$$ et $$\comm{B}{B'}$$ admettent comme matrice $$-2\sigma_y$$ dans les bases respectives $$\mathcal{B}_1$$ et $$\mathcal{B}_2$$. Comme les valeurs propres de $$\sigma_y$$ sont $$\pm 1$$, CQFD.
