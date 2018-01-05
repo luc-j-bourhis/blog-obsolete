@@ -286,10 +286,10 @@ CQFD.
 Je vais maintenant choisir les opérateurs suivants
 
 $$\begin{aligned}
-A &= S_{1,x},\\
-B &= S_{1,x}\sin b + S_{1,z}\cos b,\\
-A' &= S_{2,z},\\
-B' &= -S_{2,x}\sin b + S_{2,z}\cos b,
+&A = S_{1,x},\\
+&A' = S_{1,z},\\
+&B = S_{1,x}\sin b + S_{1,z}\cos b,\\
+&B' = -S_{1,x}\sin b + S_{1,z}\cos b,
 \end{aligned}\label{pauliDecomposition}$$
 
 où $$S_{1,x}$$ et $$S_{1,z}$$ ont les matrices respectives $$\sigma_x$$ et $$\sigma_z$$ dans $$\mathcal{B}_1$$ tandis que $$S_{2,x}$$ et $$S_{2,z}$$ ont les matrices respectives $$\sigma_x$$ et $$\sigma_z$$ dans $$\mathcal{B}_2$$. Le protocole expérimental est typiquement le suivant: les particules s'éloignent de la source en directions opposées le long de l'axe des $$y$$. On mesure alors la projection du spin de chacune dans une direction qui est dans le plan $$x-z$$. Ceci pourrait être réalisé avec deux appareils de Stern et Gerlach.
