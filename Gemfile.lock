@@ -46,12 +46,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  adsf
-  haml
-  kramdown
-  nanoc (~> 4)
-  nokogiri
-  sass
+  adsf!
+  haml!
+  kramdown!
+  nanoc (~> 4)!
+  nokogiri!
+  sass!
+
+RUBY VERSION
+   ruby 2.4.3p205
 
 BUNDLED WITH
-   1.13.7
+   1.16.1
