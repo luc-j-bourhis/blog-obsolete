@@ -569,11 +569,19 @@ where $$x_\parallel$$ is the component of $$x$$ parallel to $$u$$ whereas $$x_\p
 
 In case (III^+^), we recognise a Lorentz boost, parametrised by the rapidity $$\varphi$$ and the direction of the boost $$\hat{u}$$. The case (III^-^) is not mainstream but time and space are mixed as two spatial coordinates would be by a rotation of angle $$\varphi$$, hence the name "rotation in spacetime".
 
-Thus it would seem we have failed, since we not only recovered Galilean and Lorentz transforms but two other groups. The rotations of spacetime are definitively "exotic" in the sense that they have never played any role in physics: it is rather puzzling they appear and it is very desirable we find a criteria to eliminate them. The synchrony group is important on the contrary as a way to formalise the conventionality of synchronicity which plays a very important role when considering experimental aspects, either real experiments or gedanken ones. Nevertheless it turns out that we can prune both the rotations and the synchrony group with just one additional hypothesis.
+Thus it would seem we have failed, since we not only recovered Galilean and Lorentz transforms but two other groups. The rotations of spacetime are definitively "exotic" in the sense that they have never played any role in physics: it is rather puzzling they appear and it is very desirable we find a criteria to eliminate them. The synchrony group is important on the contrary as a way to formalise the conventionality of synchronicity which plays an essential role when considering experimental aspects, either real experiments or gedanken ones. Actually, there is a deeper point to be made here.
+
+Indeed, it would make sense to combine the synchrony group with either of the Galilean group, the Lorentz group, or the spacetime rotations. Indeed, the latter embodies the physical content of the theory whereas the former embodies a conventional aspect. But then the Lie algebra in those three cases will turn out to be the set of matrices $$\mat{0}{u}{v}{0}$$ where $$u$$ and $$v$$ span $$\reals^3$$. But then the commutator of two of them, $$A_1=\mat{0}{u_1}{v_1}{0}$$ and $$A_2=\mat{0}{u_2}{v_2}{0}$$ is
+
+$$\comm{A_1}{A_2}=\mat{u_1^Tv2-u_2^Tv_1}{0}{0}{v_1u_2^T-v_2u_1^T}$$.
+
+As a result, our group now features changes of scale. We have therefore demonstrated that our postulate 3 banning any change of scale does eventually prevent us for including synchrony transformations in our group of transforms. But this is only because postulates 1–4 lead only to the Galilean group, the Lorentz group and the group of spacetime rotations, beside the synchrony transformations.
+
+The question we would like to address now is whether we can find an extra postulate so as to eliminate the synchrony transformations and the spacetime rotations. For the former, we could require on a physical ground that we cannot have only synchrony transformations. But it turns out we can appeal to a more general idea.
 
 ## Causality
 
-The concept of cause and effect would be meaningless if all observers could not agree which of two events happens first. Hence the following requirement
+It would be highly convenient if any two observers could agree which of two events happens first. This amount to require the existence of a synchronisation procedure resulting in that property. It is therefore largely conventional but, as we have just seen, we have already banned general synchronies. Therefore it makes sense to "bite the bullet". Hence the following requirement
 
 {{Postulate 5}} (Causality) There exists a non-empty set $$E$$ of events so that for any two events $$e_1$$ and $$e_2$$ such that $$e_1$$ is seen to appear before $$e_2$$ in one frame, then in any other frame, $$e_1$$ is also seen to appear before $$e_2$$.
 
