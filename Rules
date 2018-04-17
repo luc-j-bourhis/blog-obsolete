@@ -7,7 +7,7 @@ def compile_my_markdown(source_path, layout_path)
     filter :erb
     filter :mark_abbreviations
     filter :generate_references
-    filter :kramdown
+    filter :kramdown, :input => 'GFM'
     layout layout_path
     filter :relativize_paths, type: :html
     write item.identifier.without_ext + '.html'
