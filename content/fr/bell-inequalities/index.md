@@ -244,6 +244,17 @@ où les espérances sont pour $$\ket\phi$$ dans le cas de $$A$$ et $$A'$$ et pou
 
 $$-2 \le u(x-y)+v(x+y) \le 2.$$
 
+Posons $$X=(x+y)/2$$ et $$Y=(x-y)/2$$. Le domaine de $$(x,y)$$ devient pour $$(X,Y)$$:
+
+$$\begin{align}
+&-1 < X + Y < 1,\\
+&-1 < X - Y < 1,
+\end{align}$$
+
+Donc, du fait du domaine autorisé pour $$u$$ et $$v$$, si $$X \ge 0$$ et $$Y \ge 0$$, alors $$uX + vY \le X+Y \le 1$$. De même, si $$X \ge 0$$ et $$Y < 0$$, alors $$uX + vY \le X-Y \le 1$$. On finit en traitant de manière similaire toutes les possibilités restantes de signes de $$X$$ et $$Y$$.
+
+CQFD.
+
 ### c. La non-séparabilité: une condition suffisante {#section-c}
 
 Je vais dans cette section et les suivantes considérer le cas de particule de spin 1/2, pour des raisons pédagogiques de simplicité mais les résultats que je vais démontrer peuvent être prouver pour d'autres systèmes quantiques. La dimension de $$\Hsingle$$ est donc 2 et l'on y définit les opérateurs de spin habituels $$S_x, S_y, S_z$$, à une normalisation de $$\hbar/2$$ près, de manière à avoir des valeurs propres $$\pm 1$$. On peut alors se donner une base $$\mathcal{B}$$ où les matrices de ces opérateurs sont les matrices de Pauli $$\sigma_x$$, $$\sigma_y$$, et $$\sigma_z$$.
