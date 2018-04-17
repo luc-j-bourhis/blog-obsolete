@@ -345,7 +345,7 @@ $$ A^2 = A'^2 = B^2 = B'^2 = I. $$
 Ensuite, dans les termes de $$S^2$$, les multiplications de produits tensoriels deviennent des produits tensoriels de multiplications, dans lesquelles on peut alors éliminer tous ces carrés. Cela donne
 
 $$  \begin{split}
-    S(a, a', b, b')^2  &= I - A'\otimes A + B\otimes B' + A'A\otimes  BB' \\
+    S^2  &= I - A'\otimes A + B\otimes B' + A'A\otimes  BB' \\
                      & -A\otimes A' + I - AA'\otimes BB' - B\otimes B' \\
                      & + B'\otimes B - A'A\otimes B'B + I + A'\otimes A \\
                      & + AA'\otimes B'B - B'\otimes B + A\otimes A' + I  \\
