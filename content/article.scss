@@ -30,6 +30,10 @@
     h6 {
       margin-bottom: $header_margin_bottom_reduction*2.33em;
     }
+
+    blockquote {
+      font-style: italic;
+    }
   }
 
   .bibliography_entry {
