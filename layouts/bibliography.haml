@@ -17,7 +17,7 @@
                     - else
                         pages #{e[:pages][0...-1].join(', ')}
                         and #{e[:pages][-1]},
-            #{e[:year]}
             - if e.has_key?(:note)
-                :markdown
-                    #{e[:note]}
+                #{e[:year].to_s + '. ' + Kramdown::Document.new(e[:note], input:'SpanKramdown').to_html}
+            - else
+                #{e[:year]}
