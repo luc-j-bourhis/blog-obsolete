@@ -164,11 +164,11 @@ google_fonts:
 
   # PT Serif
   # Typewolf recommends it as an alternative for Le Monde
-  PT Serif:
-    - 400
-    - 400i
-    - 700
-    - 700i
+  # PT Serif:
+  #   - 400
+  #   - 400i
+  #   - 700
+  #   - 700i
 
   # Pairs recommended by typewolf in "The Definitive Guide to Free Fonts"
   # 1)
@@ -242,14 +242,14 @@ google_fonts:
   #   - 700i
 
   # 8) [++]
-  # Crimson Text: # line height a bit too big
-  #   - 400
-  #   - 400i
-  #   - 700
-  #   - 700i
-  # Rosario:
-  #   - 700
-  #   - 700i
+  Crimson Text: # line height a bit too big
+    - 400
+    - 400i
+    - 700
+    - 700i
+  Rosario:
+    - 700
+    - 700i
 
   # 9) [+]
   # Beware: no italic for sans-serif
@@ -265,8 +265,8 @@ google_fonts:
   # Roboto Slab:
   #   - 400
   #   - 700
-  Roboto:
-    - 400
-    - 700
-    - 400i
-    - 700i
+  # Roboto:
+  #   - 400
+  #   - 700
+  #   - 400i
+  #   - 700i
