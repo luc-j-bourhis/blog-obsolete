@@ -74,7 +74,7 @@ bibliography:
         authors:
             - Gisin, N.
             - Peres, A.
-        title: Maximal violation of {B}ell's inequality for arbitrarily large spin
+        title: Maximal violation of Bell's inequality for arbitrarily large spin
         journal: Physics Letters A
         volume: 162
         year: 1992
