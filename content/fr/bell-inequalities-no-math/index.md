@@ -4,6 +4,16 @@ author: Luc J. Bourhis
 kind: article
 category: physique
 bibliography:
+    Einstein:1935aa:
+        authors:
+            - Einstein, A.
+            - Podolsky, B.
+            - Rosen, N.
+        title: Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?
+        journal: Phys. Rev.
+        volume: 47
+        year: 1935
+        pages: 777--780
     Mermin:1990ab:
         authors:
             - Mermin, N. David
@@ -154,7 +164,7 @@ Mon historiette est finie! Je voudrais maintenant conclure en la reliant avec de
 
 Le théorème de Jessica de mon histoire est un théorème de Bell dû à David Mermin. Si je l'avais formalisé mathématiquement, cela aurait été une égalité, ce que l'on peut deviner en observant que le résultat de Jessica est "exact". Je veux dire par là que Jessica ne dit pas par exemple que dans la moitié des cas en moyenne, il y aura ceci ou cela: elle affirme un résultat valable pour toutes les observations. Nombres d'entre vous sont accoutumés à l'expression "inégalités de Bell", inégalités portant sur la probabilité d'observer ceci ou cela, et vous en serez peut-être étonné. Il se trouve que les théorèmes de Bell les mieux à même d'être vérifiés par de vraies expériences, par opposition aux expériences de pensée de ce billet, et bien ce sont des inégalités. Mais d'un point de vue purement conceptuel, rien n'interdit des égalités, ce qui fut publié pour la première fois par [[Greenberger:1990aa]]. L'égalité de Bell proposée par Jessica dans mon histoire fut publiée par [[Mermin:1990ab]]. Mes jetons sont une analogie pour les spin 1/2 utilisé par Mermin: c'est pour cela que j'ai appelé les faces X et Y. Elles correspondent à la mesure du spin selon les directions des mêmes noms. Quant aux couleurs, blanc et noir, elles correspondent aux mesures +1/2 et -1/2.
 
-L'argument de Paul, pour justifier que les faces doivent avoir des couleurs bien définie avant leur observation, est le pendant de l'argument classique d'Einstein, Podolsky et Rosen, dit argument EPR: des corrélations parfaites entre des systèmes distants, et qui par conséquent ne peuvent pas interagir, requièrent l'existence d'une cause préalable. Les théorèmes de Bell contredisent précisément ce point.
+L'argument de Paul, pour justifier que les faces doivent avoir des couleurs bien définie avant leur observation, est le pendant de l'argument classique d'[[Einstein:1935aa]], dit argument EPR: des corrélations parfaites entre des systèmes distants, et qui par conséquent ne peuvent pas interagir, requièrent l'existence d'une cause préalable. Les théorèmes de Bell contredisent précisément ce point.
 
 La "lacune de localité" identifiée par mes protagonistes est un problème auquel les chercheurs réalisant ce genre d'expérience durent faire face, en utilisant une solution conceptuellement similaire à celle de Jessica. Comme les articles scientifiques sont publiés en anglais, le terme universellement utilisé est l'expression "locality loophole".
 
