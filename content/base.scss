@@ -69,7 +69,7 @@
   // @media (-webkit-max-device-pixel-ratio: 1) {
   //   font-weight: 300;
   // }
-  @include font-spec(("Crimson Text", serif), 25 (21, 1441));
+  // @include font-spec(("Crimson Text", serif), 25 (21, 1441));
   // @include font-spec(("Neuton", serif), 23 (21, 1441));
   // @include font-spec(("Georgia", serif), 22 (18, 1441));
   // @include font-spec(("Lato", sans-serif), 20 (17, 1441));
@@ -85,7 +85,7 @@
   // @include font-spec(("Playfair Display", serif), 22 (17, 1441));
   // @include font-spec(("Roboto", sans-serif), 22 (17, 1441));
   // @include font-spec(("Droid Serif", serif), 22 (18, 1441));
-  // @include font-spec(("PT Serif", serif), 22 (17, 1441));
+  @include font-spec(("PT Serif", serif), 22 (17, 1441));
 
   /*
    * Fonts installed on this site
@@ -121,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
   // font-family: "Montserrat", sans-serif;
   // font-weight: 500;
   // font-family: "Merriweather Sans", sans-serif;
-  font-family: "Rosario", sans-serif;
+  // font-family: "Rosario", sans-serif;
   // font-weight: bold;
   // font-family: "Playfair Display", serif;
   // font-family: Neuton, serif;
@@ -138,6 +138,7 @@ h1, h2, h3, h4, h5, h6 {
   // font-family: "Roboto", sans-serif;
   // font-family: "Droid Sans", sans-serif;
   // font-family: "Source Serif Pro", serif;
+  font-family: "PT Sans";
   // font-family: sans-serif;
 }
 

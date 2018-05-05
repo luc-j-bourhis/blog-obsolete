@@ -164,11 +164,20 @@ google_fonts:
 
   # PT Serif
   # Typewolf recommends it as an alternative for Le Monde
-  # PT Serif:
-  #   - 400
-  #   - 400i
-  #   - 700
-  #   - 700i
+  PT Serif:
+    - 400
+    - 400i
+    - 700
+    - 700i
+
+  # PT Sans
+  # Typewolf recommends it paired with PT Serif
+  PT Sans:
+    - 400
+    - 400i
+    - 700
+    - 700i
+
 
   # Pairs recommended by typewolf in "The Definitive Guide to Free Fonts"
   # 1)
