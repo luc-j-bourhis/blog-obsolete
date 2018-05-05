@@ -50,6 +50,7 @@ class AbstractFilter < Nanoc::Filter
   def run(content, params={})
     content.gsub(/^~~~~(.+?)^~~~~/m,
                  "<% content_for :summary do %>\\1<% end %>\n" +
+                 "{: .abstract}\n" +
                  "<%= content_for(@item, :summary) %>\n")
   end
 end
