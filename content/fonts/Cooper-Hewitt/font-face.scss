@@ -1,14 +1,62 @@
 @font-face {
   font-family: "Cooper Hewitt";
+  src: url(/fonts/Copper-Hewitt/CooperHewitt-Thin.woff);
+  font-style: normal;
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(/fonts/Copper-Hewitt/CooperHewitt-ThinItalic.woff);
+  font-style: italic;
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(/fonts/Copper-Hewitt/CooperHewitt-Light.woff);
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(/fonts/Copper-Hewitt/CooperHewitt-LightItalic.woff);
+  font-style: italic;
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Cooper Hewitt";
   src: url(/fonts/Copper-Hewitt/CooperHewitt-Book.woff);
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
 }
 @font-face {
   font-family: "Cooper Hewitt";
   src: url(/fonts/Copper-Hewitt/CooperHewitt-BookItalic.woff);
   font-style: italic;
-  font-weight: 400;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(/fonts/Copper-Hewitt/CooperHewitt-Medium.woff);
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(/fonts/Copper-Hewitt/CooperHewitt-MediumItalic.woff);
+  font-style: italic;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(/fonts/Copper-Hewitt/CooperHewitt-Semibold.woff);
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(/fonts/Copper-Hewitt/CooperHewitt-SemiboldItalic.woff);
+  font-style: italic;
+  font-weight: 600;
 }
 @font-face {
   font-family: "Cooper Hewitt";
@@ -21,4 +69,16 @@
   src: url(/fonts/Copper-Hewitt/CooperHewitt-BoldItalic.woff);
   font-style: italic;
   font-weight: 700;
+}
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(/fonts/Copper-Hewitt/CooperHewitt-Heavy.woff);
+  font-style: normal;
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(/fonts/Copper-Hewitt/CooperHewitt-HeavyItalic.woff);
+  font-style: italic;
+  font-weight: 800;
 }
