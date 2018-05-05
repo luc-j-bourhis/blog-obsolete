@@ -90,10 +90,11 @@
   /*
    * Fonts installed on this site
    */
-  // @include font-spec(("Cooper Hewitt", serif), 22 (18, 1441));
-  // font-weight: 500;
+  // @include font-spec(("Cooper Hewitt", sans-serif), 22 (18, 1441));
+  // font-weight: 300;
   // @include font-spec(("Computer Modern Serif", serif), 24 (19, 1441));
   // @include font-spec(("Aleo", serif), 23 (18, 1441));
+  // font-weight: 300;
 
   /*
    * Those are available on MacOS and iOS
