@@ -180,8 +180,8 @@ google_fonts:
 
 
   # Pairs recommended by typewolf in "The Definitive Guide to Free Fonts"
-  # 1)
-  # Playfair Display:
+  # 1) Playfair Display:
+  # serif titles + sans-serif body
   #   - 400
   #   - 400i
   #   - 700
@@ -193,16 +193,18 @@ google_fonts:
   #   - 500i
 
   # 2) [+]
+  # serif titles + sans-serif body
+  # Domine:
+  #   - 700
+  #   - 700i
   # Open Sans:
   #   - 400
   #   - 400i
   #   - 700
   #   - 700i
-  # Domine:
-  #   - 700
-  #   - 700i
 
-  # 3) [++] (Sans for body)
+  # 3) [++]
+  # sans-serif titles + serif body
   # Alegreya:
   #   - 400
   #   - 400i
@@ -215,6 +217,7 @@ google_fonts:
   #   - 700i
 
   # 4) [++]
+  # sans-serif titles + serif body
   # Montserrat:
   #   - 500
   #   - 500i
@@ -224,7 +227,13 @@ google_fonts:
   #   - 700
   #   - 700i
 
+  # 5)
+  # serif titles + sans-serif body
+  # Source Serif Pro
+  # Source Sans Pro
+
   # 6) [++]
+  # serif titles + sans-serif body
   # Neuton:
   #   - 400
   #   - 400i
@@ -237,6 +246,7 @@ google_fonts:
   #   - 700i
 
   # 7) [+]
+  # sans-serif titles + serif body
   # Merriweather:
   #   - 300
   #   - 300i
@@ -251,16 +261,18 @@ google_fonts:
   #   - 700i
 
   # 8) [++]
-  Crimson Text: # line height a bit too big
-    - 400
-    - 400i
-    - 700
-    - 700i
-  Rosario:
-    - 700
-    - 700i
+  # sans-serif titles + serif body
+  # Crimson Text: # line height a bit too big
+  #   - 400
+  #   - 400i
+  #   - 700
+  #   - 700i
+  # Rosario:
+  #   - 700
+  #   - 700i
 
   # 9) [+]
+  # sans-serif titles + serif body
   # Beware: no italic for sans-serif
   # Varela Round:
   #   - 700
@@ -271,6 +283,7 @@ google_fonts:
   #   - 700i
 
   # 10)
+  # serif titles + sans-serif body
   # Roboto Slab:
   #   - 400
   #   - 700
