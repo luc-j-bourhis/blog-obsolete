@@ -1,8 +1,11 @@
 ---
 title: Étude d'une Inégalité de Bell
 author: Luc J. Bourhis
+abstract: |
+    Les inégalités de Bell sont un moyen de tester certains principes implicites en mécanique classique, où le mot "classique" est ici entendu par opposition à "quantique". Partant de deux de ces principes, localité et réalisme, que je définis clairement dans cet article, je vais démontrer que certains résultats expérimentaux doivent satisfaire des inégalités, dite de Bell, en l'honneur du chercheur qui démontra la première d'entre elles. De nombreuses expériences différentes ont été réalisées, dont je donnerais un aperçu, menant à une double conclusion: d'une part, leurs résultats violent ces inégalités, et par conséquent falsifient ces hypothèses de localité et de réalisme; d'autre part, ils sont en accord avec les prédictions de la mécanique quantique.
 kind: article
 category: physique
+group: théorèmes de Bell
 bibliography:
     Aspect:1982:
         authors:
@@ -137,10 +140,6 @@ tex_macros:
     Hpair:      \mathcal{P}
     vec:        \mathrm{Vec}\left(#1\right)
 ---
-
-~~~~
-Les inégalités de Bell sont un moyen de tester certains principes implicites en mécanique classique, où le mot "classique" est ici entendu par opposition à "quantique". Partant de deux de ces principes, localité et réalisme, que je définis clairement dans cet article, je vais démontrer que certains résultats expérimentaux doivent satisfaire des inégalités, dite de Bell, en l'honneur du chercheur qui démontra la première d'entre elles. De nombreuses expériences différentes ont été réalisées, dont je donnerais un aperçu, menant à une double conclusion: d'une part, leurs résultats violent ces inégalités, et par conséquent falsifient ces hypothèses de localité et de réalisme; d'autre part, ils sont en accord avec les prédictions de la mécanique quantique.
-~~~~
 
 ## 1. L'expérience
 

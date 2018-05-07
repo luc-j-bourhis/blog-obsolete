@@ -1,8 +1,11 @@
 ---
 title: Une présentation ludique d'un théorème de Bell
 author: Luc J. Bourhis
+abstract: |
+    Mon but est de présenter un théorème de Bell rigoureusement correct sous la forme d'un dialogue, sans mathématiques, même pas l'arithmétique la plus élémentaire, en imaginant une expérience avec des objets de tous les jours et en analysant cette expérience comme on le ferait pour de vraies expériences de physique réalisées en laboratoire.
 kind: article
 category: physique
+group: théorèmes de Bell
 bibliography:
     Einstein:1935aa:
         authors:
@@ -45,10 +48,6 @@ bibliography:
 
 
 ---
-
-~~~~
-Mon but est de présenter un théorème de Bell rigoureusement correct sous la forme d'un dialogue, sans mathématiques, même pas l'arithmétique la plus élémentaire, en imaginant une expérience avec des objets de tous les jours et en analysant cette expérience comme on le ferait pour de vraies expériences de physique réalisées en laboratoire.
-~~~~
 
 J'ai trois amis, Alice, Jessica et Paul, à qui je vais proposer le jeu suivant. Je dispose de nombreux jetons, avec une face marquée d'un X et l'autre face marqué d'un Y. Le jeu consiste à réaliser plusieurs expériences qui toutes procèdent comme suit. Mes trois amis se séparent et vont chacun prendre place dans un isoloir d'où ils ne peuvent pas voir ce que je fais. J'envoie à chacun d'entre eux un jeton numéroté: le jeton 1 à Paul, le 2 à Alice et le 3 à Jessica. Ils sont plongés dans le noir et ne peuvent donc pas voir le jeton qu'ils reçoivent chacun. Le seul moyen à leur disposition pour l'observer est une machine spéciale (j'en ai donné une à chacun d'entre eux): chaque machine à un réglage à deux positions, X ou Y. Quand on y insère le jeton, la machine révèle la couleur de la face spécifiée par le réglage, puis la machine détruit le jeton. Par conséquent, on peut connaître ou bien la couleur de la face X, ou bien de la face Y, au choix, mais jamais la couleur des deux. Pour chaque expérience, je vais indiqué à chacun, à l'avance, le réglage de la machine et chacun notera alors la couleur révélée. On répète cette procédure un grand nombre de fois en utilisant mon très grand stock de jetons. Finalement ils me rejoignent et comparent leur liste d'observations. Le but du jeu est pour Paul, Jessica et Alice de deviner la procédure que j'ai suivi pour préparer les jetons. Mais attention, c'est moi qui choisis le réglage des appareils!
 
