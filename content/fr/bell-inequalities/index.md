@@ -307,7 +307,9 @@ où $$S_{1,x}$$ et $$S_{1,z}$$ ont les matrices respectives $$\sigma_x$$ et $$\s
 
 En utilisant alors le fait que
 
-$$\bra{\phi_i}\bra{\theta_i}S_{1,e}\otimes S_{2,f}\ket{\phi_j}\ket{\theta_j} = \bra{\phi_i}S_{1,e}\ket{\phi_j}\bra{\theta_i}S_{2,f}\ket{\theta_j}=\left(\sigma_e\right)_{ij}\left(\sigma_f\right)_{ij},$$
+$$\begin{aligned}
+\bra{\phi_i}\bra{\theta_i}S_{1,e}\otimes S_{2,f}\ket{\phi_j}\ket{\theta_j} &= \bra{\phi_i}S_{1,e}\ket{\phi_j}\bra{\theta_i}S_{2,f}\ket{\theta_j}\\&=\left(\sigma_e\right)_{ij}\left(\sigma_f\right)_{ij},
+\end{aligned}$$
 
 on trouve facilement, en notant que les termes $$S_x\otimes S_z$$ et $$S_z\otimes S_x$$ donnent des contributions nulles, que
 
