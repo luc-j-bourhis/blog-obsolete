@@ -23,7 +23,7 @@
               :markdown
                 #{info[:introduction]}
         - info[:articles].each do |a|
-          %a.titles{:href => a.path}
+          %a.titles{:href => "#{a.path}#just-after-abstract"}
             - if group == :unknown
               %h3= a[:title]
             - else
