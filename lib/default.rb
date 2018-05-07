@@ -2,9 +2,14 @@
 # before nanoc starts compiling. The search is recursive.
 require 'pp'
 require 'yaml'
-include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::LinkTo
 include Nanoc::Helpers::Rendering # to allow the use of `render` in layouts
+
+
+# List of all articles
+def articles
+  @items.select{|e| e[:kind] == :article}
+end
 
 # Organise article titles in a tree for display in the side bar
 def tree_of_content(lang)
