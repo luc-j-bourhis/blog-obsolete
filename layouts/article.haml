@@ -36,7 +36,7 @@
         .topic_categories= key
         %ul.topic_list
           - entries.each do |e|
-            %li= link_to(e[:title], e)
+            %li.titles= link_to(e[:title], e)
       %hr
   #main
     %h1
