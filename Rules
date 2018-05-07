@@ -18,6 +18,9 @@ preprocess do
   @items.each do |i|
     c = i.identifier.to_s.match(%r{/([a-z]{2})/})
     i[:language] = if not c.nil? then c[1].intern else :unknown end
+    [:kind, :category, :group].each do |a|
+      i[a] = if not i[a].nil? then i[a].intern else :unknown end
+    end
     b = i[:bibliography]
     unless b.nil?
       b.each_value {|e|
