@@ -2,7 +2,7 @@
 title: Une présentation ludique d'un théorème de Bell
 author: Luc J. Bourhis
 abstract: |
-    Mon but est de présenter un théorème de Bell rigoureusement correct sous la forme d'un dialogue, sans mathématiques, même pas l'arithmétique la plus élémentaire, en imaginant une expérience avec des objets de tous les jours et en analysant cette expérience comme on le ferait pour de vraies expériences de physique réalisées en laboratoire.
+    Mon but est ici de présenter un théorème de Bell rigoureusement correct, mais de le faire sous la forme d'un dialogue, sans mathématiques, même pas l'arithmétique la plus élémentaire. Je vais imaginer une expérience avec des objets de tous les jours, au lieu des particules microscopiques des vraies expériences quantiques. Puis cette expérience sera analysée comme on le ferait pour ces vraies expériences réalisées en laboratoire. Ces objets de tous les jours vont évidemment se comporter de manière quelque peu magique, pour que l'analogie avec les particules quantiques marche, mais c'est là mon but: faire toucher du doigt les éléments fantastiques de la mécanique quantique qui concourt aux théorèmes de Bell.
 kind: article
 category: physique
 group: théorèmes de Bell

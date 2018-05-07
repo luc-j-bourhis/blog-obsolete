@@ -1,6 +1,5 @@
 groups:
     physique:
         théorèmes de Bell:
-            introduction:
-                Dans les années 60…
-
+            introduction: |
+                Dans les années 60, John Bell découvrit que la mécanique quantique était incompatible avec l'existence d'une réalité physique indépendante des observateurs humains, sauf à devoir accepter l'impossibilité de réaliser deux observations indépendament l'une de l'autre, même si les deux observateurs sont très loin l'un de l'autre. Ce théorème eut un grand retentissement car il réduisait énormément les espoirs, portés en partie par Einstein dans les années 30, d'une refondation de la mécanique quantique sur des bases proches de la physique classique. En effet, un des piliers de cette dernière est le réalisme: l'hypothèse d'une réalité physique indépendante de tout observateur, que nous cherchons à cerner du mieux que nous pouvons d'une part en effectuant des observations quantitatives, ou mesures, et d'autre part, en élaborant des modèles mathématiques pour prédire les résultats de ces mesures. La tension entre la mécanique quantique et le réalisme n'apparaît que pour certaines classes de systèmes bien particulières, certes, mais c'est suffisant pour mettre en doute le réalisme en tant que base de la physique.
