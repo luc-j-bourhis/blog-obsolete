@@ -44,6 +44,17 @@
     .author
       = @item[:author]
     #body
+      - t = current_group
+      - if t.nil?
+        %div.abstract
+          :markdown
+            #{@item[:abstract]}
+      - else
+        - [t[:introduction], @item[:abstract], t[:conclusion]].each do |p|
+          - unless p.nil?
+            %div.abstract
+              :markdown
+                #{p}
       = yield
     = render "/bibliography.*"
     = render "/#{@item[:language]}/licence.*"

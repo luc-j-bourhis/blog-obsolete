@@ -40,6 +40,12 @@ def sorted_articles
   by_lang
 end
 
+# Group info for the current item
+def current_group
+  @items["/#{@item[:language]}/groups.*"][:groups]
+             .to_h[@item[:category]].to_h[@item[:group]]
+end
+
 # Implementation of Theorem-like environment
 def theorem_like(kind, n)
   @theorem_like_numbers ||= {}
