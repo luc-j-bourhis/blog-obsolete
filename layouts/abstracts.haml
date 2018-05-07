@@ -13,11 +13,25 @@
         Idées aux quatre vents
     .author
       = @config[:editor]
-    - abstracts[@item[:language]].each do |cat, articles|
+    - sorted_articles[@item[:language]].each do |cat, by_group|
       %h2.categories= cat
-      - articles.each do |a|
-        %a{:href => a.path}
-          %h3= a[:title]
-        %div
-          :markdown
-            #{content_for(a, :summary) || ''}
+      - by_group.each do |group, info|
+        - if group != :unknown # i.e. there is actually a group of articles
+          %h3.groups= group
+          - unless info[:introduction].nil?
+            %div
+              :markdown
+                #{info[:introduction]}
+        - info[:articles].each do |a|
+          %a.titles{:href => a.path}
+            - if group == :unknown
+              %h3= a[:title]
+            - else
+              %h4= a[:title]
+          %div
+            :markdown
+              #{a[:abstract]}
+        - unless group == :unknown or info[:conclusion].nil?
+          %div
+            :markdown
+              #{info[:conclusion]}

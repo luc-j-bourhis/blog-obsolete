@@ -3,7 +3,6 @@
 def compile_my_markdown(source_path, layout_path)
   compile source_path do
     filter :bacchantes
-    filter :abstract
     filter :erb
     filter :mark_abbreviations
     filter :generate_references

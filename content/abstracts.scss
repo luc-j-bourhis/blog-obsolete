@@ -4,6 +4,10 @@
     text-transform: uppercase;
 }
 
+.groups:first-letter {
+    text-transform: capitalize;
+}
+
 #home_lang_nav {
     position: absolute;
     left: 15px;

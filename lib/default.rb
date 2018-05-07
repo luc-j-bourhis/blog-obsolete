@@ -17,14 +17,24 @@ def tree_of_content(lang)
   tree
 end
 
-# Extract all abstracts
-def abstracts
+# Articles sorted by category, and then groups if applicable
+def sorted_articles
   by_lang = {}
+  @items.find_all("/*/groups.*").each do |i|
+    by_cat = by_lang[i[:language]] ||= {}
+    i[:groups].to_h.each do |cat, groups|
+      by_group = by_cat[cat] ||= {}
+      groups.each do |group, abstracts|
+        (by_group[group] ||= {}).update(abstracts)
+      end
+    end
+  end
   @items.each do |i|
-    if not i[:category].nil?
+    if i[:kind] == :article
       by_cat = by_lang[i[:language]] ||= {}
-      articles = by_cat[i[:category]] ||= []
-      articles << i
+      by_group = by_cat[i[:category]] ||= {}
+      group_info = by_group[i[:group]] ||= {}
+      (group_info[:articles] ||= []) << i
     end
   end
   by_lang
@@ -41,22 +51,6 @@ def theorem_like(kind, n)
     @theorem_like_numbers[kind].push(n)
   end
   render "/theorem-like.*", kind: kind, number: n
-end
-
-# Extract article abstracts, appearing between two lines of more than 4 tildes
-class AbstractFilter < Nanoc::Filter
-  identifier :abstract
-
-  def run(content, params={})
-    content.gsub(/^~~~~(.+?)^~~~~/m,
-                 "<% content_for :summary do %>\\1<% end %>\n" +
-                 "{: .abstract}\n" +
-                 "<%= content_for(@item, :summary) %>\n")
-  end
-end
-
-def abstract_of(item)
-  AbstractFilter.abstract_of[item.identifier] || ''
 end
 
 # Cast {{XXXX ddd}} to <%=theorem_like(XXXX, ddd)%>
