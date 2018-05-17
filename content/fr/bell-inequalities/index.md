@@ -172,7 +172,7 @@ Une théorie "réaliste" suppose l'existence d'une réalité indépendente de l'
 
 ### b. Le critère de localité
 
-Ce critère s'exprime ainsi: *l'appareil de mesure I fonctionne indépendamment de l'appareil de mesure II*. On pourrait imaginer à l'inverse que des facteurs extérieurs influencent les deux appareils, créant ainsi une corrélation entre les mesures, ou bien qu'un des appareils envoit, juste après avoir fait sa mesure, une information à l'autre, juste avant que ce dernier ne fasse sa mesure, influençant ainsi celle-ci. La conséquence essentielle de ce postulat est que, combiné avec le critère de réalisme, la mesure $$A$$ par l'appareil I ne peut dépendre que du réglage $$a$$ de cet appareil et de l'état de la pair $$\lambda$$. On notera donc $$A(\lambda)$$ en laissant la dépendence en $$a$$ implicite. Et de même pour l'autre mesure, $$B(\lambda)$$, qui ne dépend que de $$\lambda$$ et du réglage $$b$$ de l'appareil II.
+Ce critère s'exprime ainsi: *l'appareil de mesure I fonctionne indépendamment de l'appareil de mesure II*. On pourrait imaginer à l'inverse que des facteurs extérieurs influencent les deux appareils, créant ainsi une corrélation entre les mesures, ou bien qu'un des appareils envoit, juste après avoir fait sa mesure, une information à l'autre, juste avant que ce dernier ne fasse sa mesure, influençant ainsi celle-ci. La conséquence essentielle de ce postulat est que, combiné avec le critère de réalisme, la mesure $$A$$ par l'appareil I ne peut dépendre que du réglage $$a$$ de cet appareil et de l'état de la pair $$\lambda$$. On notera donc $$A(a, \lambda)$$. Et de même pour l'autre mesure, $$B(b, \lambda)$$, qui ne dépend que de $$\lambda$$ et du réglage $$b$$ de l'appareil II.
 
 On pourrait être tenté d'aller plus loin et de dire que $$A$$ ne peut dépendre que de l'état de la particule 1 mais comme cet état peut être corrélé avec celui de la particule 2, cette hypothèse est en générale fausse. Le critère de localité, qui s'applique aux analyseurs, n'est donc pas équivalent au critère de séparabilité, comme nous l'avions déjà mentionné plus haut.
 
@@ -180,20 +180,20 @@ On pourrait être tenté d'aller plus loin et de dire que $$A$$ ne peut dépendr
 
 La quantité mesurée étant la corrélation entre les mesures sur les membres d'une paire comme nous l'avons expliqué plus haut, le point de départ est donc l'expression de cette corrélation dans notre modèle,
 
-$$ P(A,B) = \int_{\Lambda} A(\lambda) B(\lambda) d\rho(\lambda). $$
+$$ P(a,b) = \int_{\Lambda} A(a, \lambda) B(b, \lambda) d\rho(\lambda). $$
 
-Avec un suffisament grand nombre $$N$$ de paires, on aura alors $$D_N(a,b) \approx P(A,B)$$. On voit que la moyenne qui apparaît dans $$D_N(a,b)$$ devient naturellement une moyenne prenant en compte la distribution de l'états de la paire de particule.
+Avec un suffisament grand nombre $$N$$ de paires, on aura alors $$D_N(a,b) \approx P(a,b)$$. On voit que la moyenne qui apparaît dans $$D_N(a,b)$$ devient naturellement une moyenne prenant en compte la distribution de l'états de la paire de particule.
 
-On considère maintenant deux réglages $$a$$ et $$a'$$ de l'appareil I et deux réglages $$b$$ et $$b'$$ de l'appareil II et on introduit les observables associées $$A$$, $$A'$$, $$B$$ et $$B'$$. Nous allons démontré une inégalité due à  (Clauser, Horne, Shimony et Holt (1969))[[Clauser:1969]], et donc appelée inégalité CHSH,
+On considère maintenant deux réglages $$a$$ et $$a'$$ de l'appareil I et deux réglages $$b$$ et $$b'$$ de l'appareil II. Pour simplifier l'écriture, je ne vais plus faire figuré la dépendence en les réglages: $$A(\lambda)$$ sera $$A(a, \lambda)$$, $$A'(\lambda)$$ sera $$A(a',\lambda)$$, $$B(\lambda)$$ sera $$B(b, \lambda)$$ et $$B'(\lambda)$$ sera $$B(b',\lambda)$$. Nous allons démontré une inégalité due à  (Clauser, Horne, Shimony et Holt (1969))[[Clauser:1969]], et donc appelée inégalité CHSH,
 
-$$\underbrace{|P(A',B) - P(A,B) + P(A',B') + P(A,B')|}_{\displaystyle R(A, A', B, B')} \le 2$$
+$$\underbrace{|P(a',b) - P(a,b) + P(a',b') + P(a,b')|}_{\displaystyle R(a, a', b, b')} \le 2$$
 
 quelques soient les réglages.
 
 La démonstration est très simple. On commence par majorer la valeur absolue de l'intégrale par l'intégrale de la valeur absolue,
 
 $$ \begin{aligned}
-R(A, A', B, B')
+R(a, a', b, b')
     &\le \int_\Lambda \big|[A'(\lambda) - A(\lambda)] B(\lambda)\\
     &+ [A'(\lambda) + A(\lambda)]B'(\lambda) \big| d\rho(\lambda).
 \end{aligned}\notag $$
@@ -212,7 +212,7 @@ Nous allons maintenant étudier la violation des inégalités de Bell prédite p
 
 ### a. Le cadre quantique
 
-Il faut trouver des réglages tels que la mécanique quantique prédise que $$R(A, A', B, B')$$ soit plus grand que 2, et le plus grand possible afin d'augmenter le poids statistique du résultat. Pour cela, il me faut d'abord introduire la machinerie quantique. Je noterais $$\Hsingle$$ l'espace de Hilbert des états non-corrélés de la particule 1 prise isolément, et comme les deux particules sont identiques, il s'agit aussi de l'espace de Hilbert pour la particule 2 prise isolément. L'espace de Hilbert pour une paire est alors le produit tensoriel $$\Hpair=\Hsingle\otimes\Hsingle$$. Ensuite, les observables $$A$$, $$A'$$, $$B$$ et $$B'$$ deviennent tout d'abord des opérateurs hermitiens de $$\Hsingle$$ opérant sur la première particule pour les deux premiers, et la seconde particule pour les deux derniers, dans les deux cas sur une particule isolée. La propriété que les observables prennent seulement les valeurs $$\pm 1$$ se traduit par le fait que les valeurs propres de $$A$$, $$A'$$, $$B$$ et $$B'$$ sont $$\pm 1$$.
+Il faut trouver des réglages tels que la mécanique quantique prédise que $$R(a, a', b, b')$$ soit plus grand que 2, et le plus grand possible afin d'augmenter le poids statistique du résultat. Pour cela, il me faut d'abord introduire la machinerie quantique. Je noterais $$\Hsingle$$ l'espace de Hilbert des états non-corrélés de la particule 1 prise isolément, et comme les deux particules sont identiques, il s'agit aussi de l'espace de Hilbert pour la particule 2 prise isolément. L'espace de Hilbert pour une paire est alors le produit tensoriel $$\Hpair=\Hsingle\otimes\Hsingle$$. Ensuite, les observables $$A$$, $$A'$$, $$B$$ et $$B'$$ deviennent tout d'abord des opérateurs hermitiens de $$\Hsingle$$ opérant sur la première particule pour les deux premiers, et la seconde particule pour les deux derniers, dans les deux cas sur une particule isolée. La propriété que les observables prennent seulement les valeurs $$\pm 1$$ se traduit par le fait que les valeurs propres de $$A$$, $$A'$$, $$B$$ et $$B'$$ sont $$\pm 1$$.
 
 Ensuite, les observables $$AB$$, $$A'B$$, etc deviennent les produits tensoriels des opérateurs correspondants, $$A\otimes B$$, $$A'\otimes B$$, etc. Enfin, les espérances doivent maintenant s'entendre au sens quantique, i.e. pour tout opérator $$O$$,
 
@@ -220,9 +220,9 @@ $$\expect{O} = \bra\psi O \ket\psi,$$
 
 où $$\ket\psi$$ est l'état quantique dans lequelle toutes les paires sont préparées.
 
-L'expression $$R(A, A', B, B')$$ bornée par les inégalités de Bell s'écrit alors comme la valeur absolue
+L'expression $$R(a, a', b, b')$$ bornée par les inégalités de Bell s'écrit alors comme la valeur absolue
 
-$$ R(A, A', B, B') = \left| \expect{S} \right| \label{Rexpect} $$
+$$ R(a, a', b, b') = \left| \expect{S} \right| \label{Rexpect} $$
 
 de l'espérance de l'opérateur
 
