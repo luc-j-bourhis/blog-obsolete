@@ -184,7 +184,7 @@ $$ P(a,b) = \int_{\Lambda} A(a, \lambda) B(b, \lambda) d\rho(\lambda). $$
 
 Avec un suffisament grand nombre $$N$$ de paires, on aura alors $$D_N(a,b) \approx P(a,b)$$. On voit que la moyenne qui apparaît dans $$D_N(a,b)$$ devient naturellement une moyenne prenant en compte la distribution de l'états de la paire de particule.
 
-On considère maintenant deux réglages $$a$$ et $$a'$$ de l'appareil I et deux réglages $$b$$ et $$b'$$ de l'appareil II. Pour simplifier l'écriture, je ne vais plus faire figuré la dépendence en les réglages: $$A(\lambda)$$ sera $$A(a, \lambda)$$, $$A'(\lambda)$$ sera $$A(a',\lambda)$$, $$B(\lambda)$$ sera $$B(b, \lambda)$$ et $$B'(\lambda)$$ sera $$B(b',\lambda)$$. Nous allons démontré une inégalité due à  (Clauser, Horne, Shimony et Holt (1969))[[Clauser:1969]], et donc appelée inégalité CHSH,
+On considère maintenant deux réglages $$a$$ et $$a'$$ de l'appareil I et deux réglages $$b$$ et $$b'$$ de l'appareil II. Pour simplifier l'écriture, je ne vais plus faire figuré la dépendence en les réglages: $$A(\lambda)$$ sera $$A(a, \lambda)$$, $$A'(\lambda)$$ sera $$A(a',\lambda)$$, $$B(\lambda)$$ sera $$B(b, \lambda)$$ et $$B'(\lambda)$$ sera $$B(b',\lambda)$$. Nous allons démontré une inégalité due à [[Clauser:1969 >>]], et donc appelée inégalité CHSH,
 
 $$\underbrace{|P(a',b) - P(a,b) + P(a',b') + P(a,b')|}_{\displaystyle R(a, a', b, b')} \le 2$$
 
