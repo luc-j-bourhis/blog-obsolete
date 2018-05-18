@@ -161,15 +161,15 @@ end
 #             pages: 434--437
 #
 # Then a Bibliography section is created by our layout whereas references
-# to its items in the text shall be [[Lee:1905]] and they will be replaced by
-# links to the bibliography items. The citation text is in the natbib style,
-# i.e. Bob and Alice (year), Alice, Bob and Jennifer (year), or
+# to its items in the text shall be [[Lee:1905]] and they will be replaced
+# by links to the bibliography items. The citation text is in the natbib
+# style, i.e. Bob and Alice (year), Alice, Bob and Jennifer (year), or
 # Alice et al (year).
 #
-# One may also override the automatically generated citation text with
-# (Paul, Jessica, Leto and Alia)[[Dune]]
-# For example in this case, the generated text would have been "Paul et al"
-# but now it will be as specified.
+# When there are one, two or three authors, they all appear in the citation,
+# as it has just been exemplified. With four authors or more, we use
+# "et al". If one wants all authors, one can add a trailing ">>":
+# [[Bob:2012 >>]] instead of [[Bob:2012]].
 class ReferenceFilter < Nanoc::Filter
   identifier :generate_references
 
@@ -178,16 +178,16 @@ class ReferenceFilter < Nanoc::Filter
     if bibitems.nil?
       content
     else
-      content.gsub(/(?: \( (.+?) \) )?
-                    \[ \[ ( [[:alpha:]] [^[[:space:]]]* ) \] \]/x) do |m|
-        key = $2.intern
+      content.gsub(%r{\[ \[
+                      ( [[:alpha:]] [^[[:space:]]]* )
+                      ([ ] >>)?
+                      \] \]
+                    }x) do |m|
+        key = $1.intern
         if bibitems.has_key?(key)
-          if !$1.nil?
-            txt = $1
-          else
-            item = bibitems[key]
-            txt = format_reference(item[:authors], item[:year], @item[:language])
-          end
+          item = bibitems[key]
+          txt = format_reference(item[:authors], item[:year],
+                                 @item[:language], et_al:$2.nil?)
           "[#{txt}](##{key}){: .bibliography-reference}"
         else
           m
@@ -248,7 +248,7 @@ def format_authors(authors, language)
 end
 
 # Format bibliographic reference: used when citing and in bibliography
-def format_reference(authors, year, language)
+def format_reference(authors, year, language, et_al:true)
   a = authors.map(&:full_name_without_first_name)
   txt = case a.length
     when 1
@@ -258,7 +258,11 @@ def format_reference(authors, year, language)
     when 3
       "#{a[0]}, #{a[1]}, #{and_(language)} #{a[2]}"
     else
-      "#{a[0]} et al"
+      if et_al
+        "#{a[0]} et al"
+      else
+        a[0..-2].join(', ') + ", #{and_(language)} " + a[-1]
+      end
   end
   "#{txt} (#{year})"
 end
