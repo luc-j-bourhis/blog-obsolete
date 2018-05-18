@@ -8,7 +8,10 @@
             #{e[:title]},
             - if e.has_key?(:journal)
                 <em>#{e[:journal]}</em>,
-                #{e[:volume]}:#{e[:pages]},
+                - if e.key?(:volume)
+                    #{e[:volume]}:#{e[:pages]},
+                - elsif e.key?(:eprint_archive)
+                    #{e[:eprint_archive]}: #{e[:eprint_number]} [#{e[:eprint_class]}],
             - if e.has_key?(:publisher)
                 <em>#{e[:publisher]}</em>,
                 - if e.has_key?(:pages)
