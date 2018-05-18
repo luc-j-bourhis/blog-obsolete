@@ -6,21 +6,21 @@
                 #{format_reference(e[:authors], e[:year], @item[:language])}
             #{format_authors(e[:authors], @item[:language])}.
             #{e[:title]},
-            - if e.has_key?(:journal)
+            - if e.key?(:journal)
                 <em>#{e[:journal]}</em>,
                 - if e.key?(:volume)
                     #{e[:volume]}:#{e[:pages]},
                 - elsif e.key?(:eprint_archive)
                     #{e[:eprint_archive]}: #{e[:eprint_number]} [#{e[:eprint_class]}],
-            - if e.has_key?(:publisher)
+            - if e.key?(:publisher)
                 <em>#{e[:publisher]}</em>,
-                - if e.has_key?(:pages)
+                - if e.key?(:pages)
                     - if e[:pages].length == 1
                         'page #{e[:pages][0]}'
                     - else
                         pages #{e[:pages][0...-1].join(', ')}
                         and #{e[:pages][-1]},
-            - if e.has_key?(:note)
+            - if e.key?(:note)
                 #{e[:year].to_s + '. ' + Kramdown::Document.new(e[:note], input:'SpanKramdown').to_html}
             - else
                 #{e[:year]}
