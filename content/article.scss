@@ -1,5 +1,13 @@
 @import 'base.scss';
 
+@keyframes highlight {
+  0% {
+    background: LightSkyBlue;
+  }
+  100% {
+    background: none;
+  }
+}
 
 #main {
   #body {
@@ -46,6 +54,9 @@
 
   .bibliography_entry {
     margin-bottom: 0.5em;
+    &:target {
+      animation: highlight 1s;
+    }
   }
 
   .bibliography_key {
