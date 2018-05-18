@@ -238,8 +238,12 @@ def and_(language)
 end
 
 # Format author list for bibliographie
-def format_authors(authors, language)
-  names = authors.map(&:full_name)
+def format_authors(authors, language, max: 4)
+  names = if authors.length > max
+    [authors.first.full_name, 'al.']
+  else
+    authors.map(&:full_name)
+  end
   if names.length > 1
     (names[0..-2] + ["#{and_(language)} #{names[-1]}"]).join(', ')
   else
