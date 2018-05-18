@@ -3,15 +3,15 @@
     - @item[:bibliography].sort.each do |key, e|
         %div{:id => key, :class => "bibliography_entry"}
             %span{:class => "bibliography_key"}
-                #{format_reference(e[:authors], e[:year], @item[:language])}
-            #{format_authors(e[:authors], @item[:language])}.
+                #{format_authors(e[:authors], @item[:language])}
+                (#{e[:year]}).
             #{e[:title]},
             - if e.key?(:journal)
                 <em>#{e[:journal]}</em>,
                 - if e.key?(:volume)
-                    #{e[:volume]}:#{e[:pages]},
+                    #{e[:volume]}:#{e[:pages]}
                 - elsif e.key?(:eprint_archive)
-                    #{e[:eprint_archive]}: #{e[:eprint_number]} [#{e[:eprint_class]}],
+                    #{e[:eprint_archive]}: #{e[:eprint_number]} [#{e[:eprint_class]}]
             - if e.key?(:publisher)
                 <em>#{e[:publisher]}</em>,
                 - if e.key?(:pages)
@@ -19,7 +19,7 @@
                         'page #{e[:pages][0]}'
                     - else
                         pages #{e[:pages][0...-1].join(', ')}
-                        and #{e[:pages][-1]},
+                        and #{e[:pages][-1]}
             - if e.key?(:note)
                 #{e[:year].to_s + '. ' + Kramdown::Document.new(e[:note], input:'SpanKramdown').to_html}
             - else
