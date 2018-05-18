@@ -21,6 +21,4 @@
                         pages #{e[:pages][0...-1].join(', ')}
                         and #{e[:pages][-1]}
             - if e.key?(:note)
-                #{e[:year].to_s + '. ' + Kramdown::Document.new(e[:note], input:'SpanKramdown').to_html}
-            - else
-                #{e[:year]}
+                (#{Kramdown::Document.new(e[:note], input:'SpanKramdown').to_html.strip})
