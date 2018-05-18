@@ -5,3 +5,4 @@ tmp/
 .bundle/
 *.sublime-project
 .sass-cache/
+content/*/sandbox
