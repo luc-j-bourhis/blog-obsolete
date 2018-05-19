@@ -1,0 +1,11 @@
+#{e[:title]},
+%em
+    #{e[:publisher]},
+-if e.key?(:series)
+    #{e[:series]},
+    vol. #{e[:volume]},
+#{e[:year]},
+-if e[:pages] =~ /(\d+)--(\d+)/
+    pp. #{$1}—#{$2}
+-else
+    p. #{e[:pages]}
