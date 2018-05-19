@@ -9,6 +9,7 @@ category: physique
 group: théorèmes de Bell
 bibliography:
     Aspect:1982:
+        category: journal
         authors:
             - Aspect, Alain
             - Dalibard, Jean
@@ -19,6 +20,7 @@ bibliography:
         year: 1982
         pages: 1804--1807
     Bell:1964:
+        category: journal
         authors:
             - Bell, John S.
         title: On the Einstein Podolsky Rosen paradox
@@ -27,6 +29,7 @@ bibliography:
         year: 1964
         pages: 195--200
     Braunstein:1992:
+        category: journal
         authors:
             - Braunstein, Samuel L.
             - Mann, A.
@@ -37,6 +40,7 @@ bibliography:
         year: 1992
         pages: 3259--3261
     Cirelson:1980:
+        category: journal
         authors:
             - Cirel'son, B. S.
         title: Quantum generalizations of Bell's inequality
@@ -45,6 +49,7 @@ bibliography:
         year: 1980
         pages: 93--100
     Clauser:1974:
+        category: journal
         authors:
             - Clauser, John F.
             - Horne, Michael A.
@@ -54,6 +59,7 @@ bibliography:
         year: 1974
         pages: 526--535
     Clauser:1969:
+        category: journal
         authors:
             - Clauser, John F.
             - Horne, Michael A.
@@ -65,6 +71,7 @@ bibliography:
         year: 1969
         pages: 880--884
     Einstein:1935aa:
+        category: journal
         authors:
             - Einstein, A.
             - Podolsky, B.
@@ -75,6 +82,7 @@ bibliography:
         year: 1935
         pages: 777--780
     Gisin:1992aa:
+        category: journal
         authors:
             - Gisin, N.
             - Peres, A.
@@ -84,6 +92,7 @@ bibliography:
         year: 1992
         pages: 15 - 17
     Hensen:2015:
+        category: journal
         authors:
             - Hensen, B.
             - Bernien, H.
@@ -110,6 +119,7 @@ bibliography:
         year: 2015
         pages: 682--686
     Rowe:2001:
+        category: journal
         authors:
             - Rowe, M. A.
             - Kielpinski, D.
@@ -124,6 +134,7 @@ bibliography:
         year: 2001
         pages: 791--794
     Weihs:1998:
+        category: journal
         authors:
             - Weihs, Gregor
             - Jennewein, Thomas

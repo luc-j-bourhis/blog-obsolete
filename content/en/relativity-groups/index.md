@@ -7,6 +7,7 @@ kind: article
 category: physics
 bibliography:
     Einstein:1905:
+        category: journal
         title: Zur Elektrodynamik bewegter Körper
         authors:
             - Einstein, Albert
@@ -16,6 +17,7 @@ bibliography:
         pages: 891
         note: An English translation is available [here](https://www.fourmilab.ch/etexts/einstein/specrel/www) both as a web page and as a print-quality PDF
     Rothe:1911:
+        category: journal
         authors:
             - Rothe, H.
             - Frank, P.
@@ -25,6 +27,7 @@ bibliography:
         year: 1911
         pages: 825--853
     Lee:1975:
+        category: journal
         authors:
             - Lee, A. R.
             - Kalotas, T. M.
@@ -34,6 +37,7 @@ bibliography:
         year: 1975
         pages: 434--437
     Levy-Leblond:1976:
+        category: journal
         authors:
             - Lévy-Leblond, Jean-Marc
         title: One more derivation of the Lorentz transformation
@@ -42,6 +46,7 @@ bibliography:
         year: 1976
         pages: 271
     Levy-Leblond:1979:
+        category: journal
         authors:
             - Lévy-Leblond, Jean-Marc
             - Provost, Jean-Pierre
@@ -51,6 +56,7 @@ bibliography:
         year: 1979
         pages: 1045
     Levy-Leblond:1965:
+        category: journal
         authors:
             - Lévy-Leblond, Jean-Marc
         title: Une nouvelle limite non-relativiste du groupe de Poincaré
@@ -59,6 +65,7 @@ bibliography:
         year: 1965
         pages: 1--12
     Stepanov:2010:
+        category: journal
         authors:
             - Stepanov, Sergey S.
         title: On simplified axiomatic foundations of special relativity
