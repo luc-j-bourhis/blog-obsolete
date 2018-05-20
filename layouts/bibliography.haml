@@ -5,7 +5,7 @@
             %span{:class => "bibliography_key"}
                 #{format_authors(e[:authors], @item[:language])}
                 (#{e[:year]}).
-            %span= render "/bibliography/#{e[:category]}.*", :e => e
+            %span= render "/bibliography/#{e[:type]}.*", :e => e
             - if e.key?(:note)
                 %div
                     (#{Kramdown::Document.new(e[:note], input:'SpanKramdown').to_html.strip})

@@ -8,7 +8,7 @@ category: physique
 group: théorèmes de Bell
 bibliography:
     Einstein:1935aa:
-        category: journal
+        type: article
         authors:
             - Einstein, A.
             - Podolsky, B.
@@ -19,7 +19,7 @@ bibliography:
         year: 1935
         pages: 777--780
     Mermin:1990ab:
-        category: journal
+        type: article
         authors:
             - Mermin, N. David
         title: Simple unified form for the major no-hidden-variables theorems
@@ -28,7 +28,7 @@ bibliography:
         year: 1990
         pages: 3373--3376
     Mermin:1981aa:
-        category: journal
+        type: article
         authors:
             - Mermin, N. D.
         title: "Bringing home the atomic world: Quantum mysteries for anybody"
@@ -38,7 +38,7 @@ bibliography:
         pages: 940–943
         note: Une version PDF de l'article était disponible gratuitement [ici](https://www.physics.wisc.edu/undergrads/courses/spring2014/407/experiments/bell/Bell's%20Theorem%20Background%20Papers/Mermin_quantum_mysteries-Am.J.P.49.940.pdf) quand ce billet fut écrit.
     Greenberger:1990aa:
-        category: journal
+        type: article
         authors:
             - Greenberger, Daniel M.
             - Horne, Michael A.
