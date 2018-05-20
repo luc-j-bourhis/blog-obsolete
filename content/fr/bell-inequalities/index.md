@@ -205,7 +205,7 @@ La démonstration est très simple. On commence par majorer la valeur absolue de
 
 $$ \begin{aligned}
 R(a, a', b, b')
-    &\le \int_\Lambda \big|[A'(\lambda) - A(\lambda)] B(\lambda)\\
+    \le \int_\Lambda &\big|[A'(\lambda) - A(\lambda)] B(\lambda)\\
     &+ [A'(\lambda) + A(\lambda)]B'(\lambda) \big| d\rho(\lambda).
 \end{aligned}\notag $$
 
