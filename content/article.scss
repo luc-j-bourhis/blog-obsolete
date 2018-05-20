@@ -54,9 +54,6 @@
 
   .bibliography_entry {
     margin-bottom: 0.5em;
-    &:target {
-      animation: highlight 1s;
-    }
   }
 
   .bibliography_key {
