@@ -9,6 +9,7 @@
            :content => "width=device-width, initial-scale=1"}/
     %title Luc J. Bourhis Musings - #{@item[:title]}
     %link{:rel => "stylesheet", :href => %Q[#{@items["/#{@stylesheet}.*"].path}]}/
+    %script{:src => "/js/jquery-3.3.1.min.js"}
 
     - if not google_fonts.empty?
       %link{:rel => "stylesheet",

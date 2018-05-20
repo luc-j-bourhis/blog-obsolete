@@ -2,11 +2,9 @@
   :javascript
     (function () {
       window.onload = function() {
-        var button = document.getElementById('topics-menu-toggle');
-        button.addEventListener('click', function(event) {
+        $("#topics-menu-toggle").click(function() {
           event.preventDefault();
-          var menu = document.getElementById('topics-menu');
-          menu.classList.toggle('is-open');
+          $("#topics-menu").toggleClass('is-open');
         });
       }
     })();

@@ -31,7 +31,9 @@ preprocess do
       }
     end
   end
-  @items.map {|i| i[:language]}.uniq.select {|l| l != :unknown}.each do |l|
+  @items
+  .map {|i| i[:language]}
+  .uniq.select {|l| l != :unknown}.each do |l|
     @items.create('', {:language => l}, "/#{l}/index.md")
   end
 end

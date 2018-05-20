@@ -1,9 +1,19 @@
 # The data sources where Nanoc loads its data from. This is an array of
 # hashes; each array element represents a single data source.
 data_sources:
+  # File system for the actual content, drawing files from default /content
   -
-    # The type is the identifier of the data source.
     type: filesystem
+
+  # File system for javascript, drawing files from /js
+  -
+    type: filesystem
+    content_dir: js
+    items_root: /js
+    # Without the following, this filesystem will share /layouts
+    # with the first filesystem, leading to collisions between layouts
+    # with the same identifier
+    layouts_dir: nil
 
 # Deployment, Github style
 deploy:
