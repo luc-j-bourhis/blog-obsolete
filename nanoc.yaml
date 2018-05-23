@@ -17,6 +17,11 @@ deploy:
 editor:
   Luc J. Bourhis
 
+# List of languages: they shall correspond to directories /xx at the root
+languages:
+  - en
+  - fr
+
 # Google Fonts
 google_fonts:
   # Free font recommened by typewolf as the best match for Times New Roman

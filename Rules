@@ -16,7 +16,11 @@ end
 preprocess do
   @items.each do |i|
     c = i.identifier.to_s.match(%r{/([a-z]{2})/})
-    i[:language] = if not c.nil? then c[1].intern else :unknown end
+    i[:language] = if !c.nil? && @config[:languages].include?(c[1])
+      c[1].intern
+    else
+      :unknown
+    end
     [:kind, :category, :group].each do |a|
       i[a] = if not i[a].nil? then i[a].intern else :unknown end
     end
@@ -32,7 +36,8 @@ preprocess do
   end
 end
 
-compile_my_markdown('/*/index.md', '/abstracts.*')
+compile_my_markdown(%r{/(#{@config[:languages].join('|')})/index.md},
+                    '/abstracts.*')
 compile_my_markdown('/**/*.md', '/article.*')
 
 compile '/fonts/*.scss' do
