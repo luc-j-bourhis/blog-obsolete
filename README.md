@@ -1,4 +1,6 @@
 # Introduction
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fluc-j-bourhis%2Fblog.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fluc-j-bourhis%2Fblog?ref=badge_shield)
+
 
 This is more web publication than blog, really, but in any case nobody else than me should a priori care about this repository. Except that besides the content itself, the infrastructure built about nanoc should be interesting to anybody who want to produce contents on the web with a lot of maths and a heavy academic undertone (citations, etc). Ideally, I should split the repository in two parts: infrastructure and content. This is on my todo list...
 
@@ -26,3 +28,7 @@ in `fish`.
 # Miscenalleous notes
 
 The site is divided into a French section and an English section, respectively at http://luc-j-bourhis.github.io/blog/fr/ and at http://luc-j-bourhis.github.io/blog/en/.
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fluc-j-bourhis%2Fblog.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fluc-j-bourhis%2Fblog?ref=badge_large)
