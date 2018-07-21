@@ -51,7 +51,7 @@ bibliography:
         pages: 1131-1143
 ---
 
-J'ai trois amis, Alice, Jessica et Paul, à qui je vais proposer le jeu suivant. Je dispose de nombreux jetons, avec une face marquée d'un X et l'autre face marqué d'un Y. Le jeu consiste à réaliser plusieurs expériences qui toutes procèdent comme suit. Mes trois amis se séparent et vont chacun prendre place dans un isoloir d'où ils ne peuvent pas voir ce que je fais. J'envoie à chacun d'entre eux un jeton numéroté: le jeton 1 à Paul, le 2 à Alice et le 3 à Jessica. Ils sont plongés dans le noir et ne peuvent donc pas voir le jeton qu'ils reçoivent chacun. Le seul moyen à leur disposition pour l'observer est une machine spéciale (j'en ai donné une à chacun d'entre eux): chaque machine à un réglage à deux positions, X ou Y. Quand on y insère le jeton, la machine révèle la couleur de la face spécifiée par le réglage, puis la machine détruit le jeton. Par conséquent, on peut connaître ou bien la couleur de la face X, ou bien de la face Y, au choix, mais jamais la couleur des deux. Pour chaque expérience, je vais indiqué à chacun, à l'avance, le réglage de la machine et chacun notera alors la couleur révélée. On répète cette procédure un grand nombre de fois en utilisant mon très grand stock de jetons. Finalement ils me rejoignent et comparent leur liste d'observations. Le but du jeu est pour Paul, Jessica et Alice de deviner la procédure que j'ai suivi pour préparer les jetons. Mais attention, c'est moi qui choisis le réglage des appareils!
+J'ai trois amis, Alice, Jessica et Paul, à qui je vais proposer le jeu suivant. Je dispose de nombreux jetons, avec une face marquée d'un X et l'autre face marqué d'un Y. Le jeu consiste à réaliser plusieurs expériences qui toutes procèdent comme suit. Mes trois amis se séparent et vont chacun prendre place dans un isoloir d'où ils ne peuvent pas voir ce que je fais. J'envoie à chacun d'entre eux un jeton numéroté. Ils sont plongés dans le noir et ne peuvent donc pas voir le jeton qu'ils reçoivent chacun. Le seul moyen à leur disposition pour l'observer est une machine spéciale (j'en ai donné une à chacun d'entre eux): chaque machine à un réglage à deux positions, X ou Y. Quand on y insère le jeton, la machine révèle la couleur de la face spécifiée par le réglage, puis la machine détruit le jeton. Par conséquent, on peut connaître ou bien la couleur de la face X, ou bien de la face Y, au choix, mais jamais la couleur des deux. Pour chaque expérience, je vais indiqué à chacun, à l'avance, le réglage de la machine et chacun notera alors la couleur révélée. On répète cette procédure un grand nombre de fois en utilisant mon très grand stock de jetons. Finalement ils me rejoignent et comparent leur liste d'observations. Le but du jeu est pour Paul, Jessica et Alice de deviner la procédure que j'ai suivi pour préparer les jetons. Mais attention, c'est moi qui choisis le réglage des appareils!
 
 **Première expérience:** Paul examine la face X; Alice et Jessica examine la face Y.
 
@@ -62,7 +62,7 @@ Chacun d'eux constate que la couleur observée est toujours ou bien noire ou bie
 
 Alice commente aussitôt: «Sur un tellement grand nombre d'observations, cela ne peut pas être une coïncidence! Luc a clairement des jetons dont chaque face X ou Y est ou bien blanche ou bien noire, et il a suivi un plan bien précis pour préparer les envois qu'il nous a fait.»
 
-Paul ajoute: «En effet! Il y certes une part de hasard dans la manière dont il a choisi les faces mais il a pris soin de toujours choisir les jetons 2 et 3 avec une face Y de la même couleur s'il avait choisi un jeton 1 avec une face X blanche, et deux faces de couleurs différentes dans le cas contraire. Appelons cela la règle I.»
+Paul ajoute: «En effet! Il y certes une part de hasard dans la manière dont il a choisi les faces mais il a pris soin de toujours choisir les jetons pour vous deux avec une face Y de la même couleur s'il avait choisi un jeton pour moi avec une face X blanche, et deux faces de couleurs différentes dans le cas contraire. Appelons cela la règle I.»
 
 Je leur propose alors aussitôt une autre expérience…
 
@@ -73,7 +73,7 @@ Chacun d'eux constate à nouveau une suite aléatoire de faces blanches et noire
 - *à chaque fois* que Paul et Jessica ont observé deux faces de même couleur, Alice a observé une face blanche; et
 - *à chaque fois* que Paul et Jessica ont observé des couleurs différentes, Alice a observé une face noire.
 
-Alice lance: «Nous apprenons donc que Luc a encore une fois choisit les jetons partiellement au hasard, en prenant soin de toujours prendre les jetons 1 et 3 avec une face Y de la même couleur s'il avait choisi un jeton 2 avec une face X blanche, et deux faces de couleurs différentes dans le cas contraire. Cette nouvelle contrainte est tout à fait compatible avec celle que nous avons découvert avec la première expérience. Mais nous avons appris quelque chose de plus!».
+Alice lance: «Nous apprenons donc que Luc a encore une fois choisit les jetons partiellement au hasard, en prenant soin de toujours prendre les jetons pour vous deux avec une face Y de la même couleur s'il avait choisi un jeton pour moi avec une face X blanche, et deux faces de couleurs différentes dans le cas contraire. Cette nouvelle contrainte est tout à fait compatible avec celle que nous avons découvert avec la première expérience. Mais nous avons appris quelque chose de plus!».
 
 Paul est d'accord: «Nous progressons en effet: appelons cela la règle II.»
 
@@ -86,7 +86,7 @@ Sans surprise, trois nouvelles listes de faces noires et blanches sortant au has
 - *à chaque fois* que Paul et Alice ont observé deux faces de même couleur, Jessica a observé une face blanche; et
 - *à chaque fois* que Paul et Alice ont observé des couleurs différentes, Jessica a observé une face noire.
 
-Paul et Alice échangent un regard de connivence, et c'est Paul qui exprime leur idée commune: «Nous avons appris cette fois que Luc a pris soin de toujours choisir les jetons 1 et 2 avec une face Y de la même couleur s'il avait choisi un jeton 3 avec une face X blanche, et deux faces de couleurs différentes dans le cas contraire.»
+Paul et Alice échangent un regard de connivence, et c'est Paul qui exprime leur idée commune: «Nous avons appris cette fois que Luc a pris soin de toujours choisir les jetons pour moi et Alice avec une face Y de la même couleur s'il avait choisi un jeton pour Jessica avec une face X blanche, et deux faces de couleurs différentes dans le cas contraire.»
 
 Alice ajoute: «Et nous avons une règle III. Mieux, les trois règles que nous avons trouvé couvrent tous les cas de choix des faces X. Nous avons la description ultime de la procédure suivie par Luc! Les trois règles sont compatibles. Le jeu est fini, non?»
 
@@ -96,8 +96,8 @@ Paul et Alice cogitent pendant un moment et Alice dit soudain: «Mais oui! Tu as
 
 Après quelques instants, Paul dit à son tour: «Je vois, en effet. Raisonnons à l'envers. Si la prédiction de Jessica est fausse, alors ou bien il y a une seule face noire, ou bien il y en a trois.
 
-- Ce deuxième cas est le plus facile: d'après notre règle I, les faces Y des jetons 2 et 3 devraient avoir des couleurs différentes; même chose pour les jetons 1 et 3 d'après la règle II; et 1 et 2 d'après la règle III. C'est clairement impossible: il y a toujours au moins deux faces de la même couleur!
-- Dans le premier cas, disons pour fixer les idées que le jeton 1 est celui avec une face X noire, et donc que les faces X des jetons 2 et 3 sont blanches. Alors les règles II et III nous disent respectivement que les jetons 1 et 3 ont des faces Y de la même couleur, et que les jetons 1 et 2 ont des faces Y de la même couleur. Par conséquent les trois jetons ont des faces Y de la même couleur, ce qui est impossible puisque les jetons 2 et 3 devraient avoir des faces Y de couleurs différentes selon la règle I. Le raisonnement est le même si le jeton noir est le jeton 2 ou le jeton 3.»
+- Ce deuxième cas est le plus facile: d'après notre règle I, les faces Y des jetons pour Alice et Jessica devraient avoir des couleurs différentes; même chose pour les jetons de Paul et Jessica d'après la règle II; et de Alice et Paul d'après la règle III. C'est clairement impossible: il y a toujours au moins deux faces de la même couleur!
+- Dans le premier cas, disons pour fixer les idées que le jeton de Alice est celui avec une face X noire, et donc que les faces X des jetons de Paul et Jessica sont blanches. Alors les règles II et III nous disent respectivement que les jetons de Paul et Jessica ont des faces Y de la même couleur, et que les jetons de Paul et Alice ont des faces Y de la même couleur. Par conséquent les trois jetons ont des faces Y de la même couleur, ce qui est impossible puisque les jetons de Alice et Jessica devraient avoir des faces Y de couleurs différentes selon la règle I. Le raisonnement est le même si le jeton noir est celui de Paul ou de Jessica.»
 
 Jessica conclut alors: «Oui, exactement, tu aboutis à une contradiction, et cela veut donc dire que ton point de départ était faux, c'est à dire que ma prédiction était vraie».
 
