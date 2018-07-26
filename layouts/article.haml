@@ -1,22 +1,20 @@
 = render '/base.*', :stylesheet => 'article' do
   :javascript
-    (function () {
-      window.onload = function() {
-        $("#topics-menu-toggle").click(function() {
-          event.preventDefault();
-          $("#topics-menu").toggleClass('is-open');
-        });
+    $(document).ready(function() {
+      $("#topics-menu-toggle").click(function(event) {
+        event.preventDefault();
+        $("#topics-menu").toggleClass('is-open');
+      });
 
-        $(".bibliography-reference").click(function(){
-          var hash = this.href.substr(this.href.indexOf('#')+1);
-          var duration = 1500;
-          var target = $(
-            "#" + hash.replace( /(:|\.|\[|\]|,|=|@)/g, "\\$1" ));
-          target.animate({backgroundColor:"LightSkyBlue"}, duration/2)
-          .animate({backgroundColor:"white"}, duration/2);
-        })
-      }
-    })();
+      $(".bibliography-reference").click(function(event){
+        var hash = this.href.substr(this.href.indexOf('#')+1);
+        var duration = 1500;
+        var target = $(
+          "#" + hash.replace( /(:|\.|\[|\]|,|=|@)/g, "\\$1" ));
+        target.animate({backgroundColor:"LightSkyBlue"}, duration/2)
+        .animate({backgroundColor:"white"}, duration/2);
+      })
+    });
   %nav.menu#topics-menu
     %span.menu-toggle#topics-menu-toggle
       %span.fa.fa-bars
