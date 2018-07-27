@@ -90,7 +90,7 @@ bibliography:
         journal: Physics Letters A
         volume: 162
         year: 1992
-        pages: 15 - 17
+        pages: 15--17
     Hensen:2015:
         type: article
         authors:
