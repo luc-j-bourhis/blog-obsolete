@@ -118,6 +118,16 @@ bibliography:
         volume: 526
         year: 2015
         pages: 682--686
+    Mermin:1993:
+        type: article
+        authors:
+            - Mermin, N. D.
+        title: Hidden variables and the two theorems of John Bell
+        journal: Review of Modern Physics
+        volume: 66
+        number: 3
+        year: 1993
+        pages: 803--815
     Rowe:2001:
         type: article
         authors:
@@ -151,6 +161,8 @@ tex_macros:
     Hsingle:    \mathcal{S}
     Hpair:      \mathcal{P}
     vec:        \mathrm{Vec}\left(#1\right)
+    kup:        \ket{#1+}
+    bup:        \bra{#1+}
 ---
 
 ## 1. L'expérience
@@ -189,9 +201,77 @@ On pourrait être tenté d'aller plus loin et de dire que $$A$$ ne peut dépendr
 
 La quantité mesurée étant la corrélation entre les mesures sur les membres d'une paire comme nous l'avons expliqué plus haut, le point de départ est donc l'expression de cette corrélation dans notre modèle,
 
-$$ P(a,b) = \int_{\Lambda} A(a, \lambda) B(b, \lambda) d\rho(\lambda). $$
+$$ P(a,b) = \int_{\Lambda} A(a, \lambda) B(b, \lambda) d\rho(\lambda). \label{olt:corr}$$
 
 Avec un suffisament grand nombre $$N$$ de paires, on aura alors $$D_N(a,b) \approx P(a,b)$$. On voit que la moyenne qui apparaît dans $$D_N(a,b)$$ devient naturellement une moyenne prenant en compte la distribution de l'états de la paire de particule.
+
+
+### c. Example de modèle local et réaliste: le spin 1/2
+
+Pour qui connait un peu la mécanique quantique, le formalisme que nous venons de décrire semble totalement incompatible avec la mécanique quantique la plus élémentaire, qui est poutant est très bien vérifiée experimentalement. En effet, pas d'espace de Hibert pour les états, ni d'opérateurs hermitiens pour les observables, et surtout pas de règle de Born ici. Mais il faut bien ce rendre compte que ce formalisme quantique est juste un outil pour prédire la seule chose que l'on puisse effectivement mesurée: la distribution statistique des résultats de mesure. Si une théorie réaliste et locale peut prédire la même distribution que la théorie quantique, alors on ne peut la rejeter. Je pense qu'il est important d'illustrer ce point sur un exemple simple, classique et pertinent quant à la suite: un spin 1/2. C'est ce que fit Bell dans l'article où il démontra les premières équations auxquelles on donna son nom par la suite (c.f. le tout début de la section III dans [[Bell:1964]]) mais je vais utiliser la présentation de [[Mermin:1993]], et de plus ne considérer que les mesures de spin dans des directions quelconques.
+
+Commençons par rappeler le formalisme quantique.  L'observable associée à la projection du spin dans une direction $$a$$, un vecteur unitaire, est
+
+$$S(a) = \frac{\hbar}{2}(a_x\sigma_x + a_y\sigma_y + a_z\sigma_z)$$,
+
+où $$\sigma_x$$, $$\sigma_y$$ et $$\sigma_z$$ sont les traditionelles matrices de Pauli. Nous allons prendre un système d'unité où $$\hbar = 1$$ comme il est de coutume en physique théorique pour rendre les équations plus lisibles. La mesure de cette projection du spin ne peut résulter qu'en l'une des valeurs -1/2 our 1/2. Considérons maintenant un système dans l'état quantique $$\kup{n}$$ correspondant à un spin dans la direction $$n$$, un autre vecteur unitaire. Cela veut dire que
+
+$$S(n) \kup{n} = +\frac{1}{2} \kup{n}.$$
+
+Comme il n'y a que deux valeurs possibles d'une mesure de $$S(a)$$, les probabilités de chacune peuvent se déduire de la valeur moyenne de $$S(a)$$ pour $$\kup{n}$$, et il suffira donc de reproduire cette espérance avec une théorie réaliste. On a $$\expect{S(a)} = \bup{n}S(a)\kup{n} = \frac{1}{2}a\cdot n$$, un résultat classique que l'on peut trouver dans tous les bons livres mais afin que ce billet se suffise à lui-même, je vais le redémontrer avant de continuer. Le lecteur au fait de ces choses peut donc sauter directement à la suite du texte après le prochain CQFD!
+
+En utilisant l'expression des matrices de Pauli, on a
+
+$$S(n) = \frac{1}{2}\begin{pmatrix} n_z & n_x - i n_y \\ n_x + i n_y & -n_z \end{pmatrix}.$$
+
+Comme $$n_x^2+n_y^2+n_z^2=1$$, le polynome charactéristique est $$X^2 - \frac{1}{4}$$, d'où les valeurs propres $$\pm\frac{1}{2}$$. Un vecteur propre pour la valeur propre $$\frac{1}{2}$$ est alors
+
+$$\ket{\psi}=\begin{pmatrix} n_x - i n_y \\ 1 - n_z \end{pmatrix}.$$
+
+La normalisation est donc $$\sqrt{2(1-n_z)}$$, d'où
+
+$$\kup{n} = \frac{1}{\sqrt{2}}\begin{pmatrix} \dfrac{n_x - i n_y}{\sqrt{1-n_z}} \\ \sqrt{1-n_z} \end{pmatrix} = \begin{pmatrix} \alpha \\ \beta \end{pmatrix}.$$
+
+Par conséquent,
+
+$$\bup{n}S(a)\kup{n} = \frac{1}{4}\left(a_z |\alpha|^2 - a_z |\beta|^2 + 2\Re((a_x-ia_y)\alpha^*\beta)\right).$$
+
+Mais comme $$n$$ est unitaire, $$\alpha\alpha^*=1+n_z$$, et donc
+
+CQFD.
+
+Il s'agit maintenant de construire un modèle local et réaliste reproduisant ces deux points. Pour l'état $$\lambda$$ du système dans l'état quantique $$\kup{n}$$, nous allons choisir la paire $$(n,m)$$ où le vecteur unitaire $$m$$ est ici la variable cachée (ou plutôt les variables cachées car il a deux composantes indépendentes). Pour la distribution $$\rho(\lambda)$$, nous allons choisir une distribution uniforme sur l'angle solide associé à $$m$$. Il ne reste plus qu'à élaborer une observable $$S(a, \lambda)$$ ne prenant que les valeurs $$\pm\frac{1}{2}$$ (bien entendu, ce symbole $$S$$ correspond à un tout autre object que ce même symbole dans le paragraphe précédent sur le formalisme quantique). On veut pour $$S(a, \lambda)$$ et ce spin 1/2 unique l'équivalent de ($$\ref{olt:corr}$$), en imposant de surcroît de retrouver la valeur moyenne prédite par la mécanique quantique, c'est à dire
+
+$$\notag
+\expect{S(a)} = \int_\Lambda \rho(\lambda)S(a, \lambda)d\lambda.$$
+
+Cela se simplifie en
+
+$$\notag
+\expect{S(a)} = \int\frac{d\Omega(m)}{4\pi}S(a, n, m).$$
+
+On peut alors voir facilement que le choix suivant convient:
+
+$$S(a, n, m) =
+\begin{cases}
+-\frac{1}{2}, & \text{if } (n+m)\cdot a > 0,\\
++\frac{1}{2}, & \text{otherwise.}
+\end{cases}$$
+
+En effet, en introduisant des coordonnées polaires avec $$a$$ comme axe des $$z$$, l'intégrale s'écrit
+
+$$\frac{1}{4\pi}\int_0^{2\pi}d\phi\int_0^\pi \sin\theta d\theta\ S(a,n,m),$$
+
+où $$\theta$$ et $$\phi$$ sont donc les angles polaires de $$m$$. Quant à la condition $$(n+m)\cdot a > 0$$, elle se réduit à $$\cos\theta > -\cos\theta_n$$ où $$\theta_n$$ est l'angle entre $$n$$ et $$a$$. Comme ces angles sont entre 0 et $$\pi$$, la condition est donc que $$\theta < \pi - \theta_n$$. Comme l'intégrande ne dépend pas de l'angle azimuthal, l'intégration correspondante disparait en donnant un facteur $$2\pi$$, et il reste donc
+
+$$\notag
+\frac{1}{2}\left(\int_0^{\pi-\theta_n}-\frac{1}{2}\sin\theta d\theta + \int_{\pi-\theta_n}^\pi+\frac{1}{2}\sin\theta d\theta\right) = \frac{1}{2}\cos\theta_n.$$
+
+CQFD.
+
+Nous avons donc montrer que l'on pouvait construire un modèle réaliste et local qui reproduisait exactement les prédictions stastistiques de la mécanique quantique pour une particule de spin 1/2. Ce résultat fut une des surprises des travaux de Bell. Il montre qu'il faudra au moins un système de deux particules pour espérer trouver une contradiction avec la mécanique quantique, ce qui sera le sujet de la section suivante. Il resterait à discuter comment la réduction de l'état quantique après la mesure est reproduite dans le modèle de Bell et Mermin mais cette section est déjà une disgression beaucoup trop longue. Avoir montrer que les théories réalistes et locales pour lesquelles le théorème de Bell peut être démontrer ne sont pas trivialement exclue est suffisant pour le but rechercher dans ce billet.
+
+Au final, le choix du formalisme quantique apparaît donc comme un choix métaphysique, selon que l'on préfère abandonner le réalisme ou non. Je dit bien "apparaît" car les théorème de Bell vont justement montrer qu'il n'en est rien: il y a des conséquences mesurables à choisir une théorie réaliste.
 
 
 ## 3. Démonstration des inégalités de Bell
