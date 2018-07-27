@@ -187,13 +187,14 @@ Ce critère s'exprime ainsi: *l'appareil de mesure I fonctionne indépendamment 
 
 On pourrait être tenté d'aller plus loin et de dire que $$A$$ ne peut dépendre que de l'état de la particule 1 mais comme cet état peut être corrélé avec celui de la particule 2, cette hypothèse est en générale fausse. Le critère de localité, qui s'applique aux analyseurs, n'est donc pas équivalent au critère de séparabilité, comme nous l'avions déjà mentionné plus haut.
 
-## 3. Démonstration des inégalités de Bell
-
 La quantité mesurée étant la corrélation entre les mesures sur les membres d'une paire comme nous l'avons expliqué plus haut, le point de départ est donc l'expression de cette corrélation dans notre modèle,
 
 $$ P(a,b) = \int_{\Lambda} A(a, \lambda) B(b, \lambda) d\rho(\lambda). $$
 
 Avec un suffisament grand nombre $$N$$ de paires, on aura alors $$D_N(a,b) \approx P(a,b)$$. On voit que la moyenne qui apparaît dans $$D_N(a,b)$$ devient naturellement une moyenne prenant en compte la distribution de l'états de la paire de particule.
+
+
+## 3. Démonstration des inégalités de Bell
 
 On considère maintenant deux réglages $$a$$ et $$a'$$ de l'appareil I et deux réglages $$b$$ et $$b'$$ de l'appareil II. Pour simplifier l'écriture, je ne vais plus faire figuré la dépendence en les réglages: $$A(\lambda)$$ sera $$A(a, \lambda)$$, $$A'(\lambda)$$ sera $$A(a',\lambda)$$, $$B(\lambda)$$ sera $$B(b, \lambda)$$ et $$B'(\lambda)$$ sera $$B(b',\lambda)$$. Nous allons démontré une inégalité due à [[Clauser:1969 >>]], et donc appelée inégalité CHSH,
 
