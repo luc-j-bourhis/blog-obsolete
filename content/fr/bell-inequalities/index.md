@@ -160,7 +160,7 @@ bibliography:
 tex_macros:
     Hsingle:    \mathcal{S}
     Hpair:      \mathcal{P}
-    vec:        \mathrm{Vec}\left(#1\right)
+    Vec:        \mathrm{Vec}\left(#1\right)
     kup:        \ket{#1+}
     bup:        \bra{#1+}
 ---
@@ -448,7 +448,7 @@ $$
 
 CQFD
 
-Passons maintenant à l'exploitation de (\ref{Rexpect}) et (\ref{Sfundamental}). Comme un commutateur a une trace nulle, les valeurs propres de l'opérateur hermitien $$i \comm{A}{A'}$$ sont $$\alpha$$ et $$-\alpha$$ pour un certain nombre réel $$\alpha \ge 0$$. Soient $$\ket\alpha$$ et $$\ket{-\alpha}$$ les vecteurs propres associés. Avec le même raisonnement, les valeurs propres de $$i \comm{B}{B'}$$ sont $$\beta$$ et $$-\beta$$ pour un certain nombre réel $$\beta \ge 0$$ et les vecteurs propres associés seront notés $$\ket\beta$$ et $$\ket{-\beta}$$. Il est alors immédiat que $$S^2$$ a deux valeurs propres dégénérées, $$4 + \alpha\beta$$ et $$4 -\alpha\beta$$, qui sont nécessairement positives puisque $$S^2$$ est positif, et que les espaces propres associés sont respectivement $$\mathcal{U} = \vec{\ket\alpha\ket\beta, \ket{-\alpha}\ket{-\beta}}$$ et $$\mathcal{V} = \vec{\ket{-\alpha}\ket\beta, \ket\alpha\ket{-\beta}}$$.
+Passons maintenant à l'exploitation de (\ref{Rexpect}) et (\ref{Sfundamental}). Comme un commutateur a une trace nulle, les valeurs propres de l'opérateur hermitien $$i \comm{A}{A'}$$ sont $$\alpha$$ et $$-\alpha$$ pour un certain nombre réel $$\alpha \ge 0$$. Soient $$\ket\alpha$$ et $$\ket{-\alpha}$$ les vecteurs propres associés. Avec le même raisonnement, les valeurs propres de $$i \comm{B}{B'}$$ sont $$\beta$$ et $$-\beta$$ pour un certain nombre réel $$\beta \ge 0$$ et les vecteurs propres associés seront notés $$\ket\beta$$ et $$\ket{-\beta}$$. Il est alors immédiat que $$S^2$$ a deux valeurs propres dégénérées, $$4 + \alpha\beta$$ et $$4 -\alpha\beta$$, qui sont nécessairement positives puisque $$S^2$$ est positif, et que les espaces propres associés sont respectivement $$\mathcal{U} = \Vec{\ket\alpha\ket\beta, \ket{-\alpha}\ket{-\beta}}$$ et $$\mathcal{V} = \Vec{\ket{-\alpha}\ket\beta, \ket\alpha\ket{-\beta}}$$.
 Par conséquent, les valeurs propres de $$S$$ s'écrivent ou bien $$\pm\sqrt{4+\alpha\beta}$$ ou bien $$\pm\sqrt{4-\alpha\beta}$$. Les premières (resp. les secondes) ont leurs vecteurs propres dans $$U$$ (resp. $$V$$).
 
 On voit donc que si $$A$$ commute avec $$A'$$ ou bien si $$B$$ commute avec $$B'$$, les valeurs propres de $$S$$ sont égales à $$\pm2$$, et par conséquent $$R(A,A',B,B')$$ est toujours entre -2 et 2: la borne de l'inégalité de Bell n'est violée pour aucun réglage et pour aucun état quantique de la paire $$\ket\psi$$. Rappellons en effet que pour un opérateur hermitien tel que $$S$$, la borne supérieure de l'espérance $$\bra\psi S\ket\psi$$, quand $$\ket\psi$$ décrit l'ensemble des kets tels que $$\braket{\psi}{\psi}=1$$, est la plus grande des valeurs propres de $$S$$.
