@@ -263,24 +263,24 @@ On va alors voir que le choix suivant convient:
 
 $$S(a, n, m) =
 \begin{cases}
--\frac{1}{2}, & \text{if } (n+m)\cdot a > 0,\\
-+\frac{1}{2}, & \text{otherwise.}
++\frac{1}{2}, & \text{if } (n+m)\cdot a > 0,\\
+-\frac{1}{2}, & \text{otherwise.}
 \end{cases}$$
 
 La probabilité ci-dessus s'écrit alors avec nos choix de densité de probabilité et de valeur de mesure,
 
 $$\notag
-P(a) = \int\frac{d\Omega(m)}{4\pi}\Theta((n+m)\cdot a < 0).$$
+P(a) = \int\frac{d\Omega(m)}{4\pi}\Theta((n+m)\cdot a > 0).$$
 
 
 En introduisant des coordonnées polaires sphériques avec $$a$$ comme axe des $$z$$, le vecteur $$m$$ est repéré par l'angle azimuthal $$\varphi$$ et l'angle polaire $$\theta$$ tandis que le vecteur $$n$$ a un angle polaire $$\theta$$.
 
-$$P(a) = \frac{1}{4\pi}\int_0^{2\pi}d\varphi\int_0^\pi d\theta\sin\theta \ \Theta(\cos\theta_n + \cos\theta < 0),$$
+$$P(a) = \frac{1}{4\pi}\int_0^{2\pi}d\varphi\int_0^\pi d\theta\sin\theta \ \Theta(\cos\theta_n + \cos\theta > 0),$$
 
-Comme les angles sont entre 0 et $$\pi$$, la condition $$\cos\theta < -\cos\theta_n$$ se réduit à $$\theta > \pi - \theta_n$$. Comme l'intégrande ne dépend pas de l'angle azimuthal, l'intégration correspondante disparait en donnant un facteur $$2\pi$$, et il reste donc
+Comme les angles sont entre 0 et $$\pi$$, la condition $$\cos\theta > -\cos\theta_n$$ se réduit à $$\theta < \pi - \theta_n$$. Comme l'intégrande ne dépend pas de l'angle azimuthal, l'intégration correspondante disparait en donnant un facteur $$2\pi$$, et il reste donc
 
 $$\notag
-P(a) = \frac{1}{2} \int_{\pi-\theta_n}^\pi\sin\theta d\theta = \frac{1}{2}(1+\cos\theta_n).$$
+P(a) = \frac{1}{2} \int_0^{\pi-\theta_n}\sin\theta d\theta = \frac{1}{2}(1+\cos\theta_n).$$
 
 CQFD.
 
