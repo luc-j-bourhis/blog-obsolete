@@ -218,9 +218,25 @@ où $$\sigma_x$$, $$\sigma_y$$ et $$\sigma_z$$ sont les traditionelles matrices 
 
 $$S(n) \kup{n} = +\frac{1}{2} \kup{n}.$$
 
-Comme il n'y a que deux valeurs possibles d'une mesure de $$S(a)$$, les probabilités de chacune peuvent se déduire de la valeur moyenne de $$S(a)$$ pour $$\kup{n}$$, et il suffira donc de reproduire cette espérance avec une théorie réaliste. On a $$\expect{S(a)} = \bup{n}S(a)\kup{n} = \frac{1}{2}a\cdot n$$, un résultat classique que l'on peut trouver dans tous les bons livres mais afin que ce billet se suffise à lui-même, je vais le redémontrer avant de continuer. Le lecteur au fait de ces choses peut donc sauter directement à la suite du texte après le prochain CQFD!
+Comme il n'y a que deux valeurs possibles d'une mesure de $$S(a)$$, les probabilités de chacune peuvent se déduire l'une de l'autre, et aussi de la valeur moyenne de $$S(a)$$ pour $$\kup{n}$$. On a
 
-En utilisant l'expression des matrices de Pauli, on a
+$$\expect{S(a)} = \bup{n}S(a)\kup{n} = \frac{1}{2}a\cdot n,\label{spin:half:expect}$$
+
+et la probabilité de mesurer la valeur +1/2 est
+
+$$P(a) = \frac{1}{2}(1 + a\cdot n).\label{spin:half:proba}$$
+
+Ce sont là des résultats classiques que l'on peut trouver dans tous les bons livres mais afin que ce billet se suffise à lui-même, je vais les redémontrer avant de continuer. Le lecteur au fait de ces choses peut donc sauter directement à la suite du texte après le prochain CQFD!
+
+Tout d'abord,
+
+$$\expect{S(a)} = +\frac{1}{2}P(a) - \frac{1}{2}(1-P(a))$$
+
+et donc
+
+$$P(a) = \expect{S(a)} + \frac{1}{2}.$$
+
+Ensuite, en utilisant l'expression des matrices de Pauli, on a
 
 $$S(n) = \frac{1}{2}\begin{pmatrix} n_z & n_x - i n_y \\ n_x + i n_y & -n_z \end{pmatrix}.$$
 
@@ -240,17 +256,17 @@ Mais comme $$n$$ est unitaire, $$\alpha\alpha^*=1+n_z$$, et donc
 
 CQFD.
 
-Il s'agit maintenant de construire un modèle local et réaliste reproduisant ces deux points. Pour l'état $$\lambda$$ du système dans l'état quantique $$\kup{n}$$, nous allons choisir la paire $$(n,m)$$ où le vecteur unitaire $$m$$ est ici la variable cachée (ou plutôt les variables cachées car il a deux composantes indépendentes). Pour la distribution $$\rho(\lambda)$$, nous allons choisir une distribution uniforme sur l'angle solide associé à $$m$$. Il ne reste plus qu'à élaborer une observable $$S(a, \lambda)$$ ne prenant que les valeurs $$\pm\frac{1}{2}$$ (bien entendu, ce symbole $$S$$ correspond à un tout autre object que ce même symbole dans le paragraphe précédent sur le formalisme quantique). On veut pour $$S(a, \lambda)$$ et ce spin 1/2 unique l'équivalent de ($$\ref{olt:corr}$$), en imposant de surcroît de retrouver la valeur moyenne prédite par la mécanique quantique, c'est à dire
+Il s'agit maintenant de construire un modèle local et réaliste reproduisant ces deux points. Pour l'état $$\lambda$$ du système dans l'état quantique $$\kup{n}$$, nous allons choisir la paire $$(n,m)$$ où le vecteur unitaire $$m$$ est ici la variable cachée (ou plutôt les variables cachées car il a deux composantes indépendentes). Pour la distribution $$\rho(\lambda)$$, nous allons choisir une distribution uniforme sur l'angle solide associé à $$m$$. Il ne reste plus qu'à élaborer une observable $$S(a, \lambda)$$ ne prenant que les valeurs $$\pm\frac{1}{2}$$ (bien entendu, ce symbole $$S$$ correspond à un tout autre object que ce même symbole dans le paragraphe précédent sur le formalisme quantique). L'équivalent de ($$\ref{olt:corr}$$) est ici
 
-$$\notag
-\expect{S(a)} = \int_\Lambda \rho(\lambda)S(a, \lambda)d\lambda.$$
+$$\expect{S(a)} = \int_\Lambda \rho(\lambda)S(a, \lambda)d\lambda,$$
 
-Cela se simplifie en
+ou pour la probabilité d'observer la valeur +1/2,
 
-$$\notag
-\expect{S(a)} = \int\frac{d\Omega(m)}{4\pi}S(a, n, m).$$
+$$P(a) = \int_\Lambda \rho(\lambda)\ \Theta\!\!\left(S(a,\lambda)=+\frac{1}{2}\right)d\lambda$$
 
-On peut alors voir facilement que le choix suivant convient:
+où $$\Theta(\cdots)$$ est la fonction indicatrice du domaine des $$\lambda$$ considéré, égale à 1 quand la condition est satisfatire, et égale à 0 sinon.
+
+On va alors voir que le choix suivant convient:
 
 $$S(a, n, m) =
 \begin{cases}
@@ -258,14 +274,20 @@ $$S(a, n, m) =
 +\frac{1}{2}, & \text{otherwise.}
 \end{cases}$$
 
-En effet, en introduisant des coordonnées polaires avec $$a$$ comme axe des $$z$$, l'intégrale s'écrit
-
-$$\frac{1}{4\pi}\int_0^{2\pi}d\phi\int_0^\pi \sin\theta d\theta\ S(a,n,m),$$
-
-où $$\theta$$ et $$\phi$$ sont donc les angles polaires de $$m$$. Quant à la condition $$(n+m)\cdot a > 0$$, elle se réduit à $$\cos\theta > -\cos\theta_n$$ où $$\theta_n$$ est l'angle entre $$n$$ et $$a$$. Comme ces angles sont entre 0 et $$\pi$$, la condition est donc que $$\theta < \pi - \theta_n$$. Comme l'intégrande ne dépend pas de l'angle azimuthal, l'intégration correspondante disparait en donnant un facteur $$2\pi$$, et il reste donc
+La probabilité ci-dessus s'écrit alors avec nos choix de densité de probabilité et de valeur de mesure,
 
 $$\notag
-\frac{1}{2}\left(\int_0^{\pi-\theta_n}-\frac{1}{2}\sin\theta d\theta + \int_{\pi-\theta_n}^\pi+\frac{1}{2}\sin\theta d\theta\right) = \frac{1}{2}\cos\theta_n.$$
+P(a) = \int\frac{d\Omega(m)}{4\pi}\Theta((n+m)\cdot a < 0).$$
+
+
+En introduisant des coordonnées polaires sphériques avec $$a$$ comme axe des $$z$$, le vecteur $$m$$ est repéré par l'angle azimuthal $$\varphi$$ et l'angle polaire $$\theta$$ tandis que le vecteur $$n$$ a un angle polaire $$\theta$$.
+
+$$P(a) = \frac{1}{4\pi}\int_0^{2\pi}d\phi\int_0^\pi d\theta\sin\theta \ \Theta(\cos\theta_n + \cos\theta < 0),$$
+
+Comme les angles sont entre 0 et $$\pi$$, la condition $$\cos\theta < -\cos\theta_n$$ se réduit à $$\theta > \pi - \theta_n$$. Comme l'intégrande ne dépend pas de l'angle azimuthal, l'intégration correspondante disparait en donnant un facteur $$2\pi$$, et il reste donc
+
+$$\notag
+P(a) = \frac{1}{2} \int_{\pi-\theta_n}^\pi\sin\theta d\theta = \frac{1}{2}(1+\cos\theta_n).$$
 
 CQFD.
 
