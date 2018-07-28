@@ -2,6 +2,8 @@
 tex_macros:
     reals:    '\mathbb{R}'
     integers: '\mathbb{}'
+    Re:       '\operatorname{Re}'
+    Im:       '\operatorname{Im}'
     set:      '\left\{\left. #1 \right| #2 \right\}'
     ket:      '\left| #1 \right\rangle'
     bra:      '\left\langle #1 \right|'
