@@ -208,7 +208,7 @@ Avec un suffisament grand nombre $$N$$ de paires, on aura alors $$D_N(a,b) \appr
 
 ### c. Example de modèle local et réaliste: le spin 1/2
 
-Pour qui connait un peu la mécanique quantique, le formalisme que nous venons de décrire semble totalement incompatible avec la mécanique quantique la plus élémentaire, qui est poutant est très bien vérifiée experimentalement. En effet, pas d'espace de Hibert pour les états, ni d'opérateurs hermitiens pour les observables, et surtout pas de règle de Born ici. Mais il faut bien ce rendre compte que ce formalisme quantique est juste un outil pour prédire la seule chose que l'on puisse effectivement mesurée: la distribution statistique des résultats de mesure. Si une théorie réaliste et locale peut prédire la même distribution que la théorie quantique, alors on ne peut la rejeter. Je pense qu'il est important d'illustrer ce point sur un exemple simple, classique et pertinent quant à la suite: un spin 1/2. C'est ce que fit Bell dans l'article où il démontra les premières équations auxquelles on donna son nom par la suite (c.f. le tout début de la section III dans [[Bell:1964]]) mais je vais utiliser la présentation de [[Mermin:1993]], et de plus ne considérer que les mesures de spin dans des directions quelconques.
+Pour qui connait un peu la mécanique quantique, le formalisme que nous venons de décrire semble totalement incompatible avec la mécanique quantique la plus élémentaire, qui est poutant est très bien vérifiée experimentalement. En effet, pas d'espace de Hibert pour les états, ni d'opérateurs hermitiens pour les observables, et surtout pas de règle de Born pour calculer les probabiltés de mesure ici. Mais il faut bien ce rendre compte que ce formalisme quantique est juste un outil pour prédire la seule chose que l'on puisse effectivement mesurée: la distribution statistique des résultats de mesure. Si une théorie réaliste et locale peut prédire la même distribution que la théorie quantique, alors on ne peut la rejeter. Je pense qu'il est important d'illustrer ce point sur un exemple simple, classique et pertinent quant à la suite: une particule de spin 1/2, que l'on suppose fixe en un certain point de l'espace pour se concentrer sur le seul degré de liberté du spin. C'est ce que fit Bell dans l'article où il démontra les premières équations auxquelles on donna son nom par la suite (c.f. le tout début de la section III dans [[Bell:1964]]) mais je vais utiliser la présentation de [[Mermin:1993]], et de plus ne considérer que les mesures de spin dans des directions quelconques, tandis que aussi bien Bell que Mermin considère les observables les plus générales possibles.
 
 Commençons par rappeler le formalisme quantique.  L'observable associée à la projection du spin dans une direction $$a$$, un vecteur unitaire, est
 
@@ -275,7 +275,7 @@ P(a) = \int\frac{d\Omega(m)}{4\pi}\Theta((n+m)\cdot a < 0).$$
 
 En introduisant des coordonnées polaires sphériques avec $$a$$ comme axe des $$z$$, le vecteur $$m$$ est repéré par l'angle azimuthal $$\varphi$$ et l'angle polaire $$\theta$$ tandis que le vecteur $$n$$ a un angle polaire $$\theta$$.
 
-$$P(a) = \frac{1}{4\pi}\int_0^{2\pi}d\phi\int_0^\pi d\theta\sin\theta \ \Theta(\cos\theta_n + \cos\theta < 0),$$
+$$P(a) = \frac{1}{4\pi}\int_0^{2\pi}d\varphi\int_0^\pi d\theta\sin\theta \ \Theta(\cos\theta_n + \cos\theta < 0),$$
 
 Comme les angles sont entre 0 et $$\pi$$, la condition $$\cos\theta < -\cos\theta_n$$ se réduit à $$\theta > \pi - \theta_n$$. Comme l'intégrande ne dépend pas de l'angle azimuthal, l'intégration correspondante disparait en donnant un facteur $$2\pi$$, et il reste donc
 
@@ -287,7 +287,6 @@ CQFD.
 Nous avons donc montrer que l'on pouvait construire un modèle réaliste et local qui reproduisait exactement les prédictions stastistiques de la mécanique quantique pour une particule de spin 1/2. Ce résultat fut une des surprises des travaux de Bell. Il montre qu'il faudra au moins un système de deux particules pour espérer trouver une contradiction avec la mécanique quantique, ce qui sera le sujet de la section suivante. Il resterait à discuter comment la réduction de l'état quantique après la mesure est reproduite dans le modèle de Bell et Mermin mais cette section est déjà une disgression beaucoup trop longue. Avoir montrer que les théories réalistes et locales pour lesquelles le théorème de Bell peut être démontrer ne sont pas trivialement exclue est suffisant pour le but rechercher dans ce billet.
 
 Au final, le choix du formalisme quantique apparaît donc comme un choix métaphysique, selon que l'on préfère abandonner le réalisme ou non. Je dit bien "apparaît" car les théorème de Bell vont justement montrer qu'il n'en est rien: il y a des conséquences mesurables à choisir une théorie réaliste.
-
 
 ## 3. Démonstration des inégalités de Bell
 
