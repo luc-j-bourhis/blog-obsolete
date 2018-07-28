@@ -218,41 +218,34 @@ où $$\sigma_x$$, $$\sigma_y$$ et $$\sigma_z$$ sont les traditionelles matrices 
 
 $$S(n) \kup{n} = +\frac{1}{2} \kup{n}.$$
 
-Comme il n'y a que deux valeurs possibles d'une mesure de $$S(a)$$, les probabilités de chacune peuvent se déduire l'une de l'autre, et aussi de la valeur moyenne de $$S(a)$$ pour $$\kup{n}$$. On a
-
-$$\expect{S(a)} = \bup{n}S(a)\kup{n} = \frac{1}{2}a\cdot n,\label{spin:half:expect}$$
-
-et la probabilité de mesurer la valeur +1/2 est
+Comme il n'y a que deux valeurs possibles d'une mesure de $$S(a)$$, les probabilités de chacune peuvent se déduire l'une de l'autre. La probabilité de mesurer la valeur +1/2 est
 
 $$P(a) = \frac{1}{2}(1 + a\cdot n).\label{spin:half:proba}$$
 
-Ce sont là des résultats classiques que l'on peut trouver dans tous les bons livres mais afin que ce billet se suffise à lui-même, je vais les redémontrer avant de continuer. Le lecteur au fait de ces choses peut donc sauter directement à la suite du texte après le prochain CQFD!
+C'est là un résultat classique que l'on peut trouver dans tous les bons livres mais afin que ce billet se suffise à lui-même, je vais les redémontrer avant de continuer. Le lecteur au fait de ces choses peut donc sauter directement à la suite du texte après le prochain CQFD!
 
-Tout d'abord,
+En utilisant l'expression des matrices de Pauli, on a
 
-$$\expect{S(a)} = +\frac{1}{2}P(a) - \frac{1}{2}(1-P(a))$$
-
-et donc
-
-$$P(a) = \expect{S(a)} + \frac{1}{2}.$$
-
-Ensuite, en utilisant l'expression des matrices de Pauli, on a
-
-$$S(n) = \frac{1}{2}\begin{pmatrix} n_z & n_x - i n_y \\ n_x + i n_y & -n_z \end{pmatrix}.$$
+$$\notag
+S(n) = \frac{1}{2}\begin{pmatrix} n_z & n_x - i n_y \\ n_x + i n_y & -n_z \end{pmatrix}.$$
 
 Comme $$n_x^2+n_y^2+n_z^2=1$$, le polynome charactéristique est $$X^2 - \frac{1}{4}$$, d'où les valeurs propres $$\pm\frac{1}{2}$$. Un vecteur propre pour la valeur propre $$\frac{1}{2}$$ est alors
 
-$$\ket{\psi}=\begin{pmatrix} n_x - i n_y \\ 1 - n_z \end{pmatrix}.$$
+$$\notag
+\ket{\psi}=\begin{pmatrix} n_x - i n_y \\ 1 - n_z \end{pmatrix}.$$
 
 La normalisation est donc $$\sqrt{2(1-n_z)}$$, d'où
 
-$$\kup{n} = \frac{1}{\sqrt{2}}\begin{pmatrix} \dfrac{n_x - i n_y}{\sqrt{1-n_z}} \\ \sqrt{1-n_z} \end{pmatrix} = \begin{pmatrix} \alpha \\ \beta \end{pmatrix}.$$
+$$\kup{n} = \frac{1}{\sqrt{2}}\begin{pmatrix} \dfrac{n_x - i n_y}{\sqrt{1-n_z}} \\ \sqrt{1-n_z} \end{pmatrix}.$$
 
-Par conséquent,
+Par conséquent, par la règle de Born,
 
-$$\bup{n}S(a)\kup{n} = \frac{1}{4}\left(a_z |\alpha|^2 - a_z |\beta|^2 + 2\Re((a_x-ia_y)\alpha^*\beta)\right).$$
+$$\begin{align*}
+P(a) &= |\braket{a+}{n+}|^2 = \frac{1}{4}\left|\frac{(a_x + i a_y)(n_x - i n_y)}{\sqrt{(1-a_z)(1-n_z)}} + \sqrt{(1-a_z)(1-n_z)}\right|^2\\
+&= \frac{1}{4}\left(\frac{(a_x^2+a_y^2)(n_x^2+n_y^2)}{(1-a_z)(1-n_z)}+(1-a_z)(1-n_z)+2\Re\left[(a_x+ia_y)(n_x-in_y)\right]\right)
+\end{align*}$$
 
-Mais comme $$n$$ est unitaire, $$\alpha\alpha^*=1+n_z$$, et donc
+Comme $$a$$ et $$n$$ sont unitaires, le premier terme est en fait $$(1+a_z)(1+n_z)$$, donc
 
 CQFD.
 
