@@ -11,6 +11,10 @@ def articles
   @items.select{|e| e[:kind] == :article}
 end
 
+def sorting_key_for_article(a)
+  File.basename(File.dirname(a.identifier))
+end
+
 # Organise article titles in a tree for display in the side bar
 def tree_of_content(lang)
   tree = {}
@@ -18,6 +22,9 @@ def tree_of_content(lang)
     if e[:language] == lang
       (tree[e[:category]] ||= []) << e
     end
+  end
+  tree.each_value do |by_cat|
+    by_cat.sort_by! { |a| sorting_key_for_article(a) }
   end
   tree
 end
@@ -40,6 +47,13 @@ def sorted_articles
       by_group = by_cat[i[:category]] ||= {}
       group_info = by_group[i[:group]] ||= {}
       (group_info[:articles] ||= []) << i
+    end
+  end
+  by_lang.each_value do |by_cat|
+    by_cat.each_value do |by_group|
+      by_group.each_value do |group_info|
+        group_info[:articles].sort_by! { |a| sorting_key_for_article(a) }
+      end
     end
   end
   by_lang
