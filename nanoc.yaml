@@ -15,6 +15,11 @@ data_sources:
     # with the same identifier
     layouts_dir: nil
 
+# Recommendations from official docs when using github to deploy
+prune:
+  auto_prune: true
+  exclude: [ '.git' ]
+
 # Deployment, Github style
 deploy:
   default:
