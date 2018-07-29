@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(../Copper-Hewitt/CooperHewitt-Thin.woff);
+  font-style: normal;
+  font-weight: 100; }
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(../Copper-Hewitt/CooperHewitt-ThinItalic.woff);
+  font-style: italic;
+  font-weight: 100; }
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(../Copper-Hewitt/CooperHewitt-Light.woff);
+  font-style: normal;
+  font-weight: 200; }
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(../Copper-Hewitt/CooperHewitt-LightItalic.woff);
+  font-style: italic;
+  font-weight: 200; }
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(../Copper-Hewitt/CooperHewitt-Book.woff);
+  font-style: normal;
+  font-weight: 300; }
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(../Copper-Hewitt/CooperHewitt-BookItalic.woff);
+  font-style: italic;
+  font-weight: 300; }
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(../Copper-Hewitt/CooperHewitt-Medium.woff);
+  font-style: normal;
+  font-weight: 500; }
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(../Copper-Hewitt/CooperHewitt-MediumItalic.woff);
+  font-style: italic;
+  font-weight: 500; }
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(../Copper-Hewitt/CooperHewitt-Semibold.woff);
+  font-style: normal;
+  font-weight: 600; }
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(../Copper-Hewitt/CooperHewitt-SemiboldItalic.woff);
+  font-style: italic;
+  font-weight: 600; }
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(../Copper-Hewitt/CooperHewitt-Bold.woff);
+  font-style: normal;
+  font-weight: 700; }
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(../Copper-Hewitt/CooperHewitt-BoldItalic.woff);
+  font-style: italic;
+  font-weight: 700; }
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(../Copper-Hewitt/CooperHewitt-Heavy.woff);
+  font-style: normal;
+  font-weight: 800; }
+@font-face {
+  font-family: "Cooper Hewitt";
+  src: url(../Copper-Hewitt/CooperHewitt-HeavyItalic.woff);
+  font-style: italic;
+  font-weight: 800; }

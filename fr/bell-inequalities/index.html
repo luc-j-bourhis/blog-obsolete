@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>Luc J. Bourhis Musings - Étude d'une Inégalité de Bell</title>
+<link href="../../article.css" rel="stylesheet">
+<script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/jquery.color.plus-names-2.1.2.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i%7CPT+Sans:400,400i,700,700i" rel="stylesheet">
+<meta content="nanoc 4.9.3" name="generator">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  // we do not need delimiters as kramdown will transform a $$ XXX $$
+  // into span's or div's, the inner ones containing XXX,
+  // and with the appropriate id's and classes for an accompanying
+  // script to run Mathjax to render the content of those tags.
+  tex2jax: {
+    inlineMath: [],
+    displayMath: [],
+  },
+
+  TeX: {
+    // this is part of our handmade management of equation numbers
+    equationNumbers: {
+      autoNumber: "AMS"
+    },
+
+    // this is part of our handmade LaTeX macro management
+    Macros: {
+      reals: ["\\mathbb{R}"],
+integers: ["\\mathbb{}"],
+Re: ["\\operatorname{Re}"],
+Im: ["\\operatorname{Im}"],
+set: ["\\left\\{\\left. #1 \\right| #2 \\right\\}", 2],
+ket: ["\\left| #1 \\right\\rangle", 1],
+bra: ["\\left\\langle #1 \\right|", 1],
+braket: ["\\left\\langle #1 \\vphantom{#2}\\right|\\left.\\vphantom{#1} #2 \\right\\rangle", 2],
+expect: ["\\left\\langle #1 \\right\\rangle", 1],
+comm: ["\\left[ #1, #2 \\right]", 2],
+matnorm: ["\\Vert #1 \\Vert", 1],
+Hsingle: ["\\mathcal{S}"],
+Hpair: ["\\mathcal{P}"],
+Vec: ["\\mathrm{Vec}\\left(#1\\right)", 1],
+kup: ["\\ket{#1+}", 1],
+bup: ["\\bra{#1+}", 1]
+    }
+  },
+
+  menuSettings: {
+    zoom: "Double-Click",
+  },
+});
+// MathJax.Hub.Register.StartupHook("SVG Jax Ready",function () {
+//   var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;
+//   VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+//   VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+//   VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+//   VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+// });
+
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_SVG"></script>
+
+<script src="https://use.fontawesome.com/0e6d8b9bc7.js"></script>
+</head>
+<body>
+<script>
+  $(document).ready(function() {
+    $("#topics-menu-toggle").click(function(event) {
+      event.preventDefault();
+      $("#topics-menu").toggleClass('is-open');
+    });
+  
+    $(".bibliography-reference").click(function(event){
+      var hash = this.href.substr(this.href.indexOf('#')+1);
+      var duration = 1500;
+      var target = $(
+        "#" + hash.replace( /(:|\.|\[|\]|,|=|@)/g, "\\$1" ));
+      target.animate({backgroundColor:"LightSkyBlue"}, duration/2)
+      .animate({backgroundColor:"white"}, duration/2);
+    })
+  });
+</script>
+<nav class="menu" id="topics-menu">
+<span class="menu-toggle" id="topics-menu-toggle">
+<span class="fa fa-bars"></span>
+<span class="toc_label">
+Table des Matières
+</span>
+</span>
+<div class="topics">
+<hr>
+<span class="topic_categories">
+Page Principale
+<a class="flags" href="../../en">
+<img src="../../en/icon.png">
+</a>
+<a class="flags" href="..">
+<img src="../icon.png">
+</a>
+</span>
+<div class="topic_categories">physique</div>
+<ul class="topic_list">
+<li class="titles"><a href="../bell-inequalities-no-math/">Une présentation ludique d'un théorème de Bell</a></li>
+<li class="titles"><a href="./">Étude d'une Inégalité de Bell</a></li>
+</ul>
+<hr>
+</div>
+</nav>
+<div id="main">
+<h1>
+Étude d'une Inégalité de Bell
+</h1>
+<div class="author">
+Luc J. Bourhis
+</div>
+<div id="body">
+<div class="abstract">
+<p>Dans les années 60, John Bell découvrit que la mécanique quantique était incompatible avec l'existence d'une réalité physique indépendante des observateurs humains, sauf à devoir accepter l'impossibilité de réaliser deux observations indépendament l'une de l'autre, même si les deux observateurs sont très loin l'un de l'autre. Ce théorème eut un grand retentissement car il réduisait énormément les espoirs, portés en partie par Einstein dans les années 30, d'une refondation de la mécanique quantique sur des bases proches de la physique classique. En effet, un des piliers de cette dernière est le réalisme: l'hypothèse d'une réalité physique indépendante de tout observateur, que nous cherchons à cerner du mieux que nous pouvons d'une part en effectuant des observations quantitatives, ou mesures, et d'autre part, en élaborant des modèles mathématiques pour prédire les résultats de ces mesures. La tension entre la mécanique quantique et le réalisme n'apparaît que pour certaines classes de systèmes bien particulières, certes, mais c'est suffisant pour mettre en doute le réalisme en tant que base de la physique.</p>
+
+
+</div>
+<div class="abstract">
+<p>Par la suite, de nombreux résultats similaires furent découverts par d'autres chercheurs, et ils furent tous nommé théorème de Bell, en l'honneur de ce dernier. En particulier, plusieurs inégalités de Bell furent prouvées dans les années 1970 puis testées expérimentalement.
+Dans cet article, je vais présenter en détails une de ces inégalités. Je vais montrer comment elle est la conséquence des hypothèses de réalisme et de localité appliquées à un dispositif expérimental simple. Je montrerais ensuite que les prédictions de la mécanique quantique violent ces inégalités. Cette expérience n'est pas réalisable en pratique mais des variantes furent réalisées. Les résultats donnèrent raison à la mécanique quantique: les inégalités de Bell étaient belle et bien violées. Je donnerais les références des expériences les plus marquantes.</p>
+
+
+</div>
+<div id="just-after-abstract"></div>
+<h2 id="1-lexpérience">1. L’expérience</h2>
+
+<p>Je vais présenter une expérience idéalisée. Il ne s’agit pas d’une pure expérience de pensée car des expériences réelles furent réalisées sur les mêmes principes mais l’analyse rigoureuses de ces dernières est trop complexe pour le but pédagogique que je me suis fixé pour cet article. Je me conteterais de faire quelques liens qualitatifs avec ces expériences réelles.</p>
+
+<p>Il y a en premier lieu une source qui émet une à une des paires de particules – en pratique des photons, des ions ou des électrons. Pour chaque paire, l’une des particules, notée 1, va vers un appareil de mesure I tandis que l’autre, notée 2, va vers un appareil de mesure II. Ces deux appareils sont identiques mais chacun peut avoir des réglages différents, respectivement <script type="math/tex">a</script> et <script type="math/tex">b</script>. En pratique, on mesurera la polarisation d’un photon ou le spin d’un ion, et le réglage sera la direction dans laquelle on mesurera cette grandeur. Je vais appeler <script type="math/tex">A</script> l’observable de la particule 1 mesurée par l’appareil I et <script type="math/tex">B</script> celle mesurée sur  la particule 2. À priori, aussi bien <script type="math/tex">A</script> que <script type="math/tex">B</script> dépendent des deux réglages <script type="math/tex">a</script> et <script type="math/tex">b</script> car rien ne dit que la mesure effectuée par l’appareil II n’influence pas celle effectuée par l’appareil I, et vice-versa.</p>
+
+<p>Nous allons faire l’hypothèse que <script type="math/tex">A</script> et <script type="math/tex">B</script> ne peuvent prendre que les valeurs 1 et -1, ce qui est vrai en pratique comme nous le verrons quand j’aborderais le traitement quantique. L’expérience consiste alors à mesurer <script type="math/tex">A</script> et <script type="math/tex">B</script> pour un grand nombre <script type="math/tex">N</script> de paires et à calculer</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+D_N(a,b) = \frac{N_\text{identique}(a,b)-N_\text{différente}(a,b)}{N} \label{countingRatios},
+\end{equation}</script>
+
+<p>où <script type="math/tex">N_\text{identique}(a,b)</script> (resp. <script type="math/tex">N_\text{différente}(a,b)</script>) est le nombre de paires pour lesquelles <script type="math/tex">A</script> et <script type="math/tex">B</script> ont la même valeur (resp. des valeurs différentes). Ces comptages dépendent à priori des réglages <script type="math/tex">a</script> et <script type="math/tex">b</script>, ce que j’ai rendu explicite dans cette équation. Comme <script type="math/tex">A</script> et <script type="math/tex">B</script> ne peuvent prendre que les valeurs +1 et -1, <script type="math/tex">D_N(a,b)</script> est la moyenne du produit <script type="math/tex">AB</script> sur les <script type="math/tex">N</script> paires mesurées, c’est à dire ce que l’on appelle la corrélation entre <script type="math/tex">A</script> et <script type="math/tex">B</script>.<br>
+L’astuce est alors de répéter l’expérience avec des réglages différents, de combiner ces différentes corrélations, et de les comparer avec les prédictions du modèle réaliste et locale, que nous allons maintenant étudier.</p>
+
+<h2 id="2-le-modèle">2. Le modèle</h2>
+
+<p>L’information contenue dans chaque paire, ou du moins celle qui aura une influence sur les mesures, sera notée <script type="math/tex">\lambda</script>, qui est aussi appelée l’état de la paire. À priori, on ne sait rien de <script type="math/tex">\lambda</script>. Prenons l’exemple où les particules sont des photons dont on mesure la polarisation. On serait tenter de dire que <script type="math/tex">\lambda</script> contient au moins la polarisation des deux particules, et aussi d’autres éléments d’information pour lesquels nous n’avons pas d’accès direct par l’observation: ces derniers sont les fameuses variables cachées. Cela semble naturel, car l’idée même de mesurer les polarisations semble impliquer que ces polarisations soient des propriétés des particules qui existaient avant la mesure. Un tel argument fut dévelopé par <a href="#Einstein:1935aa" class="bibliography-reference"> Einstein,  Podolsky, et  Rosen (1935)</a>, et il constitua une des inspirations de <a href="#Bell:1964" class="bibliography-reference"> Bell (1964)</a>, comme le montre clairement le titre de l’article. Mais en fait, il se pourrait très bien que la polarisation ne fasse pas du tout partie de cet état <script type="math/tex">\lambda</script>: la polarisation pourrait être un phénomène émergeant lors de la mesure, déterminé par d’autres propriétés de la particule, et ces propriétés sont représentées par <script type="math/tex">\lambda</script>. L’une et l’autre possibilité sont acceptables ici. Elles correspondent à deux types différents de modèles mais l’un comme l’autre permettent de déduire des inégalités de Bell.</p>
+
+<p>Je voudrais insister sur deux points importants:</p>
+
+<ul>
+  <li>
+<script type="math/tex">\lambda</script> varie aléatoirement d’une paire à l’autre et <script type="math/tex">\lambda</script> évolue peut-être aussi stochastiquement pendant le temps de vol des particules d’une même paire. Cela ne signifie pas que l’on renie le déterminisme de la mécanique classique mais simplement que l’on doit se contenter de traiter statistiquement des processus dont tous les détails ne nous sont pas connus;</li>
+  <li>on ne suppose pas que l’information <script type="math/tex">\lambda</script> au sujet de la paire est un simple juxtaposition d’informations indépendantes <script type="math/tex">\lambda_1</script> et <script type="math/tex">\lambda_2</script> au sujet de respectivement la première et la deuxième particule de la paire – cette supposition est ce que l’on peut appeler un critère de séparabilité. On laisse donc la porte ouverte à des corrélations entre les états des deux particules – au minimum des corrélations entre les spins ou les polarisations dans le cas où ces grandeurs font partie de <script type="math/tex">\lambda</script>. L’idée est que ces corrélations sont causées par le mécanisme de production de la paire, dont malheureusement nous ne connaissons pas tous les détails.</li>
+</ul>
+
+<p>Toutes les inégalités de Bell résulte des deux hypothèses fondamentales de localité et de réalisme (en anglais Objective Local Theory, parfois abrégé en OLT). Nous allons maintenant les présenter en détails. Tout l’enjeu est de décrire précisément de quoi dépendent les mesures de <script type="math/tex">A</script> et <script type="math/tex">B</script>.</p>
+
+<h3 id="a-le-critère-de-réalisme">a. Le critère de réalisme</h3>
+
+<p>Une théorie “réaliste” suppose l’existence d’une réalité indépendente de l’observateur et déterministe, ce qui constitue un des piliers de la mécanique classique. Une telle théorie introduit des probabilités, comme en physique statistique, uniquement parce que l’on ne peut pas décrire complètement les détails microscopiques des systèmes en jeu. Plus précisément, une telle théorie fait l’hypothèse que <em>l’état de la paire <script type="math/tex">\lambda</script> est entièrement suffisant pour déterminer, conjointement avec les réglages des appareils, le résultat des mesures</em> mais que l’état de chaque paire ne pouvant être connu, il nous faut introduire une mesure de probabilité <script type="math/tex">\rho</script> sur l’ensemble <script type="math/tex">\Lambda</script> des valeurs pouvant être prises par <script type="math/tex">\lambda</script>. Par conséquent, cette mesure ne dépend que du mécanisme de production des paires et donc pas des réglages des appareils de mesure, un point très important pour démontrer les inégalités de Bell. Notons que nous n’avons à priori aucune idée de la forme que peut prendre <script type="math/tex">\rho</script>, et que cette information n’est pas nécessaire pour démontrer les inégalités de Bell.</p>
+
+<h3 id="b-le-critère-de-localité">b. Le critère de localité</h3>
+
+<p>Ce critère s’exprime ainsi: <em>l’appareil de mesure I fonctionne indépendamment de l’appareil de mesure II</em>. On pourrait imaginer à l’inverse que des facteurs extérieurs influencent les deux appareils, créant ainsi une corrélation entre les mesures, ou bien qu’un des appareils envoit, juste après avoir fait sa mesure, une information à l’autre, juste avant que ce dernier ne fasse sa mesure, influençant ainsi celle-ci. La conséquence essentielle de ce postulat est que, combiné avec le critère de réalisme, la mesure <script type="math/tex">A</script> par l’appareil I ne peut dépendre que du réglage <script type="math/tex">a</script> de cet appareil et de l’état de la pair <script type="math/tex">\lambda</script>. On notera donc <script type="math/tex">A(a, \lambda)</script>. Et de même pour l’autre mesure, <script type="math/tex">B(b, \lambda)</script>, qui ne dépend que de <script type="math/tex">\lambda</script> et du réglage <script type="math/tex">b</script> de l’appareil II.</p>
+
+<p>On pourrait être tenté d’aller plus loin et de dire que <script type="math/tex">A</script> ne peut dépendre que de l’état de la particule 1 mais comme cet état peut être corrélé avec celui de la particule 2, cette hypothèse est en générale fausse. Le critère de localité, qui s’applique aux analyseurs, n’est donc pas équivalent au critère de séparabilité, comme nous l’avions déjà mentionné plus haut.</p>
+
+<p>La quantité mesurée étant la corrélation entre les mesures sur les membres d’une paire comme nous l’avons expliqué plus haut, le point de départ est donc l’expression de cette corrélation dans notre modèle,</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+P(a,b) = \int_{\Lambda} A(a, \lambda) B(b, \lambda) d\rho(\lambda). \label{olt:corr}
+\end{equation}</script>
+
+<p>Avec un suffisament grand nombre <script type="math/tex">N</script> de paires, on aura alors <script type="math/tex">D_N(a,b) \approx P(a,b)</script>. On voit que la moyenne qui apparaît dans <script type="math/tex">D_N(a,b)</script> devient naturellement une moyenne prenant en compte la distribution de l’états de la paire de particule.</p>
+
+<h3 id="c-example-de-modèle-local-et-réaliste-le-spin-12">c. Example de modèle local et réaliste: le spin 1/2</h3>
+
+<p>Pour qui connait un peu la mécanique quantique, le formalisme que nous venons de décrire semble totalement incompatible avec la mécanique quantique la plus élémentaire, qui est pourtant est très bien vérifiée expérimentalement. En effet, pas d’espace de Hibert pour les états, ni d’opérateurs hermitiens pour les observables, et surtout pas de règle de Born pour calculer les probabiltés de mesure ici. Mais il faut bien se rendre compte que ce formalisme quantique est juste un outil pour prédire la seule chose que l’on puisse effectivement mesurée: la distribution statistique des résultats de mesure. Si une théorie réaliste et locale peut prédire la même distribution que la théorie quantique, alors on ne peut la rejeter. Je pense qu’il est important d’illustrer ce point sur un exemple simple, classique et pertinent quant à la suite: une particule de spin 1/2, que l’on suppose fixe en un certain point de l’espace pour se concentrer sur le seul degré de liberté du spin. C’est ce que fit Bell dans l’article où il démontra les premières équations auxquelles on donna son nom par la suite (c.f. le tout début de la section III dans <a href="#Bell:1964" class="bibliography-reference"> Bell (1964)</a>) mais je vais utiliser la présentation de <a href="#Mermin:1993" class="bibliography-reference"> Mermin (1993)</a>, et de plus ne considérer que les mesures de spin dans des directions quelconques, tandis que aussi bien Bell que Mermin considèrent les observables les plus générales possibles.</p>
+
+<p>Commençons par rappeler le formalisme quantique.  L’observable associée à la projection du spin dans une direction <script type="math/tex">a</script>, un vecteur unitaire, est</p>
+
+<p><script type="math/tex">S(a) = \frac{\hbar}{2}(a_x\sigma_x + a_y\sigma_y + a_z\sigma_z)</script>,</p>
+
+<p>où <script type="math/tex">\sigma_x</script>, <script type="math/tex">\sigma_y</script> et <script type="math/tex">\sigma_z</script> sont les traditionelles matrices de Pauli. Nous allons prendre un système d’unité où <script type="math/tex">\hbar = 1</script> comme il est de coutume en physique théorique pour rendre les équations plus lisibles. La mesure de cette projection du spin ne peut résulter qu’en l’une des valeurs -1/2 our 1/2. Considérons maintenant un système dans l’état quantique <script type="math/tex">\kup{n}</script> correspondant à un spin dans la direction <script type="math/tex">n</script>, un autre vecteur unitaire. Cela veut dire que</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+S(n) \kup{n} = +\frac{1}{2} \kup{n}.
+\end{equation}</script>
+
+<p>Comme il n’y a que deux valeurs possibles d’une mesure de <script type="math/tex">S(a)</script>, les probabilités de chacune peuvent se déduire l’une de l’autre. La probabilité de mesurer la valeur +1/2 est</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+P(a) = \frac{1}{2}(1 + a\cdot n).\label{spin:half:proba}
+\end{equation}</script>
+
+<p>C’est là un résultat classique que l’on peut trouver dans tous les bons livres mais afin que ce billet se suffise à lui-même, je vais les redémontrer avant de continuer. Le lecteur au fait de ces choses peut donc sauter directement à la suite du texte après le prochain CQFD!</p>
+
+<p>En utilisant l’expression des matrices de Pauli, on a</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+\notag
+S(n) = \frac{1}{2}\begin{pmatrix} n_z & n_x - i n_y \\ n_x + i n_y & -n_z \end{pmatrix}.
+\end{equation} %]]></script>
+
+<p>Comme <script type="math/tex">n_x^2+n_y^2+n_z^2=1</script>, le polynome charactéristique est <script type="math/tex">X^2 - \frac{1}{4}</script>, d’où les valeurs propres <script type="math/tex">\pm\frac{1}{2}</script>. Un vecteur propre pour la valeur propre <script type="math/tex">\frac{1}{2}</script> est alors</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\notag
+\ket{\psi}=\begin{pmatrix} n_x - i n_y \\ 1 - n_z \end{pmatrix}.
+\end{equation}</script>
+
+<p>La normalisation est donc <script type="math/tex">\sqrt{2(1-n_z)}</script>, d’où</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\kup{n} = \frac{1}{\sqrt{2}}\begin{pmatrix} \dfrac{n_x - i n_y}{\sqrt{1-n_z}} \\ \sqrt{1-n_z} \end{pmatrix}.
+\end{equation}</script>
+
+<p>Par conséquent, par la règle de Born,</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+P(a) &= |\braket{a+}{n+}|^2 = \frac{1}{4}\left|\frac{(a_x + i a_y)(n_x - i n_y)}{\sqrt{(1-a_z)(1-n_z)}} + \sqrt{(1-a_z)(1-n_z)}\right|^2\\
+&= \frac{1}{4}\left(\frac{(a_x^2+a_y^2)(n_x^2+n_y^2)}{(1-a_z)(1-n_z)}+(1-a_z)(1-n_z)+2\Re\left[(a_x+ia_y)(n_x-in_y)\right]\right)
+\end{align*} %]]></script>
+
+<p>Comme <script type="math/tex">a</script> et <script type="math/tex">n</script> sont unitaires, le premier terme est en fait <script type="math/tex">(1+a_z)(1+n_z)</script>, donc</p>
+
+<p>CQFD.</p>
+
+<p>Il s’agit maintenant de construire un modèle local et réaliste reproduisant ces deux points. Pour l’état <script type="math/tex">\lambda</script> du système dans l’état quantique <script type="math/tex">\kup{n}</script>, nous allons choisir la paire <script type="math/tex">(n,m)</script> où le vecteur unitaire <script type="math/tex">m</script> est ici la variable cachée (ou plutôt les variables cachées car il a deux composantes indépendentes). Pour la distribution <script type="math/tex">\rho(\lambda)</script>, nous allons choisir une distribution uniforme sur l’angle solide associé à <script type="math/tex">m</script>. Il ne reste plus qu’à élaborer une observable <script type="math/tex">S(a, \lambda)</script> ne prenant que les valeurs <script type="math/tex">\pm\frac{1}{2}</script> (bien entendu, ce symbole <script type="math/tex">S</script> correspond à un tout autre object que ce même symbole dans le paragraphe précédent sur le formalisme quantique). L’équivalent de (<script type="math/tex">\ref{olt:corr}</script>) est ici</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\expect{S(a)} = \int_\Lambda \rho(\lambda)S(a, \lambda)d\lambda,
+\end{equation}</script>
+
+<p>ou pour la probabilité d’observer la valeur +1/2,</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+P(a) = \int_\Lambda \rho(\lambda)\ \Theta\!\!\left(S(a,\lambda)=+\frac{1}{2}\right)d\lambda
+\end{equation}</script>
+
+<p>où <script type="math/tex">\Theta(\cdots)</script> est la fonction indicatrice du domaine des <script type="math/tex">\lambda</script> considéré, égale à 1 quand la condition est satisfatire, et égale à 0 sinon.</p>
+
+<p>On va alors voir que le choix suivant convient:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+S(a, n, m) =
+\begin{cases}
++\frac{1}{2}, & \text{if } (n+m)\cdot a > 0,\\
+-\frac{1}{2}, & \text{otherwise.}
+\end{cases}
+\end{equation} %]]></script>
+
+<p>La probabilité ci-dessus s’écrit alors avec nos choix de densité de probabilité et de valeur de mesure,</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\notag
+P(a) = \int\frac{d\Omega(m)}{4\pi}\Theta((n+m)\cdot a > 0).
+\end{equation}</script>
+
+<p>En introduisant des coordonnées polaires sphériques avec <script type="math/tex">a</script> comme axe des <script type="math/tex">z</script>, le vecteur <script type="math/tex">m</script> est repéré par l’angle azimuthal <script type="math/tex">\varphi</script> et l’angle polaire <script type="math/tex">\theta</script> tandis que le vecteur <script type="math/tex">n</script> a un angle polaire <script type="math/tex">\theta</script>.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+P(a) = \frac{1}{4\pi}\int_0^{2\pi}d\varphi\int_0^\pi d\theta\sin\theta \ \Theta(\cos\theta_n + \cos\theta > 0),
+\end{equation}</script>
+
+<p>Comme les angles sont entre 0 et <script type="math/tex">\pi</script>, la condition <script type="math/tex">\cos\theta > -\cos\theta_n</script> se réduit à <script type="math/tex">% <![CDATA[
+\theta < \pi - \theta_n %]]></script>. Comme l’intégrande ne dépend pas de l’angle azimuthal, l’intégration correspondante disparait en donnant un facteur <script type="math/tex">2\pi</script>, et il reste donc</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\notag
+P(a) = \frac{1}{2} \int_0^{\pi-\theta_n}\sin\theta d\theta = \frac{1}{2}(1+\cos\theta_n).
+\end{equation}</script>
+
+<p>CQFD.</p>
+
+<p>Nous avons donc montrer que l’on pouvait construire un modèle réaliste et local qui reproduisait exactement les prédictions stastistiques de la mécanique quantique pour une particule de spin 1/2. Ce résultat fut une des surprises des travaux de Bell. Il montre qu’il faudra au moins un système de deux particules pour espérer trouver une contradiction avec la mécanique quantique, ce qui sera le sujet de la section suivante. Il resterait à discuter comment la réduction de l’état quantique après la mesure est reproduite dans le modèle de Bell et Mermin mais cette section est déjà une disgression beaucoup trop longue. Avoir montrer que les théories réalistes et locales pour lesquelles le théorème de Bell peut être démontrer ne sont pas trivialement exclue est suffisant pour le but rechercher dans ce billet.</p>
+
+<p>Au final, le choix du formalisme quantique apparaît donc comme un choix métaphysique, selon que l’on préfère abandonner le réalisme ou non. Je dit bien “apparaît” car les théorème de Bell vont justement montrer qu’il n’en est rien: il y a des conséquences mesurables à choisir une théorie réaliste.</p>
+
+<h2 id="3-démonstration-des-inégalités-de-bell">3. Démonstration des inégalités de Bell</h2>
+
+<p>On considère maintenant deux réglages <script type="math/tex">a</script> et <script type="math/tex">a'</script> de l’appareil I et deux réglages <script type="math/tex">b</script> et <script type="math/tex">b'</script> de l’appareil II. Pour simplifier l’écriture, je ne vais plus faire figuré la dépendence en les réglages: <script type="math/tex">A(\lambda)</script> sera <script type="math/tex">A(a, \lambda)</script>, <script type="math/tex">A'(\lambda)</script> sera <script type="math/tex">A(a',\lambda)</script>, <script type="math/tex">B(\lambda)</script> sera <script type="math/tex">B(b, \lambda)</script> et <script type="math/tex">B'(\lambda)</script> sera <script type="math/tex">B(b',\lambda)</script>. Nous allons démontré une inégalité due à <a href="#Clauser:1969" class="bibliography-reference"> Clauser,  Horne,  Shimony, et  Holt (1969)</a>, et donc appelée inégalité CHSH,</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\underbrace{|P(a',b) - P(a,b) + P(a',b') + P(a,b')|}_{\displaystyle R(a, a', b, b')} \le 2
+\end{equation}</script>
+
+<p>quelques soient les réglages.</p>
+
+<p>La démonstration est très simple. On commence par majorer la valeur absolue de l’intégrale par l’intégrale de la valeur absolue,</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+\begin{aligned}
+R(a, a', b, b')
+    \le \int_\Lambda &\big|[A'(\lambda) - A(\lambda)] B(\lambda)\\
+    &+ [A'(\lambda) + A(\lambda)]B'(\lambda) \big| d\rho(\lambda).
+\end{aligned}\notag
+\end{equation} %]]></script>
+
+<p>Comme <script type="math/tex">A</script> et <script type="math/tex">A'</script> prennent seulement les valeurs <script type="math/tex">\pm 1</script>, ou bien <script type="math/tex">A'(\lambda) \ne A(\lambda)</script>, auquel cas le premier crochet vaut <script type="math/tex">\pm 2</script> et le second crochet 0, ou bien  <script type="math/tex">A'(\lambda) = A(\lambda)</script>, auquel cas le premier crochet vaut 0 et le second crochet vaut <script type="math/tex">\pm 2</script>. Comme <script type="math/tex">B</script> et <script type="math/tex">B'</script> ne prennent que les valeurs +1 et -1, dans les deux cas, l’intégrande est majoré par 2, ce qui finit la preuve puisque par définition d’une mesure de probabilité, <script type="math/tex">\int_\Lambda d\rho(\lambda)=1</script>.</p>
+
+<p>Un test expérimental consistera alors à mesurer</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+R(a,a',b,b') = D_N(a',b) - D_N(a,b) + D_N(a',b') + D_N(a,b')
+\end{equation}</script>
+
+<p>et à chercher des réglages <script type="math/tex">a</script>, <script type="math/tex">a'</script>, <script type="math/tex">b</script>, <script type="math/tex">b'</script> des appareils de mesure tels que <script type="math/tex">R(a,a',b,b')</script> soit plus grand que 2 en valeur absolue. De telles expériences furent réalisées, et cette borne fut effectivement violée. La conclusion est donc que l’une ou l’autre des deux hypothèses de réalisme ou de localité est falsifiée. L’étape suivante est alors d’étudier les prédictions des théories qui ne contiennent pas ces hypothèses, et de comparer leur prédictions pour les bornes de <script type="math/tex">R(a,a',b,b')</script>. En premier lieu, vient la mécanique quantique, pour laquelle les deux hypothèses sont fausses, mais il est aussi intéressant de chercher si il est possible de déveloper une théorie conservant l’une des deux.</p>
+
+<h2 id="4-violation-des-inégalités-de-bell-en-mécanique-quantique">4. Violation des inégalités de Bell en mécanique quantique</h2>
+
+<p>Nous allons maintenant étudier la violation des inégalités de Bell prédite par la mécanique quantique.</p>
+
+<h3 id="a-le-cadre-quantique">a. Le cadre quantique</h3>
+
+<p>Il faut trouver des réglages tels que la mécanique quantique prédise que <script type="math/tex">R(a, a', b, b')</script> soit plus grand que 2, et le plus grand possible afin d’augmenter le poids statistique du résultat. Pour cela, il me faut d’abord introduire la machinerie quantique. Je noterais <script type="math/tex">\Hsingle</script> l’espace de Hilbert des états non-corrélés de la particule 1 prise isolément, et comme les deux particules sont identiques, il s’agit aussi de l’espace de Hilbert pour la particule 2 prise isolément. L’espace de Hilbert pour une paire est alors le produit tensoriel <script type="math/tex">\Hpair=\Hsingle\otimes\Hsingle</script>. Ensuite, les observables <script type="math/tex">A</script>, <script type="math/tex">A'</script>, <script type="math/tex">B</script> et <script type="math/tex">B'</script> deviennent tout d’abord des opérateurs hermitiens de <script type="math/tex">\Hsingle</script> opérant sur la première particule pour les deux premiers, et la seconde particule pour les deux derniers, dans les deux cas sur une particule isolée. La propriété que les observables prennent seulement les valeurs <script type="math/tex">\pm 1</script> se traduit par le fait que les valeurs propres de <script type="math/tex">A</script>, <script type="math/tex">A'</script>, <script type="math/tex">B</script> et <script type="math/tex">B'</script> sont <script type="math/tex">\pm 1</script>.</p>
+
+<p>Ensuite, les observables <script type="math/tex">AB</script>, <script type="math/tex">A'B</script>, etc deviennent les produits tensoriels des opérateurs correspondants, <script type="math/tex">A\otimes B</script>, <script type="math/tex">A'\otimes B</script>, etc. Enfin, les espérances doivent maintenant s’entendre au sens quantique, i.e. pour tout opérator <script type="math/tex">O</script>,</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\expect{O} = \bra\psi O \ket\psi,
+\end{equation}</script>
+
+<p>où <script type="math/tex">\ket\psi</script> est l’état quantique dans lequelle toutes les paires sont préparées.</p>
+
+<p>L’expression <script type="math/tex">R(a, a', b, b')</script> bornée par les inégalités de Bell s’écrit alors comme la valeur absolue</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+R(a, a', b, b') = \left| \expect{S} \right| \label{Rexpect}
+\end{equation}</script>
+
+<p>de l’espérance de l’opérateur</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+S = A'\otimes B - A\otimes B + A'\otimes B' + A\otimes B'.
+\end{equation}</script>
+
+<h3 id="b-une-condition-nécessaire-la-non-séparabilité">b. Une condition nécessaire: la non-séparabilité</h3>
+
+<p>Ceci étant posé, le premier résultat important que:</p>
+
+<p><strong id="id-2789078506494330441-1">Théorème 1.</strong><br>
+ L’espérance de <script type="math/tex">S</script> pour un ket séparable <script type="math/tex">\ket\psi=\ket\phi\ket\xi</script> ne viole pas les inégalités CHSH.</p>
+
+<p>Dans ce cas,</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\expect{S}=\left[\expect{A'} - \expect{A}\right]\expect{B} + \left[\expect{A'} + \expect{A}\right]\expect{B'}, \notag
+\end{equation}</script>
+
+<p>où les espérances sont pour <script type="math/tex">\ket\phi</script> dans le cas de <script type="math/tex">A</script> et <script type="math/tex">A'</script> et pour <script type="math/tex">\ket\xi</script> dans le cas de <script type="math/tex">B</script> et <script type="math/tex">B'</script>. Le théorème résulte alors du lemme suivant.</p>
+
+<p><strong id="id--2649240827476979042-1">Lemme 1.</strong><br>
+ Si <script type="math/tex">u</script>, <script type="math/tex">v</script>, <script type="math/tex">x</script>, et <script type="math/tex">y</script> sont dans <script type="math/tex">[-1, 1]</script>, alors</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+-2 \le u(x-y)+v(x+y) \le 2.
+\end{equation}</script>
+
+<p>Posons <script type="math/tex">X=(x+y)/2</script> et <script type="math/tex">Y=(x-y)/2</script>. Le domaine de <script type="math/tex">(x,y)</script> devient pour <script type="math/tex">(X,Y)</script>:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+&-1 < X + Y < 1,\\
+&-1 < X - Y < 1,
+\end{align} %]]></script>
+
+<p>Donc, du fait du domaine autorisé pour <script type="math/tex">u</script> et <script type="math/tex">v</script>, si <script type="math/tex">X \ge 0</script> et <script type="math/tex">Y \ge 0</script>, alors <script type="math/tex">uX + vY \le X+Y \le 1</script>. De même, si <script type="math/tex">X \ge 0</script> et <script type="math/tex">% <![CDATA[
+Y < 0 %]]></script>, alors <script type="math/tex">uX + vY \le X-Y \le 1</script>. On finit en traitant de manière similaire toutes les possibilités restantes de signes de <script type="math/tex">X</script> et <script type="math/tex">Y</script>.</p>
+
+<p>CQFD.</p>
+
+<h3 id="section-c">c. La non-séparabilité: une condition suffisante</h3>
+
+<p>Je vais dans cette section et les suivantes considérer le cas de particule de spin 1/2, pour des raisons pédagogiques de simplicité mais les résultats que je vais démontrer peuvent être prouver pour d’autres systèmes quantiques. La dimension de <script type="math/tex">\Hsingle</script> est donc 2 et l’on y définit les opérateurs de spin habituels <script type="math/tex">S_x, S_y, S_z</script>, à une normalisation de <script type="math/tex">\hbar/2</script> près, de manière à avoir des valeurs propres <script type="math/tex">\pm 1</script>. On peut alors se donner une base <script type="math/tex">\mathcal{B}</script> où les matrices de ces opérateurs sont les matrices de Pauli <script type="math/tex">\sigma_x</script>, <script type="math/tex">\sigma_y</script>, et <script type="math/tex">\sigma_z</script>.</p>
+
+<p>Ensuite, je vais avoir besoin d’un représentation simple et générale d’un état non-séparable de la paire: une décomposition de Schmidt. Tout ket <script type="math/tex">\ket\psi</script> peut se décomposer en</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\ket\psi = c_1 \ket{\phi_1}\ket{\theta_1} + c_2 \ket{\phi_2}\ket{\theta_2},\notag
+\end{equation}</script>
+
+<p>où <script type="math/tex">\mathcal{B}_1=(\ket{\phi_1}, \ket{\phi_2})</script> et <script type="math/tex">\mathcal{B}_2=(\ket{\theta_1}, \ket{\theta_2})</script> sont deux bases orthonormées de <script type="math/tex">\Hsingle</script>, et <script type="math/tex">c_1</script> et <script type="math/tex">c_2</script> sont deux nombres réels positifs. Ils doivent satisfaire <script type="math/tex">c_1^2+c_2^2=1</script> pour normaliser <script type="math/tex">\ket\psi</script>, et donc il existe <script type="math/tex">\varphi\in[0,\pi/2]</script> tel que</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\ket\psi = \cos\varphi \ket{\phi_1}\ket{\theta_1} + \sin\varphi \ket{\phi_2}\ket{\theta_2}.
+\end{equation}</script>
+
+<p>On peut maintenant établir la condition suivante.</p>
+
+<p><strong id="id-2789078506494330441-2">Théorème 2.</strong></p>
+
+<p><script type="math/tex">\ket\psi</script> est non-séparable si et seulement si <script type="math/tex">\sin2\varphi \ne 0.</script></p>
+
+<p>En effet, si <script type="math/tex">\ket\psi</script> est séparable, alors</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\ket\psi = \ket\xi\ket\eta,
+\end{equation}</script>
+
+<p>mais il existe alors des nombres complexes <script type="math/tex">u_1</script>, <script type="math/tex">u_2</script>, <script type="math/tex">v_1</script>, et <script type="math/tex">v_2</script> tels que</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+\ket\xi &= u_1\ket\phi_1 + u_2\ket\phi_2,\\
+\ket\eta &= v_1\ket\theta_1 + v_2\ket\theta_2,
+\end{align*} %]]></script>
+
+<p>et on a donc</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+&\cos\varphi \ket{\phi_1}\ket{\theta_1} + \sin\varphi \ket{\phi_2}\ket{\theta_2} \\
+&= u_1v_1\ket\phi_1 +u_2v_2\ket\phi_2\ket\theta_2 + u_1v_2\ket\phi_1\ket\theta_2 + u_2v_1\ket\phi_2\ket\theta_1.
+\end{align*} %]]></script>
+
+<p>Par conséquent, <script type="math/tex">u_1v_2=u_2v_1=0</script> et donc <script type="math/tex">\cos\varphi=u_1v_1=0</script> ou <script type="math/tex">\sin\varphi=u_2v_2=0</script>. À l’inverse, si <script type="math/tex">\sin2\varphi=0</script>, alors <script type="math/tex">\ket\psi=\ket{\phi_1}\ket{\theta_1}</script> ou <script type="math/tex">\ket{\phi_2}\ket{\theta_2}</script>. Ceci démontre le théorème par contraposée.</p>
+
+<p>CQFD.</p>
+
+<p>Je vais maintenant choisir les opérateurs suivants</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+\begin{aligned}
+&A = S_{1,x},\\
+&A' = S_{1,z},\\
+&B = S_{1,x}\sin b + S_{1,z}\cos b,\\
+&B' = -S_{1,x}\sin b + S_{1,z}\cos b,
+\end{aligned}\label{pauliDecomposition}
+\end{equation} %]]></script>
+
+<p>où <script type="math/tex">S_{1,x}</script> et <script type="math/tex">S_{1,z}</script> ont les matrices respectives <script type="math/tex">\sigma_x</script> et <script type="math/tex">\sigma_z</script> dans <script type="math/tex">\mathcal{B}_1</script> tandis que <script type="math/tex">S_{2,x}</script> et <script type="math/tex">S_{2,z}</script> ont les matrices respectives <script type="math/tex">\sigma_x</script> et <script type="math/tex">\sigma_z</script> dans <script type="math/tex">\mathcal{B}_2</script>. Le protocole expérimental est typiquement le suivant: les particules s’éloignent de la source en directions opposées le long de l’axe des <script type="math/tex">y</script>. On mesure alors la projection du spin de chacune dans une direction qui est dans le plan <script type="math/tex">x-z</script>. Ceci pourrait être réalisé avec deux appareils de Stern et Gerlach.</p>
+
+<p>En utilisant alors le fait que</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+\begin{aligned}
+\bra{\phi_i}\bra{\theta_i}S_{1,e}\otimes S_{2,f}\ket{\phi_j}\ket{\theta_j} &= \bra{\phi_i}S_{1,e}\ket{\phi_j}\bra{\theta_i}S_{2,f}\ket{\theta_j}\\&=\left(\sigma_e\right)_{ij}\left(\sigma_f\right)_{ij},
+\end{aligned}
+\end{equation} %]]></script>
+
+<p>on trouve facilement, en notant que les termes <script type="math/tex">S_x\otimes S_z</script> et <script type="math/tex">S_z\otimes S_x</script> donnent des contributions nulles, que</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+\expect{A'\otimes B} &= \expect{A'\otimes B'} = \cos b,\\
+\expect{A\otimes B} &= \sin2\varphi\sin b = -\expect{A\otimes B'},
+\end{align*} %]]></script>
+
+<p>et donc que</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\expect{S} = 2\cos b(1 - \sin 2\varphi\tan b).
+\end{equation}</script>
+
+<p>En choisissant</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\tan b = -\sin 2\varphi, \label{choice:of:b:for:max:violation}
+\end{equation}</script>
+
+<p>on a</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\expect{S} = 2(1 + \sin^2 2\varphi)^\frac{1}{2},
+\end{equation}</script>
+
+<p>qui est en dehors de l’intervalle <script type="math/tex">[-2,2]</script> pour toutes les valeurs de <script type="math/tex">\varphi\in]0,\pi/2[</script>, c’est à dire pour toutes les kets non-séparables. Cette démonstration est un simplification dans un cas spécial simple de celle beaucoup plus générale de <a href="#Gisin:1992aa" class="bibliography-reference"> Gisin et  Peres (1992)</a>.</p>
+
+<h3 id="d-violation-maximale">d. Violation maximale</h3>
+
+<p>Le dernier résultat de la section précédente montre que la valeur maximum de <script type="math/tex">\expect{S}</script> est égale à <script type="math/tex">2\sqrt2</script>, obtenue pour <script type="math/tex">\varphi=\pi/4</script>. On peut alors se demander si il est possible de faire mieux. La réponse est non. Cette borne supérieure fut démontré pour la première fois par <a href="#Cirelson:1980" class="bibliography-reference">Cirel’ son (1980)</a> – son nom est aussi orthographié Tsirelson parfois mais nous allons ici utiliser la démonstration de <a href="#Braunstein:1992" class="bibliography-reference"> Braunstein,  Mann, et  Revzen (1992)</a>.</p>
+
+<p>Elle dépend du résultat suivant:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+S^2 = 4I - \comm{A}{A'} \otimes \comm{B}{B'}. \label{Sfundamental}
+\end{equation}</script>
+
+<p>Nous allons en effet voir que cette propriété est pleine de conséquences pour les bornes de <script type="math/tex">R(A,A',B,B')</script> mais nous allons tout d’abord la démontrer. Tout d’abord, comme les opérateurs hermitiens <script type="math/tex">A</script>, <script type="math/tex">A'</script>, <script type="math/tex">B</script> et <script type="math/tex">B'</script> ont toute leur valeur propre égale à <script type="math/tex">\pm 1</script>, nécessairement</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+A^2 = A'^2 = B^2 = B'^2 = I.
+\end{equation}</script>
+
+<p>Ensuite, dans les termes de <script type="math/tex">S^2</script>, les multiplications de produits tensoriels deviennent des produits tensoriels de multiplications, dans lesquelles on peut alors éliminer tous ces carrés. Cela donne</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+\begin{split}
+    S^2  &= I - A'\otimes A + B\otimes B' + A'A\otimes  BB' \\
+                     & -A\otimes A' + I - AA'\otimes BB' - B\otimes B' \\
+                     & + B'\otimes B - A'A\otimes B'B + I + A'\otimes A \\
+                     & + AA'\otimes B'B - B'\otimes B + A\otimes A' + I  \\
+    \end{split}
+\end{equation} %]]></script>
+
+<p>CQFD</p>
+
+<p>Passons maintenant à l’exploitation de (\ref{Rexpect}) et (\ref{Sfundamental}). Comme un commutateur a une trace nulle, les valeurs propres de l’opérateur hermitien <script type="math/tex">i \comm{A}{A'}</script> sont <script type="math/tex">\alpha</script> et <script type="math/tex">-\alpha</script> pour un certain nombre réel <script type="math/tex">\alpha \ge 0</script>. Soient <script type="math/tex">\ket\alpha</script> et <script type="math/tex">\ket{-\alpha}</script> les vecteurs propres associés. Avec le même raisonnement, les valeurs propres de <script type="math/tex">i \comm{B}{B'}</script> sont <script type="math/tex">\beta</script> et <script type="math/tex">-\beta</script> pour un certain nombre réel <script type="math/tex">\beta \ge 0</script> et les vecteurs propres associés seront notés <script type="math/tex">\ket\beta</script> et <script type="math/tex">\ket{-\beta}</script>. Il est alors immédiat que <script type="math/tex">S^2</script> a deux valeurs propres dégénérées, <script type="math/tex">4 + \alpha\beta</script> et <script type="math/tex">4 -\alpha\beta</script>, qui sont nécessairement positives puisque <script type="math/tex">S^2</script> est positif, et que les espaces propres associés sont respectivement <script type="math/tex">\mathcal{U} = \Vec{\ket\alpha\ket\beta, \ket{-\alpha}\ket{-\beta}}</script> et <script type="math/tex">\mathcal{V} = \Vec{\ket{-\alpha}\ket\beta, \ket\alpha\ket{-\beta}}</script>.<br>
+Par conséquent, les valeurs propres de <script type="math/tex">S</script> s’écrivent ou bien <script type="math/tex">\pm\sqrt{4+\alpha\beta}</script> ou bien <script type="math/tex">\pm\sqrt{4-\alpha\beta}</script>. Les premières (resp. les secondes) ont leurs vecteurs propres dans <script type="math/tex">U</script> (resp. <script type="math/tex">V</script>).</p>
+
+<p>On voit donc que si <script type="math/tex">A</script> commute avec <script type="math/tex">A'</script> ou bien si <script type="math/tex">B</script> commute avec <script type="math/tex">B'</script>, les valeurs propres de <script type="math/tex">S</script> sont égales à <script type="math/tex">\pm2</script>, et par conséquent <script type="math/tex">R(A,A',B,B')</script> est toujours entre -2 et 2: la borne de l’inégalité de Bell n’est violée pour aucun réglage et pour aucun état quantique de la paire <script type="math/tex">\ket\psi</script>. Rappellons en effet que pour un opérateur hermitien tel que <script type="math/tex">S</script>, la borne supérieure de l’espérance <script type="math/tex">\bra\psi S\ket\psi</script>, quand <script type="math/tex">\ket\psi</script> décrit l’ensemble des kets tels que <script type="math/tex">\braket{\psi}{\psi}=1</script>, est la plus grande des valeurs propres de <script type="math/tex">S</script>.</p>
+
+<p>Si au contraire aucune de ces paires d’opérateurs ne commute, alors <script type="math/tex">\alpha\beta > 0</script>. Dans ce cas, les valeurs propres <script type="math/tex">\pm\sqrt{4+\alpha\beta}</script> sont en dehors de l’intervalle <script type="math/tex">[-2,2]</script>.<br>
+Quelle violation maximale peut-on obtenir? Comme <script type="math/tex">\matnorm{\comm{A}{A'}} \le 2 \matnorm{A} \matnorm{A'}</script>, nécessairement <script type="math/tex">-2 \le \alpha \le 2</script> puisque <script type="math/tex">\matnorm{A}=\matnorm{A'}=1</script>. De même, <script type="math/tex">-2 \le \beta \le 2</script>. Cela démontre que la borne maximale est <script type="math/tex">2\sqrt{2}</script> comme annoncé plus haut mais nous voyons aussi que cette borne est réalisée quand <script type="math/tex">\alpha = \beta = \pm 2</script>.</p>
+
+<p>Il est facile de voir que l’exemple étudié en <a href="#section-c">section c</a> rentre dans ce théorème. En effet, nous avons vu que la violation maximale est obtenue pour <script type="math/tex">\varphi=\pi/4</script>, et donc avec l’équation (\ref{choice:of:b:for:max:violation}), on a <script type="math/tex">b=-\pi/4</script>, et donc les équations (\ref{pauliDecomposition}) impliquent que <script type="math/tex">\comm{A}{A'}</script> et <script type="math/tex">\comm{B}{B'}</script> admettent comme matrice <script type="math/tex">-2\sigma_y</script> dans les bases respectives <script type="math/tex">\mathcal{B}_1</script> et <script type="math/tex">\mathcal{B}_2</script>. Comme les valeurs propres de <script type="math/tex">\sigma_y</script> sont <script type="math/tex">\pm 1</script>, CQFD.</p>
+
+</div>
+<h2>Bibliographie</h2>
+<div class="bibliography_entry" id="Aspect:1982">
+<span class="bibliography_key">
+Alain  Aspect, Jean  Dalibard, et Gérard  Roger
+(1982).
+</span>
+<span>Experimental Test of Bell's Inequalities Using Time-Varying Analyzers,
+<em>
+Phys. Rev. Lett.,
+</em>
+49:
+1804--1807
+</span>
+</div>
+<div class="bibliography_entry" id="Bell:1964">
+<span class="bibliography_key">
+John S.  Bell
+(1964).
+</span>
+<span>On the Einstein Podolsky Rosen paradox,
+<em>
+Physics,
+</em>
+1:
+195--200
+</span>
+</div>
+<div class="bibliography_entry" id="Braunstein:1992">
+<span class="bibliography_key">
+Samuel L.  Braunstein, A.  Mann, et M.  Revzen
+(1992).
+</span>
+<span>Maximal violation of Bell inequalities for mixed states,
+<em>
+Phys. Rev. Lett.,
+</em>
+68:
+3259--3261
+</span>
+</div>
+<div class="bibliography_entry" id="Cirelson:1980">
+<span class="bibliography_key">
+B. S. Cirel' son
+(1980).
+</span>
+<span>Quantum generalizations of Bell's inequality,
+<em>
+Letters in Mathematical Physics,
+</em>
+4:
+93--100
+</span>
+</div>
+<div class="bibliography_entry" id="Clauser:1969">
+<span class="bibliography_key">
+John F.  Clauser, Michael A.  Horne, Abner  Shimony, et Richard A.  Holt
+(1969).
+</span>
+<span>Proposed Experiment to Test Local Hidden-Variable Theories,
+<em>
+Phys. Rev. Lett.,
+</em>
+23:
+880--884
+</span>
+</div>
+<div class="bibliography_entry" id="Clauser:1974">
+<span class="bibliography_key">
+John F.  Clauser, et Michael A.  Horne
+(1974).
+</span>
+<span>Experimental consequences of objective local theories,
+<em>
+Phys. Rev. D,
+</em>
+10:
+526--535
+</span>
+</div>
+<div class="bibliography_entry" id="Einstein:1935aa">
+<span class="bibliography_key">
+A.  Einstein, B.  Podolsky, et N.  Rosen
+(1935).
+</span>
+<span>Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?,
+<em>
+Phys. Rev.,
+</em>
+47:
+777--780
+</span>
+</div>
+<div class="bibliography_entry" id="Gisin:1992aa">
+<span class="bibliography_key">
+N.  Gisin, et A.  Peres
+(1992).
+</span>
+<span>Maximal violation of Bell's inequality for arbitrarily large spin,
+<em>
+Physics Letters A,
+</em>
+162:
+15--17
+</span>
+</div>
+<div class="bibliography_entry" id="Hensen:2015">
+<span class="bibliography_key">
+B.  Hensen, et al.
+(2015).
+</span>
+<span>Loophole-free Bell inequality violation using electron spins separated by 1.3 kilometres,
+<em>
+Nature,
+</em>
+526:
+682--686
+</span>
+</div>
+<div class="bibliography_entry" id="Mermin:1993">
+<span class="bibliography_key">
+N. D.  Mermin
+(1993).
+</span>
+<span>Hidden variables and the two theorems of John Bell,
+<em>
+Review of Modern Physics,
+</em>
+66:
+803--815
+</span>
+</div>
+<div class="bibliography_entry" id="Rowe:2001">
+<span class="bibliography_key">
+M. A.  Rowe, et al.
+(2001).
+</span>
+<span>Experimental violation of a Bell's inequality with efficient detection,
+<em>
+Nature,
+</em>
+409:
+791--794
+</span>
+</div>
+<div class="bibliography_entry" id="Weihs:1998">
+<span class="bibliography_key">
+Gregor  Weihs, et al.
+(1998).
+</span>
+<span>Violation of Bell's Inequality under Strict Einstein Locality Conditions,
+<em>
+Phys. Rev. Lett.,
+</em>
+81:
+5039--5043
+</span>
+</div>
+
+<div id="license">
+<div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" rel="license">
+<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+</a>
+</div>
+<div>
+Cette œuvre est mise à disposition selon les termes de la
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" rel="license">
+Licence Internationale "Creative Commons Attribution" 4.0 - Pas d’utilisation commerciale - Partage dans les mêmes conditions.
+</a>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

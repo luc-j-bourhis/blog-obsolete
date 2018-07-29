@@ -1,0 +1,130 @@
+/**
+ * Universal border-box fix
+ * Listing 3.6 of Keith J. Grant "CSS in Depth",
+ * referred to as [CSSD] in the following
+ */
+:root {
+  box-sizing: border-box; }
+
+*,
+::before,
+::after {
+  box-sizing: inherit; }
+
+:root {
+  /*
+   * Do not forget to add those Google web fonts to config file `nanoc.yaml`
+   */
+  font-family: "PT Serif", serif;
+  font-size: 1.375em;
+  /*
+   * Fonts installed on this site
+   */
+  /*
+   * Those are available on MacOS and iOS
+   */ }
+  @media (min-device-width: 90.0625em) {
+    :root {
+      font-size: 1.0625em; } }
+
+body {
+  margin: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "PT Sans"; }
+
+#main {
+  padding: 1em;
+  padding-top: 0; }
+  #main p {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
+  #main ul, #main ol {
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
+  #main h1 {
+    text-align: center; }
+  #main .author {
+    text-align: center;
+    font-style: italic; }
+
+a.flags img {
+  vertical-align: text-bottom;
+  margin-left: 0.1em; }
+
+a.flags {
+  text-decoration: none; }
+
+@keyframes highlight {
+  0% {
+    background: LightSkyBlue; }
+  100% {
+    background: none; } }
+#main #body {
+  margin-top: 2em; }
+  #main #body h2 {
+    margin-bottom: 0.7055em; }
+  #main #body h3 {
+    margin-bottom: 0.85em; }
+  #main #body h4 {
+    margin-bottom: 1.1305em; }
+  #main #body h5 {
+    margin-bottom: 1.4195em; }
+  #main #body h6 {
+    margin-bottom: 1.9805em; }
+  #main #body blockquote {
+    font-style: italic; }
+#main .abstract {
+  font-style: italic; }
+#main #just-after-abstract {
+  visibility: hidden; }
+#main .bibliography_entry {
+  margin-bottom: 0.5em; }
+#main .bibliography_key {
+  font-weight: bold; }
+#main #license {
+  margin-top: 2em;
+  margin-bottom: 1em; }
+  #main #license img {
+    border-width: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em; }
+
+.menu {
+  margin: 1em; }
+
+.menu-toggle {
+  font-size: 1.5em; }
+
+.toc_label {
+  display: none;
+  margin-left: 0.2em; }
+
+.topics {
+  display: none;
+  margin-top: 1em;
+  margin-bottom: 2em; }
+  .topics .titles a {
+    text-decoration: none; }
+
+.topic_categories {
+  text-transform: uppercase;
+  margin-top: 0.6em; }
+
+.topic_list {
+  margin: 0;
+  list-style-type: none; }
+
+.menu.is-open .topics {
+  display: block; }
+
+.menu.is-open .toc_label {
+  display: inline; }

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>Luc J. Bourhis Musings - </title>
+<link href="../abstracts.css" rel="stylesheet">
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/jquery.color.plus-names-2.1.2.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i%7CPT+Sans:400,400i,700,700i" rel="stylesheet">
+<meta content="nanoc 4.9.3" name="generator">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  // we do not need delimiters as kramdown will transform a $$ XXX $$
+  // into span's or div's, the inner ones containing XXX,
+  // and with the appropriate id's and classes for an accompanying
+  // script to run Mathjax to render the content of those tags.
+  tex2jax: {
+    inlineMath: [],
+    displayMath: [],
+  },
+
+  TeX: {
+    // this is part of our handmade management of equation numbers
+    equationNumbers: {
+      autoNumber: "AMS"
+    },
+
+    // this is part of our handmade LaTeX macro management
+    Macros: {
+      reals: ["\\mathbb{R}"],
+integers: ["\\mathbb{}"],
+Re: ["\\operatorname{Re}"],
+Im: ["\\operatorname{Im}"],
+set: ["\\left\\{\\left. #1 \\right| #2 \\right\\}", 2],
+ket: ["\\left| #1 \\right\\rangle", 1],
+bra: ["\\left\\langle #1 \\right|", 1],
+braket: ["\\left\\langle #1 \\vphantom{#2}\\right|\\left.\\vphantom{#1} #2 \\right\\rangle", 2],
+expect: ["\\left\\langle #1 \\right\\rangle", 1],
+comm: ["\\left[ #1, #2 \\right]", 2],
+matnorm: ["\\Vert #1 \\Vert", 1]
+    }
+  },
+
+  menuSettings: {
+    zoom: "Double-Click",
+  },
+});
+// MathJax.Hub.Register.StartupHook("SVG Jax Ready",function () {
+//   var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;
+//   VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+//   VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+//   VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+//   VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+// });
+
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_SVG"></script>
+
+<script src="https://use.fontawesome.com/0e6d8b9bc7.js"></script>
+</head>
+<body>
+<nav id="home_lang_nav">
+<a class="flags" href=".">
+<img src="icon.png">
+</a>
+<a class="flags" href="../fr">
+<img src="../fr/icon.png">
+</a>
+</nav>
+<div id="main">
+<h1>
+Cartesian Musings
+</h1>
+<div class="author">
+Luc J. Bourhis
+</div>
+<h2 class="categories">computing</h2>
+<a class="titles" href="fast-matrix-multiplication/#just-after-abstract">
+<h3>Matrix Multiplication at Peak Performance</h3>
+</a>
+<div>
+<p>High performance matrix multiplication is the workhorse which makes possible the whole field of high performance linear algebra. In this article, we succinctly motivate the importance of that field, and explain in simple terms why it must rely so much on fast matrix multiplication. Then we explore how to implement the latter with more technical details.</p>
+
+
+</div>
+<h2 class="categories">physics</h2>
+<a class="titles" href="relativity-groups/#just-after-abstract">
+<h3>Change of inertial frames: what transforms are possible?</h3>
+</a>
+<div>
+<p>We discuss how to prove that Galilean and Lorentz transforms are the only possibilities besides rotations using only very general postulates about changes of inertial frames. Most interestingly, we do not make any of the traditional assumptions, about the speed of light for Lorentz transforms, and about the universality of time and length for Galilean transforms.</p>
+
+
+</div>
+</div>
+
+</body>
+</html>

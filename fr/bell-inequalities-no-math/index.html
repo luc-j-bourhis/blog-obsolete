@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>Luc J. Bourhis Musings - Une présentation ludique d'un théorème de Bell</title>
+<link href="../../article.css" rel="stylesheet">
+<script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/jquery.color.plus-names-2.1.2.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i%7CPT+Sans:400,400i,700,700i" rel="stylesheet">
+<meta content="nanoc 4.9.3" name="generator">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  // we do not need delimiters as kramdown will transform a $$ XXX $$
+  // into span's or div's, the inner ones containing XXX,
+  // and with the appropriate id's and classes for an accompanying
+  // script to run Mathjax to render the content of those tags.
+  tex2jax: {
+    inlineMath: [],
+    displayMath: [],
+  },
+
+  TeX: {
+    // this is part of our handmade management of equation numbers
+    equationNumbers: {
+      autoNumber: "AMS"
+    },
+
+    // this is part of our handmade LaTeX macro management
+    Macros: {
+      reals: ["\\mathbb{R}"],
+integers: ["\\mathbb{}"],
+Re: ["\\operatorname{Re}"],
+Im: ["\\operatorname{Im}"],
+set: ["\\left\\{\\left. #1 \\right| #2 \\right\\}", 2],
+ket: ["\\left| #1 \\right\\rangle", 1],
+bra: ["\\left\\langle #1 \\right|", 1],
+braket: ["\\left\\langle #1 \\vphantom{#2}\\right|\\left.\\vphantom{#1} #2 \\right\\rangle", 2],
+expect: ["\\left\\langle #1 \\right\\rangle", 1],
+comm: ["\\left[ #1, #2 \\right]", 2],
+matnorm: ["\\Vert #1 \\Vert", 1]
+    }
+  },
+
+  menuSettings: {
+    zoom: "Double-Click",
+  },
+});
+// MathJax.Hub.Register.StartupHook("SVG Jax Ready",function () {
+//   var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;
+//   VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+//   VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+//   VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+//   VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+// });
+
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_SVG"></script>
+
+<script src="https://use.fontawesome.com/0e6d8b9bc7.js"></script>
+</head>
+<body>
+<script>
+  $(document).ready(function() {
+    $("#topics-menu-toggle").click(function(event) {
+      event.preventDefault();
+      $("#topics-menu").toggleClass('is-open');
+    });
+  
+    $(".bibliography-reference").click(function(event){
+      var hash = this.href.substr(this.href.indexOf('#')+1);
+      var duration = 1500;
+      var target = $(
+        "#" + hash.replace( /(:|\.|\[|\]|,|=|@)/g, "\\$1" ));
+      target.animate({backgroundColor:"LightSkyBlue"}, duration/2)
+      .animate({backgroundColor:"white"}, duration/2);
+    })
+  });
+</script>
+<nav class="menu" id="topics-menu">
+<span class="menu-toggle" id="topics-menu-toggle">
+<span class="fa fa-bars"></span>
+<span class="toc_label">
+Table des Matières
+</span>
+</span>
+<div class="topics">
+<hr>
+<span class="topic_categories">
+Page Principale
+<a class="flags" href="../../en">
+<img src="../../en/icon.png">
+</a>
+<a class="flags" href="..">
+<img src="../icon.png">
+</a>
+</span>
+<div class="topic_categories">physique</div>
+<ul class="topic_list">
+<li class="titles"><a href="./">Une présentation ludique d'un théorème de Bell</a></li>
+<li class="titles"><a href="../bell-inequalities/">Étude d'une Inégalité de Bell</a></li>
+</ul>
+<hr>
+</div>
+</nav>
+<div id="main">
+<h1>
+Une présentation ludique d'un théorème de Bell
+</h1>
+<div class="author">
+Luc J. Bourhis
+</div>
+<div id="body">
+<div class="abstract">
+<p>Dans les années 60, John Bell découvrit que la mécanique quantique était incompatible avec l'existence d'une réalité physique indépendante des observateurs humains, sauf à devoir accepter l'impossibilité de réaliser deux observations indépendament l'une de l'autre, même si les deux observateurs sont très loin l'un de l'autre. Ce théorème eut un grand retentissement car il réduisait énormément les espoirs, portés en partie par Einstein dans les années 30, d'une refondation de la mécanique quantique sur des bases proches de la physique classique. En effet, un des piliers de cette dernière est le réalisme: l'hypothèse d'une réalité physique indépendante de tout observateur, que nous cherchons à cerner du mieux que nous pouvons d'une part en effectuant des observations quantitatives, ou mesures, et d'autre part, en élaborant des modèles mathématiques pour prédire les résultats de ces mesures. La tension entre la mécanique quantique et le réalisme n'apparaît que pour certaines classes de systèmes bien particulières, certes, mais c'est suffisant pour mettre en doute le réalisme en tant que base de la physique.</p>
+
+
+</div>
+<div class="abstract">
+<p>Mon but est ici de présenter un théorème de Bell rigoureusement correct, mais de le faire sous la forme d'un dialogue, sans mathématiques, même pas l'arithmétique la plus élémentaire. Je vais imaginer une expérience avec des objets de tous les jours, au lieu des particules microscopiques des vraies expériences quantiques. Puis cette expérience sera analysée comme on le ferait pour ces vraies expériences réalisées en laboratoire. Ces objets de tous les jours vont évidemment se comporter de manière quelque peu magique, pour que l'analogie avec les particules quantiques marche, mais c'est là mon but: faire toucher du doigt les éléments fantastiques de la mécanique quantique qui concourt aux théorèmes de Bell.</p>
+
+
+</div>
+<div id="just-after-abstract"></div>
+<p>J’ai trois amis, Alice, Jessica et Paul, à qui je vais proposer le jeu suivant. Je dispose de nombreux jetons, avec une face marquée d’un X et l’autre face marqué d’un Y. Le jeu consiste à réaliser plusieurs expériences qui toutes procèdent comme suit. Mes trois amis se séparent et vont chacun prendre place dans un isoloir d’où ils ne peuvent pas voir ce que je fais. J’envoie à chacun d’entre eux un jeton numéroté. Ils sont plongés dans le noir et ne peuvent donc pas voir le jeton qu’ils reçoivent chacun. Le seul moyen à leur disposition pour l’observer est une machine spéciale (j’en ai donné une à chacun d’entre eux): chaque machine à un réglage à deux positions, X ou Y. Quand on y insère le jeton, la machine révèle la couleur de la face spécifiée par le réglage, puis la machine détruit le jeton. Par conséquent, on peut connaître ou bien la couleur de la face X, ou bien de la face Y, au choix, mais jamais la couleur des deux. Pour chaque expérience, je vais indiqué à chacun, à l’avance, le réglage de la machine et chacun notera alors la couleur révélée. On répète cette procédure un grand nombre de fois en utilisant mon très grand stock de jetons. Finalement ils me rejoignent et comparent leur liste d’observations. Le but du jeu est pour Paul, Jessica et Alice de deviner la procédure que j’ai suivi pour préparer les jetons. Mais attention, c’est moi qui choisis le réglage des appareils!</p>
+
+<p><strong>Première expérience:</strong> Paul examine la face X; Alice et Jessica examine la face Y.</p>
+
+<p>Chacun d’eux constate que la couleur observée est toujours ou bien noire ou bien blanche. De plus, chacun se rend compte que, sur sa liste, les couleurs se suivent au hasard. Par contre quand ils comparent leur liste, ils découvrent qu’Alice et Jessica aurait pu prédire les résultats observés par Paul. En effet,</p>
+
+<ul>
+  <li>
+<em>à chaque fois</em> qu’Alice et Jessica ont observé deux faces de même couleur, Paul a observé un face blanche; et</li>
+  <li>
+<em>à chaque fois</em> qu’Alice et Jessica ont observé des couleurs différentes, Paul a observé une face noire.</li>
+</ul>
+
+<p>Alice commente aussitôt: «Sur un tellement grand nombre d’observations, cela ne peut pas être une coïncidence! Luc a clairement des jetons dont chaque face X ou Y est ou bien blanche ou bien noire, et il a suivi un plan bien précis pour préparer les envois qu’il nous a fait.»</p>
+
+<p>Paul ajoute: «En effet! Il y certes une part de hasard dans la manière dont il a choisi les faces mais il a pris soin de toujours choisir les jetons pour vous deux avec une face Y de la même couleur s’il avait choisi un jeton pour moi avec une face X blanche, et deux faces de couleurs différentes dans le cas contraire. Appelons cela la règle I.»</p>
+
+<p>Je leur propose alors aussitôt une autre expérience…</p>
+
+<p><strong>Deuxième expérience:</strong> Alice examine la face X; Paul et Jessica la face Y.</p>
+
+<p>Chacun d’eux constate à nouveau une suite aléatoire de faces blanches et noires. Quand ils comparent leur liste, ils se rendent compte que, cette fois, Paul et Jessica auraient pu prédire les observations d’Alice. En effet,</p>
+
+<ul>
+  <li>
+<em>à chaque fois</em> que Paul et Jessica ont observé deux faces de même couleur, Alice a observé une face blanche; et</li>
+  <li>
+<em>à chaque fois</em> que Paul et Jessica ont observé des couleurs différentes, Alice a observé une face noire.</li>
+</ul>
+
+<p>Alice lance: «Nous apprenons donc que Luc a encore une fois choisit les jetons partiellement au hasard, en prenant soin de toujours prendre les jetons pour vous deux avec une face Y de la même couleur s’il avait choisi un jeton pour moi avec une face X blanche, et deux faces de couleurs différentes dans le cas contraire. Cette nouvelle contrainte est tout à fait compatible avec celle que nous avons découvert avec la première expérience. Mais nous avons appris quelque chose de plus!».</p>
+
+<p>Paul est d’accord: «Nous progressons en effet: appelons cela la règle II.»</p>
+
+<p>Je leur propose de suite une autre expérience…</p>
+
+<p><strong>Troisième expérience:</strong> Jessica examine la face X; Paul et Alice la face Y</p>
+
+<p>Sans surprise, trois nouvelles listes de faces noires et blanches sortant au hasard. Et c’est le résultat de Jessica qui s’avère prévisible cette fois:</p>
+
+<ul>
+  <li>
+<em>à chaque fois</em> que Paul et Alice ont observé deux faces de même couleur, Jessica a observé une face blanche; et</li>
+  <li>
+<em>à chaque fois</em> que Paul et Alice ont observé des couleurs différentes, Jessica a observé une face noire.</li>
+</ul>
+
+<p>Paul et Alice échangent un regard de connivence, et c’est Paul qui exprime leur idée commune: «Nous avons appris cette fois que Luc a pris soin de toujours choisir les jetons pour moi et Alice avec une face Y de la même couleur s’il avait choisi un jeton pour Jessica avec une face X blanche, et deux faces de couleurs différentes dans le cas contraire.»</p>
+
+<p>Alice ajoute: «Et nous avons une règle III. Mieux, les trois règles que nous avons trouvé couvrent tous les cas de choix des faces X. Nous avons la description ultime de la procédure suivie par Luc! Les trois règles sont compatibles. Le jeu est fini, non?»</p>
+
+<p>Jessica, pensante: «Avec ces trois expériences, nous avons juste assez d’information pour atteindre cette conclusion. Je voudrais voir des confirmations redondantes avant de conclure. En fait, j’ai une idée! En effet, on peut prédire le résultat d’une expérience que nous n’avons pas encore faite, ce qui n’était pas possible jusqu’à maintenant. J’affirme que si chacun d’entre nous examine la face X, alors nous observerons toujours ou bien une seule face blanche, ou bien trois faces blanches.»</p>
+
+<p>Paul et Alice cogitent pendant un moment et Alice dit soudain: «Mais oui! Tu as raison!».</p>
+
+<p>Après quelques instants, Paul dit à son tour: «Je vois, en effet. Raisonnons à l’envers. Si la prédiction de Jessica est fausse, alors ou bien il y a une seule face noire, ou bien il y en a trois.</p>
+
+<ul>
+  <li>Ce deuxième cas est le plus facile: d’après notre règle I, les faces Y des jetons pour Alice et Jessica devraient avoir des couleurs différentes; même chose pour les jetons de Paul et Jessica d’après la règle II; et de Alice et Paul d’après la règle III. C’est clairement impossible: il y a toujours au moins deux faces de la même couleur!</li>
+  <li>Dans le premier cas, disons pour fixer les idées que le jeton de Alice est celui avec une face X noire, et donc que les faces X des jetons de Paul et Jessica sont blanches. Alors les règles II et III nous disent respectivement que les jetons de Paul et Jessica ont des faces Y de la même couleur, et que les jetons de Paul et Alice ont des faces Y de la même couleur. Par conséquent les trois jetons ont des faces Y de la même couleur, ce qui est impossible puisque les jetons de Alice et Jessica devraient avoir des faces Y de couleurs différentes selon la règle I. Le raisonnement est le même si le jeton noir est celui de Paul ou de Jessica.»</li>
+</ul>
+
+<p>Jessica conclut alors: «Oui, exactement, tu aboutis à une contradiction, et cela veut donc dire que ton point de départ était faux, c’est à dire que ma prédiction était vraie».</p>
+
+<p>Paul: «Appelons cette prédiction, le théorème de Jessica!»</p>
+
+<p>Les yeux d’Alice s’illumine alors: «Bonne idée! Et ce théorème de Jessica, on peut le tester expérimentalement! Le résultat est couru d’avance mais vérifions quand même! Luc, accepterais-tu de déroger à ta règle et de nous laisser le choix de l’expérience cette fois?».</p>
+
+<p>J’accepte. Mes trois amis ne semble pas noter mon sourire narquois…</p>
+
+<p><strong>Quatrième expérience:</strong> Paul, Alice et Jessica examine chacun le compartiment X</p>
+
+<p>Encore et toujours des faces noires et blanches dans trois suites aléatoires mais quand nos trois amis comparent leur liste, ils restent sans voix. Alice brise le silence finalement: «C’est à ne rien y comprendre: il y a toujours ou bien une face noire, ou bien trois, c’est à dire l’exact opposé du théorème de Jessica!». Paul ressasse le raisonnement qu’il a fait quelques temps auparavant: «Non, je n’y vois rien à redire: le théorème de Jessica devrait être correct. Nous somme d’accord?». Alice hoche de la tête.</p>
+
+<p>Après un long moment, Jessica prend la parole.</p>
+
+<p>«Il y a des choses qui nous avaient parues si évidentes au début que nous les avons acceptées sans y réfléchir. Et mon théorème repose sur ces hypothèses. Maintenant, le résultat de cette dernière expérience nous forcent donc à rejeter ces hypothèses. Le problème est qu’elles ne m’apparaissent pas clairement, ces hypothèses. Mais c’est ce qu’il nous faut faire: les trouver! Et ensuite les tester…»</p>
+
+<p>Un long silence s’ensuit que Paul est le premier à briser: «Les détecteurs! Je veux dire les appareils que Luc nous a fournit et qui nous donne la couleur d’une face ou de l’autre. Nous avons accepté sans sourciller qu’ils fonctionnaient comme Luc nous l’avait décrit. Mais, et si ils trichaient?! Ils se pourraient qu’ils nous aient montré la vraie couleur des faces pour les trois premières expériences mais que pour la quatrième, ils nous aient montré une face blanche quand elle était noire et vice-versa. Cela suffirait à expliquer le résultat: au moins quand chaque détecteur est réglé pour donner la couleur de la face X, ils trichent! Comme nous réglons les détecteurs avant de commencer l’expérience, ils ont largement le temps de s’échanger des informations pour découvris que nous mesurons les faces X!»</p>
+
+<p>Alice: «Pas bête! Mais la parade est aisée: au lieu de faire quatre expériences avec les détecteurs réglés à l’avance, on pourrait faire une seule expérience où chacun d’entre nous choisirait au hasard la face à observer. À la fin, il suffit de sélectionner les combinaisons que Luc avait choisies et ignorer le reste.»</p>
+
+<p>Paul et Alice regarde Jessica mais son regard est perdu dans le vide: à l’évidence, elle les écoutent à peine, toute à ses réflexions. Qu’à cela ne tienne, nos deux compères continuent à peaufiner leur idée.</p>
+
+<p>Paul: «Bonne idée, Alice! D’ailleurs ton protocole nous permet de ne pas avoir à croire Luc sur parole quand il nous dit qu’il ne triche pas car il ne pourrait alors pas savoir quel réglage nous allons choisir.</p>
+
+<p>Le visage de Paul s’obscurcit aussitôt cependant: «Mais il reste un problème. Chacun de nous fait son observation à un instant un petit peu différent des autres. Pour fixer les idées, considérons une observation qui se fait dans l’ordre Alice, Jessica et puis moi. Disons que tu as choisi au hasard de regarder X, Alice, et que ton détecteur t’aies révélé une face blanche, sans tricher. Il envoie alors un signal au détecteur de Jessica et au mien avec ce résultat. Nos détecteurs à tous deux se règlent alors pour montrer une face blanche si le choix se porte d’observer X, quelque soit la couleur réelle. Disons que Jessica fait l’observation avant moi. Alors son détecteur envoie un signal au mien, qui change alors son réglage pour me montrer une face noire si j’observe effectivement X, quelque soit la couleur réelle de cette face X. Et vice-versa si je fais l’observation avant Jessica. Et voilà! Lorsque nous comparerons nos listes, nous aurons une observation avec une seule face noire.»</p>
+
+<p>Alice: «C’est machiavélique! Mais tu as montré comment tricher seulement sur un cas particulier. Je ne suis pas sûr que l’on peut construire un système de triche qui marche pour tous les cas des quatre expériences que nous avons faites, un système qui tricherait quand il faut et ne tricherait pas quand il ne faut pas! Mais, en chercher un ne serait guère utile: si nous n’y parvenons pas, il se pourrait simplement que nous manquions d’imagination. Il nous serait très difficile de prouver qu’aucun système de triche ne puisse exister. Non, ce qu’il faut, c’est empêcher les détecteurs de communiquer, car alors la base même de ton idée s’écroule.»</p>
+
+<p>Paul: «Très juste! Et il y a un moyen simple de réaliser cela: la relativité restreinte nous dit que ces signaux ne peuvent pas se propager plus vite que la lumière. Il nous suffit donc, toi, moi et Jessica, de nous éloigner suffisamment les uns les autres pour que même un signal lumineux n’ai pas le temps d’aller d’un détecteur à un autre dans l’intervalle entre les observations.»</p>
+
+<p>Alice commente alors: «Très juste! De plus, ton idée est non seulement pratique mais conceptuellement très juste: si on la suit, on s’assure que l’observation de la couleur de la face d’un jeton dépend seulement du jeton et du détecteur, à l’exclusion des autres détecteurs et jetons au moment de leur propre observation. On pourrait appeler cela un principe de localité: nous nous limitons à des expériences qui ne dépendent que du voisinage immédiat, disons au plus notre isoloir à chacun. Ta proposition de détecteurs tricheurs est une violation possible de ce principe, et elle ouvre ce que l’on pourrait appeler une “lacune de localité”, qui permet alors d’échapper au théorème de Jessica.»</p>
+
+<p>Jessica rejoint soudain la discussion: «Voilà comment je mettrais votre idée en pratique pour combler cette “lacune de localité”. Chacun de nous se munit d’une horloge très précise. Nous nous asseyons autour d’une table et nous synchronisons ces horloges. Puis nous partons à plusieurs kilomètres les uns des autres. Une fois en place, j’envoie un signal lumineux à Paul: je note l’instant de départ comme indiqué par mon horloge et Paul note l’instant d’arrivée sur son horloge. Quand nous nous réunirons à nouveau plus tard, nous aurons donc une définition du temps qu’un signal lumineux met pour aller de ma position à la tienne Paul. Je fais la même chose avec Alice, et tu fais la même chose avec elle, bien sûr.»</p>
+
+<p>Elle poursuit: «Passons à l’expérience proprement dite maintenant. Quand je fais une observation, je note non seulement le résultat mais le temps indiqué par mon horloge. Chacun de vous fait de même. Pour chaque mesure, nous comparons alors ces temps. Par exemple, disons que nos notes montrent que Paul a fait une de ses mesures une seconde après moi: si il avait fallu plus d’une seconde au signal lumineux pour aller de moi à Paul, alors la mesure de Paul n’aurait pas pu être influencer par mon détecteur. Même chose entre moi et Alice et entre Paul et Alice.»</p>
+
+<p>Alice et Paul regardent Jessica avec admiration et explosent de joie: «Superbe! Faisons cette expérience. Si Luc veut se prêter au jeu bien entendu!»</p>
+
+<p>Je dit aussitôt: «Bien entendu».</p>
+
+<p><strong>Cinquième expérience:</strong> Paul, Alice et Jessica choisissent le réglage X ou Y de leur appareil au hasard; ils notent l’heure exacte de chaque observation; et ils ont préalablement mesuré le temps que met un signal lumineux pour aller de l’un d’entre eux à un autre</p>
+
+<p>Les résultats des observations correspondant aux faces XYY, YXY, YYX et XXX (dans l’ordre de numérotation des jetons), sont exactement les mêmes que dans les expériences avec les réglages prédéfinis. Et les différences entre les temps notés par Paul, Alice et Jessica sont des dizaines de fois plus petites que le temps que met un signal lumineux pour aller de l’un d’entre eux à un autre.</p>
+
+<p>Paul: «Bon, et bien mon hypothèse de détecteurs tricheurs est contredite. On peut maintenant considérer que les détecteurs se comportent comme décrit par Luc. Sauf à admettre l’existence de signaux super-luminiques, ce qui serait incompatible avec un très grand nombre d’expériences.»</p>
+
+<p>Nos trois amis deviennent pensifs pendant de long instants. Soudain Alice prend la parole: «J’ai bien une idée mais vous allez me traiter de folle!».</p>
+
+<p>Paul: «Au point où on en est!»</p>
+
+<p>Alice: «Et bien, nous avons supposé que les faces des jetons de Luc avait une couleur bien définie, du début à la fin des expériences, ou bien blanche, ou bien noire. Et que les détecteurs nous révélaient cette couleur, et nous savons maintenant que ces détecteurs ne peuvent pas tricher. Cette hypothèses est implicite dans l’énoncé des règles I à III de Paul, et on l’utilise dans ta démonstration du théorème de Jessica.»</p>
+
+<p>Paul: «Je ne vois pas comment il pourrait en être autrement. Et encore moins maintenant que nous savons que les détecteurs ne peuvent pas communiquer entre eux, justement. En effet, nous avons mis en évidence trois fois des corrélations parfaites: l’observation des faces Y par deux d’entre nous permet à tout coup de prédire la face X observée par le troisième. Si aucune communication n’est possible entre les détecteurs, il faut nécessairement que les couleurs des faces aient été fixées à l’avance. Et donc que les trois pions soient décrits au moins par les couleurs des six faces, chaque face ayant en effet une couleur bien définie quand Luc en a fini de sa préparation.»</p>
+
+<p>Jessica intervient: «Je t’accorde que ton argument semble naturel mais justement, comme Alice vient de te le dire, cette hypothèse que tu viens de défendre mène à une contradiction dans la quatrième expérience. Ou dit autrement, cette hypothèse n’est pas compatible avec les quatre premières expériences prises ensemble. Et incompatible de la même manière avec la cinquième, qui ne fait ni plus ni moins que les quatre premières pour ce qui consiste de cette hypothèse-ci. Leur résultats nous montrent qu’il n’est pas possible d’assigner des couleurs aux faces des jetons avant de les observer. C’est en effet un élément essentiel de mon théorème: la couleur d’une face existe avant son observation et indépendamment de cette dernière. Le détecteur se contente de révéler ce qui existe déjà.»</p>
+
+<p>Alice surenchérit: «Oui, c’est exactement ce que j’avais en tête. Il semblerait donc qu’il nous faille renoncer à cette vision du monde, que l’on pourrait résumer comme l’existence d’une réalité physique indépendante des observateurs.»</p>
+
+<p>Après un long silence lourd de perplexité, Luc prend la parole: «Mes amis, laissez-moi vous apprendre la mécanique quantique…»</p>
+
+<p><strong>Épilogue</strong></p>
+
+<p>Mon historiette est finie! Je voudrais maintenant conclure en la reliant avec des théorèmes de la vraie physique.</p>
+
+<p>Le théorème de Jessica de mon histoire est un théorème de Bell dû à David Mermin. Si je l’avais formalisé mathématiquement, cela aurait été une égalité, ce que l’on peut deviner en observant que le résultat de Jessica est “exact”. Je veux dire par là que Jessica ne dit pas par exemple que dans la moitié des cas en moyenne, il y aura ceci ou cela: elle affirme un résultat valable pour toutes les observations. Nombres d’entre vous sont accoutumés à l’expression “inégalités de Bell”, inégalités portant sur la probabilité d’observer ceci ou cela, et vous en serez peut-être étonné. Il se trouve que les théorèmes de Bell les mieux à même d’être vérifiés par de vraies expériences, par opposition aux expériences de pensée de ce billet, et bien ce sont des inégalités. Mais d’un point de vue purement conceptuel, rien n’interdit des égalités, ce qui fut publié pour la première fois par <a href="#Greenberger:1990aa" class="bibliography-reference"> Greenberger et al (1990)</a>. L’égalité de Bell proposée par Jessica dans mon histoire fut publiée par <a href="#Mermin:1990ab" class="bibliography-reference"> Mermin (1990)</a>. Mes jetons sont une analogie pour les spin 1/2 utilisé par Mermin: c’est pour cela que j’ai appelé les faces X et Y. Elles correspondent à la mesure du spin selon les directions des mêmes noms. Quant aux couleurs, blanc et noir, elles correspondent aux mesures +1/2 et -1/2.</p>
+
+<p>L’argument de Paul, pour justifier que les faces doivent avoir des couleurs bien définie avant leur observation, est le pendant de l’argument classique d’<a href="#Einstein:1935aa" class="bibliography-reference"> Einstein,  Podolsky, et  Rosen (1935)</a>, dit argument EPR: des corrélations parfaites entre des systèmes distants, et qui par conséquent ne peuvent pas interagir, requièrent l’existence d’une cause préalable. Les théorèmes de Bell contredisent précisément ce point.</p>
+
+<p>La “lacune de localité” identifiée par mes protagonistes est un problème auquel les chercheurs réalisant ce genre d’expérience durent faire face, en utilisant une solution conceptuellement similaire à celle de Jessica. Comme les articles scientifiques sont publiés en anglais, le terme universellement utilisé est l’expression “locality loophole”.</p>
+
+<p>Pour finir, il existe une longue tradition d’introduction pédagogique aux théorème de Bell. Il est intéressant de noter l’une d’entre elle, <a href="#Mermin:1981aa" class="bibliography-reference"> Mermin (1981)</a> qui utilise une analogie et de l’arithmétique élémentaire pour présenter une inégalité de Bell. Il est étonnant que Mermin n’ai pas publié, à ma connaissance, une telle présentation pour l’égalité de Bell sur laquelle j’ai fondé ce billet.</p>
+
+</div>
+<h2>Bibliographie</h2>
+<div class="bibliography_entry" id="Einstein:1935aa">
+<span class="bibliography_key">
+A.  Einstein, B.  Podolsky, et N.  Rosen
+(1935).
+</span>
+<span>Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?,
+<em>
+Phys. Rev.,
+</em>
+47:
+777--780
+</span>
+</div>
+<div class="bibliography_entry" id="Greenberger:1990aa">
+<span class="bibliography_key">
+Daniel M.  Greenberger, Michael A.  Horne, Abner  Shimony, et Anton  Zeilinger
+(1990).
+</span>
+<span>Bell's theorem without inequalities,
+<em>
+American Journal of Physics,
+</em>
+58:
+1131-1143
+</span>
+</div>
+<div class="bibliography_entry" id="Mermin:1981aa">
+<span class="bibliography_key">
+N. D.  Mermin
+(1981).
+</span>
+<span>Bringing home the atomic world: Quantum mysteries for anybody,
+<em>
+American Journal of Physics,
+</em>
+49:
+940–943
+</span>
+<div>
+(Une version PDF de l’article était disponible gratuitement <a href="https://www.physics.wisc.edu/undergrads/courses/spring2014/407/experiments/bell/Bell's%20Theorem%20Background%20Papers/Mermin_quantum_mysteries-Am.J.P.49.940.pdf">ici</a> quand ce billet fut écrit.)
+</div>
+</div>
+<div class="bibliography_entry" id="Mermin:1990ab">
+<span class="bibliography_key">
+N. David  Mermin
+(1990).
+</span>
+<span>Simple unified form for the major no-hidden-variables theorems,
+<em>
+Phys. Rev. Lett.,
+</em>
+65:
+3373--3376
+</span>
+</div>
+
+<div id="license">
+<div>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" rel="license">
+<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+</a>
+</div>
+<div>
+Cette œuvre est mise à disposition selon les termes de la
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" rel="license">
+Licence Internationale "Creative Commons Attribution" 4.0 - Pas d’utilisation commerciale - Partage dans les mêmes conditions.
+</a>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
