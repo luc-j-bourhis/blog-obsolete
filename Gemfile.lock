@@ -3,44 +3,54 @@ GEM
   specs:
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    adsf (1.2.1)
-      rack (>= 1.0.0)
+    adsf (1.4.1)
+      rack (>= 1.0.0, < 3.0.0)
     colored (1.2)
     concurrent-ruby (1.0.5)
     cri (2.10.1)
       colored (~> 1.2)
-    ddplugin (1.0.1)
-    ffi (1.9.18)
+    ddmemoize (1.0.0)
+      ddmetrics (~> 1.0)
+      ref (~> 2.0)
+    ddmetrics (1.0.1)
+    ddplugin (1.0.2)
+    ffi (1.9.25)
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
-    kramdown (1.15.0)
+    kramdown (1.17.0)
     mini_portile2 (2.3.0)
-    nanoc (4.8.11)
+    nanoc (4.9.3)
       addressable (~> 2.5)
       cri (~> 2.8)
+      ddmemoize (~> 1.0)
+      ddmetrics (~> 1.0)
       ddplugin (~> 1.0)
       hamster (~> 3.0)
+      parallel (~> 1.12)
       ref (~> 2.0)
       slow_enumerator_tools (~> 1.0)
-    nokogiri (1.8.2)
+      tomlrb (~> 1.2)
+    nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
-    public_suffix (3.0.0)
-    rack (2.0.3)
-    rb-fsevent (0.10.2)
+    parallel (1.12.1)
+    public_suffix (3.0.2)
+    rack (2.0.5)
+    rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     ref (2.0.0)
-    sass (3.5.3)
+    sass (3.5.7)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    slow_enumerator_tools (1.0.0)
+    slow_enumerator_tools (1.1.0)
     temple (0.8.0)
     tilt (2.0.8)
+    tomlrb (1.2.7)
 
 PLATFORMS
   ruby
@@ -49,7 +59,7 @@ DEPENDENCIES
   adsf!
   haml!
   kramdown!
-  nanoc (~> 4)!
+  nanoc (~> 4.8)!
   nokogiri!
   sass!
 
@@ -57,4 +67,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.2
+   1.16.3
