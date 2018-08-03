@@ -5,7 +5,7 @@
   |
   Not working: KaTeX lacks a handful of features that we need:
   environments equations, align and split, support for equation numbers (\label)
-  and referring to them (\ref), and the \notag to control numbering of
+  and referring to them (\ref), and the  to control numbering of
   course. So at the time of compiling this site, KaTeX is not a viable
   option, even though its fantastic rendering speed is really nice!
   So we edit away all we can below, to get as much as possible cleanly rendered
@@ -14,11 +14,12 @@
 %script{:src => "https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js", :integrity => "sha256-mxaM9VWtRj1wBtn50/EDUUe4m3t39ExE+xEPyrxVB8I=", :crossorigin => "anonymous"}
 %link{:rel => "stylesheet", :href => "https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css", :integrity => "sha256-sI/DdD47R/Sa54XZDNFjRWlS+Dv8MC5xfkqQLRh0Jes=", :crossorigin => "anonymous"}
 :javascript
+  function remove_dollars(tex) {
+    return tex.replace(/^[$]+/, '').replace(/[$]+$/, '');
+  }
+
   function clean_latex_for_katex(tex) {
     return tex
-      .replace('% <![CDATA[','').replace('%]]>','')
-      .replace(/\\(begin|end){equation}/g,'')
-      .replace('\\notag', '')
       .replace(/\\label{[^}]*}/, '')
       .replace(/(\\(begin|end)){align\*?}/g, '$1{aligned}')
       .replace(/(\\(begin|end)){split}/g, '$1{aligned}');
@@ -30,12 +31,13 @@
       macros: #{macros_for_katex}
     };
 
-    $("script[type='math/tex']").replaceWith(function() {
-      var tex = clean_latex_for_katex($(this).text());
+    $("span.kdmath").replaceWith(function() {
+      var tex = remove_dollars($(this).text());
       return katex.renderToString(tex, {displayMode: false, ...options});
     });
-    $("script[type='math/tex; mode=display']").replaceWith(function() {
-      var tex = clean_latex_for_katex($(this).html());
+    $("div.kdmath").replaceWith(function() {
+      var tex = remove_dollars($(this).text());
+      tex = clean_latex_for_katex(tex);
       return katex.renderToString(tex, {displayMode: true, ...options});
     });
   });
