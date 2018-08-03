@@ -3,6 +3,6 @@ crash.log
 output/
 tmp/
 .bundle/
-*.sublime-project
+*.sublime-workspace
 .sass-cache/
 content/*/sandbox
