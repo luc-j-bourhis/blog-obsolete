@@ -12,3 +12,4 @@ tex_macros:
     comm:     '\left[ #1, #2 \right]'
     matnorm:  '\Vert #1 \Vert'
     mathbbone: '\\unicode{x1D7D9}'
+    sign:     '\operatorname{sign}'
