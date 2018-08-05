@@ -41,7 +41,7 @@ module KramdownMathjaxMonkeyPatching
   # unless the LaTeX starts with an align or an equation environment.
   def call(converter, el, opts)
     if not el.value.match %r{^\\begin\{
-                             (?:align|equation|gather|multline)
+                             (?:align|alignat|equation|gather|multline)
                              \*?
                              \}
                             }x
