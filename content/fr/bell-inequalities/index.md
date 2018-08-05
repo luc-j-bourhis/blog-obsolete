@@ -383,9 +383,7 @@ CQFD.
 
 ### c. La non-séparabilité: une condition suffisante {#section-c}
 
-Je vais dans cette section et les suivantes considérer le cas de particule de spin 1/2, pour des raisons pédagogiques de simplicité mais les résultats que je vais démontrer peuvent être prouver pour d'autres systèmes quantiques. La dimension de $$\Hsingle$$ est donc 2 et l'on y définit les opérateurs de spin habituels $$S_x, S_y, S_z$$, à une normalisation de $$\hbar/2$$ près, de manière à avoir des valeurs propres $$\pm 1$$. On peut alors se donner une base $$\mathcal{B}$$ où les matrices de ces opérateurs sont les matrices de Pauli $$\sigma_x$$, $$\sigma_y$$, et $$\sigma_z$$.
-
-Ensuite, je vais avoir besoin d'un représentation simple et générale d'un état non-séparable de la paire: une décomposition de Schmidt. Tout ket $$\ket\psi$$ peut se décomposer en
+Je vais avoir besoin d'un représentation simple et générale d'un état non-séparable de la paire: une décomposition de Schmidt. Tout ket $$\ket\psi$$ peut se décomposer en
 
 $$\ket\psi = c_1 \ket{\phi_1}\ket{\theta_1} + c_2 \ket{\phi_2}\ket{\theta_2},\notag$$
 
