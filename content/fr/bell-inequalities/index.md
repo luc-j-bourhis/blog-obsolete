@@ -289,6 +289,23 @@ CQFD.
 
 Nous avons donc montrer que l'on pouvait construire un modèle réaliste et local qui reproduisait exactement les prédictions stastistiques de la mécanique quantique pour une particule de spin 1/2. Ce résultat fut une des surprises des travaux de Bell. Il montre qu'il faudra au moins un système de deux particules pour espérer trouver une contradiction avec la mécanique quantique, ce qui sera le sujet de la section suivante.
 
+Mais au sujet de ces paires, il nous faut au moins montrer qu'un modèle réaliste et local peut reproduire les corrélations parfaites quand les détecteurs ont des réglages opposés, car ce fut le point de départ de notre raisonnement sur les variables cachées. Ce n'est guère difficile. Je vais bien entendu réutiliser le modèle que nous venons d'étudier pour chaque particule: la particule 1 a un état $$(n,m_1)$$, et la particule 2 a un état $$(-n,m_2)$$. L'une a $$n$$ et l'autre $$-n$$ pour réaliser des spins en direction opposée. Pour corréler les particules, il suffit alors de demander que $$m_1 = m_2$$. En effet, on a alors
+
+$$\begin{align*}
+A(a, m) &=
+\begin{cases}
++\frac{1}{2}, & \text{if } (n+m)\cdot a > 0,\\
+-\frac{1}{2}, & \text{otherwise;}
+\end{cases}\\
+B(b, m) &=
+\begin{cases}
++\frac{1}{2}, & \text{if } (-n-m)\cdot b > 0,\\
+-\frac{1}{2}, & \text{otherwise.}
+\end{cases}.
+\end{align*}$$
+
+Il est alors clair que $$P(a,-a) = -1$$. CQFD.
+
 Au final, le choix du formalisme quantique apparaît donc comme un choix métaphysique, selon que l'on préfère abandonner le réalisme ou non. Je dit bien "apparaît" car les théorème de Bell vont justement montrer qu'il n'en est rien: il y a des conséquences mesurables à choisir une théorie réaliste.
 
 ## 3. Démonstration des inégalités de Bell
