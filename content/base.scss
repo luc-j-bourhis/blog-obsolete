@@ -174,3 +174,10 @@ a.flags img {
 a.flags {
   text-decoration: none;
 }
+
+// Tweak font size for KaTeX: this works when using my settings for PT Serif
+// but I don't know whether this would require different a tweak for other fonts
+// Anyway, this value reproduces the look and feel of MathJax well.
+span.katex {
+    font-size: 1.08em;
+}

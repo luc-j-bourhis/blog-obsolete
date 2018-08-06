@@ -228,3 +228,9 @@ google_fonts:
   #   - 700
   #   - 400i
   #   - 700i
+
+# Choice of math engine to rendre equations
+# KaTeX is not ready for primetime (c.f. comment in katex.haml)
+math_engine:
+  mathjax
+  #katex

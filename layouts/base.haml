@@ -19,7 +19,13 @@
     -# you don't need to keep this, but it's cool for stats!
     %meta{:name => "generator", :content => "nanoc #{Nanoc::VERSION}"}/
 
-    = render "/mathjax.*"
+    - case @config[:math_engine]
+      - when "mathjax"
+        = render "/mathjax.*"
+      - when "katex"
+        = render "/katex.*"
+      - else
+        - raise "'#{math_engine}' is not a supported Math engine"
 
     %script{:src => "https://use.fontawesome.com/0e6d8b9bc7.js"}
   %body

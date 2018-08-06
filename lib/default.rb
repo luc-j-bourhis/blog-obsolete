@@ -126,6 +126,15 @@ class AbbreviationMarker < Nanoc::Filter
   end
 end
 
+# Collect LaTeX macros for site and current article and merge them
+def latex_macros
+  macros = @items['/tex_macros.*'][:tex_macros]
+  if not @item.nil? and not @item[:tex_macros].nil?
+    macros = macros.merge @item[:tex_macros]
+  end
+  macros
+end
+
 # Translation of LaTeX macros into the format used in  Mathjax configuration
 #
 # Usage
@@ -144,17 +153,19 @@ end
 # The file tex_macros.yaml in the content directory can be used to define
 # macros available on any page, with the same format and syntax as above.
 def macros_for_mathjax
-  macros = @items['/tex_macros.*'][:tex_macros]
-  if not @item.nil? and not @item[:tex_macros].nil?
-    macros = macros.merge @item[:tex_macros]
-  end
-  macros.collect { |name, body|
+  latex_macros.collect { |name, body|
     max_arg = body.scan(/#(\d+)/).flatten.map(&:to_i).max
     escaped = body.gsub('\\', '\\\\\\\\')
     specs = ["\"#{escaped}\""]
     if not max_arg.nil? then specs.push(max_arg) end
     "#{name}: [#{specs.join(', ')}]"
   }.join(",\n")
+end
+
+def macros_for_katex
+  "{\n" + latex_macros.collect { |name, body|
+    "\"\\\\#{name}\": \"#{body.gsub('\\', '\\\\\\\\')}\""
+  }.join(",\n") + "\n}"
 end
 
 # References
