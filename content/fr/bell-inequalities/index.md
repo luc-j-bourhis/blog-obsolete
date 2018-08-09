@@ -276,7 +276,7 @@ $$\notag
 P(a) = \int\frac{d\Omega(m)}{4\pi}\Theta((n+m)\cdot a > 0).$$
 
 
-En introduisant des coordonnées polaires sphériques avec $$a$$ comme axe des $$z$$, le vecteur $$m$$ est repéré par l'angle azimuthal $$\varphi$$ et l'angle polaire $$\theta$$ tandis que le vecteur $$n$$ a un angle polaire $$\theta$$.
+En introduisant des coordonnées polaires sphériques avec $$a$$ comme axe des $$z$$, le vecteur $$m$$ est repéré par l'angle azimuthal $$\varphi$$ et l'angle polaire $$\theta$$ tandis que le vecteur $$n$$ a un angle polaire $$\theta_n$$.
 
 $$P(a) = \frac{1}{4\pi}\int_0^{2\pi}d\varphi\int_0^\pi d\theta\sin\theta \ \Theta(\cos\theta_n + \cos\theta > 0),$$
 
@@ -289,7 +289,7 @@ CQFD.
 
 Nous avons donc montrer que l'on pouvait construire un modèle réaliste et local qui reproduisait exactement les prédictions stastistiques de la mécanique quantique pour une particule de spin 1/2. Ce résultat fut une des surprises des travaux de Bell. Il montre qu'il faudra au moins un système de deux particules pour espérer trouver une contradiction avec la mécanique quantique, ce qui sera le sujet de la section suivante.
 
-Mais au sujet de ces paires, il nous faut au moins montrer qu'un modèle réaliste et local peut reproduire les corrélations parfaites quand les détecteurs ont des réglages opposés, car ce fut le point de départ de notre raisonnement sur les variables cachées. Ce n'est guère difficile. Je vais bien entendu réutiliser le modèle que nous venons d'étudier pour chaque particule: la particule 1 a un état $$(n,m_1)$$, et la particule 2 a un état $$(-n,m_2)$$. L'une a $$n$$ et l'autre $$-n$$ pour réaliser des spins en direction opposée. Pour corréler les particules, il suffit alors de demander que $$m_1 = m_2$$. En effet, on a alors
+Mais au sujet de ces paires, il nous faut au moins montrer qu'un modèle réaliste et local peut reproduire les corrélations parfaites quand les détecteurs ont des réglages opposés, car ce fut le point de départ de notre raisonnement sur les variables cachées. Ce n'est guère difficile. Je vais bien entendu réutiliser le modèle que nous venons d'étudier pour chaque particule: la particule 1 a un état $$(n,m_1)$$, et la particule 2 a un état $$(-n,m_2)$$. L'une a $$n$$ et l'autre $$-n$$ pour réaliser des spins en direction opposée. Pour corréler les particules, il suffit alors de demander que $$m_1 = -m_2$$. En effet, on a alors
 
 $$\begin{align*}
 A(a, m) &=
