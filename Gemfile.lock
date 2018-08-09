@@ -7,7 +7,7 @@ GEM
       rack (>= 1.0.0, < 3.0.0)
     colored (1.2)
     concurrent-ruby (1.0.5)
-    cri (2.10.1)
+    cri (2.11.0)
       colored (~> 1.2)
     ddmemoize (1.0.0)
       ddmetrics (~> 1.0)
