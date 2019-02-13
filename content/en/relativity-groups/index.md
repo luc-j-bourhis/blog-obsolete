@@ -481,8 +481,8 @@ We can now prove the following theorem.
 
 - the synchrony group (I)
 - the Galilean group (II)
-- the Lorentz group (III^+^)
-- the group of rotations in spacetime (III^-^)
+- the Lorentz group (III$$^+$$)
+- the group of rotations in spacetime (III$$^-$$)
 
 *Proof.* Those four cases obviously correspond to the four cases of [lemma 2]. Thus let us review them in turn.
 
@@ -536,7 +536,7 @@ $$\notag
 \end{cases}} \Keps
 $$
 
-Thus we have either case (III^-^),
+Thus we have either case (III$$^-$$),
 
 $$
 \newcommand{\boostmat}[2]{
@@ -545,13 +545,13 @@ $$
 \exp K_{-} = \boostmat{\cos\varphi}{\sin\varphi},
 $$
 
-or case (III^+^),
+or case (III$$^+$$),
 
 $$
 \exp K_{+} = \boostmat{\cosh\varphi}{\sinh\varphi},
 $$
 
-where $$\projperp{u} = I - P_u$$ is the projection onto the plane $$u^\perp$$ perpendicular to $$u$$. Thus the transformations are either, in case (III^-^),
+where $$\projperp{u} = I - P_u$$ is the projection onto the plane $$u^\perp$$ perpendicular to $$u$$. Thus the transformations are either, in case (III$$^-$$),
 
 $$ \newcommand{\boosttrans}[2]{
     \begin{aligned}
@@ -564,7 +564,7 @@ $$ \newcommand{\boosttrans}[2]{
 \boosttrans{\cos\varphi}{\sin\varphi},
 $$
 
-or, in case (III^+^),
+or, in case (III$$^+$$),
 
 $$
 \boosttrans{\cosh\varphi}{\sinh\varphi},
@@ -572,7 +572,7 @@ $$
 
 where $$x_\parallel$$ is the component of $$x$$ parallel to $$u$$ whereas $$x_\perp$$ is the component perpendicular to $$u$$.
 
-In case (III^+^), we recognise a Lorentz boost, parametrised by the rapidity $$\varphi$$ and the direction of the boost $$\hat{u}$$. The case (III^-^) is not mainstream but time and space are mixed as two spatial coordinates would be by a rotation of angle $$\varphi$$, hence the name "rotation in spacetime".
+In case (III$$^+$$), we recognise a Lorentz boost, parametrised by the rapidity $$\varphi$$ and the direction of the boost $$\hat{u}$$. The case (III$$^-$$) is not mainstream but time and space are mixed as two spatial coordinates would be by a rotation of angle $$\varphi$$, hence the name "rotation in spacetime".
 
 Thus it would seem we have failed, since we not only recovered Galilean and Lorentz transforms but two other groups. The rotations of spacetime are definitively "exotic" in the sense that they have never played any role in physics: it is rather puzzling they appear and it is very desirable we find a criteria to eliminate them. The synchrony group is important on the contrary as a way to formalise the conventionality of synchronicity which plays an essential role when considering experimental aspects, either real experiments or gedanken ones. Actually, there is a deeper point to be made here.
 
