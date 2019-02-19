@@ -36,7 +36,7 @@
 # to suppress numbering. In the last case, use `\notag` on each equation
 # as usual in LaTeX.
 
-module KramdownMathjaxMonkeyPatching
+module KramdownMathjaxEquationNumberMonkeyPatching
   # Wrap a math element inside \begin{equation} ... \end{equation}
   # unless the LaTeX starts with an align or an equation environment.
   def call(converter, el, opts)
@@ -54,4 +54,4 @@ end
 require 'kramdown'
 require 'kramdown/converter/math_engine/mathjax'
 Kramdown::Converter::MathEngine::Mathjax.singleton_class.prepend(
-  KramdownMathjaxMonkeyPatching)
+  KramdownMathjaxEquationNumberMonkeyPatching)
