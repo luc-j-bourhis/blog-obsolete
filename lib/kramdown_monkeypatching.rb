@@ -51,7 +51,49 @@ module KramdownMathjaxEquationNumberMonkeyPatching
   end
 end
 
+# Tensors a la \usepackage{tensor} from CTAN
+# ------------------------------------------
+#
+# We support the \indices macro as in
+#
+# M\indices{^a_{\mathbf{u}}^d_{bc}}
+#
+# This is translated to something of the form M^{…}_{…} which Mathjax
+# or KaTeX can handle. The current implementation just insert \phantom{…}
+# at the right places among superscript and indices to create spaces of
+# the right length.
+module KramdownMathjaxTensorMonkeyPatching
+  def call(converter, el, opts)
+    bracepat = %r{
+      (?<re>
+        (?:
+          (?> [^{}]+)
+          |
+          \{ \g<re> \}
+        )*
+      )
+    }x
+    el.value.gsub! /\\indices \{ (#{bracepat}) \}/x do
+      indices = Regexp.last_match.captures[0]
+      # All capturing groups must be named even if we don't use those names
+      # as otherwise `scan` will not iterate over the right triplet of matching
+      # text
+      up, down = indices.scan(%r{ (?<s>[\^_])
+                                | (?<i>\\?[[:alnum:]]+)
+                                | \{ #{bracepat} \}}x)
+                 .map{|x| x.compact.uniq}.flatten
+                 .each_slice(2)
+                 .map{|s,v|  s == '^' ? [v, "\\phantom{#{v}}"]
+                                      : ["\\phantom{#{v}}", v]}
+                 .transpose
+                 .map{|x| "{#{x.join}}"}
+      "^#{up}_#{down}"
+    end
+  end
+end
+
 require 'kramdown'
 require 'kramdown/converter/math_engine/mathjax'
 Kramdown::Converter::MathEngine::Mathjax.singleton_class.prepend(
-  KramdownMathjaxEquationNumberMonkeyPatching)
+  KramdownMathjaxEquationNumberMonkeyPatching,
+  KramdownMathjaxTensorMonkeyPatching)
