@@ -89,6 +89,7 @@ module KramdownMathjaxTensorMonkeyPatching
                  .map{|x| "{#{x.join}}"}
       "^#{up}_#{down}"
     end
+    super(converter, el, opts)
   end
 end
 
