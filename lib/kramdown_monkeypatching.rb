@@ -59,7 +59,19 @@ end
 # M\indices{^a_{\mathbf{u}}^d_{bc}}
 #
 # This is translated to something of the form M^{…}_{…} which Mathjax
-# or KaTeX can handle. The current implementation just insert \phantom{…}
+# or KaTeX can handle. Braces are necessary around macros taking arguments.
+# They can be omitted around macro-like construct without arguments, e.g.
+#
+# T\indices{^\mu_\nu}
+#
+# is fine but
+#
+# T\indices{^\myindex{i}_\nu}
+#
+# is not: it won't trigger any error but the rendering will be garbled.
+# Note that the LaTeX package `tensor` has the same caveat.
+#
+# The current implementation just insert \phantom{…}
 # at the right places among superscript and indices to create spaces of
 # the right length.
 module KramdownMathjaxTensorMonkeyPatching
