@@ -1,3 +1,6 @@
+This repository is now obsolete. Please see https://github.com/luc-j-bourhis/blog instead
+which is based on https://github.com/luc-j-bourhis/nanoc-science.
+
 # Introduction
 
 This is more web publication than blog, really, but in any case nobody else than me should a priori care about this repository. Except that besides the content itself, the infrastructure built about nanoc should be interesting to anybody who want to produce contents on the web with a lot of maths and a heavy academic undertone (citations, etc). Ideally, I should split the repository in two parts: infrastructure and content. This is on my todo list...
