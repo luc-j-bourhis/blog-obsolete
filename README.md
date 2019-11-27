@@ -3,6 +3,8 @@ which is based on https://github.com/luc-j-bourhis/nanoc-science.
 
 # Introduction
 
+[![Join the chat at https://gitter.im/luc-j-bourhis-cartesian-musings/community](https://badges.gitter.im/luc-j-bourhis-cartesian-musings/community.svg)](https://gitter.im/luc-j-bourhis-cartesian-musings/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This is more web publication than blog, really, but in any case nobody else than me should a priori care about this repository. Except that besides the content itself, the infrastructure built about nanoc should be interesting to anybody who want to produce contents on the web with a lot of maths and a heavy academic undertone (citations, etc). Ideally, I should split the repository in two parts: infrastructure and content. This is on my todo list...
 
 # How to setup the build environment?
