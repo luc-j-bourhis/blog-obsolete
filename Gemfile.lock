@@ -37,7 +37,7 @@ GEM
       hamster (~> 3.0)
       json_schema (~> 0.19)
       zeitwerk (~> 1.0)
-    nokogiri (1.10.1)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     parallel (1.13.0)
     public_suffix (3.0.3)
@@ -65,7 +65,7 @@ DEPENDENCIES
   haml!
   kramdown (~> 1.17)!
   nanoc (~> 4.8)!
-  nokogiri (~> 1.8, >= 1.8.5)!
+  nokogiri (~> 1.10)!
   sass!
 
 RUBY VERSION
